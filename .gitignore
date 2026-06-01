@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+/fsh-generated
+/input-cache
+/output
+/temp
+/template
+*.sh
+*.bat
+_updatePublisher.bat
+*.sh
+*.bat
