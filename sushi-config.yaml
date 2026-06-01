@@ -1,0 +1,30 @@
+id: dk-medcom-ref-lm
+canonical: http://medcomehmi.dk/ig/dk-medcom-ref-lm
+name: DK MEDCOM REFERRAL LM
+title: "DK MEDCOM REFERRAL LM"
+description: The DK MEDCOM REFERRAL LM
+status: draft # draft | active | retired | unknown
+version: 0.1.0
+fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+copyrightYear: 2026+
+releaseLabel: draft # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+# license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
+jurisdiction: urn:iso:std:iso:3166#DK "Denmark"
+publisher:
+  name: MedCom
+  url: http://medcom.dk
+  # email: test@example.org
+
+
+dependencies:
+  hl7.fhir.dk.core: 3.4.0
+  medcom.fhir.dk.core: 2.4.0
+
+menu:
+  Home: index.html
+  Artifacts: artifacts.html
+  More:
+    Table of Contents: toc.html
+
+instanceOptions:
+  manualSliceOrdering: true # true | false
