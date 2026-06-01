@@ -1,0 +1,117 @@
+@startuml
+hide methods
+hide circle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+title Henvisningsmeddelelse – Logisk FHIR Model
+
+package "HenvisningsmeddelelseLM" {
+
+  class HenvisningsmeddelelseLM {
+  }
+
+  class MeddelelseLM {
+    +messageId : id [1]
+    +timestamp : dateTime [1]
+    +haendelse : Coding [1]
+  }
+
+  class PatientLM {
+    +cpr : string [1]
+    +navn : HumanName [1]
+    +adresse : Address [0..1]
+    +telefon : ContactPoint [0..1]
+  }
+
+  class HenvisningLM {
+    +oprettetDato : dateTime [1]
+    +prioritet : code [1]
+    +ydelseskode : CodeableConcept [1]
+    +anamnese : string [0..1]
+    +medicin : string [0..1]
+    +oensketTidspunkt : dateTime [0..1]
+  }
+
+  class HenviserLM {
+    +autorisationsId : string [1]
+    +navn : HumanName [1]
+    +speciale : CodeableConcept [0..1]
+    +kontakt : ContactPoint [0..1]
+  }
+
+}
+
+package "MeddelelseLM detaljer" {
+
+  class Afsender {
+    +sorKode : string [1]
+    +navn : string [1]
+    +yder : string [0..1]
+    +ehmiEndpoint : ehmiEndpointLM [1]
+  }
+
+  class Modtager {
+    +sorKode : string [1]
+    +navn : string [1]
+    +ehmiEndpoint : ehmiEndpointLM [1]
+  }
+
+  class ehmiEndpointLM {
+    +glnIdentifier : string [1]
+    +navn : string [1]
+    +url : url [1]
+    +mimeType : string [1]
+    +meddelelseTyper : string [1]
+  }
+}
+
+package "HenvisningLM detaljer" {
+
+  class Indikation {
+    +diagnose : CodeableConcept [0..1]
+    +friTekst : string [0..1]
+  }
+
+  class Paraklinik {
+    +type : code [1]
+    +reference : Reference [1]
+  }
+
+  class AktueltProblem {
+    +problem : CodeableConcept
+  }
+
+}
+
+
+
+
+' ------------------------------------------------------------
+' Root relationer
+' ------------------------------------------------------------
+
+HenvisningsmeddelelseLM *-- "1" MeddelelseLM : Meddelelse
+HenvisningsmeddelelseLM *-- "1" HenvisningLM : Henvisning
+HenvisningsmeddelelseLM *-- "1" PatientLM : Patient
+HenvisningsmeddelelseLM *-- "1" HenviserLM : Henviser
+
+' ------------------------------------------------------------
+' Meddelelse relationer
+' ------------------------------------------------------------
+
+MeddelelseLM *-- "1" Afsender : afsender
+MeddelelseLM *-- "1..*" Modtager : modtager
+
+Afsender *-- "1..*" ehmiEndpointLM : ehmiEndpoint
+Modtager *-- "1..*" ehmiEndpointLM : ehmiEndpoint
+
+' ------------------------------------------------------------
+' Henvisning relationer
+' ------------------------------------------------------------
+
+HenvisningLM *-- "1..*" Indikation : indikation
+HenvisningLM *-- "0..*" Paraklinik : paraklinik
+HenvisningLM *-- "0..*" AktueltProblem : aktuelleProblemer
+
+@enduml
