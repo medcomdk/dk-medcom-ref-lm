@@ -2,9 +2,11 @@
 
 Oversigten beskriver use cases for de to primære roller i et FHIR-baseret henvisningsflow: **henviseren** (den der afsender en henvisning) og **visitatoren** (den der modtager og triagerer). Derudover beskrives use cases der kun opstår i den fælles udvekslingsdialog mellem de to parter. Al kommunikation foregår via FHIR-baserede beskeder.
 
-![usecases-claude-svg.svg](/images/usecases-claude-svg.svg)
-<!--img src="usecases-claude-svg.svg" alt="usecases-claude-svg.svg" width="300"-->
+<!--![usecases-claude-svg.svg](usecases-claude-svg.svg)-->
 
+<p style="display: block; margin-bottom: 1em;">
+<img src="usecases-claude-svg.svg" alt="usecases-claude-svg.svg" width="67%">
+</p>
 ---
 
 ## 1. Henviserens use cases
