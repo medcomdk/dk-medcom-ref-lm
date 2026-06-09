@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+
+actor Henviser
+actor Visitator
+
+usecase "3.3 Faglig\nafklaring" as UC33
+usecase "2.3 Acceptere og\nbooke" as UC23
+usecase "2.4 Afvise\nhenvisning" as UC24
+
+Henviser --> UC33
+Visitator --> UC33
+
+Visitator --> UC23
+Visitator --> UC24
+
+UC33 --> UC23
+UC33 --> UC24
+
+@enduml
