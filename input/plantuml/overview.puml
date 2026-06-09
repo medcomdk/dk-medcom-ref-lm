@@ -1,0 +1,30 @@
+@startuml
+
+!include common.iuml
+
+title Oversigt over use case-domæner for henvisningshåndtering
+
+actor Henviser
+actor Visitator
+
+rectangle "Henviserens use cases" as Sender {
+    usecase "1. Oprette og\nadministrere\nhenvisninger" as UC1
+}
+
+rectangle "Visitatorens use cases" as Receiver {
+    usecase "2. Modtage,\nvurdere og\nbehandle\nhenvisninger" as UC2
+}
+
+rectangle "Dialogbaserede use cases" as Collaboration {
+    usecase "3. Dialog og\nkoordination\nmellem parter" as UC3
+}
+
+Henviser --> UC1
+Visitator --> UC2
+
+UC1 --> UC2 : Henvisning
+UC2 --> UC3 : Behov for dialog
+UC3 --> UC2 : Afklaring
+UC2 --> UC1 : Status og afgørelser
+
+@enduml
