@@ -1,0 +1,10 @@
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+skinparam usecase {
+    BorderColor Black
+    BackgroundColor White
+}
+
+left to right direction
