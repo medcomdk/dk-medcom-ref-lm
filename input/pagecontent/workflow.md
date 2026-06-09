@@ -2,7 +2,7 @@
 
 Nedenstående viser et logisk workflow, hvor en henvisning sendes fra en praktiserende læge til en hospitalsafdeling, men hvor manglende information medfører dialog og gensendelse af henvisningen.
 
-[!fhir_referral_messaging_flow.svg](fhir_referral_messaging_flow.svg)
+![fhir_referral_messaging_flow.svg](fhir_referral_messaging_flow.svg)
 
 Scenariet er modelleret med:
 
@@ -283,12 +283,12 @@ I EHMI kunne ovenstående udveksles som:
 FHIR Messaging
 ```
 
-eller:
+<!-- eller:
 
 ```text
 REST + Subscription events
 ```
-
+-->
 eller hybridt:
 
 ```text
