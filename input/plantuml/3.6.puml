@@ -1,0 +1,13 @@
+@startuml UC36
+left to right direction
+actor Henviser
+actor Visitator
+
+usecase "3.6 Korrektions-\naftale" as UC36
+usecase "1.3 Ændre afsendt\nhenvisning" as UC13
+
+Henviser --> UC36
+Visitator --> UC36
+
+UC36 --> UC13
+@enduml
