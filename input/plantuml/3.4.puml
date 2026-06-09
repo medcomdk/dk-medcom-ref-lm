@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+
+actor Visitator
+actor Henviser
+
+usecase "2.3 Acceptere og\nbooke" as UC23
+usecase "2.4 Afvise\nhenvisning" as UC24
+usecase "2.5 Videresende" as UC25
+usecase "2.6 Ændre\nprioritet" as UC26
+
+usecase "3.4 Status-\n notifikation \n om afgørelse" as UC34
+usecase "1.6 Modtage\nafgørelse" as UC16
+
+Visitator --> UC34
+Henviser --> UC16
+
+UC23 --> UC34
+UC24 --> UC34
+UC25 --> UC34
+UC26 --> UC34
+
+UC34 --> UC16
+
+@enduml
