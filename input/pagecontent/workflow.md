@@ -4,8 +4,8 @@ Nedenstående viser et logisk workflow, hvor en henvisning sendes fra en praktis
 
 <!--![fhir_referral_messaging_flow.svg](fhir_referral_messaging_flow.svg)-->
 
-<p style="display: block; margin-bottom: 1em;">
-<img src="fhir_referral_messaging_flow.svg" alt="fhir_referral_messaging_flow.svg" width="80%">
+<p style="display: block; margin-right: 1em; margin-bottom: 1em;">
+<img src="fhir_referral_messaging_flow.svg" alt="fhir_referral_messaging_flow.svg" width="100%">
 </p>
 ---
 
