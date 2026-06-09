@@ -1,5 +1,11 @@
 Her er et detaljeret flowdiagram over et FHIR messaging-baseret henvisningsflow med den scenarie, du beskriver — inkl. statusskift og nøgleskift på centrale ressourcer.Du kan klikke på enhver boks for at få uddybning. Her er en forklaring af de centrale dele af flowet:
 
+<!--![usecases-claude-svg.svg](usecases-claude-svg.svg)-->
+
+<p style="display: block;">
+<img src="usecases-claude-svg.svg" alt="usecases-claude-svg.svg" width="70%" style="margin-top: 10px; margin-left: 10%; margin-right: 20%;">
+</p>
+
 **Fase 1 — Afsendelse**
 Afsender opretter en `ServiceRequest` (status: *draft*) og en `Task` (status: *draft*), pakker dem i et FHIR `Bundle` af typen `message` med en `MessageHeader` der angiver event-kode (f.eks. `referral-request`). Ved afsendelse skifter `ServiceRequest` til *active* og `Task` til *requested*.
 
@@ -17,3 +23,4 @@ Modtager accepterer endeligt og sender en bundle med event `referral-accept`. `T
 
 **Særlige ressourcer at bemærke:**
 `Communication` er den centrale ressource til den strukturerede dialog i fase 3-4 — den linkes til den originale `ServiceRequest` via `Communication.basedOn`. `MessageHeader.event` bærer semantikken for hvilken handling bundtet repræsenterer, og `Task` er den sporbarheds-ressource der holder det samlede procesforløb.
+
