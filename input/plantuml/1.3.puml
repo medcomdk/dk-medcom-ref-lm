@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+
+actor Henviser
+actor Visitator
+
+usecase "1.3 Ændre afsendt\nhenvisning" as UC13
+usecase "2.2 Triagere og\nprioritere" as UC22
+
+Henviser --> UC13
+Visitator --> UC22
+
+UC13 --> UC22
+
+@enduml
