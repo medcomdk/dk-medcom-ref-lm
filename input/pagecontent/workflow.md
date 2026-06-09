@@ -2,7 +2,13 @@
 
 Nedenstående viser et logisk workflow, hvor en henvisning sendes fra en praktiserende læge til en hospitalsafdeling, men hvor manglende information medfører dialog og gensendelse af henvisningen.
 
-![fhir_referral_messaging_flow.svg](fhir_referral_messaging_flow.svg)
+<!--![fhir_referral_messaging_flow.svg](fhir_referral_messaging_flow.svg)-->
+
+<p style="display: block; margin-bottom: 1em;">
+<img src="fhir_referral_messaging_flow.svg" alt="fhir_referral_messaging_flow.svg" width="80%">
+</p>
+---
+
 
 Scenariet er modelleret med:
 
