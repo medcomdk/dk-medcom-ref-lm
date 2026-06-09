@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+
+actor Visitator
+actor Henviser
+
+usecase "3.1 Anmode om\nsupplerende oplysninger" as UC31
+usecase "3.2 Besvare\nanmodning" as UC32
+
+Visitator --> UC31
+Henviser --> UC32
+
+UC31 --> UC32
+
+@enduml
