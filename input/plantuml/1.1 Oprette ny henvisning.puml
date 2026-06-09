@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+
+actor Henviser
+actor Visitator
+
+usecase "1.1 Oprette ny\nhenvisning" as UC11
+usecase "1.2 Tilknytte klinisk\ndokumentation" as UC12
+usecase "2.1 Modtage og\nkvittere" as UC21
+
+Henviser --> UC11
+Visitator --> UC21
+
+UC11 --> UC12 : evt.
+UC11 --> UC21
+
+@enduml
