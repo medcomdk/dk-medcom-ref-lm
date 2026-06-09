@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+
+actor Henviser
+actor Visitator
+
+usecase "3.2 Besvare\nanmodning" as UC32
+usecase "2.2 Triagere og\nprioritere" as UC22
+usecase "3.3 Faglig\nafklaring" as UC33
+
+Henviser --> UC32
+Visitator --> UC22
+Henviser --> UC33
+Visitator --> UC33
+
+UC32 --> UC22
+UC32 --> UC33 : evt.
+
+@enduml
