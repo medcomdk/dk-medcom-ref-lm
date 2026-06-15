@@ -1,0 +1,127 @@
+@startuml
+
+ title REF-001 - Opret henvisning
+ participant Henviser
+ participant EHMI
+ participant Visitator
+Henviser -> EHMI : REF-001
+EHMI -> Visitator
+@enduml
+newpage
+@startuml
+
+ title REF-002 - Supplerende dokumentation
+ participant Henviser
+ participant EHMI
+ participant Visitator
+Henviser -> EHMI : REF-002
+EHMI -> Visitator
+@enduml
+newpage
+@startuml
+
+ title REF-003 - Anmodning om supplerende oplysninger
+ participant Henviser
+ participant EHMI
+ participant Visitator
+Visitator -> EHMI : REF-003
+EHMI -> Henviser
+@enduml
+newpage
+@startuml
+
+ title REF-004 - Besvarelse af anmodning
+ participant Henviser
+ participant EHMI
+ participant Visitator
+Henviser -> EHMI : REF-004
+EHMI -> Visitator
+@enduml
+newpage
+@startuml
+
+ title REF-005 - Accept af henvisning
+ participant Henviser
+ participant EHMI
+ participant Visitator
+Visitator -> EHMI : REF-005
+EHMI -> Henviser
+@enduml
+newpage
+@startuml
+
+ title REF-006 - Booking gennemført
+ participant Henviser
+ participant EHMI
+ participant Visitator
+Visitator -> EHMI : REF-006
+EHMI -> Henviser
+@enduml
+newpage
+@startuml
+
+ title REF-007 - Afvisning
+ participant Henviser
+ participant EHMI
+ participant Visitator
+Visitator -> EHMI : REF-007
+EHMI -> Henviser
+@enduml
+newpage
+@startuml
+
+ title REF-008 - Videresendelse
+ participant Henviser
+ participant EHMI
+ participant Visitator
+Visitator -> EHMI : REF-008
+EHMI -> Ny Visitator
+@enduml
+newpage
+@startuml
+
+ title REF-009 - Statusopdatering
+ participant Henviser
+ participant EHMI
+ participant Visitator
+Visitator -> EHMI : REF-009
+EHMI -> Henviser
+@enduml
+newpage
+@startuml
+
+ title REF-010 - Faglig dialog
+ participant Henviser
+ participant EHMI
+ participant Visitator
+loop indtil afklaring
+Visitator -> EHMI : Dialog
+EHMI -> Henviser
+Henviser -> EHMI : Dialog svar
+EHMI -> Visitator
+end
+@enduml
+newpage
+@startuml
+
+ title REF-011 - Alternativ visitation
+ participant Henviser
+ participant EHMI
+ participant Visitator
+Visitator -> EHMI : Alternativ visitation
+EHMI -> Henviser
+Henviser -> EHMI : Accept/afvis
+EHMI -> Visitator
+@enduml
+newpage
+@startuml
+
+ title REF-012 - Korrektion
+ participant Henviser
+ participant EHMI
+ participant Visitator
+Visitator -> EHMI : Korrektionsanmodning
+EHMI -> Henviser
+Henviser -> EHMI : Korrigeret henvisning
+EHMI -> Visitator
+@enduml

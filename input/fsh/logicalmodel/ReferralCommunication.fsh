@@ -15,7 +15,7 @@
 // ALIAS-ERKLÆRINGER
 // Aliasser holder FSH-koden læsbar og undgår gentagelse af lange URLs.
 // ──────────────────────────────────────────────────────────────────────
-
+/*
 Alias: $SCT           = http://snomed.info/sct
 Alias: $LOINC         = http://loinc.org
 Alias: $commCat       = http://terminology.hl7.org/CodeSystem/communication-category
@@ -552,3 +552,4 @@ Usage:      #example
 * item[=].text      = "Kendt nefropati?"
 * item[=].type      = #boolean
 * item[=].required  = false
+*/

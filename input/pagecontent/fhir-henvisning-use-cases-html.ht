@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FHIR Henvisning — Use Case Oversigt</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0;300;0,400;0,600;1,300&display=swap');
+
+  :root {
+    --c-bg:        #F2F4F7;
+    --c-surface:   #FFFFFF;
+    --c-sidebar:   #1B2333;
+    --c-sidebar-h: #243044;
+    --c-teal:      #1A7F8E;
+    --c-teal-lt:   #E6F4F6;
+    --c-purple:    #4B3F8A;
+    --c-purple-lt: #EEEAF7;
+    --c-coral:     #C75D3A;
+    --c-coral-lt:  #FBF0EB;
+    --c-slate:     #3D4E63;
+    --c-muted:     #7A8999;
+    --c-border:    #D8DFE8;
+    --c-text:      #1B2333;
+    --radius:      10px;
+    --mono:        'IBM Plex Mono', monospace;
+    --sans:        'IBM Plex Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--c-bg);
+    color: var(--c-text);
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ── SIDEBAR ── */
+  nav {
+    width: 240px;
+    min-width: 240px;
+    background: var(--c-sidebar);
+    color: #CBD5E1;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 0 0 24px;
+  }
+  nav .nav-brand {
+    padding: 24px 20px 16px;
+    border-bottom: 1px solid #2D3F57;
+  }
+  nav .nav-brand .wordmark {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--c-teal);
+    text-transform: uppercase;
+  }
+  nav .nav-brand h1 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #E8EEF5;
+    margin-top: 6px;
+    line-height: 1.3;
+  }
+  nav .nav-section {
+    padding: 16px 20px 4px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #506070;
+  }
+  nav a {
+    display: block;
+    padding: 7px 20px;
+    font-size: 12.5px;
+    color: #9BAFC4;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: background 0.12s, color 0.12s;
+  }
+  nav a:hover, nav a.active {
+    background: var(--c-sidebar-h);
+    color: #E0EAF5;
+  }
+  nav a .uc-id {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--c-teal);
+    margin-right: 6px;
+  }
+
+  /* ── MAIN ── */
+  main {
+    flex: 1;
+    padding: 40px 48px 80px;
+    max-width: 860px;
+  }
+
+  .page-header {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--c-border);
+  }
+  .page-header .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--c-teal);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .page-header h1 {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    color: var(--c-slate);
+    line-height: 1.2;
+  }
+  .page-header h1 strong { font-weight: 600; color: var(--c-text); }
+  .page-header p {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--c-muted);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 40px 0 20px;
+  }
+  .section-header .pill {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  .pill-purple { background: var(--c-purple-lt); color: var(--c-purple); }
+  .pill-teal   { background: var(--c-teal-lt);   color: var(--c-teal); }
+  .pill-coral  { background: var(--c-coral-lt);  color: var(--c-coral); }
+
+  .section-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--c-slate);
+  }
+  .section-intro {
+    font-size: 13px;
+    color: var(--c-muted);
+    font-weight: 300;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  /* ── USE CASE CARD ── */
+  .uc-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .uc-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px 14px;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .uc-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 4px 9px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .num-purple { background: var(--c-purple-lt); color: var(--c-purple); }
+  .num-teal   { background: var(--c-teal-lt);   color: var(--c-teal); }
+  .num-coral  { background: var(--c-coral-lt);  color: var(--c-coral); }
+
+  .uc-card-header h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--c-text);
+  }
+  .uc-body {
+    padding: 18px 20px;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 20px;
+    align-items: start;
+  }
+  .uc-left {}
+  .uc-desc {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--c-slate);
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+  .uc-story {
+    background: var(--c-bg);
+    border-left: 3px solid var(--c-border);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 12.5px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--c-slate);
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+  .uc-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .meta-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+    min-width: 68px;
+    flex-shrink: 0;
+  }
+  .meta-val {
+    color: var(--c-slate);
+    font-weight: 400;
+  }
+  code {
+    font-family: var(--mono);
+    font-size: 11px;
+    background: var(--c-bg);
+    border: 1px solid var(--c-border);
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: var(--c-teal);
+    white-space: nowrap;
+  }
+
+  /* next-step chips */
+  .next-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .next-chip {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: opacity 0.1s;
+  }
+  .next-chip:hover { opacity: 0.75; }
+  .chip-purple { background: var(--c-purple-lt); color: var(--c-purple); }
+  .chip-teal   { background: var(--c-teal-lt);   color: var(--c-teal); }
+  .chip-coral  { background: var(--c-coral-lt);  color: var(--c-coral); }
+  .chip-end    { background: #F0F4F0; color: #4A7A4A; }
+
+  /* ── DIAGRAM (right column) ── */
+  .uc-diagram svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── RESOURCE TABLE ── */
+  .res-table-wrap {
+    margin-top: 48px;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .res-table-wrap h2 {
+    padding: 16px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--c-border);
+    color: var(--c-slate);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  th {
+    background: var(--c-bg);
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+    padding: 10px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--c-border);
+  }
+  td {
+    padding: 9px 16px;
+    border-bottom: 1px solid #EEF2F7;
+    color: var(--c-slate);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #FAFBFD; }
+
+  @media (max-width: 720px) {
+    nav { display: none; }
+    main { padding: 24px 20px 60px; }
+    .uc-body { grid-template-columns: 1fr; }
+    .uc-diagram { order: -1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="wordmark">FHIR · Refers</div>
+    <h1>Use Case Oversigt</h1>
+  </div>
+
+  <div class="nav-section">Henviser</div>
+  <a href="#uc-1-1"><span class="uc-id">1.1</span> Oprette henvisning</a>
+  <a href="#uc-1-2"><span class="uc-id">1.2</span> Tilknytte dokumentation</a>
+  <a href="#uc-1-3"><span class="uc-id">1.3</span> Ændre henvisning</a>
+  <a href="#uc-1-4"><span class="uc-id">1.4</span> Tilbagekalde</a>
+  <a href="#uc-1-5"><span class="uc-id">1.5</span> Monitorere status</a>
+  <a href="#uc-1-6"><span class="uc-id">1.6</span> Modtage afgørelse</a>
+
+  <div class="nav-section">Visitator</div>
+  <a href="#uc-2-1"><span class="uc-id">2.1</span> Modtage og kvittere</a>
+  <a href="#uc-2-2"><span class="uc-id">2.2</span> Triagere og prioritere</a>
+  <a href="#uc-2-3"><span class="uc-id">2.3</span> Acceptere og booke</a>
+  <a href="#uc-2-4"><span class="uc-id">2.4</span> Afvise</a>
+  <a href="#uc-2-5"><span class="uc-id">2.5</span> Videresende</a>
+  <a href="#uc-2-6"><span class="uc-id">2.6</span> Ændre prioritet</a>
+
+  <div class="nav-section">Udvekslingsdialog</div>
+  <a href="#uc-3-1"><span class="uc-id">3.1</span> Anmode om supplement</a>
+  <a href="#uc-3-2"><span class="uc-id">3.2</span> Besvare supplement</a>
+  <a href="#uc-3-3"><span class="uc-id">3.3</span> Faglig afklaring</a>
+  <a href="#uc-3-4"><span class="uc-id">3.4</span> Statusnotifikation</a>
+  <a href="#uc-3-5"><span class="uc-id">3.5</span> Alternativ visitation</a>
+  <a href="#uc-3-6"><span class="uc-id">3.6</span> Korrektionsaftale</a>
+
+  <div class="nav-section">Reference</div>
+  <a href="#resource-table"><span class="uc-id">↓</span> Ressourceoversigt</a>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main>
+  <div class="page-header">
+    <div class="eyebrow">FHIR R4 · Henvisningsworkflow</div>
+    <h1>Use Cases for <strong>FHIR-baseret</strong><br>Henvisningshåndtering</h1>
+    <p>Oversigt over use cases for de to primære roller — <strong>henviseren</strong> og <strong>visitatoren</strong> — samt de fælles use cases der opstår i udvekslingsdialogen mellem dem. Al kommunikation foregår via FHIR-baserede beskeder.</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       SEKTION 1 — HENVISER
+  ════════════════════════════════════════════════ -->
+  <div class="section-header">
+    <span class="pill pill-purple">Sektion 1</span>
+    <h2>Henviserens use cases</h2>
+  </div>
+  <p class="section-intro">Udføres selvstændigt af henviseren uden at kræve aktiv respons fra visitatoren ud over systemkvittering.</p>
+
+  <!-- 1.1 -->
+  <div class="uc-card" id="uc-1-1">
+    <div class="uc-card-header">
+      <span class="uc-num num-purple">1.1</span>
+      <h3>Oprette en ny henvisning</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Henviseren udfærdiger og afsender en ny henvisning til et modtagende tilbud. Henvisningen repræsenteres som en <code>ServiceRequest</code>-ressource med status <code>proposed</code> og sendes i en FHIR-<code>Bundle</code>. Henvisningen indeholder patientoplysninger, indikation, hastegrad og ønsket ydelse.</p>
+        <p class="uc-story">Som henviser ønsker jeg at kunne oprette og afsende en struktureret henvisning via FHIR, når jeg har truffet en klinisk beslutning om at viderehenvise en patient, så visitatoren modtager alle nødvendige oplysninger på et standardiseret format.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>ServiceRequest</code> status=proposed</span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Klinisk beslutning om at henvise patient</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-purple" href="#uc-1-2">1.2 Tilknytte dok.</a>
+              <a class="next-chip chip-teal" href="#uc-2-1">2.1 Modtage</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- actor -->
+          <circle cx="36" cy="30" r="10" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="40" x2="36" y2="68" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="20" y1="52" x2="52" y2="52" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="68" x2="22" y2="84" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="68" x2="50" y2="84" stroke="#4B3F8A" stroke-width="1.5"/>
+          <text x="36" y="98" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#4B3F8A" font-weight="600">Henviser</text>
+          <!-- arrow -->
+          <line x1="68" y1="52" x2="120" y2="52" stroke="#4B3F8A" stroke-width="1.5" marker-end="url(#arrowP)"/>
+          <!-- resource box -->
+          <rect x="122" y="38" width="100" height="28" rx="6" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1"/>
+          <text x="172" y="51" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="#4B3F8A" font-weight="600">ServiceRequest</text>
+          <text x="172" y="62" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#7060B0">proposed</text>
+          <!-- label on arrow -->
+          <text x="94" y="48" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#7A8999">POST Bundle</text>
+          <!-- destination -->
+          <line x1="172" y1="66" x2="172" y2="108" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <rect x="122" y="110" width="100" height="24" rx="6" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="172" y="125" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#1A7F8E">→ 2.1 Modtage</text>
+          <defs>
+            <marker id="arrowP" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M1 1L7 4L1 7" fill="none" stroke="#4B3F8A" stroke-width="1.2"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1.2 -->
+  <div class="uc-card" id="uc-1-2">
+    <div class="uc-card-header">
+      <span class="uc-num num-purple">1.2</span>
+      <h3>Tilknytte klinisk dokumentation</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Henviseren vedhæfter supplerende klinisk materiale til en eksisterende henvisning — fx laboratoriesvar, billeddiagnostik eller tidligere epikriser. Materialet knyttes til <code>ServiceRequest</code>-ressourcen via referencer til <code>DiagnosticReport</code>, <code>Media</code> eller <code>DocumentReference</code>.</p>
+        <p class="uc-story">Som henviser ønsker jeg at kunne vedhæfte relevant klinisk dokumentation til en eksisterende henvisning, når jeg vurderer at visitatoren har brug for supplerende materiale for at træffe en god afgørelse, så beslutningsgrundlaget er samlet ét sted.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>DiagnosticReport</code> · <code>Media</code> · <code>DocumentReference</code></span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Behov for at understøtte klinisk beslutningsgrundlag</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-teal" href="#uc-2-1">2.1 Modtage</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowP2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M1 1L7 4L1 7" fill="none" stroke="#4B3F8A" stroke-width="1.2"/>
+            </marker>
+          </defs>
+          <circle cx="36" cy="28" r="10" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="38" x2="36" y2="66" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="20" y1="50" x2="52" y2="50" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="66" x2="22" y2="82" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="66" x2="50" y2="82" stroke="#4B3F8A" stroke-width="1.5"/>
+          <text x="36" y="96" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#4B3F8A" font-weight="600">Henviser</text>
+          <!-- existing SR -->
+          <rect x="90" y="16" width="130" height="22" rx="5" fill="#F5F5F5" stroke="#B0B8C4" stroke-width="1" stroke-dasharray="3 2"/>
+          <text x="155" y="31" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#888">ServiceRequest (eksist.)</text>
+          <!-- doc boxes -->
+          <rect x="90" y="52" width="58" height="20" rx="5" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1"/>
+          <text x="119" y="65" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#4B3F8A">DiagnosticRpt</text>
+          <rect x="158" y="52" width="58" height="20" rx="5" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1"/>
+          <text x="187" y="65" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#4B3F8A">Media / DocRef</text>
+          <!-- attach arrows -->
+          <line x1="119" y1="38" x2="119" y2="52" stroke="#4B3F8A" stroke-width="1" marker-end="url(#arrowP2)"/>
+          <line x1="187" y1="38" x2="187" y2="52" stroke="#4B3F8A" stroke-width="1" marker-end="url(#arrowP2)"/>
+          <line x1="68" y1="50" x2="88" y2="50" stroke="#4B3F8A" stroke-width="1.5" marker-end="url(#arrowP2)"/>
+          <!-- next -->
+          <rect x="90" y="90" width="130" height="22" rx="5" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="155" y="104" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#1A7F8E">→ 2.1 Modtage</text>
+          <line x1="155" y1="72" x2="155" y2="90" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1.3 -->
+  <div class="uc-card" id="uc-1-3">
+    <div class="uc-card-header">
+      <span class="uc-num num-purple">1.3</span>
+      <h3>Ændre en afsendt henvisning</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Henviseren opdaterer indholdet af en allerede afsendt henvisning — fx korrigerer indikation, hastegrad eller kontaktoplysninger. Opdateringen sker via en <code>PUT</code>-operation på den eksisterende <code>ServiceRequest</code>, og der sættes et revisionsflag så visitatoren notificeres.</p>
+        <p class="uc-story">Som henviser ønsker jeg at kunne rette indholdet i en allerede afsendt henvisning, når jeg opdager en fejl eller patientens kliniske situation ændrer sig, så visitatoren altid arbejder ud fra korrekte og aktuelle oplysninger.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>ServiceRequest</code> (PUT / revision)</span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Fejl opdaget eller klinisk situation ændret efter afsendelse</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-teal" href="#uc-2-2">2.2 Triagere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowP3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M1 1L7 4L1 7" fill="none" stroke="#4B3F8A" stroke-width="1.2"/>
+            </marker>
+          </defs>
+          <circle cx="36" cy="28" r="10" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="38" x2="36" y2="66" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="20" y1="50" x2="52" y2="50" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="66" x2="22" y2="82" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="66" x2="50" y2="82" stroke="#4B3F8A" stroke-width="1.5"/>
+          <text x="36" y="96" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#4B3F8A" font-weight="600">Henviser</text>
+          <line x1="68" y1="50" x2="118" y2="50" stroke="#4B3F8A" stroke-width="1.5" marker-end="url(#arrowP3)"/>
+          <text x="93" y="45" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#7A8999">PUT</text>
+          <rect x="120" y="36" width="105" height="28" rx="6" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1"/>
+          <text x="172" y="49" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="#4B3F8A" font-weight="600">ServiceRequest</text>
+          <text x="172" y="59" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#7060B0">revision-flag</text>
+          <line x1="172" y1="64" x2="172" y2="100" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <rect x="120" y="102" width="105" height="22" rx="5" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="172" y="116" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#1A7F8E">→ 2.2 Triagere</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1.4 -->
+  <div class="uc-card" id="uc-1-4">
+    <div class="uc-card-header">
+      <span class="uc-num num-purple">1.4</span>
+      <h3>Tilbagekalde en henvisning</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Henviseren annullerer en afsendt henvisning der endnu ikke er ekspederet. <code>ServiceRequest</code>-status sættes til <code>revoked</code> og en notifikation sendes til visitatoren.</p>
+        <p class="uc-story">Som henviser ønsker jeg at kunne tilbagekalde en afsendt henvisning, når patienten ikke længere ønsker forløbet eller det kliniske grundlag er bortfaldet, så visitatoren ikke bruger ressourcer på en henvisning der ikke skal ekspederes.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>ServiceRequest</code> status=revoked</span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Patienten ønsker ikke forløbet, eller klinisk grundlag er bortfaldet</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps"><span class="next-chip chip-end">Flowet afsluttes</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowP4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M1 1L7 4L1 7" fill="none" stroke="#4B3F8A" stroke-width="1.2"/>
+            </marker>
+          </defs>
+          <circle cx="36" cy="28" r="10" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="38" x2="36" y2="66" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="20" y1="50" x2="52" y2="50" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="66" x2="22" y2="82" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="66" x2="50" y2="82" stroke="#4B3F8A" stroke-width="1.5"/>
+          <text x="36" y="96" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#4B3F8A" font-weight="600">Henviser</text>
+          <line x1="68" y1="50" x2="118" y2="50" stroke="#4B3F8A" stroke-width="1.5" marker-end="url(#arrowP4)"/>
+          <rect x="120" y="36" width="105" height="28" rx="6" fill="#FFF0EE" stroke="#C75D3A" stroke-width="1"/>
+          <text x="172" y="49" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="#C75D3A" font-weight="600">ServiceRequest</text>
+          <text x="172" y="59" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#C75D3A">revoked</text>
+          <text x="172" y="85" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#4A7A4A">✓ Flowet afsluttes</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1.5 -->
+  <div class="uc-card" id="uc-1-5">
+    <div class="uc-card-header">
+      <span class="uc-num num-purple">1.5</span>
+      <h3>Monitorere status på afsendte henvisninger</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Henviseren følger løbende op på status for egne udestående henvisninger. Dette kan ske via FHIR-subscription (push) eller ved periodisk polling mod visitatorens FHIR-endpoint.</p>
+        <p class="uc-story">Som henviser ønsker jeg løbende at kunne se status på mine afsendte og udestående henvisninger, når jeg har behov for overblik over patienternes videre forløb, så jeg kan følge op og informere patienterne korrekt.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>Subscription</code> · <code>SubscriptionStatus</code> · <code>ServiceRequest</code></span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Behov for overblik over egne afsendte henvisninger</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-purple" href="#uc-1-6">1.6 Modtage afgørelse</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowP5" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M1 1L7 4L1 7" fill="none" stroke="#4B3F8A" stroke-width="1.2"/>
+            </marker>
+            <marker id="arrowP5b" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M1 1L7 4L1 7" fill="none" stroke="#1A7F8E" stroke-width="1.2"/>
+            </marker>
+          </defs>
+          <circle cx="36" cy="28" r="10" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="38" x2="36" y2="66" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="20" y1="50" x2="52" y2="50" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="66" x2="22" y2="82" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="66" x2="50" y2="82" stroke="#4B3F8A" stroke-width="1.5"/>
+          <text x="36" y="97" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#4B3F8A" font-weight="600">Henviser</text>
+          <!-- subscribe arrow -->
+          <line x1="68" y1="46" x2="118" y2="36" stroke="#4B3F8A" stroke-width="1.2" stroke-dasharray="4 2" marker-end="url(#arrowP5)"/>
+          <text x="93" y="37" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="7.5" fill="#7A8999">subscribe/poll</text>
+          <!-- FHIR endpoint box -->
+          <rect x="120" y="20" width="105" height="24" rx="5" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="172" y="35" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#1A7F8E">FHIR Endpoint</text>
+          <!-- notify back -->
+          <line x1="118" y1="58" x2="68" y2="66" stroke="#1A7F8E" stroke-width="1.2" stroke-dasharray="4 2" marker-end="url(#arrowP5b)"/>
+          <text x="93" y="70" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="7.5" fill="#1A7F8E">SubscriptionStatus</text>
+          <!-- next -->
+          <rect x="68" y="108" width="105" height="22" rx="5" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1"/>
+          <text x="120" y="122" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#4B3F8A">→ 1.6 Afgørelse</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1.6 -->
+  <div class="uc-card" id="uc-1-6">
+    <div class="uc-card-header">
+      <span class="uc-num num-purple">1.6</span>
+      <h3>Modtage afgørelse fra visitatoren</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Henviseren modtager visitatorens endelige afgørelse — accept, afvisning eller alternativt tilbud — og integrerer denne i eget journalsystem. Afgørelsen leveres som en <code>Task</code>-ressource eller notifikation med reference til den oprindelige <code>ServiceRequest</code>.</p>
+        <p class="uc-story">Som henviser ønsker jeg automatisk at modtage visitatorens afgørelse i mit journalsystem, når visitatoren har truffet beslutning om accept, afvisning eller alternativt tilbud, så jeg hurtigt kan handle og orientere patienten.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>Task</code> · <code>SubscriptionNotification</code></span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Visitatoren har truffet afgørelse om henvisningen</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-purple" href="#uc-1-1">1.1 Ny henvisning</a>
+              <span class="next-chip chip-end">Accept → afslut</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowT6" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M1 1L7 4L1 7" fill="none" stroke="#1A7F8E" stroke-width="1.2"/>
+            </marker>
+          </defs>
+          <rect x="10" y="20" width="90" height="24" rx="5" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="55" y="35" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#1A7F8E">Task / Notification</text>
+          <line x1="100" y1="32" x2="148" y2="32" stroke="#1A7F8E" stroke-width="1.5" marker-end="url(#arrowT6)"/>
+          <circle cx="172" cy="32" r="10" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="172" y1="42" x2="172" y2="70" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="156" y1="54" x2="188" y2="54" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="172" y1="70" x2="158" y2="86" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="172" y1="70" x2="186" y2="86" stroke="#4B3F8A" stroke-width="1.5"/>
+          <text x="172" y="100" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#4B3F8A" font-weight="600">Henviser</text>
+          <!-- outcome boxes -->
+          <rect x="10" y="110" width="60" height="20" rx="4" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="40" y="123" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#1A7F8E">Accept ✓</text>
+          <rect x="80" y="110" width="60" height="20" rx="4" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="110" y="123" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#C75D3A">Afvisning →1.1</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       SEKTION 2 — VISITATOR
+  ════════════════════════════════════════════════ -->
+  <div class="section-header">
+    <span class="pill pill-teal">Sektion 2</span>
+    <h2>Visitatorens use cases</h2>
+  </div>
+  <p class="section-intro">Udføres selvstændigt af visitatoren som led i modtagelse og behandling af indkomne henvisninger.</p>
+
+  <!-- 2.1 -->
+  <div class="uc-card" id="uc-2-1">
+    <div class="uc-card-header">
+      <span class="uc-num num-teal">2.1</span>
+      <h3>Modtage og kvittere for ny henvisning</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Visitatoren modtager en indkommende FHIR-<code>Bundle</code> med en ny <code>ServiceRequest</code> og sender en teknisk kvittering (ACK) tilbage til afsendersystemet. Henvisningen registreres med status <code>active</code> eller <code>on-hold</code> afhængigt af triagekapacitet.</p>
+        <p class="uc-story">Som visitator ønsker jeg automatisk at modtage og kvittere for indkomne henvisninger via FHIR, når en ny ServiceRequest ankommer i mit endpoint, så afsenderen hurtigt får bekræftet at henvisningen er modtaget korrekt.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>Bundle</code> · <code>MessageHeader</code> · <code>ServiceRequest</code></span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Indkommende henvisning i FHIR-endpoint</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-teal" href="#uc-2-2">2.2 Triagere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowT1" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M1 1L7 4L1 7" fill="none" stroke="#1A7F8E" stroke-width="1.2"/>
+            </marker>
+            <marker id="arrowT1b" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M1 1L7 4L1 7" fill="none" stroke="#4B3F8A" stroke-width="1.2"/>
+            </marker>
+          </defs>
+          <!-- Bundle incoming -->
+          <rect x="10" y="20" width="80" height="24" rx="5" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1"/>
+          <text x="50" y="30" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#4B3F8A">Bundle</text>
+          <text x="50" y="40" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#7060B0">ServiceRequest</text>
+          <line x1="90" y1="32" x2="136" y2="32" stroke="#4B3F8A" stroke-width="1.5" marker-end="url(#arrowT1b)"/>
+          <!-- visitator endpoint -->
+          <rect x="138" y="20" width="90" height="24" rx="5" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="183" y="35" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#1A7F8E">FHIR Endpoint</text>
+          <!-- ACK back -->
+          <line x1="136" y1="50" x2="90" y2="56" stroke="#1A7F8E" stroke-width="1.2" stroke-dasharray="3 2" marker-end="url(#arrowT1)"/>
+          <text x="113" y="64" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="7.5" fill="#1A7F8E">ACK</text>
+          <!-- next -->
+          <rect x="90" y="100" width="100" height="22" rx="5" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="140" y="114" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#1A7F8E">→ 2.2 Triagere</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2.2 -->
+  <div class="uc-card" id="uc-2-2">
+    <div class="uc-card-header">
+      <span class="uc-num num-teal">2.2</span>
+      <h3>Triagere og prioritere en henvisning</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Visitatoren vurderer henvisningens faglige indhold, klassificerer hastegrad og prioriterer i forhold til øvrige indkomne henvisninger. Triage-udfaldet dokumenteres i en <code>Task</code>-ressource med udfald og begrundelse.</p>
+        <p class="uc-story">Som visitator ønsker jeg at kunne foretage en struktureret triage af en modtaget henvisning og dokumentere mit udfald, når en ny eller opdateret henvisning er klar til klinisk vurdering, så prioriteringen er sporbar og ensartet på tværs af alle indkomne sager.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>Task</code> (triage-outcome, priority)</span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Ny eller opdateret henvisning klar til klinisk vurdering</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-teal" href="#uc-2-3">2.3 Acceptere</a>
+              <a class="next-chip chip-teal" href="#uc-2-4">2.4 Afvise</a>
+              <a class="next-chip chip-coral" href="#uc-3-1">3.1 Supplement</a>
+              <a class="next-chip chip-teal" href="#uc-2-6">2.6 Prioritet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowT2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M1 1L7 4L1 7" fill="none" stroke="#1A7F8E" stroke-width="1.2"/>
+            </marker>
+          </defs>
+          <!-- task box -->
+          <rect x="70" y="18" width="100" height="28" rx="6" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1.5"/>
+          <text x="120" y="30" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="#1A7F8E" font-weight="600">Task</text>
+          <text x="120" y="41" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#1A7F8E">triage-outcome</text>
+          <!-- outcomes -->
+          <line x1="90" y1="46" x2="50" y2="90" stroke="#1A7F8E" stroke-width="1" marker-end="url(#arrowT2)"/>
+          <line x1="120" y1="46" x2="120" y2="90" stroke="#1A7F8E" stroke-width="1" marker-end="url(#arrowT2)"/>
+          <line x1="150" y1="46" x2="190" y2="90" stroke="#C75D3A" stroke-width="1" marker-end="url(#arrowT2)"/>
+          <rect x="10" y="92" width="75" height="20" rx="4" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="47" y="105" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#1A7F8E">2.3 Accept</text>
+          <rect x="82" y="92" width="75" height="20" rx="4" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="119" y="105" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#C75D3A">2.4 Afvis</text>
+          <rect x="162" y="92" width="70" height="20" rx="4" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="197" y="105" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#C75D3A">3.1 Suppl.</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2.3 -->
+  <div class="uc-card" id="uc-2-3">
+    <div class="uc-card-header">
+      <span class="uc-num num-teal">2.3</span>
+      <h3>Acceptere en henvisning og booke forløb</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Visitatoren accepterer henvisningen og opretter et forløb. Der bookes en tid, og <code>ServiceRequest</code>-status opdateres til <code>active</code>. En <code>Appointment</code>-ressource oprettes og linkes til henvisningen.</p>
+        <p class="uc-story">Som visitator ønsker jeg at kunne acceptere en henvisning og oprette en booking, når min visitationsafgørelse er positiv, så patienten får en tid og henviseren automatisk modtager bekræftelsen.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>ServiceRequest</code> (active) · <code>Appointment</code> (booked)</span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Positiv visitationsafgørelse</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-coral" href="#uc-3-4">3.4 Statusnotifikation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="arrowT3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#1A7F8E" stroke-width="1.2"/></marker></defs>
+          <rect x="20" y="20" width="90" height="26" rx="5" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1.5"/>
+          <text x="65" y="31" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#1A7F8E" font-weight="600">ServiceRequest</text>
+          <text x="65" y="41" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#1A7F8E">active</text>
+          <rect x="130" y="20" width="90" height="26" rx="5" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1.5"/>
+          <text x="175" y="31" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#1A7F8E" font-weight="600">Appointment</text>
+          <text x="175" y="41" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#1A7F8E">booked</text>
+          <line x1="110" y1="33" x2="130" y2="33" stroke="#1A7F8E" stroke-width="1" marker-end="url(#arrowT3)"/>
+          <line x1="120" y1="46" x2="120" y2="88" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <rect x="70" y="90" width="100" height="22" rx="5" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="120" y="104" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#C75D3A">→ 3.4 Notifikation</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2.4 -->
+  <div class="uc-card" id="uc-2-4">
+    <div class="uc-card-header">
+      <span class="uc-num num-teal">2.4</span>
+      <h3>Afvise en henvisning</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Visitatoren afviser henvisningen med en faglig eller kapacitetsmæssig begrundelse. <code>ServiceRequest</code>-status sættes til <code>revoked</code> med en <code>Task</code>-ressource der angiver årsag til afvisning.</p>
+        <p class="uc-story">Som visitator ønsker jeg at kunne afvise en henvisning med en dokumenteret begrundelse, når indikationen ikke er opfyldt eller kapaciteten er nået, så henviseren forstår årsagen og kan tage stilling til næste skridt for patienten.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>Task</code> (declined + reason) · <code>ServiceRequest</code></span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Indikation ikke opfyldt, forkert visitationsspor, eller kapacitetsloft nået</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-coral" href="#uc-3-4">3.4 Notifikation</a>
+              <a class="next-chip chip-coral" href="#uc-3-5">3.5 Alternativ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="arrowT4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#C75D3A" stroke-width="1.2"/></marker></defs>
+          <rect x="20" y="20" width="90" height="26" rx="5" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1.5"/>
+          <text x="65" y="31" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#C75D3A" font-weight="600">Task</text>
+          <text x="65" y="41" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#C75D3A">declined + reason</text>
+          <rect x="130" y="20" width="90" height="26" rx="5" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="175" y="31" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#C75D3A" font-weight="600">ServiceRequest</text>
+          <text x="175" y="41" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#C75D3A">revoked</text>
+          <line x1="110" y1="33" x2="130" y2="33" stroke="#C75D3A" stroke-width="1" marker-end="url(#arrowT4)"/>
+          <line x1="90" y1="46" x2="55" y2="88" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <line x1="160" y1="46" x2="185" y2="88" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <rect x="10" y="90" width="90" height="22" rx="5" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="55" y="104" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8.5" fill="#C75D3A">→ 3.4 Notifikation</text>
+          <rect x="140" y="90" width="90" height="22" rx="5" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="185" y="104" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8.5" fill="#C75D3A">→ 3.5 Alternativ</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2.5 -->
+  <div class="uc-card" id="uc-2-5">
+    <div class="uc-card-header">
+      <span class="uc-num num-teal">2.5</span>
+      <h3>Videresende til anden modtager</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Visitatoren vurderer at henvisningen hører hjemme et andet sted og videresender. Der oprettes en ny <code>ServiceRequest</code> med reference til den originale via <code>replaces</code>-attributten, og der sendes notifikation til den oprindelige henviser.</p>
+        <p class="uc-story">Som visitator ønsker jeg at kunne videresende en fejlplaceret henvisning til rette modtager, når jeg vurderer at et andet tilbud er bedre egnet, så patienten ikke unødigt forsinkes og henviseren holdes orienteret om omdirigeringen.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>ServiceRequest</code> (replaces) · <code>Task</code> · <code>Communication</code></span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Forkert modtager eller bedre egnet tilbud identificeret</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-teal" href="#uc-2-1">2.1 Ny modtager</a>
+              <a class="next-chip chip-coral" href="#uc-3-4">3.4 Notifikation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowT5a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#1A7F8E" stroke-width="1.2"/></marker>
+            <marker id="arrowT5b" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#C75D3A" stroke-width="1.2"/></marker>
+          </defs>
+          <rect x="70" y="14" width="100" height="24" rx="5" fill="#F5F5F5" stroke="#B0B8C4" stroke-width="1" stroke-dasharray="3 2"/>
+          <text x="120" y="29" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#888">orig. ServiceRequest</text>
+          <rect x="70" y="54" width="100" height="24" rx="5" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1.5"/>
+          <text x="120" y="65" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#1A7F8E" font-weight="600">ServiceRequest</text>
+          <text x="120" y="73" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#1A7F8E">replaces →</text>
+          <line x1="120" y1="38" x2="120" y2="54" stroke="#1A7F8E" stroke-width="1.2" marker-end="url(#arrowT5a)"/>
+          <line x1="85" y1="78" x2="50" y2="110" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <line x1="155" y1="78" x2="190" y2="110" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <rect x="10" y="112" width="80" height="22" rx="4" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="50" y="126" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#1A7F8E">→ 2.1 Ny modtager</text>
+          <rect x="150" y="112" width="80" height="22" rx="4" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="190" y="126" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#C75D3A">→ 3.4 Notif.</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2.6 -->
+  <div class="uc-card" id="uc-2-6">
+    <div class="uc-card-header">
+      <span class="uc-num num-teal">2.6</span>
+      <h3>Ændre prioritet på en modtaget henvisning</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Visitatoren revurderer hastegraden for en allerede modtaget henvisning — fx på baggrund af ny klinisk information eller ændret kapacitetssituation. Prioriteten opdateres på <code>ServiceRequest</code> og der sendes notifikation til henviseren.</p>
+        <p class="uc-story">Som visitator ønsker jeg at kunne justere prioriteten på en allerede modtaget henvisning, når ny klinisk information eller ændret kapacitetssituation tilsiger det, så den kliniske hastegrad afspejles korrekt og henviseren notificeres om ændringen.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>ServiceRequest</code> (priority update) · <code>SubscriptionNotification</code></span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Ny information ændrer klinisk hastegrad</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-coral" href="#uc-3-4">3.4 Statusnotifikation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="arrowT6a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#1A7F8E" stroke-width="1.2"/></marker></defs>
+          <rect x="20" y="20" width="90" height="26" rx="5" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1.5"/>
+          <text x="65" y="31" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#1A7F8E" font-weight="600">ServiceRequest</text>
+          <text x="65" y="41" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#1A7F8E">priority update</text>
+          <line x1="110" y1="33" x2="158" y2="33" stroke="#1A7F8E" stroke-width="1.5" marker-end="url(#arrowT6a)"/>
+          <rect x="160" y="20" width="68" height="26" rx="5" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="194" y="31" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#C75D3A" font-weight="600">Subscription</text>
+          <text x="194" y="41" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7" fill="#C75D3A">Notification</text>
+          <rect x="70" y="80" width="100" height="22" rx="5" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="120" y="94" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#C75D3A">→ 3.4 Notifikation</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       SEKTION 3 — UDVEKSLINGSDIALOG
+  ════════════════════════════════════════════════ -->
+  <div class="section-header">
+    <span class="pill pill-coral">Sektion 3</span>
+    <h2>Udvekslingsdialog</h2>
+  </div>
+  <p class="section-intro">Use cases der forudsætter aktiv kommunikation frem og tilbage mellem henviser og visitator via FHIR-beskeder.</p>
+
+  <!-- 3.1 -->
+  <div class="uc-card" id="uc-3-1">
+    <div class="uc-card-header">
+      <span class="uc-num num-coral">3.1</span>
+      <h3>Anmode om supplerende oplysninger</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Visitatoren mangler oplysninger for at kunne triagere og sender en struktureret anmodning til henviseren om at supplere med konkrete kliniske data — fx blodprøveresultater, BMI, medicinliste eller tidligere forløb.</p>
+        <p class="uc-story">Som visitator ønsker jeg at kunne sende en struktureret anmodning om supplerende oplysninger til henviseren, når grundlaget for triage er utilstrækkeligt, så jeg kan træffe en fagligt forsvarlig visitationsafgørelse uden at afvise unødigt.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>CommunicationRequest</code> (visitator → henviser)</span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Utilstrækkeligt grundlag for visitationsafgørelse</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-coral" href="#uc-3-2">3.2 Besvare</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowD1a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#C75D3A" stroke-width="1.2"/></marker>
+          </defs>
+          <!-- visitator -->
+          <circle cx="196" cy="28" r="10" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1.5"/>
+          <line x1="196" y1="38" x2="196" y2="66" stroke="#1A7F8E" stroke-width="1.5"/>
+          <line x1="180" y1="50" x2="212" y2="50" stroke="#1A7F8E" stroke-width="1.5"/>
+          <line x1="196" y1="66" x2="182" y2="82" stroke="#1A7F8E" stroke-width="1.5"/>
+          <line x1="196" y1="66" x2="210" y2="82" stroke="#1A7F8E" stroke-width="1.5"/>
+          <text x="196" y="96" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#1A7F8E" font-weight="600">Visitator</text>
+          <!-- comm request -->
+          <rect x="78" y="36" width="98" height="26" rx="5" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1.5"/>
+          <text x="127" y="47" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#C75D3A" font-weight="600">CommunicationReq</text>
+          <text x="127" y="57" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#C75D3A">→ Henviser</text>
+          <line x1="176" y1="49" x2="178" y2="49" stroke="#C75D3A" stroke-width="1.5"/>
+          <line x1="78" y1="49" x2="40" y2="49" stroke="#C75D3A" stroke-width="1.5" marker-end="url(#arrowD1a)"/>
+          <!-- next -->
+          <rect x="48" y="100" width="90" height="22" rx="5" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="93" y="114" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#C75D3A">→ 3.2 Besvare</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3.2 -->
+  <div class="uc-card" id="uc-3-2">
+    <div class="uc-card-header">
+      <span class="uc-num num-coral">3.2</span>
+      <h3>Besvare anmodning om supplement</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Henviseren modtager en supplement-anmodning og besvarer denne ved at sende de efterspurgte oplysninger. Svaret sendes som en <code>Communication</code>-ressource med reference til den oprindelige <code>CommunicationRequest</code> og til <code>ServiceRequest</code>.</p>
+        <p class="uc-story">Som henviser ønsker jeg at kunne besvare en supplement-anmodning med de efterspurgte kliniske oplysninger, når visitatoren har bedt om yderligere data, så visitatoren hurtigt kan genoptage og afslutte triage-processen.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>Communication</code> (reply, in-response-to)</span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Modtagelse af CommunicationRequest fra visitatoren</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-teal" href="#uc-2-2">2.2 Triagere</a>
+              <a class="next-chip chip-coral" href="#uc-3-3">3.3 Faglig dialog</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowD2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#C75D3A" stroke-width="1.2"/></marker>
+          </defs>
+          <circle cx="36" cy="28" r="10" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="38" x2="36" y2="66" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="20" y1="50" x2="52" y2="50" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="66" x2="22" y2="82" stroke="#4B3F8A" stroke-width="1.5"/>
+          <line x1="36" y1="66" x2="50" y2="82" stroke="#4B3F8A" stroke-width="1.5"/>
+          <text x="36" y="96" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#4B3F8A" font-weight="600">Henviser</text>
+          <line x1="68" y1="49" x2="118" y2="49" stroke="#C75D3A" stroke-width="1.5" marker-end="url(#arrowD2)"/>
+          <rect x="120" y="36" width="105" height="26" rx="5" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1.5"/>
+          <text x="172" y="47" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#C75D3A" font-weight="600">Communication</text>
+          <text x="172" y="57" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#C75D3A">in-response-to</text>
+          <line x1="120" y1="78" x2="68" y2="100" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <line x1="165" y1="62" x2="165" y2="100" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <rect x="10" y="102" width="58" height="20" rx="4" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="39" y="115" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#1A7F8E">→ 2.2</text>
+          <rect x="78" y="102" width="58" height="20" rx="4" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="107" y="115" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#C75D3A">→ 3.3</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3.3 -->
+  <div class="uc-card" id="uc-3-3">
+    <div class="uc-card-header">
+      <span class="uc-num num-coral">3.3</span>
+      <h3>Faglig afklaring i dialog</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Henviser og visitator udveksler kliniske spørgsmål og svar for at afklare indikation, behandlingsegnethed eller alternativ tilgang. Dialogen føres som en kæde af <code>Communication</code>-ressourcer med indbyrdes referencer.</p>
+        <p class="uc-story">Som henviser og visitator ønsker vi begge at kunne føre en struktureret faglig dialog om en konkret henvisning, når indikation, egnethed eller behandlingsvalg er uklart, så vi i fællesskab kan nå frem til den rigtige afgørelse for patienten uden at skulle bruge andre kommunikationskanaler.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>Communication</code> (thread, in-response-to-kæde)</span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Faglig uklarhed der kræver mere end én udveksling</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-teal" href="#uc-2-3">2.3 Acceptere</a>
+              <a class="next-chip chip-teal" href="#uc-2-4">2.4 Afvise</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowD3a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#C75D3A" stroke-width="1.2"/></marker>
+            <marker id="arrowD3b" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 7L7 4L1 1" fill="none" stroke="#C75D3A" stroke-width="1.2"/></marker>
+          </defs>
+          <!-- thread -->
+          <rect x="20" y="14" width="200" height="20" rx="4" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="120" y="27" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#C75D3A">Communication [1] →</text>
+          <rect x="20" y="42" width="200" height="20" rx="4" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="120" y="55" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#C75D3A">← Communication [2] in-response-to</text>
+          <rect x="20" y="70" width="200" height="20" rx="4" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="120" y="83" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#C75D3A">Communication [n] → afgørelse</text>
+          <line x1="80" y1="90" x2="55" y2="118" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <line x1="160" y1="90" x2="185" y2="118" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <rect x="10" y="120" width="90" height="22" rx="4" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="55" y="134" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8.5" fill="#1A7F8E">→ 2.3 Accept</text>
+          <rect x="140" y="120" width="90" height="22" rx="4" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="185" y="134" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8.5" fill="#C75D3A">→ 2.4 Afvis</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3.4 -->
+  <div class="uc-card" id="uc-3-4">
+    <div class="uc-card-header">
+      <span class="uc-num num-coral">3.4</span>
+      <h3>Statusnotifikation til henviser</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Visitatoren notificerer automatisk henviseren ved statusskift på en afsendt henvisning — fx modtaget, under vurdering, accepteret eller afvist. Notifikationen leveres via FHIR-subscription og indeholder reference til den opdaterede <code>ServiceRequest</code>.</p>
+        <p class="uc-story">Som henviser ønsker jeg automatisk at modtage en notifikation, når status på en af mine henvisninger ændrer sig hos visitatoren, så jeg til enhver tid er opdateret om forløbet uden at skulle forespørge aktivt.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>SubscriptionNotification</code> · <code>ServiceRequest</code></span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Ethvert statusskift på en aktiv henvisning hos visitatoren</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-purple" href="#uc-1-6">1.6 Modtage afgørelse</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="arrowD4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#C75D3A" stroke-width="1.2"/></marker></defs>
+          <rect x="130" y="20" width="96" height="24" rx="5" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="178" y="35" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#1A7F8E">Visitator system</text>
+          <rect x="68" y="36" width="100" height="24" rx="5" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1.5"/>
+          <text x="118" y="47" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#C75D3A" font-weight="600">SubscriptionNotif.</text>
+          <text x="118" y="56" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#C75D3A">statusskift</text>
+          <line x1="130" y1="28" x2="130" y2="36" stroke="#C75D3A" stroke-width="1"/>
+          <line x1="68" y1="48" x2="40" y2="48" stroke="#C75D3A" stroke-width="1.5" marker-end="url(#arrowD4)"/>
+          <circle cx="24" cy="48" r="8" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1.2"/>
+          <text x="24" y="72" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#4B3F8A">Henv.</text>
+          <rect x="60" y="92" width="100" height="22" rx="5" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1"/>
+          <text x="110" y="106" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="9" fill="#4B3F8A">→ 1.6 Afgørelse</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3.5 -->
+  <div class="uc-card" id="uc-3-5">
+    <div class="uc-card-header">
+      <span class="uc-num num-coral">3.5</span>
+      <h3>Aftale om alternativ visitation</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Henviser og visitator forhandler i fællesskab om et alternativt tilbud, når det primære visitationsspor ikke er muligt. Dialogen foregår via <code>Communication</code>, og den resulterende aftale dokumenteres i en <code>Task</code> med reference til det alternative tilbud.</p>
+        <p class="uc-story">Som visitator ønsker jeg at kunne indlede en dialog med henviseren om et alternativt tilbud, når jeg ikke kan imødekomme den primære henvisning, så patienten ikke ender i en blindgyde og vi i fællesskab finder en løsning.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>Communication</code> · <code>Task</code> · <code>ServiceRequest</code> (alternativ)</span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Afvisning kombineret med behov for at finde alternativ løsning for patienten</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-purple" href="#uc-1-1">1.1 Ny henvisning</a>
+              <a class="next-chip chip-teal" href="#uc-2-3">2.3 Acceptere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowD5a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#C75D3A" stroke-width="1.2"/></marker>
+            <marker id="arrowD5b" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#4B3F8A" stroke-width="1.2"/></marker>
+          </defs>
+          <circle cx="30" cy="26" r="9" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1.5"/>
+          <text x="30" y="46" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#4B3F8A">Henv.</text>
+          <circle cx="210" cy="26" r="9" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1.5"/>
+          <text x="210" y="46" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#1A7F8E">Visit.</text>
+          <rect x="70" y="14" width="100" height="22" rx="4" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1.5"/>
+          <text x="120" y="28" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#C75D3A">Communication ↔</text>
+          <line x1="39" y1="26" x2="70" y2="26" stroke="#C75D3A" stroke-width="1" marker-end="url(#arrowD5a)"/>
+          <line x1="200" y1="26" x2="170" y2="26" stroke="#C75D3A" stroke-width="1" marker-end="url(#arrowD5a)"/>
+          <rect x="70" y="52" width="100" height="22" rx="4" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1"/>
+          <text x="120" y="66" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#C75D3A">Task (alternativ aftale)</text>
+          <line x1="120" y1="36" x2="120" y2="52" stroke="#C75D3A" stroke-width="1" marker-end="url(#arrowD5a)"/>
+          <line x1="90" y1="74" x2="55" y2="112" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <line x1="150" y1="74" x2="185" y2="112" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <rect x="10" y="114" width="90" height="22" rx="4" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1"/>
+          <text x="55" y="128" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#4B3F8A">→ 1.1 Ny henvis.</text>
+          <rect x="140" y="114" width="90" height="22" rx="4" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="185" y="128" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#1A7F8E">→ 2.3 Accept</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3.6 -->
+  <div class="uc-card" id="uc-3-6">
+    <div class="uc-card-header">
+      <span class="uc-num num-coral">3.6</span>
+      <h3>Korrektionsaftale om fejl i afsendt henvisning</h3>
+    </div>
+    <div class="uc-body">
+      <div class="uc-left">
+        <p class="uc-desc">Visitatoren opdager en fejl i en modtaget henvisning — fx forkert CPR-nummer, forkert ydelseskode eller manglende samtykkedokumentation — og indleder en dialog med henviseren om korrektion. Korrektionen aftales via <code>Communication</code>-besked og gennemføres med en efterfølgende <code>PUT</code>-opdatering af <code>ServiceRequest</code>.</p>
+        <p class="uc-story">Som visitator ønsker jeg at kunne kontakte henviseren og aftale en korrektion, når jeg opdager en fejl i en modtaget henvisning, så fejlen rettes på en koordineret og sporbar måde uden at vi mister historikken.</p>
+        <div class="uc-meta">
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>Communication</code> · <code>ServiceRequest</code> (PUT/korrektion)</span></div>
+          <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Fejl opdaget under modtagelse eller triage hos visitatoren</span></div>
+          <div class="meta-row"><span class="meta-label">Næste trin</span>
+            <div class="next-steps">
+              <a class="next-chip chip-purple" href="#uc-1-3">1.3 Ændre</a>
+              <a class="next-chip chip-teal" href="#uc-2-2">2.2 Triagere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-diagram">
+        <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowD6" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#C75D3A" stroke-width="1.2"/></marker>
+          </defs>
+          <circle cx="210" cy="26" r="9" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1.5"/>
+          <text x="210" y="46" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#1A7F8E">Visit.</text>
+          <rect x="70" y="14" width="120" height="22" rx="4" fill="#FBF0EB" stroke="#C75D3A" stroke-width="1.5"/>
+          <text x="130" y="28" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#C75D3A">Communication (fejl)</text>
+          <line x1="200" y1="26" x2="192" y2="26" stroke="#C75D3A" stroke-width="1"/>
+          <line x1="70" y1="25" x2="36" y2="44" stroke="#C75D3A" stroke-width="1.2" marker-end="url(#arrowD6)"/>
+          <circle cx="24" cy="50" r="9" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1.5"/>
+          <text x="24" y="70" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#4B3F8A">Henv.</text>
+          <!-- PUT arrow back -->
+          <line x1="36" y1="56" x2="70" y2="70" stroke="#4B3F8A" stroke-width="1.2" marker-end="url(#arrowD6)"/>
+          <rect x="70" y="60" width="120" height="22" rx="4" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1"/>
+          <text x="130" y="74" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#4B3F8A">ServiceRequest PUT</text>
+          <line x1="90" y1="82" x2="55" y2="112" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <line x1="170" y1="82" x2="190" y2="112" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+          <rect x="10" y="114" width="80" height="22" rx="4" fill="#EEEAF7" stroke="#4B3F8A" stroke-width="1"/>
+          <text x="50" y="128" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#4B3F8A">→ 1.3 Ændre</text>
+          <rect x="150" y="114" width="80" height="22" rx="4" fill="#E6F4F6" stroke="#1A7F8E" stroke-width="1"/>
+          <text x="190" y="128" text-anchor="middle" font-family="IBM Plex Sans,sans-serif" font-size="8" fill="#1A7F8E">→ 2.2 Triage</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ RESOURCE TABLE ═══ -->
+  <div class="res-table-wrap" id="resource-table">
+    <h2>Ressourceoversigt</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>UC</th><th>Use case</th><th>FHIR-ressource(r)</th><th>Retning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>1.1</code></td><td>Oprette henvisning</td><td><code>ServiceRequest</code></td><td>Henviser → Visitator</td></tr>
+        <tr><td><code>1.2</code></td><td>Tilknytte dokumentation</td><td><code>DiagnosticReport</code>, <code>Media</code>, <code>DocumentReference</code></td><td>Henviser → Visitator</td></tr>
+        <tr><td><code>1.3</code></td><td>Ændre henvisning</td><td><code>ServiceRequest</code> (PUT)</td><td>Henviser → Visitator</td></tr>
+        <tr><td><code>1.4</code></td><td>Tilbagekalde henvisning</td><td><code>ServiceRequest</code> (revoked)</td><td>Henviser → Visitator</td></tr>
+        <tr><td><code>1.5</code></td><td>Monitorere status</td><td><code>Subscription</code>, <code>SubscriptionStatus</code></td><td>Begge</td></tr>
+        <tr><td><code>1.6</code></td><td>Modtage afgørelse</td><td><code>Task</code>, <code>SubscriptionNotification</code></td><td>Visitator → Henviser</td></tr>
+        <tr><td><code>2.1</code></td><td>Modtage og kvittere</td><td><code>Bundle</code>, <code>MessageHeader</code></td><td>Visitator (intern)</td></tr>
+        <tr><td><code>2.2</code></td><td>Triagere og prioritere</td><td><code>Task</code></td><td>Visitator (intern)</td></tr>
+        <tr><td><code>2.3</code></td><td>Acceptere og booke</td><td><code>ServiceRequest</code>, <code>Appointment</code></td><td>Visitator → Henviser</td></tr>
+        <tr><td><code>2.4</code></td><td>Afvise henvisning</td><td><code>Task</code>, <code>ServiceRequest</code></td><td>Visitator → Henviser</td></tr>
+        <tr><td><code>2.5</code></td><td>Videresende</td><td><code>ServiceRequest</code> (replaces)</td><td>Visitator → Ny modtager</td></tr>
+        <tr><td><code>2.6</code></td><td>Ændre prioritet</td><td><code>ServiceRequest</code>, <code>SubscriptionNotification</code></td><td>Visitator → Henviser</td></tr>
+        <tr><td><code>3.1</code></td><td>Anmode om supplement</td><td><code>CommunicationRequest</code></td><td>Visitator → Henviser</td></tr>
+        <tr><td><code>3.2</code></td><td>Besvare supplement</td><td><code>Communication</code></td><td>Henviser → Visitator</td></tr>
+        <tr><td><code>3.3</code></td><td>Faglig afklaring</td><td><code>Communication</code> (thread)</td><td>Begge</td></tr>
+        <tr><td><code>3.4</code></td><td>Statusnotifikation</td><td><code>SubscriptionNotification</code></td><td>Visitator → Henviser</td></tr>
+        <tr><td><code>3.5</code></td><td>Alternativ visitation</td><td><code>Communication</code>, <code>Task</code></td><td>Begge</td></tr>
+        <tr><td><code>3.6</code></td><td>Korrektionsaftale</td><td><code>Communication</code>, <code>ServiceRequest</code></td><td>Begge</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<script>
+  // Highlight active nav link on scroll
+  const links = document.querySelectorAll('nav a[href^="#"]');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const match = document.querySelector(`nav a[href="#${e.target.id}"]`);
+        if (match) match.classList.add('active');
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.uc-card, .res-table-wrap').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

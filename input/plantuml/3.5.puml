@@ -1,0 +1,10 @@
+@startuml UC35
+left to right direction
+actor Henviser
+actor Visitator
+
+usecase "3.5 Alternativ\nvisitation" as UC35
+
+Henviser --> UC35
+Visitator --> UC35
+@enduml

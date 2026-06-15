@@ -1,0 +1,509 @@
+@startuml UC-1-1-Oprette-henvisning
+title UC 1.1 — Oprette en ny henvisning
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #4B3F8A
+skinparam ActorBorderColor #4B3F8A
+skinparam ActorBackgroundColor #EEEAF7
+skinparam ActorFontColor #4B3F8A
+skinparam rectangleBorderColor #4B3F8A
+skinparam rectangleBackgroundColor #EEEAF7
+skinparam noteBorderColor #1A7F8E
+skinparam noteBackgroundColor #E6F4F6
+skinparam noteFontColor #1A7F8E
+
+actor Henviser
+actor Modtager
+
+rectangle "Henvisning \n- ServiceRequest\n(status: proposed)" as SR #EEEAF7
+
+Henviser -right-> SR : Send
+SR -right-> Modtager : Modtag
+
+note bottom of Henviser
+  → UC 1.2 Tilknytte klinisk dokumentation (valgfrit)
+end note
+
+note bottom of Modtager
+  → UC 2.1 Modtage og kvittere
+end note
+@enduml
+
+@startuml UC-1-2-Tilknytte-dokumentation
+title UC 1.2 — Tilknytte klinisk dokumentation
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #4B3F8A
+skinparam ActorBorderColor #4B3F8A
+skinparam ActorBackgroundColor #EEEAF7
+skinparam rectangleBorderColor #4B3F8A
+skinparam rectangleBackgroundColor #EEEAF7
+skinparam noteBorderColor #1A7F8E
+skinparam noteBackgroundColor #E6F4F6
+
+actor Henviser
+
+rectangle "ServiceRequest\n(eksisterende)" as SR #F5F5F5
+rectangle "DiagnosticReport\nMedia / DocumentReference" as DOC #EEEAF7
+
+Henviser -right-> SR : berig
+
+DOC .bottom.> SR : reference
+
+@enduml
+
+@startuml UC-1-3-Aendre-henvisning
+title UC 1.3 — Ændre en afsendt henvisning (Henvisers eget initiativ)
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #4B3F8A
+skinparam ActorBorderColor #4B3F8A
+skinparam ActorBackgroundColor #EEEAF7
+skinparam rectangleBorderColor #4B3F8A
+skinparam rectangleBackgroundColor #EEEAF7
+skinparam noteBorderColor #1A7F8E
+skinparam noteBackgroundColor #E6F4F6
+
+actor Henviser
+
+rectangle "Henvisning \n(ServiceRequest \nm. revision-flag)" as SR #EEEAF7
+
+Henviser -right-> SR : send opdatering
+SR -right-> Visitor : modtag opdatering
+
+note bottom of Henviser
+  → UC 1.3 Ændre henvisning 
+end note
+
+note bottom of Visitor
+  → UC 2.2 Triagere og prioritere
+end note
+
+@enduml
+
+@startuml UC-1-4-Tilbagekalde-henvisning
+title UC 1.4 — Tilbagekalde en henvisning
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #C75D3A
+skinparam ActorBorderColor #4B3F8A
+skinparam ActorBackgroundColor #EEEAF7
+skinparam rectangleBorderColor #C75D3A
+skinparam rectangleBackgroundColor #FBF0EB
+skinparam noteBorderColor #4A7A4A
+skinparam noteBackgroundColor #F0F4F0
+
+actor Henviser
+
+rectangle "ServiceRequest\n(status: revoked)" as SR #FBF0EB
+
+Henviser -right-> SR : send revokering
+SR -right-> Visitor : modtag revokering
+
+note bottom of Henviser
+  Flowet afsluttes
+end note
+
+note bottom of Visitor
+  Flowet afsluttes
+end note
+
+@enduml
+
+@startuml UC-1-5-Monitorere-status
+title UC 1.5 — Monitorere status på afsendte henvisninger
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #4B3F8A
+skinparam ActorBorderColor #4B3F8A
+skinparam ActorBackgroundColor #EEEAF7
+skinparam rectangleBorderColor #1A7F8E
+skinparam rectangleBackgroundColor #E6F4F6
+skinparam noteBorderColor #4B3F8A
+skinparam noteBackgroundColor #EEEAF7
+
+actor Henviser
+rectangle "FHIR Endpoint\n(Visitator)" as EP #E6F4F6
+
+Henviser -right-> EP : subscribe / poll
+EP -left-> Henviser : SubscriptionStatus
+
+note bottom of Henviser
+  → UC 1.6 Modtage afgørelse
+end note
+
+@enduml
+
+@startuml UC-1-6-Modtage-afgoerelse
+title UC 1.6 — Modtage afgørelse fra visitatoren
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #1A7F8E
+skinparam ActorBorderColor #4B3F8A
+skinparam ActorBackgroundColor #EEEAF7
+skinparam rectangleBorderColor #1A7F8E
+skinparam rectangleBackgroundColor #E6F4F6
+skinparam noteBorderColor #4B3F8A
+skinparam noteBackgroundColor #EEEAF7
+
+actor Henviser
+rectangle "Task / SubscriptionNotification\n(afgørelse)" as T #E6F4F6
+
+T -right-> Henviser : levér afgørelse
+
+note right of Henviser
+  Accept → flowet afsluttes
+  Afvisning → UC 1.1 Ny henvisning
+end note
+
+@enduml
+
+@startuml UC-2-1-Modtage-kvittere
+title UC 2.1 — Modtage og kvittere for ny henvisning
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #1A7F8E
+skinparam ActorBorderColor #1A7F8E
+skinparam ActorBackgroundColor #E6F4F6
+skinparam rectangleBorderColor #4B3F8A
+skinparam rectangleBackgroundColor #EEEAF7
+skinparam noteBorderColor #1A7F8E
+skinparam noteBackgroundColor #E6F4F6
+
+actor Visitator
+rectangle "Bundle\n(ServiceRequest)" as B #EEEAF7
+
+B -right-> Visitator : modtag
+Visitator -left-> B : ACK (MessageHeader)
+
+note bottom of Visitator
+  → UC 2.2 Triagere og prioritere
+end note
+
+@enduml
+
+@startuml UC-2-2-Triagere-prioritere
+title UC 2.2 — Triagere og prioritere en henvisning
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #1A7F8E
+skinparam ActorBorderColor #1A7F8E
+skinparam ActorBackgroundColor #E6F4F6
+skinparam rectangleBorderColor #1A7F8E
+skinparam rectangleBackgroundColor #E6F4F6
+skinparam noteBorderColor #1A7F8E
+skinparam noteBackgroundColor #E6F4F6
+
+actor Visitator
+rectangle "Task\n(triage-outcome, priority)" as T #E6F4F6
+
+Visitator -right-> T : dokumentér udfald
+
+note right of T
+  Positiv → UC 2.3 Acceptere
+  Negativ → UC 2.4 Afvise
+  Utilstr. → UC 3.1 Supplement
+  Prioritet → UC 2.6 Ændre prioritet
+end note
+
+@enduml
+
+@startuml UC-2-3-Acceptere-booke
+title UC 2.3 — Acceptere en henvisning og booke forløb
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #1A7F8E
+skinparam ActorBorderColor #1A7F8E
+skinparam ActorBackgroundColor #E6F4F6
+skinparam rectangleBorderColor #1A7F8E
+skinparam rectangleBackgroundColor #E6F4F6
+skinparam noteBorderColor #C75D3A
+skinparam noteBackgroundColor #FBF0EB
+
+actor Visitator
+rectangle "ServiceRequest\n(status: active)" as SR #E6F4F6
+rectangle "Appointment\n(status: booked)" as AP #E6F4F6
+
+Visitator -right-> SR : acceptér
+SR -right-> AP : opret booking
+
+note right of AP
+  → UC 3.4 Statusnotifikation
+end note
+
+@enduml
+
+@startuml UC-2-4-Afvise-henvisning
+title UC 2.4 — Afvise en henvisning
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #C75D3A
+skinparam ActorBorderColor #1A7F8E
+skinparam ActorBackgroundColor #E6F4F6
+skinparam rectangleBorderColor #C75D3A
+skinparam rectangleBackgroundColor #FBF0EB
+skinparam noteBorderColor #C75D3A
+skinparam noteBackgroundColor #FBF0EB
+
+actor Visitator
+rectangle "Task\n(declined + reason)" as T #FBF0EB
+rectangle "ServiceRequest\n(status: revoked)" as SR #FBF0EB
+
+Visitator -right-> T : dokumentér afvisning
+T -right-> SR : opdatér status
+
+note right of SR
+  → UC 3.4 Statusnotifikation
+  (valgfrit) → UC 3.5 Alternativ visitation
+end note
+
+@enduml
+
+@startuml UC-2-5-Videresende
+title UC 2.5 — Videresende til anden modtager
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #1A7F8E
+skinparam ActorBorderColor #1A7F8E
+skinparam ActorBackgroundColor #E6F4F6
+skinparam rectangleBorderColor #1A7F8E
+skinparam rectangleBackgroundColor #E6F4F6
+skinparam noteBorderColor #1A7F8E
+skinparam noteBackgroundColor #E6F4F6
+
+actor Visitator
+rectangle "ServiceRequest (orig.)" as ORIG #F5F5F5
+rectangle "ServiceRequest\n(replaces: orig.)" as NEW #E6F4F6
+
+Visitator -right-> NEW : opret med replaces-ref.
+NEW ..> ORIG : replaces
+
+note right of NEW
+  → UC 2.1 (ny modtager)
+  → UC 3.4 Statusnotifikation
+end note
+
+@enduml
+
+@startuml UC-2-6-Aendre-prioritet
+title UC 2.6 — Ændre prioritet på en modtaget henvisning
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #1A7F8E
+skinparam ActorBorderColor #1A7F8E
+skinparam ActorBackgroundColor #E6F4F6
+skinparam rectangleBorderColor #1A7F8E
+skinparam rectangleBackgroundColor #E6F4F6
+skinparam noteBorderColor #C75D3A
+skinparam noteBackgroundColor #FBF0EB
+
+actor Visitator
+rectangle "ServiceRequest\n(priority update)" as SR #E6F4F6
+rectangle "SubscriptionNotification" as SN #FBF0EB
+
+Visitator -right-> SR : opdatér prioritet
+SR -right-> SN : udløs notifikation
+
+note right of SN
+  → UC 3.4 Statusnotifikation
+end note
+
+@enduml
+
+@startuml UC-3-1-Anmode-supplement
+title UC 3.1 — Anmode om supplerende oplysninger
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #C75D3A
+skinparam ActorBorderColor #1A7F8E
+skinparam ActorBackgroundColor #E6F4F6
+skinparam rectangleBorderColor #C75D3A
+skinparam rectangleBackgroundColor #FBF0EB
+skinparam noteBorderColor #C75D3A
+skinparam noteBackgroundColor #FBF0EB
+
+actor Visitator
+actor Henviser
+rectangle "CommunicationRequest" as CR #FBF0EB
+
+Visitator -right-> CR : opret anmodning
+CR -right-> Henviser : send
+
+note right of Henviser
+  → UC 3.2 Besvare supplement
+end note
+
+@enduml
+
+@startuml UC-3-2-Besvare-supplement
+title UC 3.2 — Besvare anmodning om supplement
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #C75D3A
+skinparam ActorBorderColor #4B3F8A
+skinparam ActorBackgroundColor #EEEAF7
+skinparam rectangleBorderColor #C75D3A
+skinparam rectangleBackgroundColor #FBF0EB
+skinparam noteBorderColor #C75D3A
+skinparam noteBackgroundColor #FBF0EB
+
+actor Henviser
+actor Visitator
+rectangle "Communication\n(in-response-to)" as C #FBF0EB
+
+Henviser -right-> C : besvar
+C -right-> Visitator : send supplement
+
+note right of Visitator
+  → UC 2.2 Triagere (genoptag)
+  (valgfrit) → UC 3.3 Faglig afklaring
+end note
+
+@enduml
+
+@startuml UC-3-3-Faglig-afklaring
+title UC 3.3 — Faglig afklaring i dialog
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #C75D3A
+skinparam ActorBorderColor #C75D3A
+skinparam ActorBackgroundColor #FBF0EB
+skinparam rectangleBorderColor #C75D3A
+skinparam rectangleBackgroundColor #FBF0EB
+skinparam noteBorderColor #C75D3A
+skinparam noteBackgroundColor #FBF0EB
+
+actor Henviser
+actor Visitator
+rectangle "Communication [1]" as C1 #FBF0EB
+rectangle "Communication [2]\n(in-response-to)" as C2 #FBF0EB
+rectangle "Communication [n]\n(afgørelse)" as CN #FBF0EB
+
+Visitator -right-> C1
+C1 -right-> Henviser
+Henviser -left-> C2
+C2 -left-> Visitator
+Visitator -right-> CN
+
+note right of CN
+  → UC 2.3 Acceptere
+  → UC 2.4 Afvise
+end note
+
+@enduml
+
+@startuml UC-3-4-Statusnotifikation
+title UC 3.4 — Statusnotifikation til henviser
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #C75D3A
+skinparam ActorBorderColor #4B3F8A
+skinparam ActorBackgroundColor #EEEAF7
+skinparam rectangleBorderColor #C75D3A
+skinparam rectangleBackgroundColor #FBF0EB
+skinparam noteBorderColor #4B3F8A
+skinparam noteBackgroundColor #EEEAF7
+
+actor Henviser
+rectangle "SubscriptionNotification\n(statusskift)" as SN #FBF0EB
+
+SN -right-> Henviser : push notifikation
+
+note right of Henviser
+  → UC 1.6 Modtage afgørelse
+end note
+
+@enduml
+
+@startuml UC-3-5-Alternativ-visitation
+title UC 3.5 — Aftale om alternativ visitation
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #C75D3A
+skinparam ActorBorderColor #C75D3A
+skinparam ActorBackgroundColor #FBF0EB
+skinparam rectangleBorderColor #C75D3A
+skinparam rectangleBackgroundColor #FBF0EB
+skinparam noteBorderColor #C75D3A
+skinparam noteBackgroundColor #FBF0EB
+
+actor Visitator
+actor Henviser
+rectangle "Communication ↔" as C #FBF0EB
+rectangle "Task\n(alternativ aftale)" as T #FBF0EB
+
+Visitator -right-> C
+C -right-> Henviser
+Henviser -left-> C
+C -down-> T : dokumentér aftale
+
+note right of T
+  → UC 1.1 Ny henvisning (alt. tilbud)
+  → UC 2.3 Acceptere
+end note
+
+@enduml
+
+@startuml UC-3-6-Korrektionsaftale
+title UC 3.6 — Korrektionsaftale om fejl i afsendt henvisning
+
+skinparam actorStyle awesome
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam ArrowColor #C75D3A
+skinparam ActorBorderColor #C75D3A
+skinparam ActorBackgroundColor #FBF0EB
+skinparam rectangleBorderColor #C75D3A
+skinparam rectangleBackgroundColor #FBF0EB
+skinparam noteBorderColor #1A7F8E
+skinparam noteBackgroundColor #E6F4F6
+
+actor Visitator
+actor Henviser
+rectangle "Communication\n(fejlmelding)" as C #FBF0EB
+rectangle "ServiceRequest\n(PUT / korrektion)" as SR #EEEAF7
+
+Visitator -right-> C : kontakt om fejl
+C -right-> Henviser
+Henviser -left-> SR : ret og PUT
+
+note right of SR
+  → UC 1.3 Ændre henvisning
+  → UC 2.2 Triagere (genoptag)
+end note
+
+@enduml

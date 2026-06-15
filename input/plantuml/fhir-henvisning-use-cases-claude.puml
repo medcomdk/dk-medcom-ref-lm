@@ -1,0 +1,177 @@
+@startuml FHIR_Henvisning_Use_Cases
+!theme plain
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName IBM Plex Sans
+skinparam roundCorner 8
+skinparam shadowing false
+
+skinparam actor {
+  BackgroundColor #EEEAF7
+  BorderColor #4B3F8A
+  FontColor #4B3F8A
+}
+
+skinparam participant {
+  BackgroundColor #E6F4F6
+  BorderColor #1A7F8E
+  FontColor #1A7F8E
+}
+
+skinparam note {
+  BackgroundColor #FBF0EB
+  BorderColor #C75D3A
+  FontColor #3D4E63
+}
+
+title FHIR-baseret Henvisningshåndtering — Overordnet flow
+
+actor      "Henviser"   as H
+participant "FHIR Server" as S
+actor      "Visitator"  as V
+
+== Sektion 1 · Henviser ==
+
+H  ->  S : **1.1** POST Bundle\n//ServiceRequest// status=proposed
+S  ->  V : Bundle videresendt
+V  ->  H : ACK (teknisk kvittering)
+
+note over H
+  **1.2** Tilknytte dokumentation
+  DiagnosticReport / Media /
+  DocumentReference → ServiceRequest
+end note
+
+H  ->  S : **1.3** PUT ServiceRequest (revision-flag)
+note right of S : Visitator notificeres\nom opdatering
+
+H  ->  S : **1.4** PUT ServiceRequest status=revoked
+note right of S : Flowet afsluttes
+
+H  ->  S : **1.5** Subscription / poll
+S  ->  H : SubscriptionStatus (push/poll svar)
+
+S  ->  H : **1.6** Task / SubscriptionNotification\n(accept, afvisning eller alternativ)
+
+== Sektion 2 · Visitator ==
+
+V  ->  V : **2.1** Modtag Bundle + ServiceRequest\nSend ACK → system
+V  ->  V : **2.2** Opret Task (triage-outcome, priority)
+
+alt Acceptere
+  V  ->  S : **2.3** PUT ServiceRequest status=active\nOpret Appointment
+  S  ->  H : SubscriptionNotification (accept + booking)
+else Afvise
+  V  ->  S : **2.4** PUT ServiceRequest status=revoked\nOpret Task (rejection + begrundelse)
+  S  ->  H : SubscriptionNotification (afvisning)
+else Videresende
+  V  ->  S : **2.5** POST ServiceRequest (replaces → original)
+  S  ->  V : Ny modtager modtager Bundle
+end
+
+V  ->  S : **2.6** PUT ServiceRequest (priority update)
+S  ->  H : SubscriptionNotification (prioritetsændring)
+
+== Sektion 3 · Udvekslingsdialog ==
+
+V  ->  H : **3.1** POST CommunicationRequest\n(anmodning om supplement)
+H  ->  V : **3.2** POST Communication (in-response-to)\n(besvarelse med kliniske data)
+
+loop Faglig afklaring (n gange)
+  H  ->  V : **3.3** Communication [odd] →
+  V  ->  H : **3.3** ← Communication [even] in-response-to
+end
+
+V  ->  H : **3.4** SubscriptionNotification\n(statusskift: modtaget / under vurdering / afgørelse)
+
+V  ->  H : **3.5** Communication (forslag om alternativ)
+H  ->  V : Communication (svar / aftale)
+V  ->  S : POST Task (alternativ aftale)
+
+V  ->  H : **3.6** Communication (fejlbesked)
+H  ->  V : Communication (korrektionsaftale)
+H  ->  S : PUT ServiceRequest (korrigeret)
+
+@enduml
+
+
+' ─────────────────────────────────────────────────────────────────
+' Supplerende diagram: Use-case overblik (komponent/pakke-stil)
+' ─────────────────────────────────────────────────────────────────
+
+@startuml FHIR_Henvisning_UC_Overview
+!theme plain
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName IBM Plex Sans
+skinparam roundCorner 8
+skinparam shadowing false
+
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #D8DFE8
+  FontColor #1B2333
+}
+
+skinparam actor {
+  BackgroundColor #EEEAF7
+  BorderColor #4B3F8A
+  FontColor #4B3F8A
+}
+
+left to right direction
+title FHIR Henvisning — Use Case Overblik
+
+actor "Henviser" as H #EEEAF7
+actor "Visitator" as V #E6F4F6
+
+rectangle "**Sektion 1** · Henviser" #EEEAF7 {
+  usecase "1.1 Oprette\nhenvisning"            as UC11
+  usecase "1.2 Tilknytte\ndokumentation"       as UC12
+  usecase "1.3 Ændre\nhenvisning"              as UC13
+  usecase "1.4 Tilbagekalde\nhenvisning"       as UC14
+  usecase "1.5 Monitorere\nstatus"             as UC15
+  usecase "1.6 Modtage\nafgørelse"             as UC16
+}
+
+rectangle "**Sektion 2** · Visitator" #E6F4F6 {
+  usecase "2.1 Modtage og\nkvittere"           as UC21
+  usecase "2.2 Triagere og\nprioritere"        as UC22
+  usecase "2.3 Acceptere og\nbooke"            as UC23
+  usecase "2.4 Afvise\nhenvisning"             as UC24
+  usecase "2.5 Videresende\nhenvisning"        as UC25
+  usecase "2.6 Ændre\nprioritet"               as UC26
+}
+
+rectangle "**Sektion 3** · Udvekslingsdialog" #FBF0EB {
+  usecase "3.1 Anmode om\nsupplement"          as UC31
+  usecase "3.2 Besvare\nsupplement"            as UC32
+  usecase "3.3 Faglig\nafklaring"              as UC33
+  usecase "3.4 Statusnotifikation\ntil henviser" as UC34
+  usecase "3.5 Alternativ\nvisitation"         as UC35
+  usecase "3.6 Korrektionsaftale\nom fejl"     as UC36
+}
+
+H --> UC11
+H --> UC12
+H --> UC13
+H --> UC14
+H --> UC15
+H --> UC16
+
+V --> UC21
+V --> UC22
+V --> UC23
+V --> UC24
+V --> UC25
+V --> UC26
+
+H --> UC32
+H --> UC33
+V --> UC31
+V --> UC33
+V --> UC34
+H --> UC35
+V --> UC35
+H --> UC36
+V --> UC36
+
+@enduml

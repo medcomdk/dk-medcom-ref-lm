@@ -1,0 +1,123 @@
+@startuml
+title REF-001 Opret henvisning
+participant Henviser
+participant EHMI
+participant Visitator
+Henviser -> EHMI : Referral Create
+EHMI -> Visitator : Message Bundle
+Visitator --> EHMI : ACK
+EHMI --> Henviser : ACK
+@enduml
+
+@startuml
+title REF-002 Supplerende dokumentation
+participant Henviser
+participant EHMI
+participant Visitator
+Henviser -> EHMI : Supplement
+EHMI -> Visitator
+Visitator --> EHMI : ACK
+EHMI --> Henviser : ACK
+@enduml
+
+@startuml
+title REF-003 Informationsanmodning
+participant Visitator
+participant EHMI
+participant Henviser
+Visitator -> EHMI : Request Information
+EHMI -> Henviser
+Henviser --> EHMI : ACK
+EHMI --> Visitator : ACK
+@enduml
+
+@startuml
+title REF-004 Informationssvar
+participant Henviser
+participant EHMI
+participant Visitator
+Henviser -> EHMI : Information Response
+EHMI -> Visitator
+Visitator --> EHMI : ACK
+EHMI --> Henviser : ACK
+@enduml
+
+@startuml
+title REF-005 Accept
+participant Visitator
+participant EHMI
+participant Henviser
+Visitator -> EHMI : Accepted
+EHMI -> Henviser
+@enduml
+
+@startuml
+title REF-006 Booking
+participant Visitator
+participant EHMI
+participant Henviser
+Visitator -> EHMI : Appointment Booked
+EHMI -> Henviser
+@enduml
+
+@startuml
+title REF-007 Afvisning
+participant Visitator
+participant EHMI
+participant Henviser
+Visitator -> EHMI : Rejected
+EHMI -> Henviser
+@enduml
+
+@startuml
+title REF-008 Videresendelse
+participant Visitator
+participant EHMI
+participant "Ny Visitator" as NV
+Visitator -> EHMI : Forward Referral
+EHMI -> NV
+@enduml
+
+@startuml
+title REF-009 Status
+participant Visitator
+participant EHMI
+participant Henviser
+Visitator -> EHMI : Status Update
+EHMI -> Henviser
+@enduml
+
+@startuml
+title REF-010 Faglig dialog
+participant Visitator
+participant EHMI
+participant Henviser
+loop Indtil afklaring
+Visitator -> EHMI : Communication
+EHMI -> Henviser
+Henviser -> EHMI : Response
+EHMI -> Visitator
+end
+@enduml
+
+@startuml
+title REF-011 Alternativ visitation
+participant Visitator
+participant EHMI
+participant Henviser
+Visitator -> EHMI : Alternative Proposal
+EHMI -> Henviser
+Henviser -> EHMI : Accept/Reject
+EHMI -> Visitator
+@enduml
+
+@startuml
+title REF-012 Korrektion
+participant Visitator
+participant EHMI
+participant Henviser
+Visitator -> EHMI : Correction Request
+EHMI -> Henviser
+Henviser -> EHMI : Corrected Referral
+EHMI -> Visitator
+@enduml
