@@ -1,10 +1,9 @@
 # FHIR Henvisninger
 
 
-## Krav/use cases
+## Krav/User stories
 
-- [Use cases](usecases.html)
-- [Claude Use cases](usecases-henvisning-claude.html)
+- [Claude User stories](fhir-henvisning-use-stories-v2-claude.html)
 
 ## Workflows
 

@@ -2,8 +2,11 @@
 
 ## Arkitekturprincip
 
-Alle udvekslinger sker som FHIR Message Bundles via EHMI. \##
-Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
+Alle udvekslinger sker som FHIR Message Bundles via EHMI. 
+
+## Meddelelseskatalog 
+
+### REF-001 -- Opret henvisning **Fokusressource:**
 `ServiceRequest`
 
 **Trigger:** Henviser beslutter at henvise patient.
@@ -11,9 +14,9 @@ Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
 **Ressourcer:** - `Bundle` - `MessageHeader` - `ServiceRequest` -
 `Patient` - `Practitioner` - `Organization`
 
-![Opret henvisning](svg/ref001-create.svg)
+![Opret henvisning](fhir-henvisning-messaging-1.svg)
 
-## REF-002 -- Supplerende dokumentation
+### REF-002 -- Supplerende dokumentation
 
 **Fokusressource:** `DocumentReference`
 
@@ -22,9 +25,9 @@ Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
 **Ressourcer:** - `Bundle` - `MessageHeader` - `DocumentReference` -
 `DiagnosticReport` - `Media`
 
-![Supplerende dokumentation](svg/ref002-supplement.svg)
+![Supplerende dokumentation](fhir-henvisning-messaging-2.svg)
 
-## REF-003 -- Anmodning om supplerende oplysninger
+### REF-003 -- Anmodning om supplerende oplysninger
 
 **Fokusressource:** `CommunicationRequest`
 
@@ -32,9 +35,9 @@ Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
 
 **Ressourcer:** - `Bundle` - `MessageHeader` - `CommunicationRequest`
 
-![Anmodning om supplerende oplysninger](svg/ref003-request.svg)
+![Anmodning om supplerende oplysninger](fhir-henvisning-messaging-3.svg)
 
-## REF-004 -- Besvarelse af anmodning
+### REF-004 -- Besvarelse af anmodning
 
 **Fokusressource:** `Communication`
 
@@ -42,9 +45,9 @@ Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
 
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Communication`
 
-![Besvarelse af anmodning](svg/ref004-response.svg)
+![Besvarelse af anmodning](fhir-henvisning-messaging-4.svg)
 
-## REF-005 -- Accept af henvisning
+### REF-005 -- Accept af henvisning
 
 **Fokusressource:** `Task`
 
@@ -52,9 +55,9 @@ Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
 
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Task`
 
-![Accept af henvisning](svg/ref005-accept.svg)
+![Accept af henvisning](fhir-henvisning-messaging-5.svg)
 
-## REF-006 -- Booking gennemført
+### REF-006 -- Booking gennemført
 
 **Fokusressource:** `Appointment`
 
@@ -62,9 +65,9 @@ Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
 
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Appointment`
 
-![Booking gennemført](svg/ref006-booking.svg)
+![Booking gennemført](fhir-henvisning-messaging-6.svg)
 
-## REF-007 -- Afvisning
+### REF-007 -- Afvisning
 
 **Fokusressource:** `Task`
 
@@ -72,9 +75,9 @@ Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
 
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Task`
 
-![Afvisning](svg/ref007-reject.svg)
+![Afvisning](fhir-henvisning-messaging-7.svg)
 
-## REF-008 -- Videresendelse
+### REF-008 -- Videresendelse
 
 **Fokusressource:** `ServiceRequest`
 
@@ -82,9 +85,9 @@ Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
 
 **Ressourcer:** - `Bundle` - `MessageHeader` - `ServiceRequest`
 
-![Videresendelse](svg/ref008-forward.svg)
+![Videresendelse](fhir-henvisning-messaging-8.svg)
 
-## REF-009 -- Statusopdatering
+### REF-009 -- Statusopdatering
 
 **Fokusressource:** `Task`
 
@@ -92,9 +95,9 @@ Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
 
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Task`
 
-![Statusopdatering](svg/ref009-status.svg)
+![Statusopdatering](fhir-henvisning-messaging-9.svg)
 
-## REF-010 -- Faglig dialog
+### REF-010 -- Faglig dialog
 
 **Fokusressource:** `Communication`
 
@@ -102,9 +105,9 @@ Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
 
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Communication`
 
-![Faglig dialog](svg/ref010-dialog.svg)
+![Faglig dialog](fhir-henvisning-messaging-10.svg)
 
-## REF-011 -- Alternativ visitation
+### REF-011 -- Alternativ visitation
 
 **Fokusressource:** `Communication`
 
@@ -112,9 +115,9 @@ Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
 
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Communication`
 
-![Alternativ visitation](svg/ref011-alternative.svg)
+![Alternativ visitation](fhir-henvisning-messaging-11.svg)
 
-## REF-012 -- Korrektion
+### REF-012 -- Korrektion
 
 **Fokusressource:** `ServiceRequest`
 
@@ -122,4 +125,4 @@ Meddelelseskatalog \## REF-001 -- Opret henvisning **Fokusressource:**
 
 **Ressourcer:** - `Bundle` - `MessageHeader` - `ServiceRequest`
 
-![Korrektion](svg/ref012-correction.svg)
+![Korrektion](fhir-henvisning-messaging-12.svg)
