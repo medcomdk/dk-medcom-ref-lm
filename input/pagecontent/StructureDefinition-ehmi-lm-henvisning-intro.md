@@ -263,3 +263,4 @@ Visitatoren opdager en fejl i en modtaget henvisning — fx forkert CPR-nummer, 
 | **Forrige trin:** | ← [2.4 Afvise en henvisning](#user-story-24-afvise-en-henvisning) *(fejl opdaget, korrektionsdiolog indledes)* |
 | **Næste trin:** | → [1.3 Ændre en afsendt henvisning](#user-story-13-ændre-en-afsendt-henvisning) *(henviser retter og sender)* · <br/>→ [2.2 Triagere og prioritere en henvisning](StructureDefinition-ehmi-lm-visitationsafgoerelse.html#user-story-22-triagere-og-prioritere-en-henvisning) *(visitatoren genoptager triage efter korrektion)* |
 {: .grid}
+

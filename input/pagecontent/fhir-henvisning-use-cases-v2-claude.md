@@ -1,32 +1,43 @@
-# User stories for FHIR-baseret henvisningshåndtering
+<div class="stu-note">
+  <p><b>Bemærk: Dette er en disclaimer for denne side om "User stories for FHIR-baseret henvisningshåndtering"</b></p>
+  <p>
+    Oversigten er en mock-up på user stories og diagrammer og er på ingen måde nødvendigvis fuldt dækkende og fuldt retvisende. Det forsøges til stadighed at blive mere dækkende og mere retvisende.
+    <br/>
+    Oversigten er delvist udarbejdet sammen med AI-værktøjerne Clause og ChatGPT, så justeringer efter deres forslag må påregnes.
+    <br/>
+    Oversigten vil være velegnet til en dialog med de rette aktører om henvisningsaktiviteter på hhv Henviser- og Visitator-siden samt dialogen imellem dem.
+  </p>
+</div>
+
+## User stories for FHIR-baseret henvisningshåndtering
 
 Oversigten beskriver user stories for de to primære roller i et FHIR-baseret henvisningsflow: 
-><br/>**henviser** (den der afsender en henvisning) <br/>**Visitator** (den der modtager og triagerer). 
+>**Henviser** (den der afsender en henvisning) <br/>**Visitator** (den der modtager og triagerer). 
 
 Derudover beskrives user stories der kun opstår i den fælles udvekslingsdialog mellem de to parter. Al kommunikation foregår via FHIR-baserede meddelelser.
 
 ## User story oversigt med FHIR ressource
 
-| user story | FHIR-ressource(r) | Retning |
+| User story | FHIR-ressource(r) | Retning |
 |---|---|---|
-| [Oprette henvisning](#11-oprette-en-ny-henvisning) | ServiceRequest | Henviser → Visitator |
-| [Tilknytte dokumentation](#12-tilknytte-klinisk-dokumentation) | DiagnosticReport, Media, DocumentReference | Henviser → Visitator |
-| [Ændre henvisning](#13-ændre-en-afsendt-henvisning) | ServiceRequest (revision) | Henviser → Visitator |
-| [Tilbagekalde henvisning](#14-tilbagekalde-en-henvisning) | ServiceRequest (revoked) | Henviser → Visitator |
-| [Monitorere status](#15-monitorere-status-på-afsendte-henvisninger) | Subscription, SubscriptionStatus | Begge |
-| [Modtage afgørelse](#16-modtage-afgørelse-fra-visitatoren) | Task, SubscriptionNotification | Visitator → Henviser |
-| [Modtage og kvittere](#21-modtage-og-kvittere-for-ny-henvisning) | Bundle, MessageHeader | Visitator (intern) |
-| [Triagere og prioritere](#22-triagere-og-prioritere-en-henvisning) | Task | Visitator (intern) |
-| [Acceptere og booke](#23-acceptere-en-henvisning-og-booke-forløb) | ServiceRequest, Appointment | Visitator → Henviser |
-| [Afvise henvisning](#24-afvise-en-henvisning) | Task, ServiceRequest | Visitator → Henviser |
-| [Videresende](#25-videresende-til-anden-modtager) | ServiceRequest (replaces) | Visitator → Ny modtager (Ny Visitator) |
-| [Ændre prioritet](#26-ændre-prioritet-på-en-modtaget-henvisning) | ServiceRequest, SubscriptionNotification | Visitator → Henviser |
-| [Anmode om supplement](#31-anmode-om-supplerende-oplysninger) | CommunicationRequest | Visitator → Henviser |
-| [Besvare supplement](#32-besvare-anmodning-om-supplement) | Communication | Henviser → Visitator |
-| [Faglig afklaring](#33-faglig-afklaring-i-dialog) | Communication (thread) | Begge |
-| [Statusnotifikation](#34-statusnotifikation-til-henviser) | SubscriptionNotification | Visitator → Henviser |
-| [Alternativ visitation](#35-aftale-om-alternativ-visitation) | Communication, Task | Begge |
-| [Korrektionsaftale](#36-korrektionsaftale-om-fejl-i-afsendt-henvisning) | Communication, ServiceRequest | Begge |
+| [Oprette henvisning](#user-story-11-oprette-en-ny-henvisning) | ServiceRequest | Henviser → Visitator |
+| [Tilknytte dokumentation](#user-story-12-tilknytte-klinisk-dokumentation) | DiagnosticReport, Media, DocumentReference | Henviser → Visitator |
+| [Ændre henvisning](#user-story-13-ændre-en-afsendt-henvisning) | ServiceRequest (revision) | Henviser → Visitator |
+| [Tilbagekalde henvisning](#user-story-14-tilbagekalde-en-henvisning) | ServiceRequest (revoked) | Henviser → Visitator |
+| [Monitorere status](#user-story-15-monitorere-status-på-afsendte-henvisninger) | Subscription, SubscriptionStatus | Begge |
+| [Modtage afgørelse](#user-story-16-modtage-afgørelse-fra-visitatoren) | Task, SubscriptionNotification | Visitator → Henviser |
+| [Modtage og kvittere](#user-story-21-modtage-og-kvittere-for-ny-henvisning) | Bundle, MessageHeader | Visitator (intern) |
+| [Triagere og prioritere](#user-story-22-triagere-og-prioritere-en-henvisning) | Task | Visitator (intern) |
+| [Acceptere og booke](#user-story-23-acceptere-en-henvisning-og-booke-forløb) | ServiceRequest, Appointment | Visitator → Henviser |
+| [Afvise henvisning](#user-story-24-afvise-en-henvisning) | Task, ServiceRequest | Visitator → Henviser |
+| [Videresende](#user-story-25-videresende-til-anden-modtager) | ServiceRequest (replaces) | Visitator → Ny modtager (Ny Visitator) |
+| [Ændre prioritet](#user-story-26-ændre-prioritet-på-en-modtaget-henvisning) | ServiceRequest, SubscriptionNotification | Visitator → Henviser |
+| [Anmode om supplement](#user-story-31-anmode-om-supplerende-oplysninger) | CommunicationRequest | Visitator → Henviser |
+| [Besvare supplement](#user-story-32-besvare-anmodning-om-supplement) | Communication | Henviser → Visitator |
+| [Faglig afklaring](#user-story-33-faglig-afklaring-i-dialog) | Communication (thread) | Begge |
+| [Statusnotifikation](#user-story-34-statusnotifikation-til-henviser) | SubscriptionNotification | Visitator → Henviser |
+| [Alternativ visitation](#user-story-35-aftale-om-alternativ-visitation) | Communication, Task | Begge |
+| [Korrektionsaftale](#user-story-36-korrektionsaftale-om-fejl-i-afsendt-henvisning) | Communication, ServiceRequest | Begge |
 {: .grid}
 
 **Diagrammer:** 
@@ -53,7 +64,7 @@ Disse user stories udføres selvstændigt af henviseren uden at kræve aktiv res
 |---|---|
 | **Primær FHIR-ressource:** | `ServiceRequest` |
 | **Triggerhændelse:** | Klinisk beslutning om at henvise patient |
-| **Næste trin:** |→ [1.2 Tilknytte klinisk dokumentation](#12-tilknytte-klinisk-dokumentation) *(hvis supplerende materiale er relevant)* · <br/>→ [2.1 Modtage og kvittere for ny henvisning](#21-modtage-og-kvittere-for-ny-henvisning) *(visitatorsiden modtager)* |
+| **Næste trin:** |→ [1.2 Tilknytte klinisk dokumentation](#user-story-12-tilknytte-klinisk-dokumentation) *(hvis supplerende materiale er relevant)* · <br/>→ [2.1 Modtage og kvittere for ny henvisning](#user-story-21-modtage-og-kvittere-for-ny-henvisning) *(visitatorsiden modtager)* |
 {: .grid}
 
 ### User story 1.2 Tilknytte klinisk dokumentation
@@ -71,8 +82,8 @@ Disse user stories udføres selvstændigt af henviseren uden at kræve aktiv res
 |---|---|
 | **Primær FHIR-ressource:** | `DiagnosticReport`, `Media`, `DocumentReference` |
 | **Triggerhændelse:** | Behov for at understøtte klinisk beslutningsgrundlag |
-| **Forrige trin:** | ← [1.1 Oprette en ny henvisning](#11-oprette-en-ny-henvisning) *(hvis supplerende materiale er relevant)* |
-| **Næste trin:** | → [2.1 Modtage og kvittere for ny henvisning](#21-modtage-og-kvittere-for-ny-henvisning) *(visitatoren modtager den berigede henvisning)* |
+| **Forrige trin:** | ← [1.1 Oprette en ny henvisning](#user-story-11-oprette-en-ny-henvisning) *(hvis supplerende materiale er relevant)* |
+| **Næste trin:** | → [2.1 Modtage og kvittere for ny henvisning](#user-story-21-modtage-og-kvittere-for-ny-henvisning) *(visitatoren modtager den berigede henvisning)* |
 {: .grid}
 
 ### User story 1.3 Ændre en afsendt henvisning
@@ -89,8 +100,8 @@ Henviseren opdaterer indholdet af en allerede afsendt henvisning — fx korriger
 |---|---|
 | **Primær FHIR-ressource:** | `ServiceRequest` (revision) |
 | **Triggerhændelse:** | Fejl opdaget eller klinisk situation ændret efter afsendelse |
-| **Forrige trin:** | ← [3.6 Korrektionsaftale](#36-korrektionsaftale-om-fejl-i-afsendt-henvisning) *(visitatoren anmoder om korrektion)* |
-| **Næste trin:** | → [2.2 Triagere og prioritere en henvisning](#22-triagere-og-prioritere-en-henvisning) *(visitatoren modtager ændringsnotifikation og reviagerer)* |
+| **Forrige trin:** | ← [3.6 Korrektionsaftale](#user-story-36-korrektionsaftale-om-fejl-i-afsendt-henvisning) *(visitatoren anmoder om korrektion)* |
+| **Næste trin:** | → [2.2 Triagere og prioritere en henvisning](#user-story-22-triagere-og-prioritere-en-henvisning) *(visitatoren modtager ændringsnotifikation og reviagerer)* |
 {: .grid}
 
 ### User story 1.4 Tilbagekalde en henvisning
@@ -107,7 +118,7 @@ Henviseren annullerer en afsendt henvisning, der endnu ikke er ekspederet. `Serv
 |---|---|
 | **Primær FHIR-ressource:** | `ServiceRequest` (status = revoked) |
 | **Triggerhændelse:** | Patienten ønsker ikke forløbet, eller klinisk grundlag er bortfaldet |
-| **Forrige trin:** | ← [1.1 Oprette en ny henvisning](#11-oprette-en-ny-henvisning) *(afsender ønsker at tilbagekalde)* |
+| **Forrige trin:** | ← [1.1 Oprette en ny henvisning](#user-story-11-oprette-en-ny-henvisning) *(afsender ønsker at tilbagekalde)* |
 | **Næste trin:** | *(Flowet afsluttes — ingen yderligere behandling påkrævet)* | |
 {: .grid}
 
@@ -125,8 +136,8 @@ Henviseren følger løbende op på status for egne udestående henvisninger. Det
 |---|---|
 | **Primær FHIR-ressource:** | `Subscription`, `SubscriptionStatus`, `ServiceRequest` |
 | **Triggerhændelse:** | Behov for overblik over egne afsendte henvisninger |
-| **Forrige trin:** | ← [1.1 Oprette en ny henvisning](#11-oprette-en-ny-henvisning) *(efter afsendelse ønskes overblik)* |
-| **Næste trin:** | → [1.6 Modtage afgørelse fra visitatoren](#16-modtage-afgørelse-fra-visitatoren) *(statusoverblikket leder til modtagelse af den endelige afgørelse)* |
+| **Forrige trin:** | ← [1.1 Oprette en ny henvisning](#user-story-11-oprette-en-ny-henvisning) *(efter afsendelse ønskes overblik)* |
+| **Næste trin:** | → [1.6 Modtage afgørelse fra visitatoren](#user-story-16-modtage-afgørelse-fra-visitatoren) *(statusoverblikket leder til modtagelse af den endelige afgørelse)* |
 {: .grid}
 
 ### User story 1.6 Modtage afgørelse fra visitatoren
@@ -143,8 +154,8 @@ Henviseren modtager visitatorens endelige afgørelse — accept, afvisning eller
 |---|---|
 | **Primær FHIR-ressource:** | `Task`, `SubscriptionNotification` |
 | **Triggerhændelse:** | Visitatoren har truffet afgørelse om henvisningen |
-| **Forrige trin:** | ← [1.5 Monitorere status](#15-monitorere-status-på-afsendte-henvisninger) *(statusoverblikket leder hertil)* · <br/>← [3.4 Statusnotifikation](#34-statusnotifikation-til-henviser) *(notifikation udløser håndtering)* |
-| **Næste trin:** | → [1.1 Oprette en ny henvisning](#11-oprette-en-ny-henvisning) *(hvis afgørelsen er en afvisning og patienten skal viderehenvisies)* · *(Flowet afsluttes ved accept)* |
+| **Forrige trin:** | ← [1.5 Monitorere status](#user-story-15-monitorere-status-på-afsendte-henvisninger) *(statusoverblikket leder hertil)* · <br/>← [3.4 Statusnotifikation](#user-story-34-statusnotifikation-til-henviser) *(notifikation udløser håndtering)* |
+| **Næste trin:** | → [1.1 Oprette en ny henvisning](#user-story-11-oprette-en-ny-henvisning) *(hvis afgørelsen er en afvisning og patienten skal viderehenvisies)* · *(Flowet afsluttes ved accept)* |
 {: .grid}
 
 ## Visitatorens user stories
@@ -165,8 +176,8 @@ Visitatoren modtager en indkommende FHIR-`Bundle` med en ny `ServiceRequest` og 
 |---|---|
 | **Primær FHIR-ressource:** | `Bundle`, `MessageHeader`, `ServiceRequest` |
 | **Triggerhændelse:** | Indkommende henvisning i FHIR-endpoint |
-| **Forrige trin:** | ← [1.1 Oprette en ny henvisning](#11-oprette-en-ny-henvisning) *(afsendelse af ny henvisning)* · <br/>← [1.2 Tilknytte klinisk dokumentation](#12-tilknytte-klinisk-dokumentation) *(beriget henvisning modtages)* · <br/>← [2.5 Videresende](#25-videresende-til-anden-modtager) *(ny modtager starter modtagelsesflow)* |
-| **Næste trin:** | → [2.2 Triagere og prioritere en henvisning](#22-triagere-og-prioritere-en-henvisning) |
+| **Forrige trin:** | ← [1.1 Oprette en ny henvisning](#user-story-11-oprette-en-ny-henvisning) *(afsendelse af ny henvisning)* · <br/>← [1.2 Tilknytte klinisk dokumentation](#user-story-12-tilknytte-klinisk-dokumentation) *(beriget henvisning modtages)* · <br/>← [2.5 Videresende](#user-story-25-videresende-til-anden-modtager) *(ny modtager starter modtagelsesflow)* |
+| **Næste trin:** | → [2.2 Triagere og prioritere en henvisning](#user-story-22-triagere-og-prioritere-en-henvisning) |
 {: .grid}
 
 ### User story 2.2 Triagere og prioritere en henvisning
@@ -183,8 +194,8 @@ Visitatoren vurderer henvisningens faglige indhold, klassificerer hastegrad og p
 |---|---|
 | **Primær FHIR-ressource:** | `Task` (triage-outcome, priority) |
 | **Triggerhændelse:** | Ny eller opdateret henvisning klar til klinisk vurdering |
-| **Forrige trin:** | ← [2.1 Modtage og kvittere](#21-modtage-og-kvittere-for-ny-henvisning) *(efter kvittering påbegyndes triage)* · <br/>← [1.3 Ændre en afsendt henvisning](#13-ændre-en-afsendt-henvisning) *(ændringsnotifikation modtaget)* · <br/>← [3.2 Besvare anmodning om supplement](#32-besvare-anmodning-om-supplement) *(supplement modtaget, triage genoptages)* · <br/>← [3.6 Korrektionsaftale](#36-korrektionsaftale-om-fejl-i-afsendt-henvisning) *(triage genoptages efter korrektion)* |
-| **Næste trin:** | → [2.3 Acceptere en henvisning og booke forløb](#23-acceptere-en-henvisning-og-booke-forløb) *(positiv afgørelse)* · <br/>→ [2.4 Afvise en henvisning](#24-afvise-en-henvisning) *(negativ afgørelse)* · <br/>→ [3.1 Anmode om supplerende oplysninger](#31-anmode-om-supplerende-oplysninger) *(grundlaget er utilstrækkeligt)* · <br/>→ [2.6 Ændre prioritet](#26-ændre-prioritet-på-en-modtaget-henvisning) *(prioriteten justeres)* |
+| **Forrige trin:** | ← [2.1 Modtage og kvittere](#user-story-21-modtage-og-kvittere-for-ny-henvisning) *(efter kvittering påbegyndes triage)* · <br/>← [1.3 Ændre en afsendt henvisning](#user-story-13-ændre-en-afsendt-henvisning) *(ændringsnotifikation modtaget)* · <br/>← [3.2 Besvare anmodning om supplement](#user-story-32-besvare-anmodning-om-supplement) *(supplement modtaget, triage genoptages)* · <br/>← [3.6 Korrektionsaftale](#user-story-36-korrektionsaftale-om-fejl-i-afsendt-henvisning) *(triage genoptages efter korrektion)* |
+| **Næste trin:** | → [2.3 Acceptere en henvisning og booke forløb](#user-story-23-acceptere-en-henvisning-og-booke-forløb) *(positiv afgørelse)* · <br/>→ [2.4 Afvise en henvisning](#user-story-24-afvise-en-henvisning) *(negativ afgørelse)* · <br/>→ [3.1 Anmode om supplerende oplysninger](#user-story-31-anmode-om-supplerende-oplysninger) *(grundlaget er utilstrækkeligt)* · <br/>→ [2.6 Ændre prioritet](#user-story-26-ændre-prioritet-på-en-modtaget-henvisning) *(prioriteten justeres)* |
 {: .grid}
 
 ### User story 2.3 Acceptere en henvisning og booke forløb
@@ -201,8 +212,8 @@ Visitatoren accepterer henvisningen og opretter et forløb. Der bookes en tid, o
 |---|---|
 | **Primær FHIR-ressource:** | `ServiceRequest` (active), `Appointment` (booked) |
 | **Triggerhændelse:** | Positiv visitationsafgørelse |
-| **Forrige trin:** | ← [2.2 Triagere og prioritere](#22-triagere-og-prioritere-en-henvisning) *(positiv afgørelse)* · <br/>← [3.5 Alternativ visitation](#35-aftale-om-alternativ-visitation) *(alternativt tilbud accepteres)* · <br/>← [3.3 Faglig afklaring](#33-faglig-afklaring-i-dialog) *(afklaring munder ud i accept)* |
-| **Næste trin:** | → [3.4 Statusnotifikation til henviser](#34-statusnotifikation-til-henviser) *(henviser notificeres om accept og booking)* |
+| **Forrige trin:** | ← [2.2 Triagere og prioritere](#user-story-22-triagere-og-prioritere-en-henvisning) *(positiv afgørelse)* · <br/>← [3.5 Alternativ visitation](#user-story-35-aftale-om-alternativ-visitation) *(alternativt tilbud accepteres)* · <br/>← [3.3 Faglig afklaring](#user-story-33-faglig-afklaring-i-dialog) *(afklaring munder ud i accept)* |
+| **Næste trin:** | → [3.4 Statusnotifikation til henviser](#user-story-34-statusnotifikation-til-henviser) *(henviser notificeres om accept og booking)* |
 {: .grid}
 
 ### User story 2.4 Afvise en henvisning
@@ -219,8 +230,8 @@ Visitatoren afviser henvisningen med en faglig eller kapacitetsmæssig begrundel
 |---|---|
 | **Primær FHIR-ressource:** | `Task` (declined + reason), `ServiceRequest` |
 | **Triggerhændelse:** | Indikation ikke opfyldt, forkert visitationsspor, eller kapacitetsloft nået |
-| **Forrige trin:** | ← [2.2 Triagere og prioritere](#22-triagere-og-prioritere-en-henvisning) *(negativ afgørelse)* · <br/>← [3.3 Faglig afklaring](#33-faglig-afklaring-i-dialog) *(afklaring munder ud i afvisning)* |
-| **Næste trin:** | → [3.4 Statusnotifikation til henviser](#34-statusnotifikation-til-henviser) *(henviser notificeres om afvisning)* · <br/>→ [3.5 Aftale om alternativ visitation](#35-aftale-om-alternativ-visitation) *(hvis alternativ løsning bør afsøges)* |
+| **Forrige trin:** | ← [2.2 Triagere og prioritere](#user-story-22-triagere-og-prioritere-en-henvisning) *(negativ afgørelse)* · <br/>← [3.3 Faglig afklaring](#user-story-33-faglig-afklaring-i-dialog) *(afklaring munder ud i afvisning)* |
+| **Næste trin:** | → [3.4 Statusnotifikation til henviser](#user-story-34-statusnotifikation-til-henviser) *(henviser notificeres om afvisning)* · <br/>→ [3.5 Aftale om alternativ visitation](#user-story-35-aftale-om-alternativ-visitation) *(hvis alternativ løsning bør afsøges)* |
 {: .grid}
 
 ### User story 2.5 Videresende til anden modtager
@@ -237,8 +248,8 @@ Visitatoren vurderer at henvisningen hører hjemme et andet sted og videresender
 |---|---|
 | **Primær FHIR-ressource:** | `ServiceRequest` (replaces), `Task`, `Communication` |
 | **Triggerhændelse:** | Forkert modtager eller bedre egnet tilbud identificeret |
-| **Forrige trin:** | ← [2.2 Triagere og prioritere](#22-triagere-og-prioritere-en-henvisning) *(forkert modtager identificeret)* |
-| **Næste trin:** | → [2.1 Modtage og kvittere for ny henvisning](#21-modtage-og-kvittere-for-ny-henvisning) *(ny modtager starter sit eget modtagelsesflow)* · <br/>→ [3.4 Statusnotifikation til henviser](#34-statusnotifikation-til-henviser) *(den oprindelige henviser orienteres)* |
+| **Forrige trin:** | ← [2.2 Triagere og prioritere](#user-story-22-triagere-og-prioritere-en-henvisning) *(forkert modtager identificeret)* |
+| **Næste trin:** | → [2.1 Modtage og kvittere for ny henvisning](#user-story-21-modtage-og-kvittere-for-ny-henvisning) *(ny modtager starter sit eget modtagelsesflow)* · <br/>→ [3.4 Statusnotifikation til henviser](#user-story-34-statusnotifikation-til-henviser) *(den oprindelige henviser orienteres)* |
 {: .grid}
 
 ### User story 2.6 Ændre prioritet på en modtaget henvisning
@@ -255,8 +266,8 @@ Visitatoren revurderer hastegraden for en allerede modtaget henvisning — fx p�
 |---|---|
 | **Primær FHIR-ressource:** | `ServiceRequest` (priority update), `SubscriptionNotification` |
 | **Triggerhændelse:** | Ny information ændrer klinisk hastegrad |
-| **Forrige trin:** | ← [2.2 Triagere og prioritere](#22-triagere-og-prioritere-en-henvisninger) *(prioritetsjustering under triage)* |
-| **Næste trin:** | → [3.4 Statusnotifikation til henviser](#34-statusnotifikation-til-henviser) *(henviser notificeres om den ændrede prioritet)* |
+| **Forrige trin:** | ← [2.2 Triagere og prioritere](#user-story-22-triagere-og-prioritere-en-henvisninger) *(prioritetsjustering under triage)* |
+| **Næste trin:** | → [3.4 Statusnotifikation til henviser](#user-story-34-statusnotifikation-til-henviser) *(henviser notificeres om den ændrede prioritet)* |
 {: .grid}
 
 ## Udvekslingsdialog (fælles user stories)
@@ -277,8 +288,8 @@ Visitatoren mangler oplysninger for at kunne triagere og sender en struktureret 
 |---|---|
 | **Primær FHIR-ressource:** | `CommunicationRequest` (fra visitator til henviser) |
 | **Triggerhændelse:** | Utilstrækkeligt grundlag for visitationsafgørelse |
-| **Forrige trin:** | ← [2.2 Triagere og prioritere](#22-triagere-og-prioritere-en-henvisning) *(utilstrækkeligt grundlag for triage)* |
-| **Næste trin:** | → [3.2 Besvare anmodning om supplement](#32-besvare-anmodning-om-supplement) |
+| **Forrige trin:** | ← [2.2 Triagere og prioritere](#user-story-22-triagere-og-prioritere-en-henvisning) *(utilstrækkeligt grundlag for triage)* |
+| **Næste trin:** | → [3.2 Besvare anmodning om supplement](#user-story-32-besvare-anmodning-om-supplement) |
 {: .grid}
 
 ### User story 3.2 Besvare anmodning om supplement
@@ -295,8 +306,8 @@ Henviseren modtager en supplement-anmodning og besvarer denne ved at sende de ef
 |---|---|
 | **Primær FHIR-ressource:** | `Communication` (reply, in-response-to) |
 | **Triggerhændelse:** | Modtagelse af CommunicationRequest fra visitatoren |
-| **Forrige trin:** | ← [3.1 Anmode om supplerende oplysninger](#31-anmode-om-supplerende-oplysninger) *(supplement anmodet)* |
-| **Næste trin:** | → [2.2 Triagere og prioritere en henvisning](#22-triagere-og-prioritere-en-henvisning) *(visitatoren genoptager triage med det modtagne supplement)* · <br/>→ [3.3 Faglig afklaring i dialog](#33-faglig-afklaring-i-dialog) *(hvis svaret afføder yderligere spørgsmål)* |
+| **Forrige trin:** | ← [3.1 Anmode om supplerende oplysninger](#user-story-31-anmode-om-supplerende-oplysninger) *(supplement anmodet)* |
+| **Næste trin:** | → [2.2 Triagere og prioritere en henvisning](#user-story-22-triagere-og-prioritere-en-henvisning) *(visitatoren genoptager triage med det modtagne supplement)* · <br/>→ [3.3 Faglig afklaring i dialog](#user-story-33-faglig-afklaring-i-dialog) *(hvis svaret afføder yderligere spørgsmål)* |
 {: .grid}
 
 ### User story 3.3 Faglig afklaring i dialog
@@ -313,8 +324,8 @@ Henviser og visitator udveksler kliniske spørgsmål og svar for at afklare indi
 |---|---|
 | **Primær FHIR-ressource:** | `Communication` (thread med in-response-to-kæde) |
 | **Triggerhændelse:** | Faglig uklarhed der kræver mere end én udveksling |
-| **Forrige trin:** | ← [3.2 Besvare anmodning om supplement](#32-besvare-anmodning-om-supplement) *(svaret afføder yderligere spørgsmål)* |
-| **Næste trin:** | → [2.3 Acceptere en henvisning og booke forløb](#23-acceptere-en-henvisning-og-booke-forløb) *(afklaring munder ud i accept)* · <br/>→ [2.4 Afvise en henvisning](#24-afvise-en-henvisning) *(afklaring munder ud i afvisning)* |
+| **Forrige trin:** | ← [3.2 Besvare anmodning om supplement](#user-story-32-besvare-anmodning-om-supplement) *(svaret afføder yderligere spørgsmål)* |
+| **Næste trin:** | → [2.3 Acceptere en henvisning og booke forløb](#user-story-23-acceptere-en-henvisning-og-booke-forløb) *(afklaring munder ud i accept)* · <br/>→ [2.4 Afvise en henvisning](#user-story-24-afvise-en-henvisning) *(afklaring munder ud i afvisning)* |
 {: .grid}
 
 ### User story 3.4 Statusnotifikation til henviser
@@ -331,8 +342,8 @@ Visitatoren notificerer automatisk henviseren ved statusskift på en afsendt hen
 |---|---|
 | **Primær FHIR-ressource:** | `SubscriptionNotification`, `ServiceRequest` |
 | **Triggerhændelse:** | Ethvert statusskift på en aktiv henvisning hos visitatoren |
-| **Forrige trin:** | ← [2.3 Acceptere og booke](#23-acceptere-en-henvisning-og-booke-forløb) *(accept udløser notifikation)* · <br/>← [2.4 Afvise en henvisning](#24-afvise-en-henvisning) *(afvisning udløser notifikation)* · <br/>← [2.6 Ændre prioritet](#26-ændre-prioritet-på-en-modtaget-henvisning) *(prioritetsændring udløser notifikation)* |
-| **Næste trin:** | → [1.6 Modtage afgørelse fra visitatoren](#16-modtage-afgørelse-fra-visitatoren) *(notifikationen udløser håndtering af afgørelsen hos henviseren)* |
+| **Forrige trin:** | ← [2.3 Acceptere og booke](#user-story-23-acceptere-en-henvisning-og-booke-forløb) *(accept udløser notifikation)* · <br/>← [2.4 Afvise en henvisning](#user-story-24-afvise-en-henvisning) *(afvisning udløser notifikation)* · <br/>← [2.6 Ændre prioritet](#user-story-26-ændre-prioritet-på-en-modtaget-henvisning) *(prioritetsændring udløser notifikation)* |
+| **Næste trin:** | → [1.6 Modtage afgørelse fra visitatoren](#user-story-16-modtage-afgørelse-fra-visitatoren) *(notifikationen udløser håndtering af afgørelsen hos henviseren)* |
 {: .grid}
 
 ### User story 3.5 Aftale om alternativ visitation
@@ -349,8 +360,8 @@ Henviser og visitator forhandler i fællesskab om et alternativt tilbud, <br/>n�
 |---|---|
 | **Primær FHIR-ressource:** | `Communication`, `Task`, `ServiceRequest` (alternativ) |
 | **Triggerhændelse:** | Afvisning kombineret med behov for at finde alternativ løsning for patienten |
-| **Forrige trin:** | ← [2.4 Afvise en henvisning](#24-afvise-en-henvisning) *(afvisning kombineret med søgning efter alternativ)* |
-| **Næste trin:** | → [1.1 Oprette en ny henvisning](#11-oprette-en-ny-henvisning) *(nyt alternativt tilbud kræver ny henvisning)* · <br/>→ [2.3 Acceptere en henvisning og booke forløb](#23-acceptere-en-henvisning-og-booke-forløb) *(alternativt tilbud accepteres)* |
+| **Forrige trin:** | ← [2.4 Afvise en henvisning](#user-story-24-afvise-en-henvisning) *(afvisning kombineret med søgning efter alternativ)* |
+| **Næste trin:** | → [1.1 Oprette en ny henvisning](#user-story-11-oprette-en-ny-henvisning) *(nyt alternativt tilbud kræver ny henvisning)* · <br/>→ [2.3 Acceptere en henvisning og booke forløb](#user-story-23-acceptere-en-henvisning-og-booke-forløb) *(alternativt tilbud accepteres)* |
 {: .grid}
 
 ### User story 3.6 Korrektionsaftale om fejl i afsendt henvisning
@@ -367,7 +378,7 @@ Visitatoren opdager en fejl i en modtaget henvisning — fx forkert CPR-nummer, 
 |---|---|
 | **Primær FHIR-ressource:** | `Communication`, `ServiceRequest` (korrektion) |
 | **Triggerhændelse:** | Fejl opdaget under modtagelse eller triage hos visitatoren |
-| **Forrige trin:** | ← [2.4 Afvise en henvisning](#24-afvise-en-henvisning) *(fejl opdaget, korrektionsdiolog indledes)* |
-| **Næste trin:** | → [1.3 Ændre en afsendt henvisning](#13-ændre-en-afsendt-henvisning) *(henviser retter og sender)* · <br/>→ [2.2 Triagere og prioritere en henvisning](#22-triagere-og-prioritere-en-henvisning) *(visitatoren genoptager triage efter korrektion)* |
+| **Forrige trin:** | ← [2.4 Afvise en henvisning](#user-story-24-afvise-en-henvisning) *(fejl opdaget, korrektionsdiolog indledes)* |
+| **Næste trin:** | → [1.3 Ændre en afsendt henvisning](#user-story-13-ændre-en-afsendt-henvisning) *(henviser retter og sender)* · <br/>→ [2.2 Triagere og prioritere en henvisning](#user-story-22-triagere-og-prioritere-en-henvisning) *(visitatoren genoptager triage efter korrektion)* |
 {: .grid}
 
