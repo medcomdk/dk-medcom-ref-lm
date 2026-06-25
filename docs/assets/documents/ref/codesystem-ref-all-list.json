@@ -1,0 +1,187 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/bundle-type",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "BundleType",
+    "title" : "BundleType",
+    "description" : "Indicates the purpose of a bundle - how it is intended to be used.",
+    "oids" : ["2.16.840.1.113883.4.642.4.621"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-bundle-type.html" : "BundleType"
+  },
+  {
+    "url" : "http://hl7.org/fhir/http-verb",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "HTTPVerb",
+    "title" : "HTTPVerb",
+    "description" : "HTTP verbs (in the HTTP command line). See [HTTP rfc](https://tools.ietf.org/html/rfc7231) for details.",
+    "oids" : ["2.16.840.1.113883.4.642.4.625"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-http-verb.html" : "HTTPVerb"
+  },
+  {
+    "url" : "http://hl7.org/fhir/identifier-use",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "IdentifierUse",
+    "title" : "IdentifierUse",
+    "description" : "Identifies the purpose for this identifier, if known .",
+    "oids" : ["2.16.840.1.113883.4.642.4.58"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-identifier-use.html" : "IdentifierUse"
+  },
+  {
+    "url" : "http://hl7.org/fhir/request-intent",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestIntent",
+    "title" : "RequestIntent",
+    "description" : "Codes indicating the degree of authority/intentionality associated with a request.",
+    "oids" : ["2.16.840.1.113883.4.642.4.114"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-request-intent.html" : "RequestIntent"
+  },
+  {
+    "url" : "http://hl7.org/fhir/request-priority",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestPriority",
+    "title" : "RequestPriority",
+    "description" : "Identifies the level of importance to be assigned to actioning the request.",
+    "oids" : ["2.16.840.1.113883.4.642.4.116"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-request-priority.html" : "Request priority"
+  },
+  {
+    "url" : "http://hl7.org/fhir/request-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestStatus",
+    "title" : "RequestStatus",
+    "description" : "Codes identifying the lifecycle stage of a request.",
+    "oids" : ["2.16.840.1.113883.4.642.4.112"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-request-status.html" : "RequestStatus"
+  },
+  {
+    "url" : "http://hl7.org/fhir/response-code",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ResponseType",
+    "title" : "ResponseType",
+    "description" : "The kind of response to a message.",
+    "oids" : ["2.16.840.1.113883.4.642.4.381"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-response-code.html" : "ResponseType"
+  },
+  {
+    "url" : "http://hl7.org/fhir/search-entry-mode",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "SearchEntryMode",
+    "title" : "SearchEntryMode",
+    "description" : "Why an entry is in the result set - whether it's included as a match or because of an _include requirement, or to convey information or warning information about the search process.",
+    "oids" : ["2.16.840.1.113883.4.642.4.623"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-search-entry-mode.html" : "SearchEntryMode"
+  },
+  {
+    "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/CodeSystem/ehmi-message-event-cs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "EHMIMessageEventCS",
+    "title" : "EHMI Message Event Codes",
+    "description" : "Koder for meddelelseshaendelser i EHMI-meddelelseskommunikation.",
+    "uses" : {
+    },
+    "ValueSet-ehmi-message-event-vs.html" : "EHMI Message Event ValueSet"
+  },
+  {
+    "url" : "http://snomed.info/sct",
+    "version" : null,
+    "status" : "active",
+    "name" : "SNOMED_CT",
+    "title" : "SNOMED CT (all versions)",
+    "description" : "SNOMED CT is the most comprehensive and precise clinical health terminology product in the world, owned and distributed around the world by The International Health Terminology Standards Development Organisation (IHTSDO).",
+    "oids" : ["2.16.840.1.113883.6.96"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-participant-role.html" : "Participant Roles",
+    "http://hl7.org/fhir/R4/valueset-medication-as-needed-reason.html" : "SNOMED CT Medication As Needed Reason Codes",
+    "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
+    "http://hl7.org/fhir/R4/valueset-servicerequest-orderdetail.html" : "Service Request Order Details Codes",
+    "ValueSet-ehmi-referral-code-vs.html" : "EHMI Referral Code ValueSet",
+    "http://hl7.org/fhir/R4/valueset-servicerequest-category.html" : "Service Request Category Codes",
+    "http://hl7.org/fhir/R4/valueset-condition-code.html" : "Condition/Problem/Diagnosis Codes"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/common-tags",
+    "version" : "1.0.1",
+    "status" : "active",
+    "name" : "CommonTags",
+    "title" : "Common Tags",
+    "description" : "Common Tag Codes defined by FHIR project",
+    "oids" : ["2.16.840.1.113883.4.642.1.1067"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-common-tags.html" : "Common Tags"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/message-reasons-encounter",
+    "version" : "1.0.1",
+    "status" : "active",
+    "name" : "ExampleMessageReasonCodes",
+    "title" : "Example Message Reason Codes",
+    "description" : "Example Message Reasons. These are the set of codes that might be used an updating an encounter using admin-update.",
+    "oids" : ["2.16.840.1.113883.4.642.1.1122"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-message-reason-encounter.html" : "Example Message Reason Codes"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+    "version" : "5.0.0",
+    "status" : "active",
+    "name" : "IdentifierType",
+    "title" : "identifierType",
+    "description" : "HL7-defined code system of concepts specifying type of identifier. Used in HL7 Version 2.x messaging data types CX, PLN, PPN, XCN and XON.",
+    "oids" : ["2.16.840.1.113883.18.108"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-identifier-type.html" : "IdentifierType"
+  },
+  {
+    "url" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+    "version" : "4.0.0",
+    "status" : "active",
+    "name" : "RoleCode",
+    "title" : "RoleCode",
+    "description" : "A set of codes further specifying the kind of Role; specific classification codes for further qualifying RoleClass codes.",
+    "oids" : ["2.16.840.1.113883.5.111"],
+    "uses" : {
+    },
+    "http://terminology.hl7.org/7.2.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html" : "ServiceDeliveryLocationRoleType"
+  },
+  {
+    "url" : "urn:ietf:bcp:47",
+    "version" : "2.0.1",
+    "status" : "active",
+    "name" : "Ietf3066",
+    "title" : "Tags for the Identification of Languages",
+    "description" : "Older value from OID registry.  Superceded; see recommendations in BCP-47.",
+    "oids" : ["2.16.840.1.113883.6.121"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-languages.html" : "Common Languages"
+  }]
+}

@@ -1,0 +1,57 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"henvisning","henvisning","","","",0,*,"","","","null {[]} {[]}
+","Henvisning – Logisk Model","Konceptuel logisk model for en Henvisning i dansk sundhedsvæsen.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"henvisning.oprettetDato","henvisning.oprettetDato","","","",1,1,"","","","dateTime {[]} {[]}
+","Dato for oprettelse","Dato for oprettelse","","","","","","","","","",,,,,"",,,,"henvisning.oprettetDato",1,1,"",""
+"henvisning.prioritet","henvisning.prioritet","","","",1,1,"","","","code {[]} {[]}
+","routine | urgent | asap | stat","routine | urgent | asap | stat","","","","","","","","","",,,,,"",,,,"henvisning.prioritet",1,1,"",""
+"henvisning.ydelseskode","henvisning.ydelseskode","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","Kode for oensket ydelse/specialale","Kode for oensket ydelse/specialale","","","","","","","","","",,,,,"",,,,"henvisning.ydelseskode",1,1,"",""
+"henvisning.indikation","henvisning.indikation","","","",1,*,"","","","BackboneElement {[]} {[]}
+","Klinisk indikation","Klinisk indikation","","","","","","","","","",,,,,"",,,,"henvisning.indikation",1,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"henvisning.indikation.id","henvisning.indikation.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"henvisning.indikation.extension","henvisning.indikation.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"henvisning.indikation.modifierExtension","henvisning.indikation.modifierExtension","","extensions
+user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
+","Extensions that cannot be ignored even if unrecognized","May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"BackboneElement.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"henvisning.indikation.diagnose","henvisning.indikation.diagnose","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Diagnosekode (SKS/SNOMED CT)","Diagnosekode (SKS/SNOMED CT)","","","","","","","","","",,,,,"",,,,"henvisning.indikation.diagnose",0,1,"",""
+"henvisning.indikation.friTekst","henvisning.indikation.friTekst","","","",0,1,"","","","string {[]} {[]}
+","Uddybende klinisk tekst","Uddybende klinisk tekst","","","","","","","","","",,,,,"",,,,"henvisning.indikation.friTekst",0,1,"",""
+"henvisning.anamnese","henvisning.anamnese","","","",0,1,"","","","string {[]} {[]}
+","Relevant sygehistorie","Relevant sygehistorie","","","","","","","","","",,,,,"",,,,"henvisning.anamnese",0,1,"",""
+"henvisning.aktuelleProblemer","henvisning.aktuelleProblemer","","","",0,*,"","","","CodeableConcept {[]} {[]}
+","Aktuelle problemstillinger","Aktuelle problemstillinger","","","","","","","","","",,,,,"",,,,"henvisning.aktuelleProblemer",0,*,"",""
+"henvisning.medicin","henvisning.medicin","","","",0,1,"","","","string {[]} {[]}
+","Aktuel medicinliste (reference eller fri tekst)","Aktuel medicinliste (reference eller fri tekst)","","","","","","","","","",,,,,"",,,,"henvisning.medicin",0,1,"",""
+"henvisning.paraklinik","henvisning.paraklinik","","","",0,*,"","","","BackboneElement {[]} {[]}
+","Vedlagte undersøgelser","Vedlagte undersøgelser","","","","","","","","","",,,,,"",,,,"henvisning.paraklinik",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"henvisning.paraklinik.id","henvisning.paraklinik.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"henvisning.paraklinik.extension","henvisning.paraklinik.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"henvisning.paraklinik.modifierExtension","henvisning.paraklinik.modifierExtension","","extensions
+user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
+","Extensions that cannot be ignored even if unrecognized","May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"BackboneElement.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"henvisning.paraklinik.type","henvisning.paraklinik.type","","","",1,1,"","","","code {[]} {[]}
+","observation | documentReference","observation | documentReference","","","","","","","","","",,,,,"",,,,"henvisning.paraklinik.type",1,1,"",""
+"henvisning.paraklinik.reference","henvisning.paraklinik.reference","","","",1,1,"","","","Reference {[]} {[]}
+","Reference til FHIR-ressource","Reference til FHIR-ressource","","","","","","","","","",,,,,"",,,,"henvisning.paraklinik.reference",1,1,"",""
+"henvisning.oensketTidspunkt","henvisning.oensketTidspunkt","","","",0,1,"","","","dateTime {[]} {[]}
+","Oensket tidspunkt for undersoegelse","Oensket tidspunkt for undersoegelse","","","","","","","","","",,,,,"",,,,"henvisning.oensketTidspunkt",0,1,"",""

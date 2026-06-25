@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="ehmi-referral-code-vs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet ehmi-referral-code-vs</b></p><a name="ehmi-referral-code-vs"> </a><a name="hcehmi-referral-code-vs"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include codes from<a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span> where concept  is-a 3457005 (Patient referral)</li><li>Include all codes defined in <code>urn:oid:1.2.208.176.2.4</code><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span></li></ul></div>
+  </text>
+  <url value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-referral-code-vs"/>
+  <version value="0.1.0"/>
+  <name value="EHMIReferralCodeVS"/>
+  <title value="EHMI Referral Code ValueSet"/>
+  <status value="draft"/>
+  <date value="2026-06-16T14:56:57+02:00"/>
+  <publisher value="MedCom"/>
+  <contact>
+    <name value="MedCom"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://medcom.dk"/>
+    </telecom>
+  </contact>
+  <description value="Ydelseskoder for EHMI-henvisninger – SKS procedurer og SNOMED CT."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="3457005"/>
+      </filter>
+    </include>
+    <include>
+      <system value="urn:oid:1.2.208.176.2.4"/>
+    </include>
+  </compose>
+</ValueSet>

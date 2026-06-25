@@ -1,0 +1,10 @@
+{
+  "codeSystems" : [{
+    "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/CodeSystem/ehmi-message-event-cs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "EHMIMessageEventCS",
+    "title" : "EHMI Message Event Codes",
+    "description" : "Koder for meddelelseshaendelser i EHMI-meddelelseskommunikation."
+  }]
+}

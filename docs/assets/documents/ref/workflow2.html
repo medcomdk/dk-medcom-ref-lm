@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Workflow 2 - DK MEDCOM REFERRAL LM v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7-dk.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"42"}
+    h3,h4,h5,h6{--heading-prefix:"42"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.medcom.dk">
+            <img height="50" alt="Visit MedComs website" src="assets/images/dark-medcom-logo.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>        
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">DK MEDCOM REFERRAL LM</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - draft
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">More
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="toc.html">Table of Contents</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Workflow 2</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">DK MEDCOM REFERRAL LM - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://medcomehmi.dk/ig/dk-medcom-ref-lm/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Workflow 2</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h2 id="servicerequest-som-versioneret-entitet">ServiceRequest som versioneret entitet</h2>
+
+<p>FHIR R4 understøtter nativt at én ressource-instans <strong>bevarer sin logiske identifikator</strong> (<code class="language-plaintext highlighter-rouge">ServiceRequest.identifier</code>) gennem hele livscyklussen, mens indholdet opdateres og dokumenteres via versionering og statusskift.</p>
+
+<p>Det sker på to niveauer:</p>
+
+<p><strong>Logisk identifikator</strong> — <code class="language-plaintext highlighter-rouge">ServiceRequest.identifier</code> er stabil og uforanderlig. Den er hvad afsender, modtager og eventuelle tredjeparter (f.eks. rekvirent-system, journalsystem) refererer til på tværs af alle opdateringer.</p>
+
+<p><strong>Teknisk version</strong> — <code class="language-plaintext highlighter-rouge">ServiceRequest.meta.versionId</code> inkrementeres automatisk af FHIR-serveren ved hver opdatering. Kombineret med <code class="language-plaintext highlighter-rouge">meta.lastUpdated</code> giver det et fuldt revisionsspor.</p>
+
+<hr />
+
+<h2 id="konkret-mønster-i-en-henvisningskontekst">Konkret mønster i en henvisningskontekst</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ServiceRequest.identifier = "REF-2024-00487"   ← uforandret hele vejen
+
+Version 1:  status: draft    → oprettet af afsender
+Version 2:  status: active   → afsendt i Bundle
+Version 3:  status: on-hold  → modtager efterspørger info
+            + note tilføjet: "Mangler: seneste HbA1c"
+Version 4:  status: active   → supplerende info modtaget
+            + supportingInfo: [ny DocumentReference]
+Version 5:  status: active   → accepteret
+            intent: order     ← skifter fra proposal til order
+</code></pre></div></div>
+
+<p>Alle versioner er tilgængelige via FHIR's history-mekanisme:
+<code class="language-plaintext highlighter-rouge">GET /ServiceRequest/[id]/_history</code></p>
+
+<hr />
+
+<h2 id="task-som-komplementær-sporingsressource">Task som komplementær sporingsressource</h2>
+
+<p>Det er vigtigt at skelne: <strong>ServiceRequest</strong> dokumenterer <em>hvad</em> der anmodes om og i hvilken tilstand, mens <strong>Task</strong> dokumenterer <em>processen</em> med at håndtere anmodningen. De to ressourcer uddyber hinanden:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>ServiceRequest</th>
+      <th>Task</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Identifikator</td>
+      <td>Klinisk stabil (REF-nr.)</td>
+      <td>Administrativ opgave-ID</td>
+    </tr>
+    <tr>
+      <td>Statusmodel</td>
+      <td>Klinisk tilstand</td>
+      <td>Procesforløb</td>
+    </tr>
+    <tr>
+      <td>Versionering</td>
+      <td>Indholdsmæssige ændringer</td>
+      <td>Handlingsspor</td>
+    </tr>
+    <tr>
+      <td>Hvem ejer</td>
+      <td>Fælles / neutral</td>
+      <td>Én per aktør</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="provenance-som-eksplicit-revisionslog">Provenance som eksplicit revisionslog</h2>
+
+<p>Ønsker man et <strong>eksplicit og signeret revisionslog</strong> ud over <code class="language-plaintext highlighter-rouge">_history</code>, kan man supplere med <code class="language-plaintext highlighter-rouge">Provenance</code>-ressourcen, der for hver ændring angiver:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Provenance.target</code> → reference til den specifikke version (<code class="language-plaintext highlighter-rouge">ServiceRequest/[id]/_history/3</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">Provenance.recorded</code> → tidspunkt</li>
+  <li><code class="language-plaintext highlighter-rouge">Provenance.agent</code> → hvem foretog ændringen (Practitioner, Organization)</li>
+  <li><code class="language-plaintext highlighter-rouge">Provenance.reason</code> → årsagskode (f.eks. <em>info-received</em>, <em>clinical-update</em>)</li>
+</ul>
+
+<p>Det giver et revisionsspor der kan auditteres uafhængigt af selve ressourcen.</p>
+
+<hr />
+
+<h2 id="en-praktisk-overvejelse">En praktisk overvejelse</h2>
+
+<p>I en <strong>messaging-kontekst</strong> (EHMI/Bundle) er der en subtil men vigtig pointe: selve bundtet er uforanderligt efter afsendelse — det er et forseglet snapshot. Det er <em>ikke</em> bundtet der opdateres, men den underliggende ServiceRequest-instans på FHIR-serveren. Nye bundter (f.eks. <code class="language-plaintext highlighter-rouge">referral-info-response</code>) bærer en opdateret kopi af ServiceRequest med ny versionId, og modtager-systemet anvender <code class="language-plaintext highlighter-rouge">ServiceRequest.identifier</code> til at matche og erstatte sin lokale instans.</p>
+
+<p>Identifikatoren fungerer altså som <strong>den røde tråd</strong> der binder alle meddelelses-udvekslinger sammen til ét sammenhængende forløb.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://medcom.dk">MedCom</a>.  Package dk-medcom-ref-lm#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 16, 2026 14:56+0200">2026-06-16</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+
+| <a style="color: #81BEF7" target="_blank" href="https://www.was.digst.dk/medcomfhir-dk-ig-">Accessibility statement (Tilgængelighedserklæring)</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

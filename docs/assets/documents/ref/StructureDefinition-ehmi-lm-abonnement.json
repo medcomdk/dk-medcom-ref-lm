@@ -1,0 +1,335 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "ehmi-lm-abonnement",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureDefinition ehmi-lm-abonnement</b></p><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"The logical name of the element\">Name</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Information about the use of the element\">Flags</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Minimum and Maximum # of times the element can appear in the instance\">Card.</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px; width: 100px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Reference to the type of the element\">Type</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Additional information about the element\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-abonnement-definitions.html#ehmi-lm-abonnement\" title=\"Repræsenterer en abonnementsregistrering der definerer hvilke\nhændelser en abonnent (typisk henviseren) ønsker at modtage\nnotifikationer om. Svarer til FHIR Subscription.\">ehmi-lm-abonnement</a><a name=\"ehmi-lm-abonnement\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.5\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.5\">*</span></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://build.fhir.org/types.html#Base\">Base</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Abonnement</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-abonnement-definitions.html#ehmi-lm-abonnement.abonnementId\" title=\"Unik identifikator for abonnementet\">abonnementId</a><a name=\"ehmi-lm-abonnement.abonnementId\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Unik identifikator for abonnementet</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-abonnement-definitions.html#ehmi-lm-abonnement.status\" title=\"requested | active | error | off\">status</a><a name=\"ehmi-lm-abonnement.status\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">requested | active | error | off</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-abonnement-definitions.html#ehmi-lm-abonnement.kriterie\" title=\"FHIR søgekriterium (fx ServiceRequest?requester=...)\">kriterie</a><a name=\"ehmi-lm-abonnement.kriterie\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">FHIR søgekriterium (fx ServiceRequest?requester=...)</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-abonnement-definitions.html#ehmi-lm-abonnement.kanal\" title=\"Leveringskanal: rest-hook | message | email\">kanal</a><a name=\"ehmi-lm-abonnement.kanal\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Leveringskanal: rest-hook | message | email</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-abonnement-definitions.html#ehmi-lm-abonnement.endpoint\" title=\"URL/endpoint der modtager notifikationer (EHMI)\">endpoint</a><a name=\"ehmi-lm-abonnement.endpoint\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#url\">url</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">URL/endpoint der modtager notifikationer (EHMI)</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_reference.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-abonnement-definitions.html#ehmi-lm-abonnement.abonnent\" title=\"Den organisation der abonnerer\">abonnent</a><a name=\"ehmi-lm-abonnement.abonnent\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(<a href=\"StructureDefinition-ehmi-lm-organisation.html\">Organisation</a>)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Den organisation der abonnerer</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-abonnement-definitions.html#ehmi-lm-abonnement.oprettetDato\" title=\"Tidspunkt for oprettelse af abonnementet\">oprettetDato</a><a name=\"ehmi-lm-abonnement.oprettetDato\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Tidspunkt for oprettelse af abonnementet</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-abonnement-definitions.html#ehmi-lm-abonnement.udloeber\" title=\"Udløbstidspunkt (hvis midlertidigt)\">udloeber</a><a name=\"ehmi-lm-abonnement.udloeber\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Udløbstidspunkt (hvis midlertidigt)</td></tr>\r\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
+  },
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-abonnement",
+  "version" : "0.1.0",
+  "name" : "Abonnement",
+  "title" : "Abonnement",
+  "status" : "draft",
+  "date" : "2026-06-16T14:56:57+02:00",
+  "publisher" : "MedCom",
+  "contact" : [{
+    "name" : "MedCom",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://medcom.dk"
+    }]
+  }],
+  "description" : "Repræsenterer en abonnementsregistrering der definerer hvilke\nhændelser en abonnent (typisk henviseren) ønsker at modtage\nnotifikationer om. Svarer til FHIR Subscription.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "fhir-r4",
+    "uri" : "http://hl7.org/fhir",
+    "name" : "RIM Mapping"
+  }],
+  "kind" : "logical",
+  "abstract" : false,
+  "type" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-abonnement",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
+  "derivation" : "specialization",
+  "snapshot" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version",
+      "valueString" : "4.0.1"
+    }],
+    "element" : [{
+      "id" : "ehmi-lm-abonnement",
+      "path" : "ehmi-lm-abonnement",
+      "short" : "Abonnement",
+      "definition" : "Repræsenterer en abonnementsregistrering der definerer hvilke\nhændelser en abonnent (typisk henviseren) ønsker at modtage\nnotifikationer om. Svarer til FHIR Subscription.",
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Base",
+        "min" : 0,
+        "max" : "*"
+      },
+      "isModifier" : false
+    },
+    {
+      "id" : "ehmi-lm-abonnement.abonnementId",
+      "path" : "ehmi-lm-abonnement.abonnementId",
+      "short" : "Unik identifikator for abonnementet",
+      "definition" : "Unik identifikator for abonnementet",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-abonnement.abonnementId",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Identifier"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.id"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.status",
+      "path" : "ehmi-lm-abonnement.status",
+      "short" : "requested | active | error | off",
+      "definition" : "requested | active | error | off",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-abonnement.status",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "code"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.status"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.kriterie",
+      "path" : "ehmi-lm-abonnement.kriterie",
+      "short" : "FHIR søgekriterium (fx ServiceRequest?requester=...)",
+      "definition" : "FHIR søgekriterium (fx ServiceRequest?requester=...)",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-abonnement.kriterie",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.criteria"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.kanal",
+      "path" : "ehmi-lm-abonnement.kanal",
+      "short" : "Leveringskanal: rest-hook | message | email",
+      "definition" : "Leveringskanal: rest-hook | message | email",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-abonnement.kanal",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "code"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.channel.type"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.endpoint",
+      "path" : "ehmi-lm-abonnement.endpoint",
+      "short" : "URL/endpoint der modtager notifikationer (EHMI)",
+      "definition" : "URL/endpoint der modtager notifikationer (EHMI)",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-abonnement.endpoint",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "url"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.channel.endpoint"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.abonnent",
+      "path" : "ehmi-lm-abonnement.abonnent",
+      "short" : "Den organisation der abonnerer",
+      "definition" : "Den organisation der abonnerer",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-abonnement.abonnent",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-organisation"]
+      }],
+      "mapping" : [{
+        "map" : "Subscription.contact (Organization)"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.oprettetDato",
+      "path" : "ehmi-lm-abonnement.oprettetDato",
+      "short" : "Tidspunkt for oprettelse af abonnementet",
+      "definition" : "Tidspunkt for oprettelse af abonnementet",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-abonnement.oprettetDato",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.meta.lastUpdated"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.udloeber",
+      "path" : "ehmi-lm-abonnement.udloeber",
+      "short" : "Udløbstidspunkt (hvis midlertidigt)",
+      "definition" : "Udløbstidspunkt (hvis midlertidigt)",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-abonnement.udloeber",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.end"
+      }]
+    }]
+  },
+  "differential" : {
+    "element" : [{
+      "id" : "ehmi-lm-abonnement",
+      "path" : "ehmi-lm-abonnement",
+      "short" : "Abonnement",
+      "definition" : "Repræsenterer en abonnementsregistrering der definerer hvilke\nhændelser en abonnent (typisk henviseren) ønsker at modtage\nnotifikationer om. Svarer til FHIR Subscription."
+    },
+    {
+      "id" : "ehmi-lm-abonnement.abonnementId",
+      "path" : "ehmi-lm-abonnement.abonnementId",
+      "short" : "Unik identifikator for abonnementet",
+      "definition" : "Unik identifikator for abonnementet",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Identifier"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.id"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.status",
+      "path" : "ehmi-lm-abonnement.status",
+      "short" : "requested | active | error | off",
+      "definition" : "requested | active | error | off",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "code"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.status"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.kriterie",
+      "path" : "ehmi-lm-abonnement.kriterie",
+      "short" : "FHIR søgekriterium (fx ServiceRequest?requester=...)",
+      "definition" : "FHIR søgekriterium (fx ServiceRequest?requester=...)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.criteria"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.kanal",
+      "path" : "ehmi-lm-abonnement.kanal",
+      "short" : "Leveringskanal: rest-hook | message | email",
+      "definition" : "Leveringskanal: rest-hook | message | email",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "code"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.channel.type"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.endpoint",
+      "path" : "ehmi-lm-abonnement.endpoint",
+      "short" : "URL/endpoint der modtager notifikationer (EHMI)",
+      "definition" : "URL/endpoint der modtager notifikationer (EHMI)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "url"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.channel.endpoint"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.abonnent",
+      "path" : "ehmi-lm-abonnement.abonnent",
+      "short" : "Den organisation der abonnerer",
+      "definition" : "Den organisation der abonnerer",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-organisation"]
+      }],
+      "mapping" : [{
+        "map" : "Subscription.contact (Organization)"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.oprettetDato",
+      "path" : "ehmi-lm-abonnement.oprettetDato",
+      "short" : "Tidspunkt for oprettelse af abonnementet",
+      "definition" : "Tidspunkt for oprettelse af abonnementet",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.meta.lastUpdated"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-abonnement.udloeber",
+      "path" : "ehmi-lm-abonnement.udloeber",
+      "short" : "Udløbstidspunkt (hvis midlertidigt)",
+      "definition" : "Udløbstidspunkt (hvis midlertidigt)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "map" : "Subscription.end"
+      }]
+    }]
+  }
+}

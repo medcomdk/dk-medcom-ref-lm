@@ -1,0 +1,11 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"ehmiendpoint","ehmiendpoint","","","",0,*,"","","","null {[]} {[]}
+","EHMI/eDelivery Endpoint – Logisk Model","Konceptuel logisk model for et EHMI/eDelivery endpoint i dansk sundhedsvæsen.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"ehmiendpoint.ident","ehmiendpoint.ident","","","",1,1,"","","","string {[]} {[]}
+","GLN Identifier","GLN Identifier","","","","","","","","","",,,,,"",,,,"ehmiendpoint.ident",1,1,"",""
+"ehmiendpoint.mimetype","ehmiendpoint.mimetype","","","",1,*,"","","","string {[]} {[]}
+","fhr+json,fhir+xml","fhr+json,fhir+xml","","","","","","","","","",,,,,"",,,,"ehmiendpoint.mimetype",1,*,"",""
+"ehmiendpoint.meddelelsestyper","ehmiendpoint.meddelelsestyper","","","",1,*,"","","","string {[]} {[]}
+","hvilke meddelelsestyper understøttes","hvilke meddelelsestyper understøttes","","","","","","","","","",,,,,"",,,,"ehmiendpoint.meddelelsestyper",1,*,"",""
+"ehmiendpoint.url","ehmiendpoint.url","","","",1,1,"","","","url {[]} {[]}
+","URL for EHMI/eDelivery endpoint","URL for EHMI/eDelivery endpoint","","","","","","","","","",,,,,"",,,,"ehmiendpoint.url",1,1,"",""

@@ -1,0 +1,316 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/ValueSet/body-site",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTBodyStructures",
+    "title" : "SNOMED CT Body Structures",
+    "description" : "This value set includes all codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 442083009 (Anatomical or acquired body site (body structure)).",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.141"],
+    "sources" : ["2.16.840.1.113883.4.642.3.141"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/bundle-type",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "BundleType",
+    "title" : "BundleType",
+    "description" : "Indicates the purpose of a bundle - how it is intended to be used.",
+    "systems" : ["http://hl7.org/fhir/bundle-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.620"],
+    "sources" : ["2.16.840.1.113883.4.642.3.620"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-referral-message-bundle.html" : "EHMI Referring Message Bundle",
+    "StructureDefinition-ehmi-referral-message-response-bundle.html" : "EHMI Referral Message Response Bundle"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/common-tags",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CommonTags",
+    "title" : "Common Tags",
+    "description" : "Common Tag Codes defined by FHIR project",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/common-tags"],
+    "oids" : ["2.16.840.1.113883.4.642.3.79"],
+    "sources" : ["2.16.840.1.113883.4.642.3.79"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-referral-message-header.html" : "EHMI Referral MessageHeader"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/condition-code",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "Condition/Problem/DiagnosisCodes",
+    "title" : "Condition/Problem/Diagnosis Codes",
+    "description" : "Example value set for Condition/Problem/Diagnosis codes.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.161"],
+    "sources" : ["2.16.840.1.113883.4.642.3.161"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/http-verb",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "HTTPVerb",
+    "title" : "HTTPVerb",
+    "description" : "HTTP verbs (in the HTTP command line). See [HTTP rfc](https://tools.ietf.org/html/rfc7231) for details.",
+    "systems" : ["http://hl7.org/fhir/http-verb"],
+    "oids" : ["2.16.840.1.113883.4.642.3.624"],
+    "sources" : ["2.16.840.1.113883.4.642.3.624"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-referral-message-bundle.html" : "EHMI Referring Message Bundle",
+    "StructureDefinition-ehmi-referral-message-response-bundle.html" : "EHMI Referral Message Response Bundle"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/identifier-type",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "Identifier Type Codes",
+    "title" : "IdentifierType",
+    "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0203"],
+    "oids" : ["2.16.840.1.113883.4.642.3.45"],
+    "sources" : ["2.16.840.1.113883.4.642.3.45"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/identifier-use",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "IdentifierUse",
+    "title" : "IdentifierUse",
+    "description" : "Identifies the purpose for this identifier, if known .",
+    "systems" : ["http://hl7.org/fhir/identifier-use"],
+    "oids" : ["2.16.840.1.113883.4.642.3.57"],
+    "sources" : ["2.16.840.1.113883.4.642.3.57"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/languages",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "CommonLanguages",
+    "title" : "Common Languages",
+    "description" : "This value set includes common codes from BCP-47 (http://tools.ietf.org/html/bcp47)",
+    "systems" : ["urn:ietf:bcp:47"],
+    "oids" : ["2.16.840.1.113883.4.642.3.20"],
+    "sources" : ["2.16.840.1.113883.4.642.3.20"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-referral-message-bundle.html" : "EHMI Referring Message Bundle",
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning",
+    "StructureDefinition-ehmi-referral-message-header.html" : "EHMI Referral MessageHeader",
+    "StructureDefinition-ehmi-referral-message-response-bundle.html" : "EHMI Referral Message Response Bundle"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/medication-as-needed-reason",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "SNOMEDCTMedicationAsNeededReasonCodes",
+    "title" : "SNOMED CT Medication As Needed Reason Codes",
+    "description" : "This value set includes all clinical findings from SNOMED CT - provided as an exemplar value set.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.96"],
+    "sources" : ["2.16.840.1.113883.4.642.3.96"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/message-reason-encounter",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ExampleMessageReasonCodes",
+    "title" : "Example Message Reason Codes",
+    "description" : "Example Message Reasons. These are the set of codes that might be used an updating an encounter using admin-update.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/message-reasons-encounter"],
+    "oids" : ["2.16.840.1.113883.4.642.3.378"],
+    "sources" : ["2.16.840.1.113883.4.642.3.378"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-referral-message-header.html" : "EHMI Referral MessageHeader"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/participant-role",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ParticipantRoles",
+    "title" : "Participant Roles",
+    "description" : "Roles of participants that may be included in a care team.  Defined as: Is a Person, Healthcare professional (occupation) or Healthcare related organization (qualifier value).",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.152"],
+    "sources" : ["2.16.840.1.113883.4.642.3.152"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/request-intent",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestIntent",
+    "title" : "RequestIntent",
+    "description" : "Codes indicating the degree of authority/intentionality associated with a request.",
+    "systems" : ["http://hl7.org/fhir/request-intent"],
+    "oids" : ["2.16.840.1.113883.4.642.3.113"],
+    "sources" : ["2.16.840.1.113883.4.642.3.113"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/request-priority",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestPriority",
+    "title" : "Request priority",
+    "description" : "The clinical priority of a diagnostic order.",
+    "systems" : ["http://hl7.org/fhir/request-priority"],
+    "oids" : ["2.16.840.1.113883.4.642.3.115"],
+    "sources" : ["2.16.840.1.113883.4.642.3.115"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/request-status",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestStatus",
+    "title" : "RequestStatus",
+    "description" : "Codes identifying the lifecycle stage of a request.",
+    "systems" : ["http://hl7.org/fhir/request-status"],
+    "oids" : ["2.16.840.1.113883.4.642.3.111"],
+    "sources" : ["2.16.840.1.113883.4.642.3.111"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/response-code",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ResponseType",
+    "title" : "ResponseType",
+    "description" : "The kind of response to a message.",
+    "systems" : ["http://hl7.org/fhir/response-code"],
+    "oids" : ["2.16.840.1.113883.4.642.3.380"],
+    "sources" : ["2.16.840.1.113883.4.642.3.380"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-referral-message-header.html" : "EHMI Referral MessageHeader"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/search-entry-mode",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "SearchEntryMode",
+    "title" : "SearchEntryMode",
+    "description" : "Why an entry is in the result set - whether it's included as a match or because of an _include requirement, or to convey information or warning information about the search process.",
+    "systems" : ["http://hl7.org/fhir/search-entry-mode"],
+    "oids" : ["2.16.840.1.113883.4.642.3.622"],
+    "sources" : ["2.16.840.1.113883.4.642.3.622"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-referral-message-bundle.html" : "EHMI Referring Message Bundle",
+    "StructureDefinition-ehmi-referral-message-response-bundle.html" : "EHMI Referral Message Response Bundle"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/security-labels",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "All Security Labels",
+    "title" : "SecurityLabels",
+    "description" : "A single value set for all security labels defined by FHIR.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActReason",
+    "http://terminology.hl7.org/CodeSystem/v3-ActUSPrivacyLaw",
+    "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+    "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"],
+    "oids" : ["2.16.840.1.113883.4.642.3.47"],
+    "sources" : ["2.16.840.1.113883.4.642.3.47"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-referral-message-header.html" : "EHMI Referral MessageHeader"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/servicerequest-category",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ServiceRequestCategoryCodes",
+    "title" : "Service Request Category Codes",
+    "description" : "An example value set of SNOMED CT concepts that can classify a requested service",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.434"],
+    "sources" : ["2.16.840.1.113883.4.642.3.434"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/servicerequest-orderdetail",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ServiceRequestOrderDetailsCodes",
+    "title" : "Service Request Order Details Codes",
+    "description" : "An example value set of Codified order entry details concepts.  These concepts only make sense in the context of what is being ordered.  This example is for a patient ventilation order",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.435"],
+    "sources" : ["2.16.840.1.113883.4.642.3.435"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-message-event-vs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "EHMIMessageEventVS",
+    "title" : "EHMI Message Event ValueSet",
+    "description" : "ValueSet over gyldige meddelelseshaendelser til brug i MessageHeader.eventCoding.",
+    "systems" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/CodeSystem/ehmi-message-event-cs"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-referral-message-header.html" : "EHMI Referral MessageHeader"
+  },
+  {
+    "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-referral-code-vs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "EHMIReferralCodeVS",
+    "title" : "EHMI Referral Code ValueSet",
+    "description" : "Ydelseskoder for EHMI-henvisninger – SKS procedurer og SNOMED CT.",
+    "systems" : ["urn:oid:1.2.208.176.2.4", "http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
+    "version" : "3.0.0",
+    "status" : "active",
+    "name" : "ServiceDeliveryLocationRoleType",
+    "title" : "ServiceDeliveryLocationRoleType",
+    "description" : "A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-RoleCode"],
+    "oids" : ["2.16.840.1.113883.1.11.17660"],
+    "sources" : ["2.16.840.1.113883.1.11.17660"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  }]
+}

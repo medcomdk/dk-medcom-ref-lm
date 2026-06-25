@@ -1,0 +1,611 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "ehmi-lm-henvisning",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureDefinition ehmi-lm-henvisning</b></p><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"The logical name of the element\">Name</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Information about the use of the element\">Flags</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Minimum and Maximum # of times the element can appear in the instance\">Card.</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px; width: 100px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Reference to the type of the element\">Type</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Additional information about the element\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning\" title=\"Repræsenterer en klinisk anmodning om at viderehenvise en patient\ntil et specialtilbud eller en ydelse. Svarer til FHIR ServiceRequest.\nDækker hele livscyklussen fra oprettelse til afslutning.\">ehmi-lm-henvisning</a><a name=\"ehmi-lm-henvisning\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.5\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.5\">*</span></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://build.fhir.org/types.html#Base\">Base</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Henvisning</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.henvisningsId\" title=\"Unik identifikator for henvisningen\">henvisningsId</a><a name=\"ehmi-lm-henvisning.henvisningsId\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Unik identifikator for henvisningen</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.status\" title=\"proposed | active | on-hold | revoked | completed\">status</a><a name=\"ehmi-lm-henvisning.status\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">proposed | active | on-hold | revoked | completed</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.prioritet\" title=\"routine | urgent | asap | stat\">prioritet</a><a name=\"ehmi-lm-henvisning.prioritet\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">routine | urgent | asap | stat</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.oprettetDato\" title=\"Tidspunkt for oprettelse af henvisningen\">oprettetDato</a><a name=\"ehmi-lm-henvisning.oprettetDato\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Tidspunkt for oprettelse af henvisningen</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.aendretDato\" title=\"Tidspunkt for seneste rettelse (revision)\">aendretDato</a><a name=\"ehmi-lm-henvisning.aendretDato\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Tidspunkt for seneste rettelse (revision)</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.ydelseskode\" title=\"Ønsket ydelse eller specialale (SKS/SNOMED CT)\">ydelseskode</a><a name=\"ehmi-lm-henvisning.ydelseskode\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Ønsket ydelse eller specialale (SKS/SNOMED CT)</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.indikation\" title=\"Klinisk indikation / diagnose (SKS/SNOMED CT)\">indikation</a><a name=\"ehmi-lm-henvisning.indikation\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..*</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Klinisk indikation / diagnose (SKS/SNOMED CT)<br/></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.kliniskNote\" title=\"Fri tekst: anamnese, aktuelle problemer, begrundelse\">kliniskNote</a><a name=\"ehmi-lm-henvisning.kliniskNote\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Fri tekst: anamnese, aktuelle problemer, begrundelse</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.oensketTidspunkt\" title=\"Ønsket tidspunkt for undersøgelse eller behandling\">oensketTidspunkt</a><a name=\"ehmi-lm-henvisning.oensketTidspunkt\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Ønsket tidspunkt for undersøgelse eller behandling</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_reference.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.erstattetAf\" title=\"Reference til ny/revideret henvisning (replaces)\">erstattetAf</a><a name=\"ehmi-lm-henvisning.erstattetAf\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(<a href=\"StructureDefinition-ehmi-lm-henvisning.html\">Henvisning</a>)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Reference til ny/revideret henvisning (replaces)</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_reference.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.patient\" title=\"Den patient der henvises\">patient</a><a name=\"ehmi-lm-henvisning.patient\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(<a href=\"StructureDefinition-ehmi-lm-patient.html\">Patient</a>)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Den patient der henvises</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_reference.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.henviser\" title=\"Den behandler der opretter og afsender\">henviser</a><a name=\"ehmi-lm-henvisning.henviser\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(<a href=\"StructureDefinition-ehmi-lm-behandler.html\">Behandler</a>)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Den behandler der opretter og afsender</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_reference.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.afsenderOrganisation\" title=\"Afsendende organisation (klinik/praksis)\">afsenderOrganisation</a><a name=\"ehmi-lm-henvisning.afsenderOrganisation\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(<a href=\"StructureDefinition-ehmi-lm-organisation.html\">Organisation</a>)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Afsendende organisation (klinik/praksis)</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_reference.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.modtagerOrganisation\" title=\"Modtagende organisation (visitator)\">modtagerOrganisation</a><a name=\"ehmi-lm-henvisning.modtagerOrganisation\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(<a href=\"StructureDefinition-ehmi-lm-organisation.html\">Organisation</a>)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Modtagende organisation (visitator)</td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_reference.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.dokumentation\" title=\"Vedlagte kliniske bilag og resultater\">dokumentation</a><a name=\"ehmi-lm-henvisning.dokumentation\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(<a href=\"StructureDefinition-ehmi-lm-klinisk-dokumentation.html\">KliniskDokumentation</a>)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Vedlagte kliniske bilag og resultater<br/></td></tr>\r\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_reference.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/> <a href=\"StructureDefinition-ehmi-lm-henvisning-definitions.html#ehmi-lm-henvisning.booking\" title=\"Tilknyttet booking ved accept\">booking</a><a name=\"ehmi-lm-henvisning.booking\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(<a href=\"StructureDefinition-ehmi-lm-booking.html\">Booking</a>)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Tilknyttet booking ved accept</td></tr>\r\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
+  },
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-henvisning",
+  "version" : "0.1.0",
+  "name" : "Henvisning",
+  "title" : "Henvisning",
+  "status" : "draft",
+  "date" : "2026-06-16T14:56:57+02:00",
+  "publisher" : "MedCom",
+  "contact" : [{
+    "name" : "MedCom",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://medcom.dk"
+    }]
+  }],
+  "description" : "Repræsenterer en klinisk anmodning om at viderehenvise en patient\ntil et specialtilbud eller en ydelse. Svarer til FHIR ServiceRequest.\nDækker hele livscyklussen fra oprettelse til afslutning.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "fhir-r4",
+    "uri" : "http://hl7.org/fhir",
+    "name" : "RIM Mapping"
+  }],
+  "kind" : "logical",
+  "abstract" : false,
+  "type" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-henvisning",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
+  "derivation" : "specialization",
+  "snapshot" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version",
+      "valueString" : "4.0.1"
+    }],
+    "element" : [{
+      "id" : "ehmi-lm-henvisning",
+      "path" : "ehmi-lm-henvisning",
+      "short" : "Henvisning",
+      "definition" : "Repræsenterer en klinisk anmodning om at viderehenvise en patient\ntil et specialtilbud eller en ydelse. Svarer til FHIR ServiceRequest.\nDækker hele livscyklussen fra oprettelse til afslutning.",
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "Base",
+        "min" : 0,
+        "max" : "*"
+      },
+      "isModifier" : false
+    },
+    {
+      "id" : "ehmi-lm-henvisning.henvisningsId",
+      "path" : "ehmi-lm-henvisning.henvisningsId",
+      "short" : "Unik identifikator for henvisningen",
+      "definition" : "Unik identifikator for henvisningen",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.henvisningsId",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Identifier"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.identifier"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.status",
+      "path" : "ehmi-lm-henvisning.status",
+      "short" : "proposed | active | on-hold | revoked | completed",
+      "definition" : "proposed | active | on-hold | revoked | completed",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.status",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "code"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.status"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.prioritet",
+      "path" : "ehmi-lm-henvisning.prioritet",
+      "short" : "routine | urgent | asap | stat",
+      "definition" : "routine | urgent | asap | stat",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.prioritet",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "code"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.priority"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.oprettetDato",
+      "path" : "ehmi-lm-henvisning.oprettetDato",
+      "short" : "Tidspunkt for oprettelse af henvisningen",
+      "definition" : "Tidspunkt for oprettelse af henvisningen",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.oprettetDato",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.authoredOn"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.aendretDato",
+      "path" : "ehmi-lm-henvisning.aendretDato",
+      "short" : "Tidspunkt for seneste rettelse (revision)",
+      "definition" : "Tidspunkt for seneste rettelse (revision)",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.aendretDato",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.meta.lastUpdated"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.ydelseskode",
+      "path" : "ehmi-lm-henvisning.ydelseskode",
+      "short" : "Ønsket ydelse eller specialale (SKS/SNOMED CT)",
+      "definition" : "Ønsket ydelse eller specialale (SKS/SNOMED CT)",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.ydelseskode",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.code"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.indikation",
+      "path" : "ehmi-lm-henvisning.indikation",
+      "short" : "Klinisk indikation / diagnose (SKS/SNOMED CT)",
+      "definition" : "Klinisk indikation / diagnose (SKS/SNOMED CT)",
+      "min" : 1,
+      "max" : "*",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.indikation",
+        "min" : 1,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.reasonCode"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.kliniskNote",
+      "path" : "ehmi-lm-henvisning.kliniskNote",
+      "short" : "Fri tekst: anamnese, aktuelle problemer, begrundelse",
+      "definition" : "Fri tekst: anamnese, aktuelle problemer, begrundelse",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.kliniskNote",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.note.text"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.oensketTidspunkt",
+      "path" : "ehmi-lm-henvisning.oensketTidspunkt",
+      "short" : "Ønsket tidspunkt for undersøgelse eller behandling",
+      "definition" : "Ønsket tidspunkt for undersøgelse eller behandling",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.oensketTidspunkt",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.occurrenceDateTime"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.erstattetAf",
+      "path" : "ehmi-lm-henvisning.erstattetAf",
+      "short" : "Reference til ny/revideret henvisning (replaces)",
+      "definition" : "Reference til ny/revideret henvisning (replaces)",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.erstattetAf",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-henvisning"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.replaces"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.patient",
+      "path" : "ehmi-lm-henvisning.patient",
+      "short" : "Den patient der henvises",
+      "definition" : "Den patient der henvises",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.patient",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-patient"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.subject"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.henviser",
+      "path" : "ehmi-lm-henvisning.henviser",
+      "short" : "Den behandler der opretter og afsender",
+      "definition" : "Den behandler der opretter og afsender",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.henviser",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-behandler"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.requester"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.afsenderOrganisation",
+      "path" : "ehmi-lm-henvisning.afsenderOrganisation",
+      "short" : "Afsendende organisation (klinik/praksis)",
+      "definition" : "Afsendende organisation (klinik/praksis)",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.afsenderOrganisation",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-organisation"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.requester (Organization)"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.modtagerOrganisation",
+      "path" : "ehmi-lm-henvisning.modtagerOrganisation",
+      "short" : "Modtagende organisation (visitator)",
+      "definition" : "Modtagende organisation (visitator)",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.modtagerOrganisation",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-organisation"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.performer"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.dokumentation",
+      "path" : "ehmi-lm-henvisning.dokumentation",
+      "short" : "Vedlagte kliniske bilag og resultater",
+      "definition" : "Vedlagte kliniske bilag og resultater",
+      "min" : 0,
+      "max" : "*",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.dokumentation",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-klinisk-dokumentation"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.supportingInfo"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.booking",
+      "path" : "ehmi-lm-henvisning.booking",
+      "short" : "Tilknyttet booking ved accept",
+      "definition" : "Tilknyttet booking ved accept",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "ehmi-lm-henvisning.booking",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-booking"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.basedOn (Appointment)"
+      }]
+    }]
+  },
+  "differential" : {
+    "element" : [{
+      "id" : "ehmi-lm-henvisning",
+      "path" : "ehmi-lm-henvisning",
+      "short" : "Henvisning",
+      "definition" : "Repræsenterer en klinisk anmodning om at viderehenvise en patient\ntil et specialtilbud eller en ydelse. Svarer til FHIR ServiceRequest.\nDækker hele livscyklussen fra oprettelse til afslutning."
+    },
+    {
+      "id" : "ehmi-lm-henvisning.henvisningsId",
+      "path" : "ehmi-lm-henvisning.henvisningsId",
+      "short" : "Unik identifikator for henvisningen",
+      "definition" : "Unik identifikator for henvisningen",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Identifier"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.identifier"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.status",
+      "path" : "ehmi-lm-henvisning.status",
+      "short" : "proposed | active | on-hold | revoked | completed",
+      "definition" : "proposed | active | on-hold | revoked | completed",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "code"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.status"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.prioritet",
+      "path" : "ehmi-lm-henvisning.prioritet",
+      "short" : "routine | urgent | asap | stat",
+      "definition" : "routine | urgent | asap | stat",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "code"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.priority"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.oprettetDato",
+      "path" : "ehmi-lm-henvisning.oprettetDato",
+      "short" : "Tidspunkt for oprettelse af henvisningen",
+      "definition" : "Tidspunkt for oprettelse af henvisningen",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.authoredOn"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.aendretDato",
+      "path" : "ehmi-lm-henvisning.aendretDato",
+      "short" : "Tidspunkt for seneste rettelse (revision)",
+      "definition" : "Tidspunkt for seneste rettelse (revision)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.meta.lastUpdated"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.ydelseskode",
+      "path" : "ehmi-lm-henvisning.ydelseskode",
+      "short" : "Ønsket ydelse eller specialale (SKS/SNOMED CT)",
+      "definition" : "Ønsket ydelse eller specialale (SKS/SNOMED CT)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.code"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.indikation",
+      "path" : "ehmi-lm-henvisning.indikation",
+      "short" : "Klinisk indikation / diagnose (SKS/SNOMED CT)",
+      "definition" : "Klinisk indikation / diagnose (SKS/SNOMED CT)",
+      "min" : 1,
+      "max" : "*",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.reasonCode"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.kliniskNote",
+      "path" : "ehmi-lm-henvisning.kliniskNote",
+      "short" : "Fri tekst: anamnese, aktuelle problemer, begrundelse",
+      "definition" : "Fri tekst: anamnese, aktuelle problemer, begrundelse",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.note.text"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.oensketTidspunkt",
+      "path" : "ehmi-lm-henvisning.oensketTidspunkt",
+      "short" : "Ønsket tidspunkt for undersøgelse eller behandling",
+      "definition" : "Ønsket tidspunkt for undersøgelse eller behandling",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.occurrenceDateTime"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.erstattetAf",
+      "path" : "ehmi-lm-henvisning.erstattetAf",
+      "short" : "Reference til ny/revideret henvisning (replaces)",
+      "definition" : "Reference til ny/revideret henvisning (replaces)",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-henvisning"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.replaces"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.patient",
+      "path" : "ehmi-lm-henvisning.patient",
+      "short" : "Den patient der henvises",
+      "definition" : "Den patient der henvises",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-patient"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.subject"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.henviser",
+      "path" : "ehmi-lm-henvisning.henviser",
+      "short" : "Den behandler der opretter og afsender",
+      "definition" : "Den behandler der opretter og afsender",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-behandler"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.requester"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.afsenderOrganisation",
+      "path" : "ehmi-lm-henvisning.afsenderOrganisation",
+      "short" : "Afsendende organisation (klinik/praksis)",
+      "definition" : "Afsendende organisation (klinik/praksis)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-organisation"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.requester (Organization)"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.modtagerOrganisation",
+      "path" : "ehmi-lm-henvisning.modtagerOrganisation",
+      "short" : "Modtagende organisation (visitator)",
+      "definition" : "Modtagende organisation (visitator)",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-organisation"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.performer"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.dokumentation",
+      "path" : "ehmi-lm-henvisning.dokumentation",
+      "short" : "Vedlagte kliniske bilag og resultater",
+      "definition" : "Vedlagte kliniske bilag og resultater",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-klinisk-dokumentation"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.supportingInfo"
+      }]
+    },
+    {
+      "id" : "ehmi-lm-henvisning.booking",
+      "path" : "ehmi-lm-henvisning.booking",
+      "short" : "Tilknyttet booking ved accept",
+      "definition" : "Tilknyttet booking ved accept",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-booking"]
+      }],
+      "mapping" : [{
+        "map" : "ServiceRequest.basedOn (Appointment)"
+      }]
+    }]
+  }
+}

@@ -1,0 +1,5 @@
+URL,Version,Status,OIDs,Name,Title,Description,Uses,Used,Sources
+http://hl7.org/fhir/ValueSet/condition-code,4.0.1,draft,"2.16.840.1.113883.4.642.3.161",Condition/Problem/DiagnosisCodes,Condition/Problem/Diagnosis Codes,"Example value set for Condition/Problem/Diagnosis codes.","StructureDefinition/ehmi-service-request","SCT"
+http://hl7.org/fhir/ValueSet/request-priority,4.0.1,draft,"2.16.840.1.113883.4.642.3.115",RequestPriority,Request priority,"The clinical priority of a diagnostic order.","StructureDefinition/ehmi-service-request","hl7.fhir.r4.core"
+http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-message-event-vs,0.1.0,draft,,EHMIMessageEventVS,EHMI Message Event ValueSet,"ValueSet over gyldige meddelelseshaendelser til brug i MessageHeader.eventCoding.","StructureDefinition/ehmi-referral-message-header","Internal"
+http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-referral-code-vs,0.1.0,draft,,EHMIReferralCodeVS,EHMI Referral Code ValueSet,"Ydelseskoder for EHMI-henvisninger – SKS procedurer og SNOMED CT.","StructureDefinition/ehmi-service-request","SCT,Other"

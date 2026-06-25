@@ -1,0 +1,3 @@
+URL,Version,Status,OIDs,Name,Title,Description,Uses,Used,Sources
+http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-message-event-vs,0.1.0,draft,,EHMIMessageEventVS,EHMI Message Event ValueSet,"ValueSet over gyldige meddelelseshaendelser til brug i MessageHeader.eventCoding.",,"Internal"
+http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-referral-code-vs,0.1.0,draft,,EHMIReferralCodeVS,EHMI Referral Code ValueSet,"Ydelseskoder for EHMI-henvisninger – SKS procedurer og SNOMED CT.",,"SCT,Other"

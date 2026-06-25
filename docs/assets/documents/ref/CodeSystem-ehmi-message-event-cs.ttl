@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://medcomehmi.dk/ig/dk-medcom-ref-lm/CodeSystem/ehmi-message-event-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ehmi-message-event-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem ehmi-message-event-cs</b></p><a name=\"ehmi-message-event-cs\"> </a><a name=\"hcehmi-message-event-cs\"> </a><p>This  code system <code>http://medcomehmi.dk/ig/dk-medcom-ref-lm/CodeSystem/ehmi-message-event-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">new-referral<a name=\"ehmi-message-event-cs-new-referral\"> </a></td><td>Ny henvisning</td><td>Afsendelse af en ny henvisning</td></tr><tr><td style=\"white-space:nowrap\">cancel-referral<a name=\"ehmi-message-event-cs-cancel-referral\"> </a></td><td>Annuller henvisning</td><td>Tilbagetrækning af en tidligere sendt henvisning</td></tr><tr><td style=\"white-space:nowrap\">update-referral<a name=\"ehmi-message-event-cs-update-referral\"> </a></td><td>Opdater henvisning</td><td>Rettelse/tilfoejelse til eksisterende henvisning</td></tr><tr><td style=\"white-space:nowrap\">acknowledge<a name=\"ehmi-message-event-cs-acknowledge\"> </a></td><td>Kvittering</td><td>Teknisk kvittering for modtagelse</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "http://medcomehmi.dk/ig/dk-medcom-ref-lm/CodeSystem/ehmi-message-event-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "EHMIMessageEventCS"] ; # 
+  fhir:title [ fhir:v "EHMI Message Event Codes"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-06-16T14:56:57+02:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "MedCom"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "MedCom" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://medcom.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Koder for meddelelseshaendelser i EHMI-meddelelseskommunikation."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "DK" ] ;
+       fhir:display [ fhir:v "Denmark" ]
+     ] )
+  ] ) ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "4"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "new-referral" ] ;
+     fhir:display [ fhir:v "Ny henvisning" ] ;
+     fhir:definition [ fhir:v "Afsendelse af en ny henvisning" ]
+  ] [
+     fhir:code [ fhir:v "cancel-referral" ] ;
+     fhir:display [ fhir:v "Annuller henvisning" ] ;
+     fhir:definition [ fhir:v "Tilbagetrækning af en tidligere sendt henvisning" ]
+  ] [
+     fhir:code [ fhir:v "update-referral" ] ;
+     fhir:display [ fhir:v "Opdater henvisning" ] ;
+     fhir:definition [ fhir:v "Rettelse/tilfoejelse til eksisterende henvisning" ]
+  ] [
+     fhir:code [ fhir:v "acknowledge" ] ;
+     fhir:display [ fhir:v "Kvittering" ] ;
+     fhir:definition [ fhir:v "Teknisk kvittering for modtagelse" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

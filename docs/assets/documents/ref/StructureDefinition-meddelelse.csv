@@ -1,0 +1,13 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"meddelelse","meddelelse","","","",0,*,"","","","null {[]} {[]}
+","Meddelelse – Logisk Model","Konceptuel logisk model for en Meddelelse i dansk sundhedsvæsen.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"meddelelse.messageId","meddelelse.messageId","","","",1,1,"","","","id {[]} {[]}
+","Unik meddelelsesidentifikator (UUID)","Unik meddelelsesidentifikator (UUID)","","","","","","","","","",,,,,"",,,,"meddelelse.messageId",1,1,"",""
+"meddelelse.timestamp","meddelelse.timestamp","","","",1,1,"","","","dateTime {[]} {[]}
+","Afsendelsestidspunkt","Afsendelsestidspunkt","","","","","","","","","",,,,,"",,,,"meddelelse.timestamp",1,1,"",""
+"meddelelse.haendelse","meddelelse.haendelse","","","",1,1,"","","","Coding {[]} {[]}
+","Haendelsestype (ny/annuller/opdater)","Haendelsestype (ny/annuller/opdater)","","","","","","","","","",,,,,"",,,,"meddelelse.haendelse",1,1,"",""
+"meddelelse.afsender","meddelelse.afsender","","","",1,1,"","","","http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/kommunikator {[]} {[]}
+","Afsendende organisation","Afsendende organisation","","","","","","","","","",,,,,"",,,,"meddelelse.afsender",1,1,"",""
+"meddelelse.modtager","meddelelse.modtager","","","",1,*,"","","","http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/kommunikator {[]} {[]}
+","Modtagende organisation","Modtagende organisation","","","","","","","","","",,,,,"",,,,"meddelelse.modtager",1,*,"",""

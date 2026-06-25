@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Fhir Henvisning Use Cases Cgpt - DK MEDCOM REFERRAL LM v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7-dk.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"16"}
+    h3,h4,h5,h6{--heading-prefix:"16"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.medcom.dk">
+            <img height="50" alt="Visit MedComs website" src="assets/images/dark-medcom-logo.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>        
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">DK MEDCOM REFERRAL LM</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - draft
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">More
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="toc.html">Table of Contents</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Fhir Henvisning Use Cases Cgpt</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">DK MEDCOM REFERRAL LM - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://medcomehmi.dk/ig/dk-medcom-ref-lm/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Fhir Henvisning Use Cases Cgpt</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#fhir-henvisning--use-cases" id="markdown-toc-fhir-henvisning--use-cases">FHIR Henvisning – Use Cases</a>    <ul>
+      <li><a href="#henviserens-use-cases" id="markdown-toc-henviserens-use-cases">Henviserens use cases</a>        <ul>
+          <li><a href="#uc-11-oprette-en-ny-henvisning" id="markdown-toc-uc-11-oprette-en-ny-henvisning">UC 1.1 Oprette en ny henvisning</a></li>
+          <li><a href="#uc-12-tilknytte-klinisk-dokumentation" id="markdown-toc-uc-12-tilknytte-klinisk-dokumentation">UC 1.2 Tilknytte klinisk dokumentation</a></li>
+          <li><a href="#uc-13-ændre-en-afsendt-henvisning" id="markdown-toc-uc-13-ændre-en-afsendt-henvisning">UC 1.3 Ændre en afsendt henvisning</a></li>
+          <li><a href="#uc-14-tilbagekalde-en-henvisning" id="markdown-toc-uc-14-tilbagekalde-en-henvisning">UC 1.4 Tilbagekalde en henvisning</a></li>
+          <li><a href="#uc-15-monitorere-status-på-afsendte-henvisninger" id="markdown-toc-uc-15-monitorere-status-på-afsendte-henvisninger">UC 1.5 Monitorere status på afsendte henvisninger</a></li>
+          <li><a href="#uc-16-modtage-afgørelse-fra-visitatoren" id="markdown-toc-uc-16-modtage-afgørelse-fra-visitatoren">UC 1.6 Modtage afgørelse fra visitatoren</a></li>
+        </ul>
+      </li>
+      <li><a href="#visitatorens-use-cases" id="markdown-toc-visitatorens-use-cases">Visitatorens use cases</a>        <ul>
+          <li><a href="#uc-21-modtage-og-kvittere-for-ny-henvisning" id="markdown-toc-uc-21-modtage-og-kvittere-for-ny-henvisning">UC 2.1 Modtage og kvittere for ny henvisning</a></li>
+          <li><a href="#uc-22-triagere-og-prioritere-en-henvisning" id="markdown-toc-uc-22-triagere-og-prioritere-en-henvisning">UC 2.2 Triagere og prioritere en henvisning</a></li>
+          <li><a href="#uc-23-acceptere-en-henvisning-og-booke-forløb" id="markdown-toc-uc-23-acceptere-en-henvisning-og-booke-forløb">UC 2.3 Acceptere en henvisning og booke forløb</a></li>
+          <li><a href="#uc-24-afvise-en-henvisning" id="markdown-toc-uc-24-afvise-en-henvisning">UC 2.4 Afvise en henvisning</a></li>
+          <li><a href="#uc-25-videresende-til-anden-modtager" id="markdown-toc-uc-25-videresende-til-anden-modtager">UC 2.5 Videresende til anden modtager</a></li>
+          <li><a href="#uc-26-ændre-prioritet-på-en-modtaget-henvisning" id="markdown-toc-uc-26-ændre-prioritet-på-en-modtaget-henvisning">UC 2.6 Ændre prioritet på en modtaget henvisning</a></li>
+        </ul>
+      </li>
+      <li><a href="#udvekslingsdialog" id="markdown-toc-udvekslingsdialog">Udvekslingsdialog</a>        <ul>
+          <li><a href="#uc-31-anmode-om-supplerende-oplysninger" id="markdown-toc-uc-31-anmode-om-supplerende-oplysninger">UC 3.1 Anmode om supplerende oplysninger</a></li>
+          <li><a href="#uc-32-besvare-anmodning-om-supplement" id="markdown-toc-uc-32-besvare-anmodning-om-supplement">UC 3.2 Besvare anmodning om supplement</a></li>
+          <li><a href="#uc-33-faglig-afklaring-i-dialog" id="markdown-toc-uc-33-faglig-afklaring-i-dialog">UC 3.3 Faglig afklaring i dialog</a></li>
+          <li><a href="#uc-34-statusnotifikation-til-henviser" id="markdown-toc-uc-34-statusnotifikation-til-henviser">UC 3.4 Statusnotifikation til henviser</a></li>
+          <li><a href="#uc-35-aftale-om-alternativ-visitation" id="markdown-toc-uc-35-aftale-om-alternativ-visitation">UC 3.5 Aftale om alternativ visitation</a></li>
+          <li><a href="#uc-36-korrektionsaftale-om-fejl-i-afsendt-henvisning" id="markdown-toc-uc-36-korrektionsaftale-om-fejl-i-afsendt-henvisning">UC 3.6 Korrektionsaftale om fejl i afsendt henvisning</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="fhir-henvisning--use-cases">FHIR Henvisning – Use Cases</h1>
+
+<h2 id="henviserens-use-cases">Henviserens use cases</h2>
+
+<h3 id="uc-11-oprette-en-ny-henvisning">UC 1.1 Oprette en ny henvisning</h3>
+<p>Henviseren udfærdiger og afsender en ny henvisning til et modtagende tilbud. Henvisningen repræsenteres som en ServiceRequest -ressource med status proposed og sendes i en FHIR- Bundle . Henvisningen indeholder patientoplysninger, indikation, hastegrad og ønsket ydelse.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som henviser ønsker jeg at kunne oprette og afsende en struktureret henvisning via FHIR, <br />når jeg har truffet en klinisk beslutning om at viderehenvise en patient, <br />så visitatoren modtager alle nødvendige oplysninger på et standardiseret format.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 0%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-12-tilknytte-klinisk-dokumentation">UC 1.2 Tilknytte klinisk dokumentation</h3>
+<p>Henviseren vedhæfter supplerende klinisk materiale til en eksisterende henvisning — fx laboratoriesvar, billeddiagnostik eller tidligere epikriser. Materialet knyttes til ServiceRequest -ressourcen via referencer til DiagnosticReport , Media eller DocumentReference .</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som henviser ønsker jeg at kunne vedhæfte relevant klinisk dokumentation til en eksisterende henvisning, <br />når jeg vurderer at visitatoren har brug for supplerende materiale for at træffe en god afgørelse, <br />så beslutningsgrundlaget er samlet ét sted.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.2 Tilknytte klinisk dokumentation.svg" alt="1.2 Tilknytte klinisk dokumentation" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-13-ændre-en-afsendt-henvisning">UC 1.3 Ændre en afsendt henvisning</h3>
+<p>Henviseren opdaterer indholdet af en allerede afsendt henvisning — fx korrigerer indikation, hastegrad eller kontaktoplysninger. Opdateringen sker via en PUT -operation på den eksisterende ServiceRequest , og der sættes et revisionsflag så visitatoren notificeres.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som henviser ønsker jeg at kunne rette indholdet i en allerede afsendt henvisning, <br />når jeg opdager en fejl eller patientens kliniske situation ændrer sig, <br />så visitatoren altid arbejder ud fra korrekte og aktuelle oplysninger.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.3.svg" alt="1.3.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-14-tilbagekalde-en-henvisning">UC 1.4 Tilbagekalde en henvisning</h3>
+<p>Henviseren annullerer en afsendt henvisning der endnu ikke er ekspederet. ServiceRequest -status sættes til revoked og en notifikation sendes til visitatoren.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som henviser ønsker jeg at kunne tilbagekalde en afsendt henvisning, <br />når patienten ikke længere ønsker forløbet eller det kliniske grundlag er bortfaldet, <br />så visitatoren ikke bruger ressourcer på en henvisning der ikke skal ekspederes.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-15-monitorere-status-på-afsendte-henvisninger">UC 1.5 Monitorere status på afsendte henvisninger</h3>
+<p>Henviseren følger løbende op på status for egne udestående henvisninger. Dette kan ske via FHIR-subscription (push) eller ved periodisk polling mod visitatorens FHIR-endpoint.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som henviser ønsker jeg løbende at kunne se status på mine afsendte og udestående henvisninger, <br />når jeg har behov for overblik over patienternes videre forløb, <br />så jeg kan følge op og informere patienterne korrekt.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-16-modtage-afgørelse-fra-visitatoren">UC 1.6 Modtage afgørelse fra visitatoren</h3>
+<p>Henviseren modtager visitatorens endelige afgørelse — accept, afvisning eller alternativt tilbud — og integrerer denne i eget journalsystem. Afgørelsen leveres som en Task -ressource eller notifikation med reference til den oprindelige ServiceRequest .</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som henviser ønsker jeg automatisk at modtage visitatorens afgørelse i mit journalsystem, <br />når visitatoren har truffet beslutning om accept, afvisning eller alternativt tilbud, <br />så jeg hurtigt kan handle og orientere patienten.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h2 id="visitatorens-use-cases">Visitatorens use cases</h2>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-21-modtage-og-kvittere-for-ny-henvisning">UC 2.1 Modtage og kvittere for ny henvisning</h3>
+<p>Visitatoren modtager en indkommende FHIR- Bundle med en ny ServiceRequest og sender en teknisk kvittering (ACK) tilbage til afsendersystemet. Henvisningen registreres med status active eller on-hold afhængigt af triagekapacitet.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som visitator ønsker jeg automatisk at modtage og kvittere for indkomne henvisninger via FHIR, <br />når en ny ServiceRequest ankommer i mit endpoint, <br />så afsenderen hurtigt får bekræftet at henvisningen er modtaget korrekt.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-22-triagere-og-prioritere-en-henvisning">UC 2.2 Triagere og prioritere en henvisning</h3>
+<p>Visitatoren vurderer henvisningens faglige indhold, klassificerer hastegrad og prioriterer i forhold til øvrige indkomne henvisninger. Triage-udfaldet dokumenteres i en Task -ressource med udfald og begrundelse.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som visitator ønsker jeg at kunne foretage en struktureret triage af en modtaget henvisning og dokumentere mit udfald, <br />når en ny eller opdateret henvisning er klar til klinisk vurdering, <br />så prioriteringen er sporbar og ensartet på tværs af alle indkomne sager.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-23-acceptere-en-henvisning-og-booke-forløb">UC 2.3 Acceptere en henvisning og booke forløb</h3>
+<p>Visitatoren accepterer henvisningen og opretter et forløb. Der bookes en tid, og ServiceRequest -status opdateres til active . En Appointment -ressource oprettes og linkes til henvisningen.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som visitator ønsker jeg at kunne acceptere en henvisning og oprette en booking, <br />når min visitationsafgørelse er positiv, <br />så patienten får en tid og henviseren automatisk modtager bekræftelsen.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-24-afvise-en-henvisning">UC 2.4 Afvise en henvisning</h3>
+<p>Visitatoren afviser henvisningen med en faglig eller kapacitetsmæssig begrundelse. ServiceRequest -status sættes til revoked med en Task -ressource der angiver årsag til afvisning.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som visitator ønsker jeg at kunne afvise en henvisning med en dokumenteret begrundelse, <br />når indikationen ikke er opfyldt eller kapaciteten er nået, <br />så henviseren forstår årsagen og kan tage stilling til næste skridt for patienten.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-25-videresende-til-anden-modtager">UC 2.5 Videresende til anden modtager</h3>
+<p>Visitatoren vurderer at henvisningen hører hjemme et andet sted og videresender. Der oprettes en ny ServiceRequest med reference til den originale via replaces -attributten, og der sendes notifikation til den oprindelige henviser.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som visitator ønsker jeg at kunne videresende en fejlplaceret henvisning til rette modtager, <br />når jeg vurderer at et andet tilbud er bedre egnet, <br />så patienten ikke unødigt forsinkes og henviseren holdes orienteret om omdirigeringen.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-26-ændre-prioritet-på-en-modtaget-henvisning">UC 2.6 Ændre prioritet på en modtaget henvisning</h3>
+<p>Visitatoren revurderer hastegraden for en allerede modtaget henvisning — fx på baggrund af ny klinisk information eller ændret kapacitetssituation. Prioriteten opdateres på ServiceRequest og der sendes notifikation til henviseren.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som visitator ønsker jeg at kunne justere prioriteten på en allerede modtaget henvisning, <br />når ny klinisk information eller ændret kapacitetssituation tilsiger det, <br />så den kliniske hastegrad afspejles korrekt og henviseren notificeres om ændringen.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h2 id="udvekslingsdialog">Udvekslingsdialog</h2>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-31-anmode-om-supplerende-oplysninger">UC 3.1 Anmode om supplerende oplysninger</h3>
+<p>Visitatoren mangler oplysninger for at kunne triagere og sender en struktureret anmodning til henviseren om at supplere med konkrete kliniske data — fx blodprøveresultater, BMI, medicinliste eller tidligere forløb.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som visitator ønsker jeg at kunne sende en struktureret anmodning om supplerende oplysninger til henviseren, <br />når grundlaget for triage er utilstrækkeligt, <br />så jeg kan træffe en fagligt forsvarlig visitationsafgørelse uden at afvise unødigt.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-32-besvare-anmodning-om-supplement">UC 3.2 Besvare anmodning om supplement</h3>
+<p>Henviseren modtager en supplement-anmodning og besvarer denne ved at sende de efterspurgte oplysninger. Svaret sendes som en Communication -ressource med reference til den oprindelige CommunicationRequest og til ServiceRequest .</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som henviser ønsker jeg at kunne besvare en supplement-anmodning med de efterspurgte kliniske oplysninger, <br />når visitatoren har bedt om yderligere data, <br />så visitatoren hurtigt kan genoptage og afslutte triage-processen.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-33-faglig-afklaring-i-dialog">UC 3.3 Faglig afklaring i dialog</h3>
+<p>Henviser og visitator udveksler kliniske spørgsmål og svar for at afklare indikation, behandlingsegnethed eller alternativ tilgang. Dialogen føres som en kæde af Communication -ressourcer med indbyrdes referencer.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som henviser og visitator ønsker vi begge at kunne føre en struktureret faglig dialog om en konkret henvisning, <br />når indikation, egnethed eller behandlingsvalg er uklart, <br />så vi i fællesskab kan nå frem til den rigtige afgørelse for patienten uden at skulle bruge andre kommunikationskanaler.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-34-statusnotifikation-til-henviser">UC 3.4 Statusnotifikation til henviser</h3>
+<p>Visitatoren notificerer automatisk henviseren ved statusskift på en afsendt henvisning — fx modtaget, under vurdering, accepteret eller afvist. Notifikationen leveres via FHIR-subscription og indeholder reference til den opdaterede ServiceRequest .</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som henviser ønsker jeg automatisk at modtage en notifikation, <br />når status på en af mine henvisninger ændrer sig hos visitatoren, <br />så jeg til enhver tid er opdateret om forløbet uden at skulle forespørge aktivt.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-35-aftale-om-alternativ-visitation">UC 3.5 Aftale om alternativ visitation</h3>
+<p>Henviser og visitator forhandler i fællesskab om et alternativt tilbud, <br />når det primære visitationsspor ikke er muligt. Dialogen foregår via Communication , og den resulterende aftale dokumenteres i en Task med reference til det alternative tilbud.</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som visitator ønsker jeg at kunne indlede en dialog med henviseren om et alternativt tilbud, <br />når jeg ikke kan imødekomme den primære henvisning, <br />så patienten ikke ender i en blindgyde og vi i fællesskab finder en løsning.</p>
+</blockquote>
+
+<p style="display: block;">
+<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;" />
+</p>
+<p><br /><br /><br /></p>
+
+<h3 id="uc-36-korrektionsaftale-om-fejl-i-afsendt-henvisning">UC 3.6 Korrektionsaftale om fejl i afsendt henvisning</h3>
+<p>Visitatoren opdager en fejl i en modtaget henvisning — fx forkert CPR-nummer, forkert ydelseskode eller manglende samtykkedokumentation — og indleder en dialog med henviseren om korrektion. Korrektionen aftales via Communication -besked og gennemføres med en efterfølgende PUT -opdatering af ServiceRequest .</p>
+
+<blockquote>
+  <p><strong>Brugerhistorie:</strong>
+<br />Som visitator ønsker jeg at kunne kontakte henviseren og aftale en korrektion, <br />når jeg opdager en fejl i en modtaget henvisning, <br />så fejlen rettes på en koordineret og sporbar måde uden at vi mister historikken.</p>
+</blockquote>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://medcom.dk">MedCom</a>.  Package dk-medcom-ref-lm#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 16, 2026 14:56+0200">2026-06-16</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+
+| <a style="color: #81BEF7" target="_blank" href="https://www.was.digst.dk/medcomfhir-dk-ig-">Accessibility statement (Tilgængelighedserklæring)</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

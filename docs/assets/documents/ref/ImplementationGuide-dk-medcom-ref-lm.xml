@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="dk-medcom-ref-lm"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide dk-medcom-ref-lm</b></p><a name="dk-medcom-ref-lm"> </a><a name="hcdk-medcom-ref-lm"> </a><h2>DKMEDCOMREFERRALLM</h2><p>The official URL for this implementation guide is: </p><pre>http://medcomehmi.dk/ig/dk-medcom-ref-lm/ImplementationGuide/dk-medcom-ref-lm</pre><div><p>The DK MEDCOM REFERRAL LM</p>
+</div></div>
+  </text>
+  <url value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/ImplementationGuide/dk-medcom-ref-lm"/>
+  <version value="0.1.0"/>
+  <name value="DKMEDCOMREFERRALLM"/>
+  <title value="DK MEDCOM REFERRAL LM"/>
+  <status value="draft"/>
+  <date value="2026-06-16T14:56:57+02:00"/>
+  <publisher value="MedCom"/>
+  <contact>
+    <name value="MedCom"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://medcom.dk"/>
+    </telecom>
+  </contact>
+  <description value="The DK MEDCOM REFERRAL LM"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="dk-medcom-ref-lm"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="7.2.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.3.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_dk_core">
+    <uri value="http://hl7.dk/fhir/core/ImplementationGuide/hl7.fhir.dk.core"/>
+    <packageId value="hl7.fhir.dk.core"/>
+    <version value="3.4.0"/>
+  </dependsOn>
+  <dependsOn id="medcom_fhir_dk_core">
+    <uri value="http://medcomfhir.dk/ig/core/ImplementationGuide/medcom.fhir.dk.core"/>
+    <packageId value="medcom.fhir.dk.core"/>
+    <version value="2.4.0"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2026+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="draft"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r4#1.1.2"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2026+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="draft"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-lm-abonnement"/>
+      </reference>
+      <name value="Abonnement"/>
+      <description value="Repræsenterer en abonnementsregistrering der definerer hvilke&#xA;hændelser en abonnent (typisk henviseren) ønsker at modtage&#xA;notifikationer om. Svarer til FHIR Subscription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-lm-behandler"/>
+      </reference>
+      <name value="Behandler"/>
+      <description value="Repræsenterer en sundhedsprofessionel i rollen som enten&#xA;henviser eller visitator. Svarer til FHIR Practitioner kombineret&#xA;med PractitionerRole for at udtrykke rolle og tilknyttet organisation."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-lm-booking"/>
+      </reference>
+      <name value="Booking"/>
+      <description value="Repræsenterer en aftalt tid der oprettes ved accept af en henvisning.&#xA;Knyttes til den accept-givne Henvisning og notificerer automatisk&#xA;patienten og henviseren. Svarer til FHIR Appointment."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/dk-referral-message"/>
+      </reference>
+      <name value="DK Logical Referral Message"/>
+      <description value="Logisk FHIR-model for dansk henvisningsmeddelelse"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehmi-message-event-cs"/>
+      </reference>
+      <name value="EHMI Message Event Codes"/>
+      <description value="Koder for meddelelseshaendelser i EHMI-meddelelseskommunikation."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehmi-message-event-vs"/>
+      </reference>
+      <name value="EHMI Message Event ValueSet"/>
+      <description value="ValueSet over gyldige meddelelseshaendelser til brug i MessageHeader.eventCoding."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehmi-referral-code-vs"/>
+      </reference>
+      <name value="EHMI Referral Code ValueSet"/>
+      <description value="Ydelseskoder for EHMI-henvisninger – SKS procedurer og SNOMED CT."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-referral-message-response-bundle"/>
+      </reference>
+      <name value="EHMI Referral Message Response Bundle"/>
+      <description value="FHIR Bundle der repræsenterer en komplet henvisningsmeddelelse med response via EHMI."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-referral-message-header"/>
+      </reference>
+      <name value="EHMI Referral MessageHeader"/>
+      <description value="MessageHeader for EHMI-baseret henvisningsmeddelelse."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-referral-message-bundle"/>
+      </reference>
+      <name value="EHMI Referring Message Bundle"/>
+      <description value="FHIR Bundle der repræsenterer en komplet henvisningsmeddelelse via EHMI."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-service-request"/>
+      </reference>
+      <name value="EHMI ServiceRequest – Henvisning"/>
+      <description value="Kerne-ressource der repræsenterer den kliniske henvisning."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmiendpoint"/>
+      </reference>
+      <name value="EHMI/eDelivery Endpoint – Logisk Model"/>
+      <description value="Konceptuel logisk model for et EHMI/eDelivery endpoint i dansk sundhedsvæsen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/henviser"/>
+      </reference>
+      <name value="Henviser – Logisk Model"/>
+      <description value="Konceptuel logisk model for en Henviser i dansk sundhedsvæsen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-lm-henvisning"/>
+      </reference>
+      <name value="Henvisning"/>
+      <description value="Repræsenterer en klinisk anmodning om at viderehenvise en patient&#xA;til et specialtilbud eller en ydelse. Svarer til FHIR ServiceRequest.&#xA;Dækker hele livscyklussen fra oprettelse til afslutning."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/henvisning"/>
+      </reference>
+      <name value="Henvisning – Logisk Model"/>
+      <description value="Konceptuel logisk model for en Henvisning i dansk sundhedsvæsen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/henvisningsmeddelelserespons"/>
+      </reference>
+      <name value="Henvisningsmeddelelse Response – Logisk Model"/>
+      <description value="Konceptuel logisk model for en henvisningsmeddelelse med response i dansk sundhedsvæsen. Der er brug for udddybning af henvisningen før den kan endeligt triageres"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/henvisningsmeddelelse"/>
+      </reference>
+      <name value="Henvisningsmeddelelse – Logisk Model"/>
+      <description value="Konceptuel logisk model for en henvisningsmeddelelse i dansk sundhedsvæsen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-lm-klinisk-dokumentation"/>
+      </reference>
+      <name value="KliniskDokumentation"/>
+      <description value="Repræsenterer supplerende klinisk materiale der knyttes til en&#xA;Henvisning for at understøtte visitators beslutningsgrundlag.&#xA;Kan være laboratoriesvar, billeddiagnostik, epikriser eller andre dokumenter.&#xA;Svarer til FHIR DocumentReference, DiagnosticReport eller Observation."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-lm-kommunikationsbesked"/>
+      </reference>
+      <name value="Kommunikationsbesked"/>
+      <description value="Repræsenterer en struktureret besked i den løbende dialog mellem&#xA;henviser og visitator. Bruges til supplement-anmodninger, faglig&#xA;afklaring, alternativ visitation og korrektionsaftaler.&#xA;Svarer til FHIR Communication eller CommunicationRequest."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kommunikator"/>
+      </reference>
+      <name value="Kommunikator – Logisk Model"/>
+      <description value="Konceptuel logisk model for en Kommunikator i dansk sundhedsvæsen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/meddelelse"/>
+      </reference>
+      <name value="Meddelelse – Logisk Model"/>
+      <description value="Konceptuel logisk model for en Meddelelse i dansk sundhedsvæsen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-lm-meddelelseskonvolut"/>
+      </reference>
+      <name value="Meddelelseskonvolut"/>
+      <description value="Repræsenterer den tekniske meddelelsesomslag der transporterer&#xA;kliniske ressourcer (Henvisning, Afgørelse mv.) via EHMI og eDelivery.&#xA;Svarer til FHIR Bundle (type=message) med MessageHeader som første entry."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-lm-organisation"/>
+      </reference>
+      <name value="Organisation"/>
+      <description value="Repræsenterer en sundhedsorganisation der enten afsender eller modtager&#xA;henvisninger. Svarer til FHIR Organization profileret som DkCoreOrganization&#xA;med SOR-kode og GLN som primære identifikatorer."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-lm-patient"/>
+      </reference>
+      <name value="Patient"/>
+      <description value="Repræsenterer den patient der viderehenvises. Svarer til FHIR Patient&#xA;profileret som DkCorePatient med dansk CPR-nummer som primær identifikator."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/patient"/>
+      </reference>
+      <name value="Patient – Logisk Model"/>
+      <description value="Konceptuel logisk model for en Patient i dansk sundhedsvæsen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-lm-statusnotifikation"/>
+      </reference>
+      <name value="Statusnotifikation"/>
+      <description value="Repræsenterer en automatisk notifikation der sendes til en abonnent&#xA;(typisk henviseren) ved statusændring på en aktiv henvisning.&#xA;Svarer til FHIR SubscriptionNotification / SubscriptionStatus (R4B/R5-mønster&#xA;implementeret via MedCom-notifikationsmodel i R4)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/triagering"/>
+      </reference>
+      <name value="Triagering – Logisk Model"/>
+      <description value="Konceptuel logisk model for en Triagering i dansk sundhedsvæsen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehmi-lm-visitationsafgoerelse"/>
+      </reference>
+      <name value="Visitationsafgoerelse"/>
+      <description value="Repræsenterer visitatorens formelle beslutning om en indkommende&#xA;henvisning: accept, afvisning, videresendelse eller prioritetsændring.&#xA;Svarer til FHIR Task med outcome og begrundelse."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <page>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+        <valueUrl value="toc.html"/>
+      </extension>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="index.html"/>
+        </extension>
+        <nameUrl value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="00-logisk-model-oversigt.html"/>
+        </extension>
+        <nameUrl value="00-logisk-model-oversigt.html"/>
+        <title value="00 Logisk Model Oversigt"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="01-henvisning.html"/>
+        </extension>
+        <nameUrl value="01-henvisning.html"/>
+        <title value="01 Henvisning"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="02-patient.html"/>
+        </extension>
+        <nameUrl value="02-patient.html"/>
+        <title value="02 Patient"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="03-behandler.html"/>
+        </extension>
+        <nameUrl value="03-behandler.html"/>
+        <title value="03 Behandler"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="04-organisation.html"/>
+        </extension>
+        <nameUrl value="04-organisation.html"/>
+        <title value="04 Organisation"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="05-klinisk-dokumentation.html"/>
+        </extension>
+        <nameUrl value="05-klinisk-dokumentation.html"/>
+        <title value="05 Klinisk Dokumentation"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="06-visitationsafgoerelse.html"/>
+        </extension>
+        <nameUrl value="06-visitationsafgoerelse.html"/>
+        <title value="06 Visitationsafgoerelse"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="07-booking.html"/>
+        </extension>
+        <nameUrl value="07-booking.html"/>
+        <title value="07 Booking"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="08-kommunikationsbesked.html"/>
+        </extension>
+        <nameUrl value="08-kommunikationsbesked.html"/>
+        <title value="08 Kommunikationsbesked"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="09-statusnotifikation.html"/>
+        </extension>
+        <nameUrl value="09-statusnotifikation.html"/>
+        <title value="09 Statusnotifikation"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="10-abonnement.html"/>
+        </extension>
+        <nameUrl value="10-abonnement.html"/>
+        <title value="10 Abonnement"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="11-meddelelseskonvolut.html"/>
+        </extension>
+        <nameUrl value="11-meddelelseskonvolut.html"/>
+        <title value="11 Meddelelseskonvolut"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fhir-henvisning-messaging-cgpt.html"/>
+        </extension>
+        <nameUrl value="fhir-henvisning-messaging-cgpt.html"/>
+        <title value="Fhir Henvisning Messaging Cgpt"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fhir-henvisning-use-cases.html"/>
+        </extension>
+        <nameUrl value="fhir-henvisning-use-cases.html"/>
+        <title value="Fhir Henvisning Use Cases"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fhir-henvisning-use-cases-cgpt.html"/>
+        </extension>
+        <nameUrl value="fhir-henvisning-use-cases-cgpt.html"/>
+        <title value="Fhir Henvisning Use Cases Cgpt"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fhir-henvisning-use-cases-claude.html"/>
+        </extension>
+        <nameUrl value="fhir-henvisning-use-cases-claude.html"/>
+        <title value="Fhir Henvisning Use Cases Claude"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fhir-henvisning-use-cases-claude2.html"/>
+        </extension>
+        <nameUrl value="fhir-henvisning-use-cases-claude2.html"/>
+        <title value="Fhir Henvisning Use Cases Claude 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fhir-henvisning-use-cases-v2.html"/>
+        </extension>
+        <nameUrl value="fhir-henvisning-use-cases-v2.html"/>
+        <title value="Fhir Henvisning Use Cases v 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fhir-henvisning-use-cases1.html"/>
+        </extension>
+        <nameUrl value="fhir-henvisning-use-cases1.html"/>
+        <title value="Fhir Henvisning Use Cases 1"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fhir-henvisning-user-stories-v2-claude.html"/>
+        </extension>
+        <nameUrl value="fhir-henvisning-user-stories-v2-claude.html"/>
+        <title value="Fhir Henvisning User Stories v 2 Claude"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fhir-messaging-guide.html"/>
+        </extension>
+        <nameUrl value="fhir-messaging-guide.html"/>
+        <title value="Fhir Messaging Guide"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="ReferralCommunication.html"/>
+        </extension>
+        <nameUrl value="ReferralCommunication.html"/>
+        <title value="Referral Communication"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="StructureDefinition-ehmi-lm-abonnement-intro2.html"/>
+        </extension>
+        <nameUrl value="StructureDefinition-ehmi-lm-abonnement-intro2.html"/>
+        <title value="Structure Definition Ehmi Lm Abonnement Intro 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="StructureDefinition-ehmi-lm-behandler-intro2.html"/>
+        </extension>
+        <nameUrl value="StructureDefinition-ehmi-lm-behandler-intro2.html"/>
+        <title value="Structure Definition Ehmi Lm Behandler Intro 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="StructureDefinition-ehmi-lm-booking-intro2.html"/>
+        </extension>
+        <nameUrl value="StructureDefinition-ehmi-lm-booking-intro2.html"/>
+        <title value="Structure Definition Ehmi Lm Booking Intro 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="StructureDefinition-ehmi-lm-henvisning-intro2.html"/>
+        </extension>
+        <nameUrl value="StructureDefinition-ehmi-lm-henvisning-intro2.html"/>
+        <title value="Structure Definition Ehmi Lm Henvisning Intro 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="StructureDefinition-ehmi-lm-klinisk-dokumentation-intro2.html"/>
+        </extension>
+        <nameUrl value="StructureDefinition-ehmi-lm-klinisk-dokumentation-intro2.html"/>
+        <title value="Structure Definition Ehmi Lm Klinisk Dokumentation Intro 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="StructureDefinition-ehmi-lm-kommunikationsbesked-intro2.html"/>
+        </extension>
+        <nameUrl value="StructureDefinition-ehmi-lm-kommunikationsbesked-intro2.html"/>
+        <title value="Structure Definition Ehmi Lm Kommunikationsbesked Intro 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="StructureDefinition-ehmi-lm-meddelelseskonvolut-intro2.html"/>
+        </extension>
+        <nameUrl value="StructureDefinition-ehmi-lm-meddelelseskonvolut-intro2.html"/>
+        <title value="Structure Definition Ehmi Lm Meddelelseskonvolut Intro 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="StructureDefinition-ehmi-lm-organisation-intro2.html"/>
+        </extension>
+        <nameUrl value="StructureDefinition-ehmi-lm-organisation-intro2.html"/>
+        <title value="Structure Definition Ehmi Lm Organisation Intro 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="StructureDefinition-ehmi-lm-patient-intro2.html"/>
+        </extension>
+        <nameUrl value="StructureDefinition-ehmi-lm-patient-intro2.html"/>
+        <title value="Structure Definition Ehmi Lm Patient Intro 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="StructureDefinition-ehmi-lm-statusnotifikation-intro2.html"/>
+        </extension>
+        <nameUrl value="StructureDefinition-ehmi-lm-statusnotifikation-intro2.html"/>
+        <title value="Structure Definition Ehmi Lm Statusnotifikation Intro 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="StructureDefinition-ehmi-lm-visitationsafgoerelse-intro2.html"/>
+        </extension>
+        <nameUrl value="StructureDefinition-ehmi-lm-visitationsafgoerelse-intro2.html"/>
+        <title value="Structure Definition Ehmi Lm Visitationsafgoerelse Intro 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="usecases.html"/>
+        </extension>
+        <nameUrl value="usecases.html"/>
+        <title value="Usecases"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="usecases_cgpt.html"/>
+        </extension>
+        <nameUrl value="usecases_cgpt.html"/>
+        <title value="Usecases Cgpt"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="usecases-claude.html"/>
+        </extension>
+        <nameUrl value="usecases-claude.html"/>
+        <title value="Usecases Claude"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="usecases-claude2.html"/>
+        </extension>
+        <nameUrl value="usecases-claude2.html"/>
+        <title value="Usecases Claude 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="usecases-henvisning-claude.html"/>
+        </extension>
+        <nameUrl value="usecases-henvisning-claude.html"/>
+        <title value="Usecases Henvisning Claude"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="workflow.html"/>
+        </extension>
+        <nameUrl value="workflow.html"/>
+        <title value="Workflow"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="workflow-claude.html"/>
+        </extension>
+        <nameUrl value="workflow-claude.html"/>
+        <title value="Workflow Claude"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="workflow2.html"/>
+        </extension>
+        <nameUrl value="workflow2.html"/>
+        <title value="Workflow 2"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="workflow3.html"/>
+        </extension>
+        <nameUrl value="workflow3.html"/>
+        <title value="Workflow 3"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

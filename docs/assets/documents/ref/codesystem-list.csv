@@ -1,0 +1,2 @@
+URL,Version,Status,OIDs,Name,Title,Description,Used
+http://medcomehmi.dk/ig/dk-medcom-ref-lm/CodeSystem/ehmi-message-event-cs,0.1.0,draft,,EHMIMessageEventCS,EHMI Message Event Codes,"Koder for meddelelseshaendelser i EHMI-meddelelseskommunikation.",

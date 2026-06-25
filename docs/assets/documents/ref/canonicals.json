@@ -1,0 +1,203 @@
+[{
+  "id" : "ehmi-message-event-cs",
+  "type" : "CodeSystem",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/CodeSystem/ehmi-message-event-cs",
+  "version" : "0.1.0",
+  "name" : "EHMIMessageEventCS"
+},
+{
+  "id" : "dk-medcom-ref-lm",
+  "type" : "ImplementationGuide",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/ImplementationGuide/dk-medcom-ref-lm",
+  "version" : "0.1.0",
+  "name" : "DKMEDCOMREFERRALLM"
+},
+{
+  "id" : "dk-referral-message",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/dk-referral-message",
+  "version" : "0.1.0",
+  "name" : "DKReferralMessage"
+},
+{
+  "id" : "ehmi-lm-abonnement",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-abonnement",
+  "version" : "0.1.0",
+  "name" : "Abonnement"
+},
+{
+  "id" : "ehmi-lm-behandler",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-behandler",
+  "version" : "0.1.0",
+  "name" : "Behandler"
+},
+{
+  "id" : "ehmi-lm-booking",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-booking",
+  "version" : "0.1.0",
+  "name" : "Booking"
+},
+{
+  "id" : "ehmi-lm-henvisning",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-henvisning",
+  "version" : "0.1.0",
+  "name" : "Henvisning"
+},
+{
+  "id" : "ehmi-lm-klinisk-dokumentation",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-klinisk-dokumentation",
+  "version" : "0.1.0",
+  "name" : "KliniskDokumentation"
+},
+{
+  "id" : "ehmi-lm-kommunikationsbesked",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-kommunikationsbesked",
+  "version" : "0.1.0",
+  "name" : "Kommunikationsbesked"
+},
+{
+  "id" : "ehmi-lm-meddelelseskonvolut",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-meddelelseskonvolut",
+  "version" : "0.1.0",
+  "name" : "Meddelelseskonvolut"
+},
+{
+  "id" : "ehmi-lm-organisation",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-organisation",
+  "version" : "0.1.0",
+  "name" : "Organisation"
+},
+{
+  "id" : "ehmi-lm-patient",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-patient",
+  "version" : "0.1.0",
+  "name" : "Patient"
+},
+{
+  "id" : "ehmi-lm-statusnotifikation",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-statusnotifikation",
+  "version" : "0.1.0",
+  "name" : "Statusnotifikation"
+},
+{
+  "id" : "ehmi-lm-visitationsafgoerelse",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-visitationsafgoerelse",
+  "version" : "0.1.0",
+  "name" : "Visitationsafgoerelse"
+},
+{
+  "id" : "ehmi-referral-message-bundle",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-referral-message-bundle",
+  "version" : "0.1.0",
+  "name" : "EHMIReferralMessageBundle"
+},
+{
+  "id" : "ehmi-referral-message-header",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-referral-message-header",
+  "version" : "0.1.0",
+  "name" : "EHMIReferralMessageHeader"
+},
+{
+  "id" : "ehmi-referral-message-response-bundle",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-referral-message-response-bundle",
+  "version" : "0.1.0",
+  "name" : "EHMIReferralMessageResponseBundle"
+},
+{
+  "id" : "ehmi-service-request",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-service-request",
+  "version" : "0.1.0",
+  "name" : "EHMIServiceRequest"
+},
+{
+  "id" : "ehmiendpoint",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmiendpoint",
+  "version" : "0.1.0",
+  "name" : "EhmiEndpointLM"
+},
+{
+  "id" : "henviser",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/henviser",
+  "version" : "0.1.0",
+  "name" : "HenviserLM"
+},
+{
+  "id" : "henvisning",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/henvisning",
+  "version" : "0.1.0",
+  "name" : "HenvisningLM"
+},
+{
+  "id" : "henvisningsmeddelelse",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/henvisningsmeddelelse",
+  "version" : "0.1.0",
+  "name" : "HenvisningsmeddelelseLM"
+},
+{
+  "id" : "henvisningsmeddelelserespons",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/henvisningsmeddelelserespons",
+  "version" : "0.1.0",
+  "name" : "HenvisningsmeddelelseResponseLM"
+},
+{
+  "id" : "kommunikator",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/kommunikator",
+  "version" : "0.1.0",
+  "name" : "KommunikatorLM"
+},
+{
+  "id" : "meddelelse",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/meddelelse",
+  "version" : "0.1.0",
+  "name" : "MeddelelseLM"
+},
+{
+  "id" : "patient",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/patient",
+  "version" : "0.1.0",
+  "name" : "PatientLM"
+},
+{
+  "id" : "triagering",
+  "type" : "StructureDefinition",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/triagering",
+  "version" : "0.1.0",
+  "name" : "TriageringLM"
+},
+{
+  "id" : "ehmi-message-event-vs",
+  "type" : "ValueSet",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-message-event-vs",
+  "version" : "0.1.0",
+  "name" : "EHMIMessageEventVS"
+},
+{
+  "id" : "ehmi-referral-code-vs",
+  "type" : "ValueSet",
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-referral-code-vs",
+  "version" : "0.1.0",
+  "name" : "EHMIReferralCodeVS"
+}]

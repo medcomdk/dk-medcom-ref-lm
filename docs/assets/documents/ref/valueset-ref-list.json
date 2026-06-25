@@ -1,0 +1,54 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/ValueSet/condition-code",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "Condition/Problem/DiagnosisCodes",
+    "title" : "Condition/Problem/Diagnosis Codes",
+    "description" : "Example value set for Condition/Problem/Diagnosis codes.",
+    "systems" : ["http://snomed.info/sct"],
+    "oids" : ["2.16.840.1.113883.4.642.3.161"],
+    "sources" : ["2.16.840.1.113883.4.642.3.161"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/request-priority",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestPriority",
+    "title" : "Request priority",
+    "description" : "The clinical priority of a diagnostic order.",
+    "systems" : ["http://hl7.org/fhir/request-priority"],
+    "oids" : ["2.16.840.1.113883.4.642.3.115"],
+    "sources" : ["2.16.840.1.113883.4.642.3.115"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  },
+  {
+    "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-message-event-vs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "EHMIMessageEventVS",
+    "title" : "EHMI Message Event ValueSet",
+    "description" : "ValueSet over gyldige meddelelseshaendelser til brug i MessageHeader.eventCoding.",
+    "systems" : ["http://medcomehmi.dk/ig/dk-medcom-ref-lm/CodeSystem/ehmi-message-event-cs"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-referral-message-header.html" : "EHMI Referral MessageHeader"
+  },
+  {
+    "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-referral-code-vs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "EHMIReferralCodeVS",
+    "title" : "EHMI Referral Code ValueSet",
+    "description" : "Ydelseskoder for EHMI-henvisninger – SKS procedurer og SNOMED CT.",
+    "systems" : ["urn:oid:1.2.208.176.2.4", "http://snomed.info/sct"],
+    "uses" : {
+    },
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
+  }]
+}

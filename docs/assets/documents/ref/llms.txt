@@ -1,0 +1,83 @@
+# dk-medcom-ref-lm#0.1.0: DK MEDCOM REFERRAL LM
+
+## Pages
+
+* [Home](index.md)
+* [00 Logisk Model Oversigt](00-logisk-model-oversigt.md)
+* [01 Henvisning](01-henvisning.md)
+* [02 Patient](02-patient.md)
+* [03 Behandler](03-behandler.md)
+* [04 Organisation](04-organisation.md)
+* [05 Klinisk Dokumentation](05-klinisk-dokumentation.md)
+* [06 Visitationsafgoerelse](06-visitationsafgoerelse.md)
+* [07 Booking](07-booking.md)
+* [08 Kommunikationsbesked](08-kommunikationsbesked.md)
+* [09 Statusnotifikation](09-statusnotifikation.md)
+* [10 Abonnement](10-abonnement.md)
+* [11 Meddelelseskonvolut](11-meddelelseskonvolut.md)
+* [Artifacts Summary](artifacts.md)
+* [Fhir Henvisning Messaging Cgpt](fhir-henvisning-messaging-cgpt.md)
+* [Fhir Henvisning Use Cases Cgpt](fhir-henvisning-use-cases-cgpt.md)
+* [Fhir Henvisning Use Cases Claude](fhir-henvisning-use-cases-claude.md)
+* [Fhir Henvisning Use Cases Claude 2](fhir-henvisning-use-cases-claude2.md)
+* [Fhir Henvisning Use Cases v 2](fhir-henvisning-use-cases-v2.md)
+* [Fhir Henvisning Use Cases](fhir-henvisning-use-cases.md)
+* [Fhir Henvisning Use Cases 1](fhir-henvisning-use-cases1.md)
+* [Fhir Henvisning User Stories v 2 Claude](fhir-henvisning-user-stories-v2-claude.md)
+* [Fhir Messaging Guide](fhir-messaging-guide.md)
+* [Referral Communication](ReferralCommunication.md)
+* [Usecases Claude](usecases-claude.md)
+* [Usecases Claude 2](usecases-claude2.md)
+* [Usecases Henvisning Claude](usecases-henvisning-claude.md)
+* [Usecases](usecases.md)
+* [Usecases Cgpt](usecases_cgpt.md)
+* [Workflow Claude](workflow-claude.md)
+* [Workflow](workflow.md)
+* [Workflow 2](workflow2.md)
+* [Workflow 3](workflow3.md)
+
+## Resources
+
+### CodeSystems
+
+* [EHMI Message Event Codes](CodeSystem-ehmi-message-event-cs.md)
+
+### ValueSets
+
+* [EHMI Message Event ValueSet](ValueSet-ehmi-message-event-vs.md)
+* [EHMI Referral Code ValueSet](ValueSet-ehmi-referral-code-vs.md)
+
+### Logicals
+
+* [DK Logical Referral Message](StructureDefinition-dk-referral-message.md)
+* [Abonnement](StructureDefinition-ehmi-lm-abonnement.md)
+* [Behandler](StructureDefinition-ehmi-lm-behandler.md)
+* [Booking](StructureDefinition-ehmi-lm-booking.md)
+* [Henvisning](StructureDefinition-ehmi-lm-henvisning.md)
+* [KliniskDokumentation](StructureDefinition-ehmi-lm-klinisk-dokumentation.md)
+* [Kommunikationsbesked](StructureDefinition-ehmi-lm-kommunikationsbesked.md)
+* [Meddelelseskonvolut](StructureDefinition-ehmi-lm-meddelelseskonvolut.md)
+* [Organisation](StructureDefinition-ehmi-lm-organisation.md)
+* [Patient](StructureDefinition-ehmi-lm-patient.md)
+* [Statusnotifikation](StructureDefinition-ehmi-lm-statusnotifikation.md)
+* [Visitationsafgoerelse](StructureDefinition-ehmi-lm-visitationsafgoerelse.md)
+* [EHMI/eDelivery Endpoint – Logisk Model](StructureDefinition-ehmiendpoint.md)
+* [Henviser – Logisk Model](StructureDefinition-henviser.md)
+* [Henvisning – Logisk Model](StructureDefinition-henvisning.md)
+* [Henvisningsmeddelelse – Logisk Model](StructureDefinition-henvisningsmeddelelse.md)
+* [Henvisningsmeddelelse Response – Logisk Model](StructureDefinition-henvisningsmeddelelserespons.md)
+* [Kommunikator – Logisk Model](StructureDefinition-kommunikator.md)
+* [Meddelelse – Logisk Model](StructureDefinition-meddelelse.md)
+* [Patient – Logisk Model](StructureDefinition-patient.md)
+* [Triagering – Logisk Model](StructureDefinition-triagering.md)
+
+### Resource Profiles
+
+* [EHMI Referring Message Bundle](StructureDefinition-ehmi-referral-message-bundle.md)
+* [EHMI Referral MessageHeader](StructureDefinition-ehmi-referral-message-header.md)
+* [EHMI Referral Message Response Bundle](StructureDefinition-ehmi-referral-message-response-bundle.md)
+* [EHMI ServiceRequest – Henvisning](StructureDefinition-ehmi-service-request.md)
+
+### ImplementationGuides
+
+* [DK MEDCOM REFERRAL LM](index.md)

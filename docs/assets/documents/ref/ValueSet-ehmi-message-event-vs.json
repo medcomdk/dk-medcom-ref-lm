@@ -1,0 +1,35 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ehmi-message-event-vs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ehmi-message-event-vs</b></p><a name=\"ehmi-message-event-vs\"> </a><a name=\"hcehmi-message-event-vs\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-ehmi-message-event-cs.html\"><code>http://medcomehmi.dk/ig/dk-medcom-ref-lm/CodeSystem/ehmi-message-event-cs</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;0.1.0</span></li></ul></div>"
+  },
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-message-event-vs",
+  "version" : "0.1.0",
+  "name" : "EHMIMessageEventVS",
+  "title" : "EHMI Message Event ValueSet",
+  "status" : "draft",
+  "date" : "2026-06-16T14:56:57+02:00",
+  "publisher" : "MedCom",
+  "contact" : [{
+    "name" : "MedCom",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://medcom.dk"
+    }]
+  }],
+  "description" : "ValueSet over gyldige meddelelseshaendelser til brug i MessageHeader.eventCoding.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/CodeSystem/ehmi-message-event-cs"
+    }]
+  }
+}

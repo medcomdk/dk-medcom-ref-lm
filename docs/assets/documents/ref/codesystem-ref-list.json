@@ -1,0 +1,38 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/request-priority",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "RequestPriority",
+    "title" : "RequestPriority",
+    "description" : "Identifies the level of importance to be assigned to actioning the request.",
+    "oids" : ["2.16.840.1.113883.4.642.4.116"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-request-priority.html" : "Request priority"
+  },
+  {
+    "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/CodeSystem/ehmi-message-event-cs",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "EHMIMessageEventCS",
+    "title" : "EHMI Message Event Codes",
+    "description" : "Koder for meddelelseshaendelser i EHMI-meddelelseskommunikation.",
+    "uses" : {
+    },
+    "ValueSet-ehmi-message-event-vs.html" : "EHMI Message Event ValueSet"
+  },
+  {
+    "url" : "http://snomed.info/sct",
+    "version" : null,
+    "status" : "active",
+    "name" : "SNOMED_CT",
+    "title" : "SNOMED CT (all versions)",
+    "description" : "SNOMED CT is the most comprehensive and precise clinical health terminology product in the world, owned and distributed around the world by The International Health Terminology Standards Development Organisation (IHTSDO).",
+    "oids" : ["2.16.840.1.113883.6.96"],
+    "uses" : {
+    },
+    "ValueSet-ehmi-referral-code-vs.html" : "EHMI Referral Code ValueSet",
+    "http://hl7.org/fhir/R4/valueset-condition-code.html" : "Condition/Problem/Diagnosis Codes"
+  }]
+}

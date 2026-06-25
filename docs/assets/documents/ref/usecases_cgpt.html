@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Usecases Cgpt - DK MEDCOM REFERRAL LM v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7-dk.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"36"}
+    h3,h4,h5,h6{--heading-prefix:"36"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.medcom.dk">
+            <img height="50" alt="Visit MedComs website" src="assets/images/dark-medcom-logo.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>        
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">DK MEDCOM REFERRAL LM</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - draft
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">More
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="toc.html">Table of Contents</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Usecases Cgpt</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">DK MEDCOM REFERRAL LM - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://medcomehmi.dk/ig/dk-medcom-ref-lm/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Usecases Cgpt</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#use-case-katalog-for-fhir-baseret-henvisningshåndtering" id="markdown-toc-use-case-katalog-for-fhir-baseret-henvisningshåndtering">Use Case-katalog for FHIR-baseret henvisningshåndtering</a>    <ul>
+      <li><a href="#introduktion" id="markdown-toc-introduktion">Introduktion</a></li>
+      <li><a href="#oversigt" id="markdown-toc-oversigt">Oversigt</a></li>
+    </ul>
+  </li>
+  <li><a href="#1-henviserens-use-cases" id="markdown-toc-1-henviserens-use-cases">1. Henviserens use cases</a>    <ul>
+      <li><a href="#11-oprette-ny-henvisning" id="markdown-toc-11-oprette-ny-henvisning">1.1 Oprette ny henvisning</a>        <ul>
+          <li><a href="#formål" id="markdown-toc-formål">Formål</a></li>
+          <li><a href="#primær-aktør" id="markdown-toc-primær-aktør">Primær aktør</a></li>
+          <li><a href="#trigger" id="markdown-toc-trigger">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer" id="markdown-toc-primære-fhir-ressourcer">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases" id="markdown-toc-relaterede-use-cases">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram" id="markdown-toc-plantuml-diagram">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#12-tilknytte-klinisk-dokumentation" id="markdown-toc-12-tilknytte-klinisk-dokumentation">1.2 Tilknytte klinisk dokumentation</a>        <ul>
+          <li><a href="#formål-1" id="markdown-toc-formål-1">Formål</a></li>
+          <li><a href="#primær-aktør-1" id="markdown-toc-primær-aktør-1">Primær aktør</a></li>
+          <li><a href="#trigger-1" id="markdown-toc-trigger-1">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-1" id="markdown-toc-primære-fhir-ressourcer-1">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-1" id="markdown-toc-relaterede-use-cases-1">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-1" id="markdown-toc-plantuml-diagram-1">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#13-ændre-afsendt-henvisning" id="markdown-toc-13-ændre-afsendt-henvisning">1.3 Ændre afsendt henvisning</a>        <ul>
+          <li><a href="#formål-2" id="markdown-toc-formål-2">Formål</a></li>
+          <li><a href="#primær-aktør-2" id="markdown-toc-primær-aktør-2">Primær aktør</a></li>
+          <li><a href="#trigger-2" id="markdown-toc-trigger-2">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-2" id="markdown-toc-primære-fhir-ressourcer-2">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-2" id="markdown-toc-relaterede-use-cases-2">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-2" id="markdown-toc-plantuml-diagram-2">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#14-tilbagekalde-henvisning" id="markdown-toc-14-tilbagekalde-henvisning">1.4 Tilbagekalde henvisning</a>        <ul>
+          <li><a href="#formål-3" id="markdown-toc-formål-3">Formål</a></li>
+          <li><a href="#primær-aktør-3" id="markdown-toc-primær-aktør-3">Primær aktør</a></li>
+          <li><a href="#trigger-3" id="markdown-toc-trigger-3">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-3" id="markdown-toc-primære-fhir-ressourcer-3">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-3" id="markdown-toc-relaterede-use-cases-3">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-3" id="markdown-toc-plantuml-diagram-3">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#15-monitorere-status" id="markdown-toc-15-monitorere-status">1.5 Monitorere status</a>        <ul>
+          <li><a href="#formål-4" id="markdown-toc-formål-4">Formål</a></li>
+          <li><a href="#primær-aktør-4" id="markdown-toc-primær-aktør-4">Primær aktør</a></li>
+          <li><a href="#trigger-4" id="markdown-toc-trigger-4">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-4" id="markdown-toc-primære-fhir-ressourcer-4">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-4" id="markdown-toc-relaterede-use-cases-4">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-4" id="markdown-toc-plantuml-diagram-4">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#16-modtage-afgørelse" id="markdown-toc-16-modtage-afgørelse">1.6 Modtage afgørelse</a>        <ul>
+          <li><a href="#formål-5" id="markdown-toc-formål-5">Formål</a></li>
+          <li><a href="#primær-aktør-5" id="markdown-toc-primær-aktør-5">Primær aktør</a></li>
+          <li><a href="#trigger-5" id="markdown-toc-trigger-5">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-5" id="markdown-toc-primære-fhir-ressourcer-5">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-5" id="markdown-toc-relaterede-use-cases-5">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-5" id="markdown-toc-plantuml-diagram-5">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#2-visitatorens-use-cases" id="markdown-toc-2-visitatorens-use-cases">2. Visitatorens use cases</a>    <ul>
+      <li><a href="#21-modtage-og-kvittere" id="markdown-toc-21-modtage-og-kvittere">2.1 Modtage og kvittere</a>        <ul>
+          <li><a href="#formål-6" id="markdown-toc-formål-6">Formål</a></li>
+          <li><a href="#primær-aktør-6" id="markdown-toc-primær-aktør-6">Primær aktør</a></li>
+          <li><a href="#trigger-6" id="markdown-toc-trigger-6">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-6" id="markdown-toc-primære-fhir-ressourcer-6">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-6" id="markdown-toc-relaterede-use-cases-6">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-6" id="markdown-toc-plantuml-diagram-6">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#22-triagere-og-prioritere" id="markdown-toc-22-triagere-og-prioritere">2.2 Triagere og prioritere</a>        <ul>
+          <li><a href="#formål-7" id="markdown-toc-formål-7">Formål</a></li>
+          <li><a href="#primær-aktør-7" id="markdown-toc-primær-aktør-7">Primær aktør</a></li>
+          <li><a href="#trigger-7" id="markdown-toc-trigger-7">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-7" id="markdown-toc-primære-fhir-ressourcer-7">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-7" id="markdown-toc-relaterede-use-cases-7">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-7" id="markdown-toc-plantuml-diagram-7">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#23-acceptere-og-booke" id="markdown-toc-23-acceptere-og-booke">2.3 Acceptere og booke</a>        <ul>
+          <li><a href="#formål-8" id="markdown-toc-formål-8">Formål</a></li>
+          <li><a href="#primær-aktør-8" id="markdown-toc-primær-aktør-8">Primær aktør</a></li>
+          <li><a href="#trigger-8" id="markdown-toc-trigger-8">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-8" id="markdown-toc-primære-fhir-ressourcer-8">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-8" id="markdown-toc-relaterede-use-cases-8">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-8" id="markdown-toc-plantuml-diagram-8">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#24-afvise-henvisning" id="markdown-toc-24-afvise-henvisning">2.4 Afvise henvisning</a>        <ul>
+          <li><a href="#formål-9" id="markdown-toc-formål-9">Formål</a></li>
+          <li><a href="#primær-aktør-9" id="markdown-toc-primær-aktør-9">Primær aktør</a></li>
+          <li><a href="#trigger-9" id="markdown-toc-trigger-9">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-9" id="markdown-toc-primære-fhir-ressourcer-9">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-9" id="markdown-toc-relaterede-use-cases-9">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-9" id="markdown-toc-plantuml-diagram-9">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#25-videresende-til-anden-modtager" id="markdown-toc-25-videresende-til-anden-modtager">2.5 Videresende til anden modtager</a>        <ul>
+          <li><a href="#formål-10" id="markdown-toc-formål-10">Formål</a></li>
+          <li><a href="#primær-aktør-10" id="markdown-toc-primær-aktør-10">Primær aktør</a></li>
+          <li><a href="#trigger-10" id="markdown-toc-trigger-10">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-10" id="markdown-toc-primære-fhir-ressourcer-10">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-10" id="markdown-toc-relaterede-use-cases-10">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-10" id="markdown-toc-plantuml-diagram-10">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#26-ændre-prioritet" id="markdown-toc-26-ændre-prioritet">2.6 Ændre prioritet</a>        <ul>
+          <li><a href="#formål-11" id="markdown-toc-formål-11">Formål</a></li>
+          <li><a href="#primær-aktør-11" id="markdown-toc-primær-aktør-11">Primær aktør</a></li>
+          <li><a href="#trigger-11" id="markdown-toc-trigger-11">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-11" id="markdown-toc-primære-fhir-ressourcer-11">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-11" id="markdown-toc-relaterede-use-cases-11">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-11" id="markdown-toc-plantuml-diagram-11">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#3-dialogbaserede-use-cases" id="markdown-toc-3-dialogbaserede-use-cases">3. Dialogbaserede use cases</a>    <ul>
+      <li><a href="#31-anmode-om-supplerende-oplysninger" id="markdown-toc-31-anmode-om-supplerende-oplysninger">3.1 Anmode om supplerende oplysninger</a>        <ul>
+          <li><a href="#formål-12" id="markdown-toc-formål-12">Formål</a></li>
+          <li><a href="#primær-aktør-12" id="markdown-toc-primær-aktør-12">Primær aktør</a></li>
+          <li><a href="#trigger-12" id="markdown-toc-trigger-12">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-12" id="markdown-toc-primære-fhir-ressourcer-12">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-12" id="markdown-toc-relaterede-use-cases-12">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-12" id="markdown-toc-plantuml-diagram-12">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#32-besvare-anmodning" id="markdown-toc-32-besvare-anmodning">3.2 Besvare anmodning</a>        <ul>
+          <li><a href="#formål-13" id="markdown-toc-formål-13">Formål</a></li>
+          <li><a href="#primær-aktør-13" id="markdown-toc-primær-aktør-13">Primær aktør</a></li>
+          <li><a href="#trigger-13" id="markdown-toc-trigger-13">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-13" id="markdown-toc-primære-fhir-ressourcer-13">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-13" id="markdown-toc-relaterede-use-cases-13">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-13" id="markdown-toc-plantuml-diagram-13">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#33-faglig-afklaring" id="markdown-toc-33-faglig-afklaring">3.3 Faglig afklaring</a>        <ul>
+          <li><a href="#formål-14" id="markdown-toc-formål-14">Formål</a></li>
+          <li><a href="#primær-aktør-14" id="markdown-toc-primær-aktør-14">Primær aktør</a></li>
+          <li><a href="#trigger-14" id="markdown-toc-trigger-14">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-14" id="markdown-toc-primære-fhir-ressourcer-14">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-14" id="markdown-toc-relaterede-use-cases-14">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-14" id="markdown-toc-plantuml-diagram-14">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#34-statusnotifikation" id="markdown-toc-34-statusnotifikation">3.4 Statusnotifikation</a>        <ul>
+          <li><a href="#formål-15" id="markdown-toc-formål-15">Formål</a></li>
+          <li><a href="#primær-aktør-15" id="markdown-toc-primær-aktør-15">Primær aktør</a></li>
+          <li><a href="#trigger-15" id="markdown-toc-trigger-15">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-15" id="markdown-toc-primære-fhir-ressourcer-15">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-15" id="markdown-toc-relaterede-use-cases-15">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-15" id="markdown-toc-plantuml-diagram-15">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#35-alternativ-visitation" id="markdown-toc-35-alternativ-visitation">3.5 Alternativ visitation</a>        <ul>
+          <li><a href="#formål-16" id="markdown-toc-formål-16">Formål</a></li>
+          <li><a href="#primær-aktør-16" id="markdown-toc-primær-aktør-16">Primær aktør</a></li>
+          <li><a href="#trigger-16" id="markdown-toc-trigger-16">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-16" id="markdown-toc-primære-fhir-ressourcer-16">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-16" id="markdown-toc-relaterede-use-cases-16">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-16" id="markdown-toc-plantuml-diagram-16">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+      <li><a href="#36-korrektionsaftale" id="markdown-toc-36-korrektionsaftale">3.6 Korrektionsaftale</a>        <ul>
+          <li><a href="#formål-17" id="markdown-toc-formål-17">Formål</a></li>
+          <li><a href="#primær-aktør-17" id="markdown-toc-primær-aktør-17">Primær aktør</a></li>
+          <li><a href="#trigger-17" id="markdown-toc-trigger-17">Trigger</a></li>
+          <li><a href="#primære-fhir-ressourcer-17" id="markdown-toc-primære-fhir-ressourcer-17">Primære FHIR-ressourcer</a></li>
+          <li><a href="#relaterede-use-cases-17" id="markdown-toc-relaterede-use-cases-17">Relaterede use cases</a></li>
+          <li><a href="#plantuml-diagram-17" id="markdown-toc-plantuml-diagram-17">PlantUML-diagram</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="use-case-katalog-for-fhir-baseret-henvisningshåndtering">Use Case-katalog for FHIR-baseret henvisningshåndtering</h1>
+
+<h2 id="introduktion">Introduktion</h2>
+
+<p>Dette dokument beskriver de identificerede use cases for FHIR-baseret
+henvisningshåndtering. Hver use case er dokumenteret separat med formål,
+aktører, relationer og plads til PlantUML-diagrammer.</p>
+
+<h2 id="oversigt">Oversigt</h2>
+
+<ul>
+  <li>Henviserens use cases</li>
+  <li>Visitatorens use cases</li>
+  <li>Dialogbaserede use cases</li>
+</ul>
+
+<h1 id="1-henviserens-use-cases">1. Henviserens use cases</h1>
+
+<h2 id="11-oprette-ny-henvisning">1.1 Oprette ny henvisning</h2>
+
+<h3 id="formål">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="12-tilknytte-klinisk-dokumentation">1.2 Tilknytte klinisk dokumentation</h2>
+
+<h3 id="formål-1">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-1">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-1">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-1">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-1">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-1">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="13-ændre-afsendt-henvisning">1.3 Ændre afsendt henvisning</h2>
+
+<h3 id="formål-2">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-2">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-2">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-2">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-2">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-2">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="14-tilbagekalde-henvisning">1.4 Tilbagekalde henvisning</h2>
+
+<h3 id="formål-3">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-3">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-3">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-3">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-3">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-3">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="15-monitorere-status">1.5 Monitorere status</h2>
+
+<h3 id="formål-4">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-4">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-4">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-4">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-4">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-4">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="16-modtage-afgørelse">1.6 Modtage afgørelse</h2>
+
+<h3 id="formål-5">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-5">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-5">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-5">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-5">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-5">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h1 id="2-visitatorens-use-cases">2. Visitatorens use cases</h1>
+
+<h2 id="21-modtage-og-kvittere">2.1 Modtage og kvittere</h2>
+
+<h3 id="formål-6">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-6">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-6">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-6">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-6">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-6">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="22-triagere-og-prioritere">2.2 Triagere og prioritere</h2>
+
+<h3 id="formål-7">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-7">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-7">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-7">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-7">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-7">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="23-acceptere-og-booke">2.3 Acceptere og booke</h2>
+
+<h3 id="formål-8">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-8">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-8">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-8">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-8">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-8">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="24-afvise-henvisning">2.4 Afvise henvisning</h2>
+
+<h3 id="formål-9">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-9">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-9">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-9">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-9">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-9">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="25-videresende-til-anden-modtager">2.5 Videresende til anden modtager</h2>
+
+<h3 id="formål-10">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-10">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-10">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-10">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-10">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-10">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="26-ændre-prioritet">2.6 Ændre prioritet</h2>
+
+<h3 id="formål-11">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-11">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-11">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-11">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-11">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-11">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h1 id="3-dialogbaserede-use-cases">3. Dialogbaserede use cases</h1>
+
+<h2 id="31-anmode-om-supplerende-oplysninger">3.1 Anmode om supplerende oplysninger</h2>
+
+<h3 id="formål-12">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-12">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-12">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-12">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-12">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-12">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="32-besvare-anmodning">3.2 Besvare anmodning</h2>
+
+<h3 id="formål-13">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-13">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-13">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-13">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-13">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-13">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="33-faglig-afklaring">3.3 Faglig afklaring</h2>
+
+<h3 id="formål-14">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-14">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-14">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-14">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-14">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-14">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="34-statusnotifikation">3.4 Statusnotifikation</h2>
+
+<h3 id="formål-15">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-15">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-15">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-15">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-15">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-15">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="35-alternativ-visitation">3.5 Alternativ visitation</h2>
+
+<h3 id="formål-16">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-16">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-16">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-16">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-16">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-16">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+<h2 id="36-korrektionsaftale">3.6 Korrektionsaftale</h2>
+
+<h3 id="formål-17">Formål</h3>
+
+<p><em>Beskriv formålet med use casen.</em></p>
+
+<h3 id="primær-aktør-17">Primær aktør</h3>
+
+<p><em>Angiv primær aktør.</em></p>
+
+<h3 id="trigger-17">Trigger</h3>
+
+<p><em>Beskriv hændelsen, der initierer use casen.</em></p>
+
+<h3 id="primære-fhir-ressourcer-17">Primære FHIR-ressourcer</h3>
+
+<ul>
+  <li>ServiceRequest</li>
+  <li>MessageHeader</li>
+  <li>Bundle</li>
+</ul>
+
+<h3 id="relaterede-use-cases-17">Relaterede use cases</h3>
+
+<p><em>Tilføj relationer til andre use cases.</em></p>
+
+<h3 id="plantuml-diagram-17">PlantUML-diagram</h3>
+
+<pre><code class="language-plantuml">' Tilføj use case-diagram her
+</code></pre>
+
+<hr />
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://medcom.dk">MedCom</a>.  Package dk-medcom-ref-lm#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 16, 2026 14:56+0200">2026-06-16</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+
+| <a style="color: #81BEF7" target="_blank" href="https://www.was.digst.dk/medcomfhir-dk-ig-">Accessibility statement (Tilgængelighedserklæring)</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

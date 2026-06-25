@@ -1,0 +1,43 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ehmi-referral-code-vs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ehmi-referral-code-vs</b></p><a name=\"ehmi-referral-code-vs\"> </a><a name=\"hcehmi-referral-code-vs\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include codes from<a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span> where concept  is-a 3457005 (Patient referral)</li><li>Include all codes defined in <code>urn:oid:1.2.208.176.2.4</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span></li></ul></div>"
+  },
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/ValueSet/ehmi-referral-code-vs",
+  "version" : "0.1.0",
+  "name" : "EHMIReferralCodeVS",
+  "title" : "EHMI Referral Code ValueSet",
+  "status" : "draft",
+  "date" : "2026-06-16T14:56:57+02:00",
+  "publisher" : "MedCom",
+  "contact" : [{
+    "name" : "MedCom",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://medcom.dk"
+    }]
+  }],
+  "description" : "Ydelseskoder for EHMI-henvisninger – SKS procedurer og SNOMED CT.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "3457005"
+      }]
+    },
+    {
+      "system" : "urn:oid:1.2.208.176.2.4"
+    }]
+  }
+}

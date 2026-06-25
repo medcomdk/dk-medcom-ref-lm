@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ehmi-lm-organisation"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureDefinition ehmi-lm-organisation</b></p><table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Information about the use of the element">Flags</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Minimum and Maximum # of times the element can appear in the instance">Card.</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px; width: 100px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Reference to the type of the element">Type</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-organisation-definitions.html#ehmi-lm-organisation" title="Repræsenterer en sundhedsorganisation der enten afsender eller modtager
+henvisninger. Svarer til FHIR Organization profileret som DkCoreOrganization
+med SOR-kode og GLN som primære identifikatorer.">ehmi-lm-organisation</a><a name="ehmi-lm-organisation"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/types.html#Base">Base</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Organisation</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-organisation-definitions.html#ehmi-lm-organisation.sorKode" title="SOR-kode (Sundhedsorganisationsregisteret)">sorKode</a><a name="ehmi-lm-organisation.sorKode"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">SOR-kode (Sundhedsorganisationsregisteret)</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-organisation-definitions.html#ehmi-lm-organisation.glnNummer" title="GLN-nummer (Global Location Number)">glnNummer</a><a name="ehmi-lm-organisation.glnNummer"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">GLN-nummer (Global Location Number)</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-organisation-definitions.html#ehmi-lm-organisation.ydernummer" title="Ydernummer (praksis-identifikator)">ydernummer</a><a name="ehmi-lm-organisation.ydernummer"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Ydernummer (praksis-identifikator)</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-organisation-definitions.html#ehmi-lm-organisation.navn" title="Organisationens navn">navn</a><a name="ehmi-lm-organisation.navn"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Organisationens navn</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-organisation-definitions.html#ehmi-lm-organisation.type" title="Type: hospital | praksis | speciallaegepraksis | ...">type</a><a name="ehmi-lm-organisation.type"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Type: hospital | praksis | speciallaegepraksis | ...</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-organisation-definitions.html#ehmi-lm-organisation.adresse" title="Organisationens adresse">adresse</a><a name="ehmi-lm-organisation.adresse"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Address">Address</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Organisationens adresse</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-organisation-definitions.html#ehmi-lm-organisation.ehmiEndpoint" title="EHMI/eDelivery endpoint (AP-adresse)">ehmiEndpoint</a><a name="ehmi-lm-organisation.ehmiEndpoint"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#url">url</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">EHMI/eDelivery endpoint (AP-adresse)</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-organisation-definitions.html#ehmi-lm-organisation.overordnetOrganisation" title="Overordnet organisation (fx region)">overordnetOrganisation</a><a name="ehmi-lm-organisation.overordnetOrganisation"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehmi-lm-organisation.html">Organisation</a>)</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Overordnet organisation (fx region)</td></tr>
+<tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
+  </text>
+  <url value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-organisation"/>
+  <version value="0.1.0"/>
+  <name value="Organisation"/>
+  <title value="Organisation"/>
+  <status value="draft"/>
+  <date value="2026-06-16T14:56:57+02:00"/>
+  <publisher value="MedCom"/>
+  <contact>
+    <name value="MedCom"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://medcom.dk"/>
+    </telecom>
+  </contact>
+  <description value="Repræsenterer en sundhedsorganisation der enten afsender eller modtager&#xA;henvisninger. Svarer til FHIR Organization profileret som DkCoreOrganization&#xA;med SOR-kode og GLN som primære identifikatorer."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+  <mapping>
+    <identity value="fhir-r4"/>
+    <uri value="http://hl7.org/fhir"/>
+    <name value="RIM Mapping"/>
+  </mapping>
+  <kind value="logical"/>
+  <abstract value="false"/>
+  <type value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-organisation"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Base"/>
+  <derivation value="specialization"/>
+  <snapshot>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version">
+      <valueString value="4.0.1"/>
+    </extension>
+    <element id="ehmi-lm-organisation">
+      <path value="ehmi-lm-organisation"/>
+      <short value="Organisation"/>
+      <definition value="Repræsenterer en sundhedsorganisation der enten afsender eller modtager&#xA;henvisninger. Svarer til FHIR Organization profileret som DkCoreOrganization&#xA;med SOR-kode og GLN som primære identifikatorer."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Base"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <isModifier value="false"/>
+    </element>
+    <element id="ehmi-lm-organisation.sorKode">
+      <path value="ehmi-lm-organisation.sorKode"/>
+      <short value="SOR-kode (Sundhedsorganisationsregisteret)"/>
+      <definition value="SOR-kode (Sundhedsorganisationsregisteret)"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-organisation.sorKode"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <map value="Organization.identifier (SOR)"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.glnNummer">
+      <path value="ehmi-lm-organisation.glnNummer"/>
+      <short value="GLN-nummer (Global Location Number)"/>
+      <definition value="GLN-nummer (Global Location Number)"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-organisation.glnNummer"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <map value="Organization.identifier (GLN)"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.ydernummer">
+      <path value="ehmi-lm-organisation.ydernummer"/>
+      <short value="Ydernummer (praksis-identifikator)"/>
+      <definition value="Ydernummer (praksis-identifikator)"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-organisation.ydernummer"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <map value="Organization.identifier (Ydernummer)"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.navn">
+      <path value="ehmi-lm-organisation.navn"/>
+      <short value="Organisationens navn"/>
+      <definition value="Organisationens navn"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-organisation.navn"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <map value="Organization.name"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.type">
+      <path value="ehmi-lm-organisation.type"/>
+      <short value="Type: hospital | praksis | speciallaegepraksis | ..."/>
+      <definition value="Type: hospital | praksis | speciallaegepraksis | ..."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-organisation.type"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <mapping>
+        <map value="Organization.type"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.adresse">
+      <path value="ehmi-lm-organisation.adresse"/>
+      <short value="Organisationens adresse"/>
+      <definition value="Organisationens adresse"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-organisation.adresse"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Address"/>
+      </type>
+      <mapping>
+        <map value="Organization.address"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.ehmiEndpoint">
+      <path value="ehmi-lm-organisation.ehmiEndpoint"/>
+      <short value="EHMI/eDelivery endpoint (AP-adresse)"/>
+      <definition value="EHMI/eDelivery endpoint (AP-adresse)"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-organisation.ehmiEndpoint"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="url"/>
+      </type>
+      <mapping>
+        <map value="Organization.endpoint (EHMI)"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.overordnetOrganisation">
+      <path value="ehmi-lm-organisation.overordnetOrganisation"/>
+      <short value="Overordnet organisation (fx region)"/>
+      <definition value="Overordnet organisation (fx region)"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-organisation.overordnetOrganisation"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-organisation"/>
+      </type>
+      <mapping>
+        <map value="Organization.partOf"/>
+      </mapping>
+    </element>
+  </snapshot>
+  <differential>
+    <element id="ehmi-lm-organisation">
+      <path value="ehmi-lm-organisation"/>
+      <short value="Organisation"/>
+      <definition value="Repræsenterer en sundhedsorganisation der enten afsender eller modtager&#xA;henvisninger. Svarer til FHIR Organization profileret som DkCoreOrganization&#xA;med SOR-kode og GLN som primære identifikatorer."/>
+    </element>
+    <element id="ehmi-lm-organisation.sorKode">
+      <path value="ehmi-lm-organisation.sorKode"/>
+      <short value="SOR-kode (Sundhedsorganisationsregisteret)"/>
+      <definition value="SOR-kode (Sundhedsorganisationsregisteret)"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <map value="Organization.identifier (SOR)"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.glnNummer">
+      <path value="ehmi-lm-organisation.glnNummer"/>
+      <short value="GLN-nummer (Global Location Number)"/>
+      <definition value="GLN-nummer (Global Location Number)"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <map value="Organization.identifier (GLN)"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.ydernummer">
+      <path value="ehmi-lm-organisation.ydernummer"/>
+      <short value="Ydernummer (praksis-identifikator)"/>
+      <definition value="Ydernummer (praksis-identifikator)"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <map value="Organization.identifier (Ydernummer)"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.navn">
+      <path value="ehmi-lm-organisation.navn"/>
+      <short value="Organisationens navn"/>
+      <definition value="Organisationens navn"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <map value="Organization.name"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.type">
+      <path value="ehmi-lm-organisation.type"/>
+      <short value="Type: hospital | praksis | speciallaegepraksis | ..."/>
+      <definition value="Type: hospital | praksis | speciallaegepraksis | ..."/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <mapping>
+        <map value="Organization.type"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.adresse">
+      <path value="ehmi-lm-organisation.adresse"/>
+      <short value="Organisationens adresse"/>
+      <definition value="Organisationens adresse"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Address"/>
+      </type>
+      <mapping>
+        <map value="Organization.address"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.ehmiEndpoint">
+      <path value="ehmi-lm-organisation.ehmiEndpoint"/>
+      <short value="EHMI/eDelivery endpoint (AP-adresse)"/>
+      <definition value="EHMI/eDelivery endpoint (AP-adresse)"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="url"/>
+      </type>
+      <mapping>
+        <map value="Organization.endpoint (EHMI)"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-organisation.overordnetOrganisation">
+      <path value="ehmi-lm-organisation.overordnetOrganisation"/>
+      <short value="Overordnet organisation (fx region)"/>
+      <definition value="Overordnet organisation (fx region)"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-organisation"/>
+      </type>
+      <mapping>
+        <map value="Organization.partOf"/>
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>

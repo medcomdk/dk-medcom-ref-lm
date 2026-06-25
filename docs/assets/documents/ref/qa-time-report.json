@@ -1,0 +1,2837 @@
+{
+  "date" : "Tue, 16 Jun, 2026 14:56:57 +0200",
+  "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
+  "files" : [{
+    "name" : "\\fsh-generated\\resources\\ImplementationGuide-dk-medcom-ref-lm.json",
+    "size" : 18217,
+    "processes" : [{
+      "activity" : "load",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 11
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 47,
+      "length" : 16
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 85
+    },
+    {
+      "activity" : "validate",
+      "start" : 64,
+      "length" : 9160
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 74,
+      "length" : 369
+    },
+    {
+      "activity" : "generate2",
+      "start" : 93,
+      "length" : 230
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 156,
+      "length" : 7
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 187,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/CodeSystem-ehmi-message-event-cs.json",
+    "size" : 962,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 8
+    },
+    {
+      "activity" : "load-configure",
+      "start" : 47,
+      "length" : 2
+    },
+    {
+      "activity" : "loadDepInfo",
+      "start" : 47,
+      "length" : 1
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 7
+    },
+    {
+      "activity" : "validate",
+      "start" : 48,
+      "length" : 1167
+    },
+    {
+      "activity" : "checkConformanceResources",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 2
+    },
+    {
+      "activity" : "generate1",
+      "start" : 75,
+      "length" : 49
+    },
+    {
+      "activity" : "generate2",
+      "start" : 94,
+      "length" : 156
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 156,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-dk-referral-message.json",
+    "size" : 24061,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 14
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 65
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 153
+    },
+    {
+      "activity" : "validate",
+      "start" : 54,
+      "length" : 1529
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 73,
+      "length" : 2
+    },
+    {
+      "activity" : "generate1",
+      "start" : 75,
+      "length" : 1835
+    },
+    {
+      "activity" : "generate2",
+      "start" : 94,
+      "length" : 1509
+    },
+    {
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 910
+    },
+    {
+      "activity" : "makeDependencies",
+      "start" : 128,
+      "length" : 1
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 156,
+      "length" : 19
+    },
+    {
+      "activity" : "scanProfilesForR5",
+      "start" : 187,
+      "length" : 1
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 187,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-lm-abonnement.json",
+    "size" : 4988,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 13
+    },
+    {
+      "activity" : "validate",
+      "start" : 56,
+      "length" : 123
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 2
+    },
+    {
+      "activity" : "generate1",
+      "start" : 77,
+      "length" : 156
+    },
+    {
+      "activity" : "generate2",
+      "start" : 95,
+      "length" : 468
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 27
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-lm-behandler.json",
+    "size" : 4058,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 8
+    },
+    {
+      "activity" : "validate",
+      "start" : 56,
+      "length" : 88
+    },
+    {
+      "activity" : "generate1",
+      "start" : 77,
+      "length" : 270
+    },
+    {
+      "activity" : "generate2",
+      "start" : 96,
+      "length" : 429
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 27
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-lm-booking.json",
+    "size" : 5179,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 8
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 7
+    },
+    {
+      "activity" : "validate",
+      "start" : 56,
+      "length" : 123
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 77,
+      "length" : 203
+    },
+    {
+      "activity" : "generate2",
+      "start" : 96,
+      "length" : 447
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 23
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-lm-henvisning.json",
+    "size" : 9747,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 9
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 15
+    },
+    {
+      "activity" : "validate",
+      "start" : 56,
+      "length" : 197
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 2
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 77,
+      "length" : 349
+    },
+    {
+      "activity" : "generate2",
+      "start" : 97,
+      "length" : 432
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 27
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 4
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-lm-klinisk-dokumentation.json",
+    "size" : 5293,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 8
+    },
+    {
+      "activity" : "validate",
+      "start" : 57,
+      "length" : 119
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 78,
+      "length" : 297
+    },
+    {
+      "activity" : "generate2",
+      "start" : 97,
+      "length" : 405
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 26
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 2
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 187,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-lm-kommunikationsbesked.json",
+    "size" : 7335,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 10
+    },
+    {
+      "activity" : "validate",
+      "start" : 57,
+      "length" : 146
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 78,
+      "length" : 392
+    },
+    {
+      "activity" : "generate2",
+      "start" : 97,
+      "length" : 437
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 27
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-lm-meddelelseskonvolut.json",
+    "size" : 4960,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 10
+    },
+    {
+      "activity" : "validate",
+      "start" : 57,
+      "length" : 129
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 78,
+      "length" : 194
+    },
+    {
+      "activity" : "generate2",
+      "start" : 98,
+      "length" : 449
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 29
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-lm-organisation.json",
+    "size" : 5050,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 8
+    },
+    {
+      "activity" : "validate",
+      "start" : 57,
+      "length" : 129
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 78,
+      "length" : 273
+    },
+    {
+      "activity" : "generate2",
+      "start" : 98,
+      "length" : 456
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 26
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-lm-patient.json",
+    "size" : 5100,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 9
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 12
+    },
+    {
+      "activity" : "validate",
+      "start" : 57,
+      "length" : 190
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 2
+    },
+    {
+      "activity" : "generate1",
+      "start" : 79,
+      "length" : 230
+    },
+    {
+      "activity" : "generate2",
+      "start" : 99,
+      "length" : 442
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 28
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-lm-statusnotifikation.json",
+    "size" : 5332,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 9
+    },
+    {
+      "activity" : "validate",
+      "start" : 57,
+      "length" : 96
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 79,
+      "length" : 296
+    },
+    {
+      "activity" : "generate2",
+      "start" : 99,
+      "length" : 401
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 31
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-lm-visitationsafgoerelse.json",
+    "size" : 6574,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 8
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 11
+    },
+    {
+      "activity" : "validate",
+      "start" : 57,
+      "length" : 128
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 79,
+      "length" : 321
+    },
+    {
+      "activity" : "generate2",
+      "start" : 100,
+      "length" : 476
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 40
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-referral-message-bundle.json",
+    "size" : 4223,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 133
+    },
+    {
+      "activity" : "load-configure",
+      "start" : 47,
+      "length" : 1
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 65
+    },
+    {
+      "activity" : "validate",
+      "start" : 57,
+      "length" : 2303
+    },
+    {
+      "activity" : "checkConformanceResources",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 73,
+      "length" : 2
+    },
+    {
+      "activity" : "generate1",
+      "start" : 80,
+      "length" : 3058
+    },
+    {
+      "activity" : "generate2",
+      "start" : 100,
+      "length" : 1611
+    },
+    {
+      "activity" : "generate2",
+      "start" : 110,
+      "length" : 735
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 27
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 187,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-referral-message-header.json",
+    "size" : 2937,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 9
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 47,
+      "length" : 1
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 20
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 507
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 83,
+      "length" : 1054
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 614
+    },
+    {
+      "activity" : "generate2",
+      "start" : 111,
+      "length" : 90
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 6
+    },
+    {
+      "activity" : "scanProfilesForR5",
+      "start" : 187,
+      "length" : 1
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 187,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-referral-message-response-bundle.json",
+    "size" : 4270,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 54
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 37
+    },
+    {
+      "activity" : "validate",
+      "start" : 60,
+      "length" : 2010
+    },
+    {
+      "activity" : "checkConformanceResources",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 2
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 73,
+      "length" : 2
+    },
+    {
+      "activity" : "generate1",
+      "start" : 84,
+      "length" : 2886
+    },
+    {
+      "activity" : "generate2",
+      "start" : 102,
+      "length" : 1339
+    },
+    {
+      "activity" : "generate2",
+      "start" : 111,
+      "length" : 292
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 20
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 187,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmi-service-request.json",
+    "size" : 5954,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 17
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 67
+    },
+    {
+      "activity" : "validate",
+      "start" : 62,
+      "length" : 655
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 87,
+      "length" : 962
+    },
+    {
+      "activity" : "generate2",
+      "start" : 104,
+      "length" : 701
+    },
+    {
+      "activity" : "generate2",
+      "start" : 111,
+      "length" : 113
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 9
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 187,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-ehmiendpoint.json",
+    "size" : 2151,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 9
+    },
+    {
+      "activity" : "validate",
+      "start" : 63,
+      "length" : 51
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 188
+    },
+    {
+      "activity" : "generate2",
+      "start" : 104,
+      "length" : 381
+    },
+    {
+      "activity" : "generate2",
+      "start" : 111,
+      "length" : 25
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-henviser.json",
+    "size" : 2012,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 9
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 7
+    },
+    {
+      "activity" : "validate",
+      "start" : 63,
+      "length" : 46
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 2
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 183
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 447
+    },
+    {
+      "activity" : "generate2",
+      "start" : 111,
+      "length" : 22
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-henvisning.json",
+    "size" : 5119,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 6
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 12
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 13
+    },
+    {
+      "activity" : "validate",
+      "start" : 63,
+      "length" : 164
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 541
+    },
+    {
+      "activity" : "generate2",
+      "start" : 105,
+      "length" : 461
+    },
+    {
+      "activity" : "generate2",
+      "start" : 111,
+      "length" : 39
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-henvisningsmeddelelse.json",
+    "size" : 2585,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 8
+    },
+    {
+      "activity" : "validate",
+      "start" : 63,
+      "length" : 74
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 88,
+      "length" : 155
+    },
+    {
+      "activity" : "generate2",
+      "start" : 106,
+      "length" : 433
+    },
+    {
+      "activity" : "generate2",
+      "start" : 111,
+      "length" : 30
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-henvisningsmeddelelserespons.json",
+    "size" : 3298,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 10
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 7
+    },
+    {
+      "activity" : "validate",
+      "start" : 63,
+      "length" : 77
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 2
+    },
+    {
+      "activity" : "generate1",
+      "start" : 89,
+      "length" : 280
+    },
+    {
+      "activity" : "generate2",
+      "start" : 106,
+      "length" : 435
+    },
+    {
+      "activity" : "generate2",
+      "start" : 111,
+      "length" : 24
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-kommunikator.json",
+    "size" : 2135,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 7
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 8
+    },
+    {
+      "activity" : "validate",
+      "start" : 63,
+      "length" : 47
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 89,
+      "length" : 208
+    },
+    {
+      "activity" : "generate2",
+      "start" : 107,
+      "length" : 434
+    },
+    {
+      "activity" : "generate2",
+      "start" : 111,
+      "length" : 21
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-meddelelse.json",
+    "size" : 2549,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 3
+    },
+    {
+      "activity" : "scan",
+      "start" : 47,
+      "length" : 1
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 7
+    },
+    {
+      "activity" : "validate",
+      "start" : 63,
+      "length" : 54
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 89,
+      "length" : 214
+    },
+    {
+      "activity" : "generate2",
+      "start" : 107,
+      "length" : 438
+    },
+    {
+      "activity" : "generate2",
+      "start" : 111,
+      "length" : 21
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-patient.json",
+    "size" : 1906,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 8
+    },
+    {
+      "activity" : "validate",
+      "start" : 63,
+      "length" : 48
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 89,
+      "length" : 99
+    },
+    {
+      "activity" : "generate2",
+      "start" : 107,
+      "length" : 404
+    },
+    {
+      "activity" : "generate2",
+      "start" : 111,
+      "length" : 23
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/StructureDefinition-triagering.json",
+    "size" : 1638,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "generateSnapshots",
+      "start" : 46,
+      "length" : 4
+    },
+    {
+      "activity" : "loadInfo",
+      "start" : 47,
+      "length" : 1
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 8
+    },
+    {
+      "activity" : "validate",
+      "start" : 64,
+      "length" : 32
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 2
+    },
+    {
+      "activity" : "generate1",
+      "start" : 89,
+      "length" : 149
+    },
+    {
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 416
+    },
+    {
+      "activity" : "generate2",
+      "start" : 111,
+      "length" : 22
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ValueSet-ehmi-message-event-vs.json",
+    "size" : 500,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 1
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 5
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 47,
+      "length" : 64
+    },
+    {
+      "activity" : "validate",
+      "start" : 49,
+      "length" : 28
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 90,
+      "length" : 32
+    },
+    {
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 131
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 157,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "fsh-generated/resources/ValueSet-ehmi-referral-code-vs.json",
+    "size" : 643,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 46,
+      "length" : 2
+    },
+    {
+      "activity" : "load",
+      "start" : 46,
+      "length" : 8
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 48,
+      "length" : 4
+    },
+    {
+      "activity" : "validate",
+      "start" : 49,
+      "length" : 5727
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 73,
+      "length" : 2
+    },
+    {
+      "activity" : "generate1",
+      "start" : 90,
+      "length" : 39
+    },
+    {
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 144
+    }]
+  },
+  {
+    "name" : "\\fsh-generated\\includes\\fsh-link-references.md",
+    "size" : 1825,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\fsh-generated\\includes\\menu.xml",
+    "size" : 1321,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\00-logisk-model-oversigt.md",
+    "size" : 8408,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\01-henvisning.md",
+    "size" : 4676,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\02-patient.md",
+    "size" : 1878,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\03-behandler.md",
+    "size" : 1949,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\04-organisation.md",
+    "size" : 2121,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\05-klinisk-dokumentation.md",
+    "size" : 2398,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\06-visitationsafgoerelse.md",
+    "size" : 2644,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\07-booking.md",
+    "size" : 2152,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\08-kommunikationsbesked.md",
+    "size" : 3037,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\09-statusnotifikation.md",
+    "size" : 2277,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\10-abonnement.md",
+    "size" : 2051
+  },
+  {
+    "name" : "\\input\\pagecontent\\11-meddelelseskonvolut.md",
+    "size" : 2818,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\fhir-henvisning-messaging-cgpt.md",
+    "size" : 3620,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\fhir-henvisning-use-cases-cgpt.md",
+    "size" : 13891,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\fhir-henvisning-use-cases-claude.md",
+    "size" : 18884,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\fhir-henvisning-use-cases-claude2.md",
+    "size" : 23682,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\fhir-henvisning-use-cases-html.ht",
+    "size" : 79620,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 108,
+      "length" : 48
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\fhir-henvisning-use-cases-v2.md",
+    "size" : 28715,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\fhir-henvisning-use-cases.md",
+    "size" : 18023,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\fhir-henvisning-use-cases1.md",
+    "size" : 14764,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\fhir-henvisning-user-stories-v2-claude.md",
+    "size" : 29514,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\fhir-messaging-guide.md",
+    "size" : 3442,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\index.md",
+    "size" : 732,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\intros\\01-henvisning-intro.md",
+    "size" : 15110,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\intros\\02-patient-intro.md",
+    "size" : 3107,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\intros\\03-behandler-intro.md",
+    "size" : 7851,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\intros\\04-organisation-intro.md",
+    "size" : 6085,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\intros\\05-klinisk-dokumentation-intro.md",
+    "size" : 5067,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\intros\\06-visitationsafgoerelse-intro.md",
+    "size" : 11675,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\intros\\07-booking-intro.md",
+    "size" : 3436,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\intros\\08-kommunikationsbesked-intro.md",
+    "size" : 9835,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\intros\\09-statusnotifikation-intro.md",
+    "size" : 7968,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\intros\\10-abonnement-intro.md",
+    "size" : 4753,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\intros\\11-meddelelseskonvolut-intro.md",
+    "size" : 5476,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\old\\ehmi-henvisning-fhir-model.md",
+    "size" : 11797,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\old\\index2.md",
+    "size" : 14459,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\old\\lm-claude.md",
+    "size" : 11795,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\ReferralCommunication.md",
+    "size" : 1578,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-abonnement-intro.md",
+    "size" : 4742,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-abonnement-intro2.md",
+    "size" : 2051
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-behandler-intro.md",
+    "size" : 7884,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-behandler-intro2.md",
+    "size" : 1949,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-booking-intro.md",
+    "size" : 3564,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-booking-intro2.md",
+    "size" : 2152,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-henvisning-intro.md",
+    "size" : 15528,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-henvisning-intro2.md",
+    "size" : 4676,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-klinisk-dokumentation-intro.md",
+    "size" : 5121,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-klinisk-dokumentation-intro2.md",
+    "size" : 2398,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-kommunikationsbesked-intro.md",
+    "size" : 9997,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-kommunikationsbesked-intro2.md",
+    "size" : 3037,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-meddelelseskonvolut-intro.md",
+    "size" : 5530,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-meddelelseskonvolut-intro2.md",
+    "size" : 2818,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-organisation-intro.md",
+    "size" : 6204,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-organisation-intro2.md",
+    "size" : 2121,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-patient-intro.md",
+    "size" : 3107,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-patient-intro2.md",
+    "size" : 1878,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-statusnotifikation-intro.md",
+    "size" : 8044,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-statusnotifikation-intro2.md",
+    "size" : 2277,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-visitationsafgoerelse-intro.md",
+    "size" : 11979,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\StructureDefinition-ehmi-lm-visitationsafgoerelse-intro2.md",
+    "size" : 2644,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\usecases-claude.md",
+    "size" : 932,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\usecases-claude2.md",
+    "size" : 928,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\usecases-henvisning-claude.md",
+    "size" : 10145,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\usecases.md",
+    "size" : 2545,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\usecases_cgpt.md",
+    "size" : 9066,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\workflow-claude.md",
+    "size" : 2453,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\workflow.md",
+    "size" : 5759
+  },
+  {
+    "name" : "\\input\\pagecontent\\workflow2.md",
+    "size" : 3218,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\pagecontent\\workflow3.md",
+    "size" : 1418,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\template\\config",
+    "size" : 0,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\template\\config\\_config.yml",
+    "size" : 140
+  },
+  {
+    "name" : "\\input\\images",
+    "size" : 0,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\1.1 Oprette ny henvisning.svg",
+    "size" : 4227,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\1.2 Tilknytte klinisk dokumentation.svg",
+    "size" : 3325,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\1.3.svg",
+    "size" : 3307,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\2.2.svg",
+    "size" : 7133
+  },
+  {
+    "name" : "\\input\\images\\3.1.svg",
+    "size" : 3302,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\3.2.svg",
+    "size" : 5180
+  },
+  {
+    "name" : "\\input\\images\\3.3.svg",
+    "size" : 4877,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\3.4.svg",
+    "size" : 6686,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\chatgpt_allInOne-page1.svg",
+    "size" : 4787
+  },
+  {
+    "name" : "\\input\\images\\chatgpt_allInOne-page2.svg",
+    "size" : 3575,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\images\\chatgpt_allInOne-page3.svg",
+    "size" : 3526,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\chatgpt_allInOne-page4.svg",
+    "size" : 1237
+  },
+  {
+    "name" : "\\input\\images\\common.svg",
+    "size" : 525,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\ehmi-henvisning-lm.png",
+    "size" : 141155,
+    "processes" : [{
+      "activity" : "validate",
+      "start" : 73,
+      "length" : 1
+    },
+    {
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\ehmi-henvisning-lm.svg",
+    "size" : 21653
+  },
+  {
+    "name" : "\\input\\images\\Fhir Henvisning Use Cases v 2 Claude - DK MEDCOM REFERRAL LM v0.1.0.pdf",
+    "size" : 600394,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-1.svg",
+    "size" : 2358
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-10.svg",
+    "size" : 3428,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-11.svg",
+    "size" : 2765,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-12.svg",
+    "size" : 2757,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-2.svg",
+    "size" : 2397,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-3.svg",
+    "size" : 2410
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-4.svg",
+    "size" : 2385,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-5.svg",
+    "size" : 2378,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-6.svg",
+    "size" : 2388,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-7.svg",
+    "size" : 2349,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-8.svg",
+    "size" : 2356,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-9.svg",
+    "size" : 2363
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-messaging-page1.svg",
+    "size" : 7026,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-use-cases-cgpt.svg",
+    "size" : 8232
+  },
+  {
+    "name" : "\\input\\images\\fhir-henvisning-use-cases.svg",
+    "size" : 29702,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-messaging-diagrams-0.svg",
+    "size" : 4165,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-messaging-diagrams-1.svg",
+    "size" : 4094,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-messaging-diagrams-10.svg",
+    "size" : 3861,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-messaging-diagrams-11.svg",
+    "size" : 3851,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-messaging-diagrams-2.svg",
+    "size" : 4036,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-messaging-diagrams-3.svg",
+    "size" : 4024,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-messaging-diagrams-4.svg",
+    "size" : 3182
+  },
+  {
+    "name" : "\\input\\images\\fhir-messaging-diagrams-5.svg",
+    "size" : 3216,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-messaging-diagrams-6.svg",
+    "size" : 3191,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-messaging-diagrams-7.svg",
+    "size" : 3240
+  },
+  {
+    "name" : "\\input\\images\\fhir-messaging-diagrams-8.svg",
+    "size" : 3193,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\fhir-messaging-diagrams-9.svg",
+    "size" : 4532,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\FHIR_Henvisning_UC_Overview.svg",
+    "size" : 20861,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\FHIR_Henvisning_Use_Cases.svg",
+    "size" : 27453,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\overview.svg",
+    "size" : 8188,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\svg.zip",
+    "size" : 49693,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC-1-1-Oprette-henvisning.svg",
+    "size" : 5295,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC-1-2-Tilknytte-dokumentation.svg",
+    "size" : 4982
+  },
+  {
+    "name" : "\\input\\images\\UC-1-3-Aendre-henvisning.svg",
+    "size" : 5182,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC-1-4-Tilbagekalde-henvisning.svg",
+    "size" : 4914,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC-1-5-Monitorere-status.svg",
+    "size" : 4177
+  },
+  {
+    "name" : "\\input\\images\\UC-1-6-Modtage-afgoerelse.svg",
+    "size" : 3502,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC-2-1-Modtage-kvittere.svg",
+    "size" : 3834
+  },
+  {
+    "name" : "\\input\\images\\UC-2-2-Triagere-prioritere.svg",
+    "size" : 3781,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC-2-3-Acceptere-booke.svg",
+    "size" : 4212
+  },
+  {
+    "name" : "\\input\\images\\UC-2-4-Afvise-henvisning.svg",
+    "size" : 4441,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC-2-5-Videresende.svg",
+    "size" : 4244,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC-2-6-Aendre-prioritet.svg",
+    "size" : 4120
+  },
+  {
+    "name" : "\\input\\images\\UC-3-1-Anmode-supplement.svg",
+    "size" : 4243,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC-3-2-Besvare-supplement.svg",
+    "size" : 4659,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC-3-3-Faglig-afklaring.svg",
+    "size" : 6531,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC-3-4-Statusnotifikation.svg",
+    "size" : 3331,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC-3-5-Alternativ-visitation.svg",
+    "size" : 5474
+  },
+  {
+    "name" : "\\input\\images\\UC-3-6-Korrektionsaftale.svg",
+    "size" : 5737
+  },
+  {
+    "name" : "\\input\\images\\UC35.svg",
+    "size" : 2505,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "\\input\\images\\UC36.svg",
+    "size" : 3310,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  },
+  {
+    "name" : "\\input\\images\\usecases-claude-svg.png",
+    "size" : 11049
+  },
+  {
+    "name" : "\\temp\\pages\\_includes\\artifacts.xml",
+    "size" : 15107,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 109,
+      "length" : 2
+    }]
+  }]
+}

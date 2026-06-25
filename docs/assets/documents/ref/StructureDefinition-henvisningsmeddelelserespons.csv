@@ -1,0 +1,23 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"henvisningsmeddelelserespons","henvisningsmeddelelserespons","","","",0,*,"","","","null {[]} {[]}
+","Henvisningsmeddelelse Response – Logisk Model","Konceptuel logisk model for en henvisningsmeddelelse med response i dansk sundhedsvæsen. Der er brug for udddybning af henvisningen før den kan endeligt triageres","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"henvisningsmeddelelserespons.Meddelelse","henvisningsmeddelelserespons.Meddelelse","","","",1,1,"","","","http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/meddelelse {[]} {[]}
+","Meddelelseskonvolut","Meddelelseskonvolut","","","","","","","","","",,,,,"",,,,"henvisningsmeddelelserespons.Meddelelse",1,1,"",""
+"henvisningsmeddelelserespons.Meddelelse.messageId","henvisningsmeddelelserespons.Meddelelse.messageId","","","",1,1,"","","","id {[]} {[]}
+","Unik meddelelsesidentifikator (UUID)","Unik meddelelsesidentifikator (UUID)","","","","","","","","","",,,,,"",,,,"meddelelse.messageId",1,1,"",""
+"henvisningsmeddelelserespons.Meddelelse.timestamp","henvisningsmeddelelserespons.Meddelelse.timestamp","","","",1,1,"","","","dateTime {[]} {[]}
+","Afsendelsestidspunkt","Afsendelsestidspunkt","","","","","","","","","",,,,,"",,,,"meddelelse.timestamp",1,1,"",""
+"henvisningsmeddelelserespons.Meddelelse.haendelse","henvisningsmeddelelserespons.Meddelelse.haendelse","","","",1,1,"","","","Coding {[]} {[]}
+","Haendelsestype (ny/annuller/opdater)","Haendelsestype (ny/annuller/opdater)","","","","","","","","","",,,,,"",,,,"meddelelse.haendelse",1,1,"",""
+"henvisningsmeddelelserespons.Meddelelse.afsender","henvisningsmeddelelserespons.Meddelelse.afsender","","","",1,1,"","","","http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/kommunikator {[]} {[]}
+","Afsendende organisation","Afsendende organisation","","","","","","","","","",,,,,"",,,,"meddelelse.afsender",1,1,"",""
+"henvisningsmeddelelserespons.Meddelelse.modtager","henvisningsmeddelelserespons.Meddelelse.modtager","","","",1,*,"","","","http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/kommunikator {[]} {[]}
+","Modtagende organisation","Modtagende organisation","","","","","","","","","",,,,,"",,,,"meddelelse.modtager",1,*,"",""
+"henvisningsmeddelelserespons.Meddelelse.Henvisning","henvisningsmeddelelserespons.Meddelelse.Henvisning","","","",1,1,"","","","http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/henvisning {[]} {[]}
+","Klinisk henvisning (ServiceRequest)","Klinisk henvisning (ServiceRequest)","","","","","","","","","",,,,,"",,,,"henvisningsmeddelelserespons.Meddelelse.Henvisning",1,1,"",""
+"henvisningsmeddelelserespons.Meddelelse.Patient","henvisningsmeddelelserespons.Meddelelse.Patient","","","",1,1,"","","","http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/patient {[]} {[]}
+","Patientinformation","Patientinformation","","","","","","","","","",,,,,"",,,,"henvisningsmeddelelserespons.Meddelelse.Patient",1,1,"",""
+"henvisningsmeddelelserespons.Meddelelse.Henviser","henvisningsmeddelelserespons.Meddelelse.Henviser","","","",1,1,"","","","http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/henviser {[]} {[]}
+","Henvisende behandler","Henvisende behandler","","","","","","","","","",,,,,"",,,,"henvisningsmeddelelserespons.Meddelelse.Henviser",1,1,"",""
+"henvisningsmeddelelserespons.Meddelelse.Triagering","henvisningsmeddelelserespons.Meddelelse.Triagering","","","",0,1,"","","","http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/triagering {[]} {[]}
+","Triageringsbesked","Triageringsbesked","","","","","","","","","",,,,,"",,,,"henvisningsmeddelelserespons.Meddelelse.Triagering",0,1,"",""

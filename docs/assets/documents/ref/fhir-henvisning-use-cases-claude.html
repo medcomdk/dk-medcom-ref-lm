@@ -1,0 +1,1019 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Fhir Henvisning Use Cases Claude - DK MEDCOM REFERRAL LM v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7-dk.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"17"}
+    h3,h4,h5,h6{--heading-prefix:"17"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.medcom.dk">
+            <img height="50" alt="Visit MedComs website" src="assets/images/dark-medcom-logo.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>        
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">DK MEDCOM REFERRAL LM</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - draft
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">More
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="toc.html">Table of Contents</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Fhir Henvisning Use Cases Claude</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">DK MEDCOM REFERRAL LM - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://medcomehmi.dk/ig/dk-medcom-ref-lm/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Fhir Henvisning Use Cases Claude</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#use-cases-for-fhir-baseret-henvisningshåndtering" id="markdown-toc-use-cases-for-fhir-baseret-henvisningshåndtering">Use Cases for FHIR-baseret Henvisningshåndtering</a>    <ul>
+      <li><a href="#sektion-1--henviserens-use-cases" id="markdown-toc-sektion-1--henviserens-use-cases">Sektion 1 — Henviserens use cases</a>        <ul>
+          <li><a href="#11-oprette-en-ny-henvisning" id="markdown-toc-11-oprette-en-ny-henvisning">1.1 Oprette en ny henvisning</a></li>
+          <li><a href="#12-tilknytte-klinisk-dokumentation" id="markdown-toc-12-tilknytte-klinisk-dokumentation">1.2 Tilknytte klinisk dokumentation</a></li>
+          <li><a href="#13-ændre-en-afsendt-henvisning" id="markdown-toc-13-ændre-en-afsendt-henvisning">1.3 Ændre en afsendt henvisning</a></li>
+          <li><a href="#14-tilbagekalde-en-henvisning" id="markdown-toc-14-tilbagekalde-en-henvisning">1.4 Tilbagekalde en henvisning</a></li>
+          <li><a href="#15-monitorere-status-på-afsendte-henvisninger" id="markdown-toc-15-monitorere-status-på-afsendte-henvisninger">1.5 Monitorere status på afsendte henvisninger</a></li>
+          <li><a href="#16-modtage-afgørelse-fra-visitatoren" id="markdown-toc-16-modtage-afgørelse-fra-visitatoren">1.6 Modtage afgørelse fra visitatoren</a></li>
+        </ul>
+      </li>
+      <li><a href="#sektion-2--visitatorens-use-cases" id="markdown-toc-sektion-2--visitatorens-use-cases">Sektion 2 — Visitatorens use cases</a>        <ul>
+          <li><a href="#21-modtage-og-kvittere-for-ny-henvisning" id="markdown-toc-21-modtage-og-kvittere-for-ny-henvisning">2.1 Modtage og kvittere for ny henvisning</a></li>
+          <li><a href="#22-triagere-og-prioritere-en-henvisning" id="markdown-toc-22-triagere-og-prioritere-en-henvisning">2.2 Triagere og prioritere en henvisning</a></li>
+          <li><a href="#23-acceptere-en-henvisning-og-booke-forløb" id="markdown-toc-23-acceptere-en-henvisning-og-booke-forløb">2.3 Acceptere en henvisning og booke forløb</a></li>
+          <li><a href="#24-afvise-en-henvisning" id="markdown-toc-24-afvise-en-henvisning">2.4 Afvise en henvisning</a></li>
+          <li><a href="#25-videresende-en-henvisning" id="markdown-toc-25-videresende-en-henvisning">2.5 Videresende en henvisning</a></li>
+          <li><a href="#26-ændre-prioritet-på-en-modtaget-henvisning" id="markdown-toc-26-ændre-prioritet-på-en-modtaget-henvisning">2.6 Ændre prioritet på en modtaget henvisning</a></li>
+        </ul>
+      </li>
+      <li><a href="#sektion-3--udvekslingsdialog" id="markdown-toc-sektion-3--udvekslingsdialog">Sektion 3 — Udvekslingsdialog</a>        <ul>
+          <li><a href="#31-anmode-om-supplerende-oplysninger" id="markdown-toc-31-anmode-om-supplerende-oplysninger">3.1 Anmode om supplerende oplysninger</a></li>
+          <li><a href="#32-besvare-anmodning-om-supplement" id="markdown-toc-32-besvare-anmodning-om-supplement">3.2 Besvare anmodning om supplement</a></li>
+          <li><a href="#33-faglig-afklaring-i-dialog" id="markdown-toc-33-faglig-afklaring-i-dialog">3.3 Faglig afklaring i dialog</a></li>
+          <li><a href="#34-statusnotifikation-til-henviser" id="markdown-toc-34-statusnotifikation-til-henviser">3.4 Statusnotifikation til henviser</a></li>
+          <li><a href="#35-aftale-om-alternativ-visitation" id="markdown-toc-35-aftale-om-alternativ-visitation">3.5 Aftale om alternativ visitation</a></li>
+          <li><a href="#36-korrektionsaftale-om-fejl-i-afsendt-henvisning" id="markdown-toc-36-korrektionsaftale-om-fejl-i-afsendt-henvisning">3.6 Korrektionsaftale om fejl i afsendt henvisning</a></li>
+        </ul>
+      </li>
+      <li><a href="#ressourceoversigt" id="markdown-toc-ressourceoversigt">Ressourceoversigt</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="use-cases-for-fhir-baseret-henvisningshåndtering">Use Cases for FHIR-baseret Henvisningshåndtering</h1>
+
+<blockquote>
+  <p><strong>FHIR R4 · Henvisningsworkflow</strong></p>
+</blockquote>
+
+<p>Oversigt over use cases for de to primære roller — <strong>henviseren</strong> og <strong>visitatoren</strong> — samt de fælles use cases der opstår i udvekslingsdialogen mellem dem. Al kommunikation foregår via FHIR-baserede beskeder.</p>
+
+<hr />
+<!--
+## Indholdsfortegnelse
+
+- [Sektion 1 — Henviserens use cases](#sektion-1--henviserens-use-cases)
+  - [1.1 Oprette en ny henvisning](#11-oprette-en-ny-henvisning)
+  - [1.2 Tilknytte klinisk dokumentation](#12-tilknytte-klinisk-dokumentation)
+  - [1.3 Ændre en afsendt henvisning](#13-ændre-en-afsendt-henvisning)
+  - [1.4 Tilbagekalde en henvisning](#14-tilbagekalde-en-henvisning)
+  - [1.5 Monitorere status på afsendte henvisninger](#15-monitorere-status-på-afsendte-henvisninger)
+  - [1.6 Modtage afgørelse fra visitatoren](#16-modtage-afgørelse-fra-visitatoren)
+- [Sektion 2 — Visitatorens use cases](#sektion-2--visitatorens-use-cases)
+  - [2.1 Modtage og kvittere for ny henvisning](#21-modtage-og-kvittere-for-ny-henvisning)
+  - [2.2 Triagere og prioritere en henvisning](#22-triagere-og-prioritere-en-henvisning)
+  - [2.3 Acceptere en henvisning og booke forløb](#23-acceptere-en-henvisning-og-booke-forløb)
+  - [2.4 Afvise en henvisning](#24-afvise-en-henvisning)
+  - [2.5 Videresende en henvisning](#25-videresende-en-henvisning)
+  - [2.6 Ændre prioritet på en modtaget henvisning](#26-ændre-prioritet-på-en-modtaget-henvisning)
+- [Sektion 3 — Udvekslingsdialog](#sektion-3--udvekslingsdialog)
+  - [3.1 Anmode om supplerende oplysninger](#31-anmode-om-supplerende-oplysninger)
+  - [3.2 Besvare anmodning om supplement](#32-besvare-anmodning-om-supplement)
+  - [3.3 Faglig afklaring i dialog](#33-faglig-afklaring-i-dialog)
+  - [3.4 Statusnotifikation til henviser](#34-statusnotifikation-til-henviser)
+  - [3.5 Aftale om alternativ visitation](#35-aftale-om-alternativ-visitation)
+  - [3.6 Korrektionsaftale om fejl i afsendt henvisning](#36-korrektionsaftale-om-fejl-i-afsendt-henvisning)
+- [Ressourceoversigt](#ressourceoversigt)
+
+--->
+
+<h2 id="sektion-1--henviserens-use-cases">Sektion 1 — Henviserens use cases</h2>
+
+<p>Udføres selvstændigt af henviseren uden at kræve aktiv respons fra visitatoren ud over systemkvittering.</p>
+
+<hr />
+
+<h3 id="11-oprette-en-ny-henvisning">1.1 Oprette en ny henvisning</h3>
+
+<p>Henviseren udfærdiger og afsender en ny henvisning til et modtagende tilbud. Henvisningen repræsenteres som en <code class="language-plaintext highlighter-rouge">ServiceRequest</code>-ressource med status <code class="language-plaintext highlighter-rouge">proposed</code> og sendes i en FHIR-<code class="language-plaintext highlighter-rouge">Bundle</code>. Henvisningen indeholder patientoplysninger, indikation, hastegrad og ønsket ydelse.</p>
+
+<blockquote>
+  <p><em>Som henviser ønsker jeg at kunne oprette og afsende en struktureret henvisning via FHIR, <br />når jeg har truffet en klinisk beslutning om at viderehenvise en patient, <br />så visitatoren modtager alle nødvendige oplysninger på et standardiseret format.</em></p>
+</blockquote>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code> status=proposed</td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Klinisk beslutning om at henvise patient</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#12-tilknytte-klinisk-dokumentation">1.2 Tilknytte dok.</a> · <br />→ <a href="#21-modtage-og-kvittere-for-ny-henvisning">2.1 Modtage</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="12-tilknytte-klinisk-dokumentation">1.2 Tilknytte klinisk dokumentation</h3>
+
+<p>Henviseren vedhæfter supplerende klinisk materiale til en eksisterende henvisning — fx laboratoriesvar, billeddiagnostik eller tidligere epikriser. Materialet knyttes til <code class="language-plaintext highlighter-rouge">ServiceRequest</code>-ressourcen via referencer til <code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, <code class="language-plaintext highlighter-rouge">Media</code> eller <code class="language-plaintext highlighter-rouge">DocumentReference</code>.</p>
+
+<blockquote>
+  <p><em>Som henviser ønsker jeg at kunne vedhæfte relevant klinisk dokumentation til en eksisterende henvisning, <br />når jeg vurderer at visitatoren har brug for supplerende materiale for at træffe en god afgørelse, <br />så beslutningsgrundlaget er samlet ét sted.</em></p>
+</blockquote>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport</code> · <code class="language-plaintext highlighter-rouge">Media</code> · <code class="language-plaintext highlighter-rouge">DocumentReference</code></td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Behov for at understøtte klinisk beslutningsgrundlag</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#21-modtage-og-kvittere-for-ny-henvisning">2.1 Modtage</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+
+<h3 id="13-ændre-en-afsendt-henvisning">1.3 Ændre en afsendt henvisning</h3>
+
+<p>Henviseren opdaterer indholdet af en allerede afsendt henvisning — fx korrigerer indikation, hastegrad eller kontaktoplysninger. Opdateringen sker via en <code class="language-plaintext highlighter-rouge">PUT</code>-operation på den eksisterende <code class="language-plaintext highlighter-rouge">ServiceRequest</code>, og der sættes et revisionsflag så visitatoren notificeres.</p>
+
+<blockquote>
+  <p><em>Som henviser ønsker jeg at kunne rette indholdet i en allerede afsendt henvisning, <br />når jeg opdager en fejl eller patientens kliniske situation ændrer sig, <br />så visitatoren altid arbejder ud fra korrekte og aktuelle oplysninger.</em></p>
+</blockquote>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code> (PUT / revision)</td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Fejl opdaget eller klinisk situation ændret efter afsendelse</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#22-triagere-og-prioritere-en-henvisning">2.2 Triagere</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+
+<h3 id="14-tilbagekalde-en-henvisning">1.4 Tilbagekalde en henvisning</h3>
+
+<p>Henviseren annullerer en afsendt henvisning der endnu ikke er ekspederet. <code class="language-plaintext highlighter-rouge">ServiceRequest</code>-status sættes til <code class="language-plaintext highlighter-rouge">revoked</code> og en notifikation sendes til visitatoren.</p>
+
+<blockquote>
+  <p><em>Som henviser ønsker jeg at kunne tilbagekalde en afsendt henvisning, <br />når patienten ikke længere ønsker forløbet eller det kliniske grundlag er bortfaldet, <br />så visitatoren ikke bruger ressourcer på en henvisning der ikke skal ekspederes.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code> status=revoked</td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Patienten ønsker ikke forløbet, eller klinisk grundlag er bortfaldet</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>✓ Flowet afsluttes</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="15-monitorere-status-på-afsendte-henvisninger">1.5 Monitorere status på afsendte henvisninger</h3>
+
+<p>Henviseren følger løbende op på status for egne udestående henvisninger. Dette kan ske via FHIR-subscription (push) eller ved periodisk polling mod visitatorens FHIR-endpoint.</p>
+
+<blockquote>
+  <p><em>Som henviser ønsker jeg løbende at kunne se status på mine afsendte og udestående henvisninger, <br />når jeg har behov for overblik over patienternes videre forløb, <br />så jeg kan følge op og informere patienterne korrekt.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">Subscription</code> · <code class="language-plaintext highlighter-rouge">SubscriptionStatus</code> · <code class="language-plaintext highlighter-rouge">ServiceRequest</code></td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Behov for overblik over egne afsendte henvisninger</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#16-modtage-afgørelse-fra-visitatoren">1.6 Modtage afgørelse</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="16-modtage-afgørelse-fra-visitatoren">1.6 Modtage afgørelse fra visitatoren</h3>
+
+<p>Henviseren modtager visitatorens endelige afgørelse — accept, afvisning eller alternativt tilbud — og integrerer denne i eget journalsystem. Afgørelsen leveres som en <code class="language-plaintext highlighter-rouge">Task</code>-ressource eller notifikation med reference til den oprindelige <code class="language-plaintext highlighter-rouge">ServiceRequest</code>.</p>
+
+<blockquote>
+  <p><em>Som henviser ønsker jeg automatisk at modtage visitatorens afgørelse i mit journalsystem, <br />når visitatoren har truffet beslutning om accept, afvisning eller alternativt tilbud, <br />så jeg hurtigt kan handle og orientere patienten.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">Task</code> · <code class="language-plaintext highlighter-rouge">SubscriptionNotification</code></td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Visitatoren har truffet afgørelse om henvisningen</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#11-oprette-en-ny-henvisning">1.1 Ny henvisning</a> · Accept → afslut</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="sektion-2--visitatorens-use-cases">Sektion 2 — Visitatorens use cases</h2>
+
+<p>Udføres selvstændigt af visitatoren som led i modtagelse og behandling af indkomne henvisninger.</p>
+
+<hr />
+
+<h3 id="21-modtage-og-kvittere-for-ny-henvisning">2.1 Modtage og kvittere for ny henvisning</h3>
+
+<p>Visitatoren modtager en indkommende FHIR-<code class="language-plaintext highlighter-rouge">Bundle</code> med en ny <code class="language-plaintext highlighter-rouge">ServiceRequest</code> og sender en teknisk kvittering (ACK) tilbage til afsendersystemet. Henvisningen registreres med status <code class="language-plaintext highlighter-rouge">active</code> eller <code class="language-plaintext highlighter-rouge">on-hold</code> afhængigt af triagekapacitet.</p>
+
+<blockquote>
+  <p><em>Som visitator ønsker jeg automatisk at modtage og kvittere for indkomne henvisninger via FHIR, <br />når en ny ServiceRequest ankommer i mit endpoint, <br />så afsenderen hurtigt får bekræftet at henvisningen er modtaget korrekt.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">Bundle</code> · <code class="language-plaintext highlighter-rouge">MessageHeader</code> · <code class="language-plaintext highlighter-rouge">ServiceRequest</code></td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Indkommende henvisning i FHIR-endpoint</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#22-triagere-og-prioritere-en-henvisning">2.2 Triagere</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="22-triagere-og-prioritere-en-henvisning">2.2 Triagere og prioritere en henvisning</h3>
+
+<p>Visitatoren vurderer henvisningens faglige indhold, klassificerer hastegrad og prioriterer i forhold til øvrige indkomne henvisninger. Triage-udfaldet dokumenteres i en <code class="language-plaintext highlighter-rouge">Task</code>-ressource med udfald og begrundelse.</p>
+
+<blockquote>
+  <p><em>Som visitator ønsker jeg at kunne foretage en struktureret triage af en modtaget henvisning og dokumentere mit udfald, <br />når en ny eller opdateret henvisning er klar til klinisk vurdering, <br />så prioriteringen er sporbar og ensartet på tværs af alle indkomne sager.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">Task</code> (triage-outcome, priority)</td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Ny eller opdateret henvisning klar til klinisk vurdering</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#23-acceptere-en-henvisning-og-booke-forløb">2.3 Acceptere</a> · <br />→ <a href="#24-afvise-en-henvisning">2.4 Afvise</a> · <br />→ <a href="#31-anmode-om-supplerende-oplysninger">3.1 Supplement</a> · <br />→ <a href="#26-ændre-prioritet-på-en-modtaget-henvisning">2.6 Prioritet</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="23-acceptere-en-henvisning-og-booke-forløb">2.3 Acceptere en henvisning og booke forløb</h3>
+
+<p>Visitatoren accepterer en henvist patient og opretter en aftale i planlægningssystemet. <code class="language-plaintext highlighter-rouge">ServiceRequest</code>-status opdateres til <code class="language-plaintext highlighter-rouge">active</code>, og en <code class="language-plaintext highlighter-rouge">Appointment</code>-ressource oprettes med tid, sted og behandler. Henviseren notificeres automatisk.</p>
+
+<blockquote>
+  <p><em>Som visitator ønsker jeg at kunne acceptere en godkendt henvisning og oprette en booking til patienten, <br />når triage er afsluttet og kapacitet er til stede, <br />så patienten hurtigt modtager en bekræftet aftale og henviseren holdes orienteret.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code> (active) · <code class="language-plaintext highlighter-rouge">Appointment</code></td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Positiv triage-afgørelse og tilgængelig kapacitet</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#34-statusnotifikation-til-henviser">3.4 Statusnotifikation</a> · <br />→ <a href="#16-modtage-afgørelse-fra-visitatoren">1.6 Afgørelse</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="24-afvise-en-henvisning">2.4 Afvise en henvisning</h3>
+
+<p>Visitatoren afviser en modtaget henvisning og dokumenterer årsagen. <code class="language-plaintext highlighter-rouge">ServiceRequest</code>-status sættes til <code class="language-plaintext highlighter-rouge">revoked</code> og der oprettes en <code class="language-plaintext highlighter-rouge">Task</code> med afvisningskode og begrundelse. Henviseren notificeres.</p>
+
+<blockquote>
+  <p><em>Som visitator ønsker jeg at kunne afvise en henvisning med en klar begrundelse, <br />når det vurderes at tilbuddet ikke er egnet for patienten, <br />så henviseren kan agere hurtigt og patienten ikke ender i en blindgyde.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">Task</code> (rejection) · <code class="language-plaintext highlighter-rouge">ServiceRequest</code> (revoked)</td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Negativ triage-afgørelse eller kapacitetsmangel</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#35-aftale-om-alternativ-visitation">3.5 Alternativ visitation</a> · <br />→ <a href="#16-modtage-afgørelse-fra-visitatoren">1.6 Afgørelse</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="25-videresende-en-henvisning">2.5 Videresende en henvisning</h3>
+
+<p>Visitatoren videresender en fejlplaceret eller omdirigeret henvisning til en mere egnet modtager. Den nye <code class="language-plaintext highlighter-rouge">ServiceRequest</code> oprettes med <code class="language-plaintext highlighter-rouge">replaces</code>-reference til den originale, og der sendes notifikation til den oprindelige henviser.</p>
+
+<blockquote>
+  <p><em>Som visitator ønsker jeg at kunne videresende en fejlplaceret henvisning til rette modtager, <br />når jeg vurderer at et andet tilbud er bedre egnet, <br />så patienten ikke unødigt forsinkes og henviseren holdes orienteret om omdirigeringen.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code> (replaces) · <code class="language-plaintext highlighter-rouge">Task</code> · <code class="language-plaintext highlighter-rouge">Communication</code></td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Forkert modtager eller bedre egnet tilbud identificeret</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#21-modtage-og-kvittere-for-ny-henvisning">2.1 Ny modtager</a> · <br />→ <a href="#34-statusnotifikation-til-henviser">3.4 Notifikation</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="26-ændre-prioritet-på-en-modtaget-henvisning">2.6 Ændre prioritet på en modtaget henvisning</h3>
+
+<p>Visitatoren revurderer hastegraden for en allerede modtaget henvisning — fx på baggrund af ny klinisk information eller ændret kapacitetssituation. Prioriteten opdateres på <code class="language-plaintext highlighter-rouge">ServiceRequest</code> og der sendes notifikation til henviseren.</p>
+
+<blockquote>
+  <p><em>Som visitator ønsker jeg at kunne justere prioriteten på en allerede modtaget henvisning, <br />når ny klinisk information eller ændret kapacitetssituation tilsiger det, <br />så den kliniske hastegrad afspejles korrekt og henviseren notificeres om ændringen.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code> (priority update) · <code class="language-plaintext highlighter-rouge">SubscriptionNotification</code></td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Ny information ændrer klinisk hastegrad</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#34-statusnotifikation-til-henviser">3.4 Statusnotifikation</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="sektion-3--udvekslingsdialog">Sektion 3 — Udvekslingsdialog</h2>
+
+<p>Use cases der forudsætter aktiv kommunikation frem og tilbage mellem henviser og visitator via FHIR-beskeder.</p>
+
+<hr />
+
+<h3 id="31-anmode-om-supplerende-oplysninger">3.1 Anmode om supplerende oplysninger</h3>
+
+<p>Visitatoren mangler oplysninger for at kunne triagere og sender en struktureret anmodning til henviseren om at supplere med konkrete kliniske data — fx blodprøveresultater, BMI, medicinliste eller tidligere forløb.</p>
+
+<blockquote>
+  <p><em>Som visitator ønsker jeg at kunne sende en struktureret anmodning om supplerende oplysninger til henviseren, <br />når grundlaget for triage er utilstrækkeligt, <br />så jeg kan træffe en fagligt forsvarlig visitationsafgørelse uden at afvise unødigt.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">CommunicationRequest</code> (visitator → henviser)</td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Utilstrækkeligt grundlag for visitationsafgørelse</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#32-besvare-anmodning-om-supplement">3.2 Besvare</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="32-besvare-anmodning-om-supplement">3.2 Besvare anmodning om supplement</h3>
+
+<p>Henviseren modtager en supplement-anmodning og besvarer denne ved at sende de efterspurgte oplysninger. Svaret sendes som en <code class="language-plaintext highlighter-rouge">Communication</code>-ressource med reference til den oprindelige <code class="language-plaintext highlighter-rouge">CommunicationRequest</code> og til <code class="language-plaintext highlighter-rouge">ServiceRequest</code>.</p>
+
+<blockquote>
+  <p><em>Som henviser ønsker jeg at kunne besvare en supplement-anmodning med de efterspurgte kliniske oplysninger, <br />når visitatoren har bedt om yderligere data, <br />så visitatoren hurtigt kan genoptage og afslutte triage-processen.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">Communication</code> (reply, in-response-to)</td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Modtagelse af CommunicationRequest fra visitatoren</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#22-triagere-og-prioritere-en-henvisning">2.2 Triagere</a> · <br />→ <a href="#33-faglig-afklaring-i-dialog">3.3 Faglig dialog</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="33-faglig-afklaring-i-dialog">3.3 Faglig afklaring i dialog</h3>
+
+<p>Henviser og visitator udveksler kliniske spørgsmål og svar for at afklare indikation, behandlingsegnethed eller alternativ tilgang. Dialogen føres som en kæde af <code class="language-plaintext highlighter-rouge">Communication</code>-ressourcer med indbyrdes referencer.</p>
+
+<blockquote>
+  <p><em>Som henviser og visitator ønsker vi begge at kunne føre en struktureret faglig dialog om en konkret henvisning, <br />når indikation, egnethed eller behandlingsvalg er uklart, <br />så vi i fællesskab kan nå frem til den rigtige afgørelse for patienten uden at skulle bruge andre kommunikationskanaler.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">Communication</code> (thread, in-response-to-kæde)</td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Faglig uklarhed der kræver mere end én udveksling</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#23-acceptere-en-henvisning-og-booke-forløb">2.3 Acceptere</a> · <br />→ <a href="#24-afvise-en-henvisning">2.4 Afvise</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="34-statusnotifikation-til-henviser">3.4 Statusnotifikation til henviser</h3>
+
+<p>Visitatoren notificerer automatisk henviseren ved statusskift på en afsendt henvisning — fx modtaget, under vurdering, accepteret eller afvist. Notifikationen leveres via FHIR-subscription og indeholder reference til den opdaterede <code class="language-plaintext highlighter-rouge">ServiceRequest</code>.</p>
+
+<blockquote>
+  <p><em>Som henviser ønsker jeg automatisk at modtage en notifikation, <br />når status på en af mine henvisninger ændrer sig hos visitatoren, <br />så jeg til enhver tid er opdateret om forløbet uden at skulle forespørge aktivt.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">SubscriptionNotification</code> · <code class="language-plaintext highlighter-rouge">ServiceRequest</code></td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Ethvert statusskift på en aktiv henvisning hos visitatoren</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#16-modtage-afgørelse-fra-visitatoren">1.6 Modtage afgørelse</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="35-aftale-om-alternativ-visitation">3.5 Aftale om alternativ visitation</h3>
+
+<p>Henviser og visitator forhandler i fællesskab om et alternativt tilbud, <br />når det primære visitationsspor ikke er muligt. Dialogen foregår via <code class="language-plaintext highlighter-rouge">Communication</code>, og den resulterende aftale dokumenteres i en <code class="language-plaintext highlighter-rouge">Task</code> med reference til det alternative tilbud.</p>
+
+<blockquote>
+  <p><em>Som visitator ønsker jeg at kunne indlede en dialog med henviseren om et alternativt tilbud, <br />når jeg ikke kan imødekomme den primære henvisning, <br />så patienten ikke ender i en blindgyde og vi i fællesskab finder en løsning.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">Communication</code> · <code class="language-plaintext highlighter-rouge">Task</code> · <code class="language-plaintext highlighter-rouge">ServiceRequest</code> (alternativ)</td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Afvisning kombineret med behov for at finde alternativ løsning for patienten</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#11-oprette-en-ny-henvisning">1.1 Ny henvisning</a> · <br />→ <a href="#23-acceptere-en-henvisning-og-booke-forløb">2.3 Acceptere</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="36-korrektionsaftale-om-fejl-i-afsendt-henvisning">3.6 Korrektionsaftale om fejl i afsendt henvisning</h3>
+
+<p>Visitatoren opdager en fejl i en modtaget henvisning — fx forkert CPR-nummer, forkert ydelseskode eller manglende samtykkedokumentation — og indleder en dialog med henviseren om korrektion. Korrektionen aftales via <code class="language-plaintext highlighter-rouge">Communication</code>-besked og gennemføres med en efterfølgende <code class="language-plaintext highlighter-rouge">PUT</code>-opdatering af <code class="language-plaintext highlighter-rouge">ServiceRequest</code>.</p>
+
+<blockquote>
+  <p><em>Som visitator ønsker jeg at kunne kontakte henviseren og aftale en korrektion, <br />når jeg opdager en fejl i en modtaget henvisning, <br />så fejlen rettes på en koordineret og sporbar måde uden at vi mister historikken.</em></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ressource</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">Communication</code> · <code class="language-plaintext highlighter-rouge">ServiceRequest</code> (PUT/korrektion)</td>
+    </tr>
+    <tr>
+      <td><strong>Trigger</strong></td>
+      <td>Fejl opdaget under modtagelse eller triage hos visitatoren</td>
+    </tr>
+    <tr>
+      <td><strong>Næste trin</strong></td>
+      <td>→ <a href="#13-ændre-en-afsendt-henvisning">1.3 Ændre</a> · <br />→ <a href="#22-triagere-og-prioritere-en-henvisning">2.2 Triagere</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="ressourceoversigt">Ressourceoversigt</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>UC</th>
+      <th>Use case</th>
+      <th>FHIR-ressource(r)</th>
+      <th>Retning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.1</code></td>
+      <td>Oprette henvisning</td>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code></td>
+      <td>Henviser → Visitator</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2</code></td>
+      <td>Tilknytte dokumentation</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, <code class="language-plaintext highlighter-rouge">Media</code>, <code class="language-plaintext highlighter-rouge">DocumentReference</code></td>
+      <td>Henviser → Visitator</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.3</code></td>
+      <td>Ændre henvisning</td>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code> (PUT)</td>
+      <td>Henviser → Visitator</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.4</code></td>
+      <td>Tilbagekalde henvisning</td>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code> (revoked)</td>
+      <td>Henviser → Visitator</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.5</code></td>
+      <td>Monitorere status</td>
+      <td><code class="language-plaintext highlighter-rouge">Subscription</code>, <code class="language-plaintext highlighter-rouge">SubscriptionStatus</code></td>
+      <td>Begge</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.6</code></td>
+      <td>Modtage afgørelse</td>
+      <td><code class="language-plaintext highlighter-rouge">Task</code>, <code class="language-plaintext highlighter-rouge">SubscriptionNotification</code></td>
+      <td>Visitator → Henviser</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">2.1</code></td>
+      <td>Modtage og kvittere</td>
+      <td><code class="language-plaintext highlighter-rouge">Bundle</code>, <code class="language-plaintext highlighter-rouge">MessageHeader</code></td>
+      <td>Visitator (intern)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">2.2</code></td>
+      <td>Triagere og prioritere</td>
+      <td><code class="language-plaintext highlighter-rouge">Task</code></td>
+      <td>Visitator (intern)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">2.3</code></td>
+      <td>Acceptere og booke</td>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code>, <code class="language-plaintext highlighter-rouge">Appointment</code></td>
+      <td>Visitator → Henviser</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">2.4</code></td>
+      <td>Afvise henvisning</td>
+      <td><code class="language-plaintext highlighter-rouge">Task</code>, <code class="language-plaintext highlighter-rouge">ServiceRequest</code></td>
+      <td>Visitator → Henviser</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">2.5</code></td>
+      <td>Videresende</td>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code> (replaces)</td>
+      <td>Visitator → Ny modtager</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">2.6</code></td>
+      <td>Ændre prioritet</td>
+      <td><code class="language-plaintext highlighter-rouge">ServiceRequest</code>, <code class="language-plaintext highlighter-rouge">SubscriptionNotification</code></td>
+      <td>Visitator → Henviser</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">3.1</code></td>
+      <td>Anmode om supplement</td>
+      <td><code class="language-plaintext highlighter-rouge">CommunicationRequest</code></td>
+      <td>Visitator → Henviser</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">3.2</code></td>
+      <td>Besvare supplement</td>
+      <td><code class="language-plaintext highlighter-rouge">Communication</code></td>
+      <td>Henviser → Visitator</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">3.3</code></td>
+      <td>Faglig afklaring</td>
+      <td><code class="language-plaintext highlighter-rouge">Communication</code> (thread)</td>
+      <td>Begge</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">3.4</code></td>
+      <td>Statusnotifikation</td>
+      <td><code class="language-plaintext highlighter-rouge">SubscriptionNotification</code></td>
+      <td>Visitator → Henviser</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">3.5</code></td>
+      <td>Alternativ visitation</td>
+      <td><code class="language-plaintext highlighter-rouge">Communication</code>, <code class="language-plaintext highlighter-rouge">Task</code></td>
+      <td>Begge</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">3.6</code></td>
+      <td>Korrektionsaftale</td>
+      <td><code class="language-plaintext highlighter-rouge">Communication</code>, <code class="language-plaintext highlighter-rouge">ServiceRequest</code></td>
+      <td>Begge</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://medcom.dk">MedCom</a>.  Package dk-medcom-ref-lm#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 16, 2026 14:56+0200">2026-06-16</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+
+| <a style="color: #81BEF7" target="_blank" href="https://www.was.digst.dk/medcomfhir-dk-ig-">Accessibility statement (Tilgængelighedserklæring)</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

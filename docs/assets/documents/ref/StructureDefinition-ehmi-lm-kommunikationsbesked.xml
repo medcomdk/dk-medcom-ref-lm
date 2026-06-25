@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ehmi-lm-kommunikationsbesked"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureDefinition ehmi-lm-kommunikationsbesked</b></p><table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="The logical name of the element">Name</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Information about the use of the element">Flags</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Minimum and Maximum # of times the element can appear in the instance">Card.</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px; width: 100px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Reference to the type of the element">Type</a></th><th style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px" class="hierarchy"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Additional information about the element">Description &amp; Constraints</a><span style="float: right"><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/></a></span></th></tr><tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-kommunikationsbesked-definitions.html#ehmi-lm-kommunikationsbesked" title="Repræsenterer en struktureret besked i den løbende dialog mellem
+henviser og visitator. Bruges til supplement-anmodninger, faglig
+afklaring, alternativ visitation og korrektionsaftaler.
+Svarer til FHIR Communication eller CommunicationRequest.">ehmi-lm-kommunikationsbesked</a><a name="ehmi-lm-kommunikationsbesked"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://build.fhir.org/types.html#Base">Base</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Kommunikationsbesked</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-kommunikationsbesked-definitions.html#ehmi-lm-kommunikationsbesked.beskedId" title="Unik identifikator for beskeden">beskedId</a><a name="ehmi-lm-kommunikationsbesked.beskedId"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Unik identifikator for beskeden</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-kommunikationsbesked-definitions.html#ehmi-lm-kommunikationsbesked.type" title="anmodning | svar | afklaring | notifikation | korrektionsaftale">type</a><a name="ehmi-lm-kommunikationsbesked.type"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">anmodning | svar | afklaring | notifikation | korrektionsaftale</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-kommunikationsbesked-definitions.html#ehmi-lm-kommunikationsbesked.status" title="preparation | in-progress | completed | entered-in-error">status</a><a name="ehmi-lm-kommunikationsbesked.status"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">preparation | in-progress | completed | entered-in-error</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-kommunikationsbesked-definitions.html#ehmi-lm-kommunikationsbesked.emne" title="Kort emne eller titel">emne</a><a name="ehmi-lm-kommunikationsbesked.emne"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Kort emne eller titel</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-kommunikationsbesked-definitions.html#ehmi-lm-kommunikationsbesked.indhold" title="Beskedens tekstindhold">indhold</a><a name="ehmi-lm-kommunikationsbesked.indhold"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Beskedens tekstindhold</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Primitive Data Type" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-kommunikationsbesked-definitions.html#ehmi-lm-kommunikationsbesked.sendt" title="Afsendelsestidspunkt">sendt</a><a name="ehmi-lm-kommunikationsbesked.sendt"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Afsendelsestidspunkt</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-kommunikationsbesked-definitions.html#ehmi-lm-kommunikationsbesked.afsender" title="Den der har afsendt beskeden">afsender</a><a name="ehmi-lm-kommunikationsbesked.afsender"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehmi-lm-behandler.html">Behandler</a>)</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Den der har afsendt beskeden</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-kommunikationsbesked-definitions.html#ehmi-lm-kommunikationsbesked.modtager" title="Den eller de der modtager beskeden">modtager</a><a name="ehmi-lm-kommunikationsbesked.modtager"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..*</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehmi-lm-behandler.html">Behandler</a>)</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Den eller de der modtager beskeden<br/></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-kommunikationsbesked-definitions.html#ehmi-lm-kommunikationsbesked.svarPaa" title="Reference til den besked der besvares">svarPaa</a><a name="ehmi-lm-kommunikationsbesked.svarPaa"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehmi-lm-kommunikationsbesked.html">Kommunikationsbesked</a>)</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Reference til den besked der besvares</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: white; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-kommunikationsbesked-definitions.html#ehmi-lm-kommunikationsbesked.vedroererHenvisning" title="Den henvisning kommunikationen vedrører">vedroererHenvisning</a><a name="ehmi-lm-kommunikationsbesked.vedroererHenvisning"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehmi-lm-henvisning.html">Henvisning</a>)</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Den henvisning kommunikationen vedrører</td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_reference.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Reference to another Resource" class="hierarchy"/> <a href="StructureDefinition-ehmi-lm-kommunikationsbesked-definitions.html#ehmi-lm-kommunikationsbesked.bilag" title="Eventuelle vedlagte dokumenter">bilag</a><a name="ehmi-lm-kommunikationsbesked.bilag"> </a></td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehmi-lm-klinisk-dokumentation.html">KliniskDokumentation</a>)</td><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Eventuelle vedlagte dokumenter<br/></td></tr>
+<tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
+  </text>
+  <url value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-kommunikationsbesked"/>
+  <version value="0.1.0"/>
+  <name value="Kommunikationsbesked"/>
+  <title value="Kommunikationsbesked"/>
+  <status value="draft"/>
+  <date value="2026-06-16T14:56:57+02:00"/>
+  <publisher value="MedCom"/>
+  <contact>
+    <name value="MedCom"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://medcom.dk"/>
+    </telecom>
+  </contact>
+  <description value="Repræsenterer en struktureret besked i den løbende dialog mellem&#xA;henviser og visitator. Bruges til supplement-anmodninger, faglig&#xA;afklaring, alternativ visitation og korrektionsaftaler.&#xA;Svarer til FHIR Communication eller CommunicationRequest."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+  <mapping>
+    <identity value="fhir-r4"/>
+    <uri value="http://hl7.org/fhir"/>
+    <name value="RIM Mapping"/>
+  </mapping>
+  <kind value="logical"/>
+  <abstract value="false"/>
+  <type value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-kommunikationsbesked"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Base"/>
+  <derivation value="specialization"/>
+  <snapshot>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version">
+      <valueString value="4.0.1"/>
+    </extension>
+    <element id="ehmi-lm-kommunikationsbesked">
+      <path value="ehmi-lm-kommunikationsbesked"/>
+      <short value="Kommunikationsbesked"/>
+      <definition value="Repræsenterer en struktureret besked i den løbende dialog mellem&#xA;henviser og visitator. Bruges til supplement-anmodninger, faglig&#xA;afklaring, alternativ visitation og korrektionsaftaler.&#xA;Svarer til FHIR Communication eller CommunicationRequest."/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Base"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <isModifier value="false"/>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.beskedId">
+      <path value="ehmi-lm-kommunikationsbesked.beskedId"/>
+      <short value="Unik identifikator for beskeden"/>
+      <definition value="Unik identifikator for beskeden"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-kommunikationsbesked.beskedId"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <map value="Communication.identifier"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.type">
+      <path value="ehmi-lm-kommunikationsbesked.type"/>
+      <short value="anmodning | svar | afklaring | notifikation | korrektionsaftale"/>
+      <definition value="anmodning | svar | afklaring | notifikation | korrektionsaftale"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-kommunikationsbesked.type"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <mapping>
+        <map value="Communication.category | CommunicationRequest.category"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.status">
+      <path value="ehmi-lm-kommunikationsbesked.status"/>
+      <short value="preparation | in-progress | completed | entered-in-error"/>
+      <definition value="preparation | in-progress | completed | entered-in-error"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-kommunikationsbesked.status"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <mapping>
+        <map value="Communication.status"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.emne">
+      <path value="ehmi-lm-kommunikationsbesked.emne"/>
+      <short value="Kort emne eller titel"/>
+      <definition value="Kort emne eller titel"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-kommunikationsbesked.emne"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <map value="Communication.topic"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.indhold">
+      <path value="ehmi-lm-kommunikationsbesked.indhold"/>
+      <short value="Beskedens tekstindhold"/>
+      <definition value="Beskedens tekstindhold"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-kommunikationsbesked.indhold"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <map value="Communication.payload.contentString"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.sendt">
+      <path value="ehmi-lm-kommunikationsbesked.sendt"/>
+      <short value="Afsendelsestidspunkt"/>
+      <definition value="Afsendelsestidspunkt"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-kommunikationsbesked.sendt"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="dateTime"/>
+      </type>
+      <mapping>
+        <map value="Communication.sent"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.afsender">
+      <path value="ehmi-lm-kommunikationsbesked.afsender"/>
+      <short value="Den der har afsendt beskeden"/>
+      <definition value="Den der har afsendt beskeden"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-kommunikationsbesked.afsender"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-behandler"/>
+      </type>
+      <mapping>
+        <map value="Communication.sender"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.modtager">
+      <path value="ehmi-lm-kommunikationsbesked.modtager"/>
+      <short value="Den eller de der modtager beskeden"/>
+      <definition value="Den eller de der modtager beskeden"/>
+      <min value="1"/>
+      <max value="*"/>
+      <base>
+        <path value="ehmi-lm-kommunikationsbesked.modtager"/>
+        <min value="1"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-behandler"/>
+      </type>
+      <mapping>
+        <map value="Communication.recipient"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.svarPaa">
+      <path value="ehmi-lm-kommunikationsbesked.svarPaa"/>
+      <short value="Reference til den besked der besvares"/>
+      <definition value="Reference til den besked der besvares"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-kommunikationsbesked.svarPaa"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-kommunikationsbesked"/>
+      </type>
+      <mapping>
+        <map value="Communication.inResponseTo"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.vedroererHenvisning">
+      <path value="ehmi-lm-kommunikationsbesked.vedroererHenvisning"/>
+      <short value="Den henvisning kommunikationen vedrører"/>
+      <definition value="Den henvisning kommunikationen vedrører"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="ehmi-lm-kommunikationsbesked.vedroererHenvisning"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-henvisning"/>
+      </type>
+      <mapping>
+        <map value="Communication.basedOn (ServiceRequest)"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.bilag">
+      <path value="ehmi-lm-kommunikationsbesked.bilag"/>
+      <short value="Eventuelle vedlagte dokumenter"/>
+      <definition value="Eventuelle vedlagte dokumenter"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="ehmi-lm-kommunikationsbesked.bilag"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-klinisk-dokumentation"/>
+      </type>
+      <mapping>
+        <map value="Communication.payload (Attachment/Reference)"/>
+      </mapping>
+    </element>
+  </snapshot>
+  <differential>
+    <element id="ehmi-lm-kommunikationsbesked">
+      <path value="ehmi-lm-kommunikationsbesked"/>
+      <short value="Kommunikationsbesked"/>
+      <definition value="Repræsenterer en struktureret besked i den løbende dialog mellem&#xA;henviser og visitator. Bruges til supplement-anmodninger, faglig&#xA;afklaring, alternativ visitation og korrektionsaftaler.&#xA;Svarer til FHIR Communication eller CommunicationRequest."/>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.beskedId">
+      <path value="ehmi-lm-kommunikationsbesked.beskedId"/>
+      <short value="Unik identifikator for beskeden"/>
+      <definition value="Unik identifikator for beskeden"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Identifier"/>
+      </type>
+      <mapping>
+        <map value="Communication.identifier"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.type">
+      <path value="ehmi-lm-kommunikationsbesked.type"/>
+      <short value="anmodning | svar | afklaring | notifikation | korrektionsaftale"/>
+      <definition value="anmodning | svar | afklaring | notifikation | korrektionsaftale"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <mapping>
+        <map value="Communication.category | CommunicationRequest.category"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.status">
+      <path value="ehmi-lm-kommunikationsbesked.status"/>
+      <short value="preparation | in-progress | completed | entered-in-error"/>
+      <definition value="preparation | in-progress | completed | entered-in-error"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <mapping>
+        <map value="Communication.status"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.emne">
+      <path value="ehmi-lm-kommunikationsbesked.emne"/>
+      <short value="Kort emne eller titel"/>
+      <definition value="Kort emne eller titel"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <map value="Communication.topic"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.indhold">
+      <path value="ehmi-lm-kommunikationsbesked.indhold"/>
+      <short value="Beskedens tekstindhold"/>
+      <definition value="Beskedens tekstindhold"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+      <mapping>
+        <map value="Communication.payload.contentString"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.sendt">
+      <path value="ehmi-lm-kommunikationsbesked.sendt"/>
+      <short value="Afsendelsestidspunkt"/>
+      <definition value="Afsendelsestidspunkt"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="dateTime"/>
+      </type>
+      <mapping>
+        <map value="Communication.sent"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.afsender">
+      <path value="ehmi-lm-kommunikationsbesked.afsender"/>
+      <short value="Den der har afsendt beskeden"/>
+      <definition value="Den der har afsendt beskeden"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-behandler"/>
+      </type>
+      <mapping>
+        <map value="Communication.sender"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.modtager">
+      <path value="ehmi-lm-kommunikationsbesked.modtager"/>
+      <short value="Den eller de der modtager beskeden"/>
+      <definition value="Den eller de der modtager beskeden"/>
+      <min value="1"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-behandler"/>
+      </type>
+      <mapping>
+        <map value="Communication.recipient"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.svarPaa">
+      <path value="ehmi-lm-kommunikationsbesked.svarPaa"/>
+      <short value="Reference til den besked der besvares"/>
+      <definition value="Reference til den besked der besvares"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-kommunikationsbesked"/>
+      </type>
+      <mapping>
+        <map value="Communication.inResponseTo"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.vedroererHenvisning">
+      <path value="ehmi-lm-kommunikationsbesked.vedroererHenvisning"/>
+      <short value="Den henvisning kommunikationen vedrører"/>
+      <definition value="Den henvisning kommunikationen vedrører"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-henvisning"/>
+      </type>
+      <mapping>
+        <map value="Communication.basedOn (ServiceRequest)"/>
+      </mapping>
+    </element>
+    <element id="ehmi-lm-kommunikationsbesked.bilag">
+      <path value="ehmi-lm-kommunikationsbesked.bilag"/>
+      <short value="Eventuelle vedlagte dokumenter"/>
+      <definition value="Eventuelle vedlagte dokumenter"/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="Reference"/>
+        <targetProfile value="http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-klinisk-dokumentation"/>
+      </type>
+      <mapping>
+        <map value="Communication.payload (Attachment/Reference)"/>
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>

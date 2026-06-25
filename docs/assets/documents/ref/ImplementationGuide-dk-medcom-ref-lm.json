@@ -1,0 +1,1413 @@
+{
+  "resourceType" : "ImplementationGuide",
+  "id" : "dk-medcom-ref-lm",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide dk-medcom-ref-lm</b></p><a name=\"dk-medcom-ref-lm\"> </a><a name=\"hcdk-medcom-ref-lm\"> </a><h2>DKMEDCOMREFERRALLM</h2><p>The official URL for this implementation guide is: </p><pre>http://medcomehmi.dk/ig/dk-medcom-ref-lm/ImplementationGuide/dk-medcom-ref-lm</pre><div><p>The DK MEDCOM REFERRAL LM</p>\n</div></div>"
+  },
+  "url" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/ImplementationGuide/dk-medcom-ref-lm",
+  "version" : "0.1.0",
+  "name" : "DKMEDCOMREFERRALLM",
+  "title" : "DK MEDCOM REFERRAL LM",
+  "status" : "draft",
+  "date" : "2026-06-16T14:56:57+02:00",
+  "publisher" : "MedCom",
+  "contact" : [{
+    "name" : "MedCom",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://medcom.dk"
+    }]
+  }],
+  "description" : "The DK MEDCOM REFERRAL LM",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "packageId" : "dk-medcom-ref-lm",
+  "license" : "CC0-1.0",
+  "fhirVersion" : ["4.0.1"],
+  "dependsOn" : [{
+    "id" : "hl7tx",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+    }],
+    "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+    "packageId" : "hl7.terminology.r4",
+    "version" : "7.2.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "5.3.0"
+  },
+  {
+    "id" : "hl7_fhir_dk_core",
+    "uri" : "http://hl7.dk/fhir/core/ImplementationGuide/hl7.fhir.dk.core",
+    "packageId" : "hl7.fhir.dk.core",
+    "version" : "3.4.0"
+  },
+  {
+    "id" : "medcom_fhir_dk_core",
+    "uri" : "http://medcomfhir.dk/ig/core/ImplementationGuide/medcom.fhir.dk.core",
+    "packageId" : "medcom.fhir.dk.core",
+    "version" : "2.4.0"
+  }],
+  "definition" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2026+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "draft"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.2"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2026+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "draft"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://medcomehmi.dk/ig/dk-medcom-ref-lm/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    }],
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-lm-abonnement"
+      },
+      "name" : "Abonnement",
+      "description" : "Repræsenterer en abonnementsregistrering der definerer hvilke\nhændelser en abonnent (typisk henviseren) ønsker at modtage\nnotifikationer om. Svarer til FHIR Subscription.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-lm-behandler"
+      },
+      "name" : "Behandler",
+      "description" : "Repræsenterer en sundhedsprofessionel i rollen som enten\nhenviser eller visitator. Svarer til FHIR Practitioner kombineret\nmed PractitionerRole for at udtrykke rolle og tilknyttet organisation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-lm-booking"
+      },
+      "name" : "Booking",
+      "description" : "Repræsenterer en aftalt tid der oprettes ved accept af en henvisning.\nKnyttes til den accept-givne Henvisning og notificerer automatisk\npatienten og henviseren. Svarer til FHIR Appointment.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/dk-referral-message"
+      },
+      "name" : "DK Logical Referral Message",
+      "description" : "Logisk FHIR-model for dansk henvisningsmeddelelse",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ehmi-message-event-cs"
+      },
+      "name" : "EHMI Message Event Codes",
+      "description" : "Koder for meddelelseshaendelser i EHMI-meddelelseskommunikation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ehmi-message-event-vs"
+      },
+      "name" : "EHMI Message Event ValueSet",
+      "description" : "ValueSet over gyldige meddelelseshaendelser til brug i MessageHeader.eventCoding.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ehmi-referral-code-vs"
+      },
+      "name" : "EHMI Referral Code ValueSet",
+      "description" : "Ydelseskoder for EHMI-henvisninger – SKS procedurer og SNOMED CT.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-referral-message-response-bundle"
+      },
+      "name" : "EHMI Referral Message Response Bundle",
+      "description" : "FHIR Bundle der repræsenterer en komplet henvisningsmeddelelse med response via EHMI.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-referral-message-header"
+      },
+      "name" : "EHMI Referral MessageHeader",
+      "description" : "MessageHeader for EHMI-baseret henvisningsmeddelelse.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-referral-message-bundle"
+      },
+      "name" : "EHMI Referring Message Bundle",
+      "description" : "FHIR Bundle der repræsenterer en komplet henvisningsmeddelelse via EHMI.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-service-request"
+      },
+      "name" : "EHMI ServiceRequest – Henvisning",
+      "description" : "Kerne-ressource der repræsenterer den kliniske henvisning.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmiendpoint"
+      },
+      "name" : "EHMI/eDelivery Endpoint – Logisk Model",
+      "description" : "Konceptuel logisk model for et EHMI/eDelivery endpoint i dansk sundhedsvæsen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/henviser"
+      },
+      "name" : "Henviser – Logisk Model",
+      "description" : "Konceptuel logisk model for en Henviser i dansk sundhedsvæsen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-lm-henvisning"
+      },
+      "name" : "Henvisning",
+      "description" : "Repræsenterer en klinisk anmodning om at viderehenvise en patient\ntil et specialtilbud eller en ydelse. Svarer til FHIR ServiceRequest.\nDækker hele livscyklussen fra oprettelse til afslutning.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/henvisning"
+      },
+      "name" : "Henvisning – Logisk Model",
+      "description" : "Konceptuel logisk model for en Henvisning i dansk sundhedsvæsen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/henvisningsmeddelelserespons"
+      },
+      "name" : "Henvisningsmeddelelse Response – Logisk Model",
+      "description" : "Konceptuel logisk model for en henvisningsmeddelelse med response i dansk sundhedsvæsen. Der er brug for udddybning af henvisningen før den kan endeligt triageres",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/henvisningsmeddelelse"
+      },
+      "name" : "Henvisningsmeddelelse – Logisk Model",
+      "description" : "Konceptuel logisk model for en henvisningsmeddelelse i dansk sundhedsvæsen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-lm-klinisk-dokumentation"
+      },
+      "name" : "KliniskDokumentation",
+      "description" : "Repræsenterer supplerende klinisk materiale der knyttes til en\nHenvisning for at understøtte visitators beslutningsgrundlag.\nKan være laboratoriesvar, billeddiagnostik, epikriser eller andre dokumenter.\nSvarer til FHIR DocumentReference, DiagnosticReport eller Observation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-lm-kommunikationsbesked"
+      },
+      "name" : "Kommunikationsbesked",
+      "description" : "Repræsenterer en struktureret besked i den løbende dialog mellem\nhenviser og visitator. Bruges til supplement-anmodninger, faglig\nafklaring, alternativ visitation og korrektionsaftaler.\nSvarer til FHIR Communication eller CommunicationRequest.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kommunikator"
+      },
+      "name" : "Kommunikator – Logisk Model",
+      "description" : "Konceptuel logisk model for en Kommunikator i dansk sundhedsvæsen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/meddelelse"
+      },
+      "name" : "Meddelelse – Logisk Model",
+      "description" : "Konceptuel logisk model for en Meddelelse i dansk sundhedsvæsen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-lm-meddelelseskonvolut"
+      },
+      "name" : "Meddelelseskonvolut",
+      "description" : "Repræsenterer den tekniske meddelelsesomslag der transporterer\nkliniske ressourcer (Henvisning, Afgørelse mv.) via EHMI og eDelivery.\nSvarer til FHIR Bundle (type=message) med MessageHeader som første entry.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-lm-organisation"
+      },
+      "name" : "Organisation",
+      "description" : "Repræsenterer en sundhedsorganisation der enten afsender eller modtager\nhenvisninger. Svarer til FHIR Organization profileret som DkCoreOrganization\nmed SOR-kode og GLN som primære identifikatorer.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-lm-patient"
+      },
+      "name" : "Patient",
+      "description" : "Repræsenterer den patient der viderehenvises. Svarer til FHIR Patient\nprofileret som DkCorePatient med dansk CPR-nummer som primær identifikator.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/patient"
+      },
+      "name" : "Patient – Logisk Model",
+      "description" : "Konceptuel logisk model for en Patient i dansk sundhedsvæsen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-lm-statusnotifikation"
+      },
+      "name" : "Statusnotifikation",
+      "description" : "Repræsenterer en automatisk notifikation der sendes til en abonnent\n(typisk henviseren) ved statusændring på en aktiv henvisning.\nSvarer til FHIR SubscriptionNotification / SubscriptionStatus (R4B/R5-mønster\nimplementeret via MedCom-notifikationsmodel i R4).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/triagering"
+      },
+      "name" : "Triagering – Logisk Model",
+      "description" : "Konceptuel logisk model for en Triagering i dansk sundhedsvæsen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehmi-lm-visitationsafgoerelse"
+      },
+      "name" : "Visitationsafgoerelse",
+      "description" : "Repræsenterer visitatorens formelle beslutning om en indkommende\nhenvisning: accept, afvisning, videresendelse eller prioritetsændring.\nSvarer til FHIR Task med outcome og begrundelse.",
+      "exampleBoolean" : false
+    }],
+    "page" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+        "valueUrl" : "toc.html"
+      }],
+      "nameUrl" : "toc.html",
+      "title" : "Table of Contents",
+      "generation" : "html",
+      "page" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "index.html"
+        }],
+        "nameUrl" : "index.html",
+        "title" : "Home",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "00-logisk-model-oversigt.html"
+        }],
+        "nameUrl" : "00-logisk-model-oversigt.html",
+        "title" : "00 Logisk Model Oversigt",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "01-henvisning.html"
+        }],
+        "nameUrl" : "01-henvisning.html",
+        "title" : "01 Henvisning",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "02-patient.html"
+        }],
+        "nameUrl" : "02-patient.html",
+        "title" : "02 Patient",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "03-behandler.html"
+        }],
+        "nameUrl" : "03-behandler.html",
+        "title" : "03 Behandler",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "04-organisation.html"
+        }],
+        "nameUrl" : "04-organisation.html",
+        "title" : "04 Organisation",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "05-klinisk-dokumentation.html"
+        }],
+        "nameUrl" : "05-klinisk-dokumentation.html",
+        "title" : "05 Klinisk Dokumentation",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "06-visitationsafgoerelse.html"
+        }],
+        "nameUrl" : "06-visitationsafgoerelse.html",
+        "title" : "06 Visitationsafgoerelse",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "07-booking.html"
+        }],
+        "nameUrl" : "07-booking.html",
+        "title" : "07 Booking",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "08-kommunikationsbesked.html"
+        }],
+        "nameUrl" : "08-kommunikationsbesked.html",
+        "title" : "08 Kommunikationsbesked",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "09-statusnotifikation.html"
+        }],
+        "nameUrl" : "09-statusnotifikation.html",
+        "title" : "09 Statusnotifikation",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "10-abonnement.html"
+        }],
+        "nameUrl" : "10-abonnement.html",
+        "title" : "10 Abonnement",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "11-meddelelseskonvolut.html"
+        }],
+        "nameUrl" : "11-meddelelseskonvolut.html",
+        "title" : "11 Meddelelseskonvolut",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fhir-henvisning-messaging-cgpt.html"
+        }],
+        "nameUrl" : "fhir-henvisning-messaging-cgpt.html",
+        "title" : "Fhir Henvisning Messaging Cgpt",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fhir-henvisning-use-cases.html"
+        }],
+        "nameUrl" : "fhir-henvisning-use-cases.html",
+        "title" : "Fhir Henvisning Use Cases",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fhir-henvisning-use-cases-cgpt.html"
+        }],
+        "nameUrl" : "fhir-henvisning-use-cases-cgpt.html",
+        "title" : "Fhir Henvisning Use Cases Cgpt",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fhir-henvisning-use-cases-claude.html"
+        }],
+        "nameUrl" : "fhir-henvisning-use-cases-claude.html",
+        "title" : "Fhir Henvisning Use Cases Claude",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fhir-henvisning-use-cases-claude2.html"
+        }],
+        "nameUrl" : "fhir-henvisning-use-cases-claude2.html",
+        "title" : "Fhir Henvisning Use Cases Claude 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fhir-henvisning-use-cases-v2.html"
+        }],
+        "nameUrl" : "fhir-henvisning-use-cases-v2.html",
+        "title" : "Fhir Henvisning Use Cases v 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fhir-henvisning-use-cases1.html"
+        }],
+        "nameUrl" : "fhir-henvisning-use-cases1.html",
+        "title" : "Fhir Henvisning Use Cases 1",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fhir-henvisning-user-stories-v2-claude.html"
+        }],
+        "nameUrl" : "fhir-henvisning-user-stories-v2-claude.html",
+        "title" : "Fhir Henvisning User Stories v 2 Claude",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fhir-messaging-guide.html"
+        }],
+        "nameUrl" : "fhir-messaging-guide.html",
+        "title" : "Fhir Messaging Guide",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "ReferralCommunication.html"
+        }],
+        "nameUrl" : "ReferralCommunication.html",
+        "title" : "Referral Communication",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "StructureDefinition-ehmi-lm-abonnement-intro2.html"
+        }],
+        "nameUrl" : "StructureDefinition-ehmi-lm-abonnement-intro2.html",
+        "title" : "Structure Definition Ehmi Lm Abonnement Intro 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "StructureDefinition-ehmi-lm-behandler-intro2.html"
+        }],
+        "nameUrl" : "StructureDefinition-ehmi-lm-behandler-intro2.html",
+        "title" : "Structure Definition Ehmi Lm Behandler Intro 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "StructureDefinition-ehmi-lm-booking-intro2.html"
+        }],
+        "nameUrl" : "StructureDefinition-ehmi-lm-booking-intro2.html",
+        "title" : "Structure Definition Ehmi Lm Booking Intro 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "StructureDefinition-ehmi-lm-henvisning-intro2.html"
+        }],
+        "nameUrl" : "StructureDefinition-ehmi-lm-henvisning-intro2.html",
+        "title" : "Structure Definition Ehmi Lm Henvisning Intro 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "StructureDefinition-ehmi-lm-klinisk-dokumentation-intro2.html"
+        }],
+        "nameUrl" : "StructureDefinition-ehmi-lm-klinisk-dokumentation-intro2.html",
+        "title" : "Structure Definition Ehmi Lm Klinisk Dokumentation Intro 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "StructureDefinition-ehmi-lm-kommunikationsbesked-intro2.html"
+        }],
+        "nameUrl" : "StructureDefinition-ehmi-lm-kommunikationsbesked-intro2.html",
+        "title" : "Structure Definition Ehmi Lm Kommunikationsbesked Intro 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "StructureDefinition-ehmi-lm-meddelelseskonvolut-intro2.html"
+        }],
+        "nameUrl" : "StructureDefinition-ehmi-lm-meddelelseskonvolut-intro2.html",
+        "title" : "Structure Definition Ehmi Lm Meddelelseskonvolut Intro 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "StructureDefinition-ehmi-lm-organisation-intro2.html"
+        }],
+        "nameUrl" : "StructureDefinition-ehmi-lm-organisation-intro2.html",
+        "title" : "Structure Definition Ehmi Lm Organisation Intro 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "StructureDefinition-ehmi-lm-patient-intro2.html"
+        }],
+        "nameUrl" : "StructureDefinition-ehmi-lm-patient-intro2.html",
+        "title" : "Structure Definition Ehmi Lm Patient Intro 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "StructureDefinition-ehmi-lm-statusnotifikation-intro2.html"
+        }],
+        "nameUrl" : "StructureDefinition-ehmi-lm-statusnotifikation-intro2.html",
+        "title" : "Structure Definition Ehmi Lm Statusnotifikation Intro 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "StructureDefinition-ehmi-lm-visitationsafgoerelse-intro2.html"
+        }],
+        "nameUrl" : "StructureDefinition-ehmi-lm-visitationsafgoerelse-intro2.html",
+        "title" : "Structure Definition Ehmi Lm Visitationsafgoerelse Intro 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "usecases.html"
+        }],
+        "nameUrl" : "usecases.html",
+        "title" : "Usecases",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "usecases_cgpt.html"
+        }],
+        "nameUrl" : "usecases_cgpt.html",
+        "title" : "Usecases Cgpt",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "usecases-claude.html"
+        }],
+        "nameUrl" : "usecases-claude.html",
+        "title" : "Usecases Claude",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "usecases-claude2.html"
+        }],
+        "nameUrl" : "usecases-claude2.html",
+        "title" : "Usecases Claude 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "usecases-henvisning-claude.html"
+        }],
+        "nameUrl" : "usecases-henvisning-claude.html",
+        "title" : "Usecases Henvisning Claude",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "workflow.html"
+        }],
+        "nameUrl" : "workflow.html",
+        "title" : "Workflow",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "workflow-claude.html"
+        }],
+        "nameUrl" : "workflow-claude.html",
+        "title" : "Workflow Claude",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "workflow2.html"
+        }],
+        "nameUrl" : "workflow2.html",
+        "title" : "Workflow 2",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "workflow3.html"
+        }],
+        "nameUrl" : "workflow3.html",
+        "title" : "Workflow 3",
+        "generation" : "markdown"
+      }]
+    },
+    "parameter" : [{
+      "code" : "path-resource",
+      "value" : "input/capabilities"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/examples"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/extensions"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/models"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/operations"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/profiles"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/resources"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/vocabulary"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/maps"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/testing"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/history"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "fsh-generated/resources"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "template/config"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "input/images"
+    },
+    {
+      "code" : "path-tx-cache",
+      "value" : "input-cache/txcache"
+    }]
+  }
+}
