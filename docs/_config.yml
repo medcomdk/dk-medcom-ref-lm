@@ -7,10 +7,10 @@ theme: jekyll-theme-minimal
 version: "0.1.0"
 fhir_version: "EHMI"
 releasenote: https://github.com/medcomdk/ehmi/releases
-thisurl: https://ref.ehmi.dk/
-menuurl_item1: https://ref.ehmi.dk/
-menutxt_item1: EHMI ReferralLandingpage
-menuurl_item2: https://ref.ehmi.dk/assets/documents/ref/
+thisurl: https://medcomdk.github.io/dk-medcom-ref-lm/
+menuurl_item1: https://medcomdk.github.io/dk-medcom-ref-lm/
+menutxt_item1: EHMI Referral Landingpage
+menuurl_item2: https://medcomdk.github.io/dk-medcom-ref-lm/assets/documents/ref/
 menutxt_item2: EHMI Referrals
-menuurl_item3: https://ehmi.dk/assets/documents/glossary/
+menuurl_item3: https://medcomdk.github.io/dk-medcom-ref-lm/ehmi-glossary.html
 menutxt_item3: EHMI Glossary
