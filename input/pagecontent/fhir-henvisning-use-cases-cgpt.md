@@ -9,7 +9,7 @@ Henviseren udfærdiger og afsender en ny henvisning til et modtagende tilbud. He
 ><br/>Som henviser ønsker jeg at kunne oprette og afsende en struktureret henvisning via FHIR, <br/>når jeg har truffet en klinisk beslutning om at viderehenvise en patient, <br/>så visitatoren modtager alle nødvendige oplysninger på et standardiseret format.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 0%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 0%;">
 </p>
 <br/><br/><br/>
 
@@ -20,7 +20,7 @@ Henviseren vedhæfter supplerende klinisk materiale til en eksisterende henvisni
 ><br/>Som henviser ønsker jeg at kunne vedhæfte relevant klinisk dokumentation til en eksisterende henvisning, <br/>når jeg vurderer at visitatoren har brug for supplerende materiale for at træffe en god afgørelse, <br/>så beslutningsgrundlaget er samlet ét sted.
 
 <p style="display: block;">
-<img src="1.2 Tilknytte klinisk dokumentation.svg" alt="1.2 Tilknytte klinisk dokumentation" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.2.svg" alt="1.2 Tilknytte klinisk dokumentation" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -31,7 +31,7 @@ Henviseren opdaterer indholdet af en allerede afsendt henvisning — fx korriger
 ><br/>Som henviser ønsker jeg at kunne rette indholdet i en allerede afsendt henvisning, <br/>når jeg opdager en fejl eller patientens kliniske situation ændrer sig, <br/>så visitatoren altid arbejder ud fra korrekte og aktuelle oplysninger.
 
 <p style="display: block;">
-<img src="1.3.svg" alt="1.3.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.3.svg" alt="UC-1.3.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -42,7 +42,7 @@ Henviseren annullerer en afsendt henvisning der endnu ikke er ekspederet. Servic
 ><br/>Som henviser ønsker jeg at kunne tilbagekalde en afsendt henvisning, <br/>når patienten ikke længere ønsker forløbet eller det kliniske grundlag er bortfaldet, <br/>så visitatoren ikke bruger ressourcer på en henvisning der ikke skal ekspederes.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -53,7 +53,7 @@ Henviseren følger løbende op på status for egne udestående henvisninger. Det
 ><br/>Som henviser ønsker jeg løbende at kunne se status på mine afsendte og udestående henvisninger, <br/>når jeg har behov for overblik over patienternes videre forløb, <br/>så jeg kan følge op og informere patienterne korrekt.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -65,14 +65,14 @@ Henviseren modtager visitatorens endelige afgørelse — accept, afvisning eller
 
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
 ## Visitatorens use cases
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -83,7 +83,7 @@ Visitatoren modtager en indkommende FHIR- Bundle med en ny ServiceRequest og sen
 ><br/>Som visitator ønsker jeg automatisk at modtage og kvittere for indkomne henvisninger via FHIR, <br/>når en ny ServiceRequest ankommer i mit endpoint, <br/>så afsenderen hurtigt får bekræftet at henvisningen er modtaget korrekt.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -94,7 +94,7 @@ Visitatoren vurderer henvisningens faglige indhold, klassificerer hastegrad og p
 ><br/>Som visitator ønsker jeg at kunne foretage en struktureret triage af en modtaget henvisning og dokumentere mit udfald, <br/>når en ny eller opdateret henvisning er klar til klinisk vurdering, <br/>så prioriteringen er sporbar og ensartet på tværs af alle indkomne sager.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -105,7 +105,7 @@ Visitatoren accepterer henvisningen og opretter et forløb. Der bookes en tid, o
 ><br/>Som visitator ønsker jeg at kunne acceptere en henvisning og oprette en booking, <br/>når min visitationsafgørelse er positiv, <br/>så patienten får en tid og henviseren automatisk modtager bekræftelsen.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -116,7 +116,7 @@ Visitatoren afviser henvisningen med en faglig eller kapacitetsmæssig begrundel
 ><br/>Som visitator ønsker jeg at kunne afvise en henvisning med en dokumenteret begrundelse, <br/>når indikationen ikke er opfyldt eller kapaciteten er nået, <br/>så henviseren forstår årsagen og kan tage stilling til næste skridt for patienten.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -127,7 +127,7 @@ Visitatoren vurderer at henvisningen hører hjemme et andet sted og videresender
 ><br/>Som visitator ønsker jeg at kunne videresende en fejlplaceret henvisning til rette modtager, <br/>når jeg vurderer at et andet tilbud er bedre egnet, <br/>så patienten ikke unødigt forsinkes og henviseren holdes orienteret om omdirigeringen.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -139,14 +139,14 @@ Visitatoren revurderer hastegraden for en allerede modtaget henvisning — fx p�
 
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
 ## Udvekslingsdialog
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -157,7 +157,7 @@ Visitatoren mangler oplysninger for at kunne triagere og sender en struktureret 
 ><br/>Som visitator ønsker jeg at kunne sende en struktureret anmodning om supplerende oplysninger til henviseren, <br/>når grundlaget for triage er utilstrækkeligt, <br/>så jeg kan træffe en fagligt forsvarlig visitationsafgørelse uden at afvise unødigt.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -168,7 +168,7 @@ Henviseren modtager en supplement-anmodning og besvarer denne ved at sende de ef
 ><br/>Som henviser ønsker jeg at kunne besvare en supplement-anmodning med de efterspurgte kliniske oplysninger, <br/>når visitatoren har bedt om yderligere data, <br/>så visitatoren hurtigt kan genoptage og afslutte triage-processen.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -179,7 +179,7 @@ Henviser og visitator udveksler kliniske spørgsmål og svar for at afklare indi
 ><br/>Som henviser og visitator ønsker vi begge at kunne føre en struktureret faglig dialog om en konkret henvisning, <br/>når indikation, egnethed eller behandlingsvalg er uklart, <br/>så vi i fællesskab kan nå frem til den rigtige afgørelse for patienten uden at skulle bruge andre kommunikationskanaler.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -190,7 +190,7 @@ Visitatoren notificerer automatisk henviseren ved statusskift på en afsendt hen
 ><br/>Som henviser ønsker jeg automatisk at modtage en notifikation, <br/>når status på en af mine henvisninger ændrer sig hos visitatoren, <br/>så jeg til enhver tid er opdateret om forløbet uden at skulle forespørge aktivt.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 
@@ -201,7 +201,7 @@ Henviser og visitator forhandler i fællesskab om et alternativt tilbud, <br/>n�
 ><br/>Som visitator ønsker jeg at kunne indlede en dialog med henviseren om et alternativt tilbud, <br/>når jeg ikke kan imødekomme den primære henvisning, <br/>så patienten ikke ender i en blindgyde og vi i fællesskab finder en løsning.
 
 <p style="display: block;">
-<img src="1.1 Oprette ny henvisning.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
+<img src="UC-1.1.svg" alt="1.1 Oprette ny henvisning.svg" width="69%" style="margin-top: 10px; margin-left: 0%; margin-right: 31%;">
 </p>
 <br/><br/><br/>
 

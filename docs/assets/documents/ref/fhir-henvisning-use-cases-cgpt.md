@@ -40,7 +40,7 @@ Som henviser ønsker jeg at kunne rette indholdet i en allerede afsendt henvisni
 når jeg opdager en fejl eller patientens kliniske situation ændrer sig, 
 så visitatoren altid arbejder ud fra korrekte og aktuelle oplysninger.
 
- ![](1.3.svg) 
+ ![](UC-1.3.svg) 
 
 ### UC 1.4 Tilbagekalde en henvisning
 
