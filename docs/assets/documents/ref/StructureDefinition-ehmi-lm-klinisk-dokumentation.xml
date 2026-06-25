@@ -21,7 +21,7 @@ Svarer til FHIR DocumentReference, DiagnosticReport eller Observation.">ehmi-lm-
   <name value="KliniskDokumentation"/>
   <title value="KliniskDokumentation"/>
   <status value="draft"/>
-  <date value="2026-06-16T14:56:57+02:00"/>
+  <date value="2026-06-25T17:09:01+02:00"/>
   <publisher value="MedCom"/>
   <contact>
     <name value="MedCom"/>

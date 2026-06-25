@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Ehmi Glossary - DK MEDCOM REFERRAL LM v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7-dk.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"14"}
+    h3,h4,h5,h6{--heading-prefix:"14"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.medcom.dk">
+            <img height="50" alt="Visit MedComs website" src="assets/images/dark-medcom-logo.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>        
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">DK MEDCOM REFERRAL LM</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - draft
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">More
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="toc.html">Table of Contents</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Ehmi Glossary</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">DK MEDCOM REFERRAL LM - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://medcomehmi.dk/ig/dk-medcom-ref-lm/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Ehmi Glossary</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h1 id="ehmi-acronyms--glossary">EHMI Acronyms &amp; Glossary</h1>
+
+<blockquote>
+  <p><strong>Source:</strong> <a href="https://ehmi.dk/">ehmi.dk</a> — MedCom's Enhanced Healthcare Messaging Infrastructure<br />
+<strong>Version:</strong> 1.0.0<br />
+<strong>Last updated:</strong> June 2026</p>
+</blockquote>
+
+<p>This glossary covers all relevant acronyms and terms used across the EHMI documentation and its sub-pages. Entries are sorted alphabetically.</p>
+
+<hr />
+
+<h2 id="acronyms">Acronyms</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Acronym</th>
+      <th>Full Name</th>
+      <th>Description</th>
+      <th>Domain</th>
+      <th>Relevant Links</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>AP</strong></td>
+      <td>Access Point</td>
+      <td>The eDelivery component responsible for exchanging data between Corner 2 and Corner 3 in the 4-Corner Model. Can be built together with or stand-alone from EUA and MSH.</td>
+      <td>eDelivery</td>
+      <td><a href="https://ec.europa.eu/digital-building-blocks/wikis/display/DIGITAL/Access+Point+specifications">eDelivery AP Specifications</a> · <a href="https://ehmi.dk/assets/documents/ecore/ehmiAP/">ehmiAP</a></td>
+    </tr>
+    <tr>
+      <td><strong>AS4</strong></td>
+      <td>Applicability Statement 4</td>
+      <td>An OASIS-defined messaging protocol used as the transport protocol within eDelivery networks (including PEPPOL). Defines how messages are securely exchanged between Access Points.</td>
+      <td>OASIS / eDelivery</td>
+      <td><a href="https://www.oasis-open.org/">OASIS</a></td>
+    </tr>
+    <tr>
+      <td><strong>DDS</strong></td>
+      <td>Document Sharing Service</td>
+      <td>A national infrastructure for document sharing with an underlying repository structure based on IHE XDS, hosted on NSP. Collects sent messages from the sender's AP and exposes them in the national infrastructure for both healthcare professionals and citizens.</td>
+      <td>NSP</td>
+      <td><a href="https://www.nspop.dk/">NSP Documentation</a></td>
+    </tr>
+    <tr>
+      <td><strong>DNS</strong></td>
+      <td>Domain Name System</td>
+      <td>Standard internet infrastructure used within the eDelivery 4-Corner Model to look up the address of the SML, which in turn provides the address of the SMP.</td>
+      <td>General IT</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>EAS</strong></td>
+      <td>EHMI Addressing Service</td>
+      <td>A health addressing service that helps senders find the correct recipient. Draws information from authoritative sources (e.g., SOR) and returns structured recipient data to the requesting End User Application. Decouples user systems from authoritative sources.</td>
+      <td>EHMI</td>
+      <td><a href="https://build.fhir.org/ig/medcomdk/dk-ehmi-eas/">EAS IG</a> · <a href="https://ehmi.dk/assets/documents/eas/">EAS page</a></td>
+    </tr>
+    <tr>
+      <td><strong>ebXML</strong></td>
+      <td>Electronic Business using eXtensible Markup Language</td>
+      <td>A family of XML-based standards maintained by OASIS for electronic business messaging. Underpins some of the eDelivery/PEPPOL specifications.</td>
+      <td>OASIS</td>
+      <td><a href="https://www.oasis-open.org/">OASIS</a></td>
+    </tr>
+    <tr>
+      <td><strong>EDS</strong></td>
+      <td>EHMI Delivery Status (Track'n'Trace)</td>
+      <td>The delivery status component that collects and exposes the delivery status of sent messages at selected points along the delivery path in near real-time. Enables both healthcare professionals and citizens to follow a message's progress. Implemented as a FHIR AuditEvent-based server.</td>
+      <td>EHMI</td>
+      <td><a href="https://build.fhir.org/ig/medcomdk/dk-ehmi-eds/">EDS IG</a> · <a href="https://ehmi.dk/assets/documents/eds/">EDS page</a></td>
+    </tr>
+    <tr>
+      <td><strong>EER</strong></td>
+      <td>EHMI Endpoint Register</td>
+      <td>An organizational register of FHIR messaging and document sharing endpoints linked to the national SOR register. Serves as the authoritative source for SMP registrations, EDS client Devices, and endpoint-to-organization relations. Also feeds the EHMI Addressing Service.</td>
+      <td>EHMI</td>
+      <td><a href="https://build.fhir.org/ig/medcomdk/dk-ehmi-eer/">EER IG</a> · <a href="https://ehmi.dk/assets/documents/eer/">EER page</a></td>
+    </tr>
+    <tr>
+      <td><strong>EDIFACT</strong></td>
+      <td>Electronic Data Interchange For Administration, Commerce and Transport</td>
+      <td>A United Nations standard for electronic data interchange. One of the message format types that can be wrapped in an SBDH/ehmiSBDH envelope.</td>
+      <td>UN/CEFACT</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>EHMI</strong></td>
+      <td>Enhanced Healthcare Messaging Infrastructure</td>
+      <td>MedCom's new healthcare messaging infrastructure built on top of eDelivery. Adds health-specific services (EAS, EDS, EER) and the ehmiSBDH envelope on top of the eDelivery network. Modernizes security, transparency, robustness, and interoperability of clinical message exchange in Denmark.</td>
+      <td>EHMI</td>
+      <td><a href="https://ehmi.dk/">ehmi.dk</a></td>
+    </tr>
+    <tr>
+      <td><strong>EOJ</strong></td>
+      <td>Municipal Emergency/Homecare System (DA: Elektronisk Omsorgsjournalsystem)</td>
+      <td>The IT system used by Danish municipal emergency/homecare services. Acts as an EUA sending HomeCareObservation FHIR messages in the EHMI production pilot.</td>
+      <td>Danish Healthcare</td>
+      <td><a href="https://medcom.dk/projekter/kommunale-proevesvar-paa-ny-infrastruktur/">MedCom13 project</a></td>
+    </tr>
+    <tr>
+      <td><strong>EUA</strong></td>
+      <td>End User Application</td>
+      <td>The system used by end users (health professionals) to create and receive messages. In EHMI, the EUA is responsible for composing/consuming the clinical message content and sends FHIR Acknowledgements. Can be built together with MSH and AP.</td>
+      <td>EHMI</td>
+      <td><a href="https://ehmi.dk/assets/documents/ecore/ehmiEUA/">ehmiEUA</a></td>
+    </tr>
+    <tr>
+      <td><strong>FHIR</strong></td>
+      <td>Fast Healthcare Interoperability Resources</td>
+      <td>An HL7 international standard for exchanging healthcare information electronically. EHMI uses FHIR for message formats, AuditEvents (EDS), endpoint registers (EER), and addressing (EAS).</td>
+      <td>HL7</td>
+      <td><a href="https://hl7.org/fhir/">HL7 FHIR</a></td>
+    </tr>
+    <tr>
+      <td><strong>GLN</strong></td>
+      <td>Global Location Number</td>
+      <td>A GS1 identifier used to uniquely identify physical and organisational locations. Used in EHMI/EER as a foreign key linking SOR organisational units to messaging endpoints.</td>
+      <td>GS1</td>
+      <td><a href="https://www.gs1.org/">GS1</a></td>
+    </tr>
+    <tr>
+      <td><strong>GS1</strong></td>
+      <td>Global Standards 1 (originally EAN International)</td>
+      <td>The international organisation responsible for GLN numbers and the original SBDH specification.</td>
+      <td>GS1</td>
+      <td><a href="https://www.gs1.org/">gs1.org</a></td>
+    </tr>
+    <tr>
+      <td><strong>HL7</strong></td>
+      <td>Health Level Seven International</td>
+      <td>International standards organisation producing health IT interoperability standards, including FHIR, used throughout EHMI.</td>
+      <td>HL7</td>
+      <td><a href="https://www.hl7.org/">hl7.org</a></td>
+    </tr>
+    <tr>
+      <td><strong>IG</strong></td>
+      <td>Implementation Guide</td>
+      <td>A formal specification published in the HL7 FHIR standard format, describing how FHIR resources are used in a specific context. EHMI publishes separate IGs for EDS, EAS, EER, and ehmiSBDH.</td>
+      <td>HL7 / FHIR</td>
+      <td><a href="https://build.fhir.org/ig/medcomdk/">EHMI IGs on build.fhir.org</a></td>
+    </tr>
+    <tr>
+      <td><strong>IHE</strong></td>
+      <td>Integrating the Healthcare Enterprise</td>
+      <td>International organisation that creates healthcare interoperability profiles. EHMI relies on IHE XDS for document sharing on NSP.</td>
+      <td>IHE</td>
+      <td><a href="https://www.ihe.net/">ihe.net</a></td>
+    </tr>
+    <tr>
+      <td><strong>LPS</strong></td>
+      <td>General Medical Practice System (DA: Lægepraksissystem)</td>
+      <td>The IT system used by Danish general practitioners. Acts as a receiver EUA in the EHMI production pilot for HomeCareObservation messages.</td>
+      <td>Danish Healthcare</td>
+      <td><a href="https://medcom.dk/projekter/kommunale-proevesvar-paa-ny-infrastruktur/">MedCom13 project</a></td>
+    </tr>
+    <tr>
+      <td><strong>MSH</strong></td>
+      <td>Message Service Handler</td>
+      <td>The EHMI component responsible for wrapping clinical messages into the ehmiSBDH envelope. Can be a module within an EUA or AP, or a stand-alone application. MSHs communicate logically with each other through the metadata content in ehmiSBDH envelopes.</td>
+      <td>EHMI</td>
+      <td><a href="https://ehmi.dk/assets/documents/ecore/ehmiMSH/">ehmiMSH</a></td>
+    </tr>
+    <tr>
+      <td><strong>NSIS</strong></td>
+      <td>National Standard for Identities and Security (DA: National Standard for Identiteters Sikringsniveauer)</td>
+      <td>Danish national standard defining levels of identity assurance. EHMI security requires NSIS level "significant" (equivalent to NIST level 3–4) for access to personally identifiable information.</td>
+      <td>Danish Security</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>NSP</strong></td>
+      <td>National Service Platform (DA: Den Nationale Serviceplatform)</td>
+      <td>The Danish national infrastructure platform for health data services, hosting e.g. the XDS Document Sharing index and national consent/treatment relation services.</td>
+      <td>Danish Healthcare IT</td>
+      <td><a href="https://www.nspop.dk/">nspop.dk</a></td>
+    </tr>
+    <tr>
+      <td><strong>OASIS</strong></td>
+      <td>Organization for the Advancement of Structured Information Standards</td>
+      <td>The standards organisation responsible for specifications of AS4, SML, SMP, and ebXML used in eDelivery.</td>
+      <td>OASIS</td>
+      <td><a href="https://www.oasis-open.org/">oasis-open.org</a></td>
+    </tr>
+    <tr>
+      <td><strong>OIO-XML</strong></td>
+      <td>Object-oriented Interface, XML-based (DA: Offentlig Information Online)</td>
+      <td>A Danish XML-based standard for public sector data exchange. One of the message format types that can be wrapped in an SBDH/ehmiSBDH envelope alongside EDIFACT and FHIR.</td>
+      <td>Danish Public Sector</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>PEPPOL</strong></td>
+      <td>Pan-European Public Procurement On-Line</td>
+      <td>A network and set of specifications (including SBDH, AS4, SML, SMP) for cross-border electronic document exchange. EHMI's eDelivery layer is based on PEPPOL infrastructure.</td>
+      <td>PEPPOL</td>
+      <td><a href="https://peppol.eu/">peppol.eu</a></td>
+    </tr>
+    <tr>
+      <td><strong>SBD</strong></td>
+      <td>Standard Business Document</td>
+      <td>The complete wrapper object consisting of the SBDH header and the binary payload (the actual message content) within an ehmiSBDH envelope.</td>
+      <td>PEPPOL / GS1</td>
+      <td><a href="https://docs.peppol.eu/edelivery/envelope/Peppol-EDN-Business-Message-Envelope-2.0.1-2023-08-17.pdf">PEPPOL SBDH envelope</a></td>
+    </tr>
+    <tr>
+      <td><strong>SBDH</strong></td>
+      <td>Standard Business Document Header</td>
+      <td>A PEPPOL/GS1-defined envelope header that carries metadata for routing and processing a message in an eDelivery context. Can contain different message format types (EDIFACT, OIO-XML, FHIR). The basis for ehmiSBDH.</td>
+      <td>PEPPOL / GS1</td>
+      <td><a href="https://docs.peppol.eu/edelivery/envelope/Peppol-EDN-Business-Message-Envelope-2.0.1-2023-08-17.pdf">PEPPOL SBDH envelope</a></td>
+    </tr>
+    <tr>
+      <td><strong>SDN</strong></td>
+      <td>Health Data Network (DA: Sundhedsdatanettet)</td>
+      <td>The Danish national health data network over which EHMI messages are transported via eDelivery.</td>
+      <td>Danish Healthcare IT</td>
+      <td><a href="https://medcom.dk/systemforvaltning/sundhedsdatanettet-sdn/">MedCom SDN page</a></td>
+    </tr>
+    <tr>
+      <td><strong>SML</strong></td>
+      <td>Service Metadata Locator</td>
+      <td>An eDelivery/PEPPOL directory (DNS-based) used by a sending AP (Corner 2) to find the address of the SMP that holds the receiving system's capabilities.</td>
+      <td>eDelivery / PEPPOL</td>
+      <td><a href="https://www.oasis-open.org/">OASIS</a></td>
+    </tr>
+    <tr>
+      <td><strong>SMP</strong></td>
+      <td>Service Metadata Provider</td>
+      <td>An eDelivery/PEPPOL service that stores the receiver's capabilities (supported message types, AP addresses). Queried by the sending AP to verify receiver capabilities and find the receiving AP address. ehmiSMP is EHMI's profile of SMP.</td>
+      <td>eDelivery / PEPPOL</td>
+      <td><a href="https://ehmi.dk/assets/documents/ecore/ehmiSMP/">ehmiSMP</a> · <a href="https://www.oasis-open.org/">OASIS</a></td>
+    </tr>
+    <tr>
+      <td><strong>SOR</strong></td>
+      <td>Danish Healthcare Organisation Register (DA: Sundhedsvæsenets Organisationsregister)</td>
+      <td>The authoritative Danish register of healthcare organisations, units, and their physical locations. Used as the primary organisational identifier in EER (SORID) and as a data source in EAS.</td>
+      <td>Danish Healthcare IT</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>XDS</strong></td>
+      <td>Cross-Enterprise Document Sharing</td>
+      <td>An IHE integration profile for sharing documents across healthcare enterprises. EHMI uses XDS (via NSP/DDS) for the secondary document sharing flow where sent messages are deposited in the national document sharing infrastructure.</td>
+      <td>IHE</td>
+      <td><a href="https://www.ihe.net/">ihe.net</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="ehmi-specific-component-terms">EHMI-specific Component Terms</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Description</th>
+      <th>Relevant Links</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>4-Corner Model</strong></td>
+      <td>The eDelivery/PEPPOL routing model: Corner 1 = Sender system; Corner 2 = Sender's AP; Corner 3 = Receiver's AP; Corner 4 = Receiver system. Corner 2 queries SML/DNS → SMP to find Corner 3, then delivers the message.</td>
+      <td><a href="https://ec.europa.eu/digital-building-blocks/wikis/display/DIGITAL/eDelivery">eDelivery</a></td>
+    </tr>
+    <tr>
+      <td><strong>ehmiAck / ehmiEnvelopeReceipt</strong></td>
+      <td>EHMI Envelope Receipt. An acknowledgement sent from the receiver's MSH back to the sender's MSH at the eDelivery envelope level, confirming receipt of the ehmiSBDH envelope. Distinct from the FHIR-level Acknowledgement sent between EUAs.</td>
+      <td><a href="https://ehmi.dk/assets/documents/ecore/">EHMI Core</a></td>
+    </tr>
+    <tr>
+      <td><strong>ehmiSBDH</strong></td>
+      <td>EHMI's customized profile of the PEPPOL SBDH envelope. Used between MSHs to carry message metadata, reliable messaging data, XDS document sharing metadata, and EDS delivery status triggers across the eDelivery network.</td>
+      <td><a href="https://build.fhir.org/ig/medcomdk/dk-ehmi-sbdh/index.html">ehmiSBDH IG</a> · <a href="https://ehmi.dk/assets/documents/ecore/ehmiSBDH/">ehmiSBDH page</a></td>
+    </tr>
+    <tr>
+      <td><strong>ehmiSMP</strong></td>
+      <td>EHMI's profile of the Service Metadata Provider. Specifies how AP capabilities and message routing metadata are registered and queried within EHMI's eDelivery network.</td>
+      <td><a href="https://ehmi.dk/assets/documents/ecore/ehmiSMP/">ehmiSMP</a></td>
+    </tr>
+    <tr>
+      <td><strong>EdsBasicDeliveryStatus</strong></td>
+      <td>An EDS registration type for messages without patient data (e.g., MedCom Acknowledgements). Used by EDS Clients to register delivery status without including patient identifiers.</td>
+      <td><a href="https://build.fhir.org/ig/medcomdk/dk-ehmi-eds/">EDS IG</a></td>
+    </tr>
+    <tr>
+      <td><strong>EdsPatientDeliveryStatus</strong></td>
+      <td>An EDS registration type for messages that contain patient data (e.g., normal MedCom clinical messages). Includes patient reference alongside delivery status data.</td>
+      <td><a href="https://build.fhir.org/ig/medcomdk/dk-ehmi-eds/">EDS IG</a></td>
+    </tr>
+    <tr>
+      <td><strong>HomeCareObservation</strong></td>
+      <td>A new MedCom FHIR message standard for municipal test responses (e.g., blood samples taken by homecare services), sent from municipal EOJ systems to general practitioner LPS systems. The primary message type tested in the EHMI production pilot.</td>
+      <td><a href="https://medcom.dk/projekter/kommunale-proevesvar-paa-ny-infrastruktur/">MedCom13 project</a></td>
+    </tr>
+    <tr>
+      <td><strong>MinLog</strong></td>
+      <td>Danish national citizen log service. Under EHMI security requirements, healthcare professionals' access to citizens' personal data must be viewable by citizens via MinLog.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>VANSEnvelope</strong></td>
+      <td>The predecessor envelope format used on MedCom's legacy VANS network. ehmiSBDH handles the same reliable messaging responsibilities for the EHMI network that VANSEnvelope provided on the VANS network.</td>
+      <td><a href="https://medcomdk.github.io/MedCom-FHIR-Communication/assets/documents/020_Governance-for-Reliable-Messaging-in-general.html">MedCom Governance for Reliable Messaging</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="about">About</h2>
+
+<p>This glossary is compiled from <a href="https://ehmi.dk/">ehmi.dk</a> and its sub-pages, maintained by <a href="https://www.medcom.dk/">MedCom</a>.<br />
+Questions: <a href="mailto:ehmi@medcom.dk">ehmi@medcom.dk</a> · Issues: <a href="https://github.com/medcomdk/ehmi/issues">GitHub Issues for EHMI®</a></p>
+
+<p><em>"EHMI® is the registered trademark of MedCom and is used with the permission of MedCom."</em></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://medcom.dk">MedCom</a>.  Package dk-medcom-ref-lm#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jun 25, 2026 17:09+0200">2026-06-25</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+
+| <a style="color: #81BEF7" target="_blank" href="https://www.was.digst.dk/medcomfhir-dk-ig-">Accessibility statement (Tilgængelighedserklæring)</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-service-request | *Version*:0.1.0 |
-| Draft as of 2026-06-16 | *Computable Name*:EHMIServiceRequest |
+| Draft as of 2026-06-25 | *Computable Name*:EHMIServiceRequest |
 
  
 Kerne-ressource der repræsenterer den kliniske henvisning. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-ehmi-service-request
   "name" : "EHMIServiceRequest",
   "title" : "EHMI ServiceRequest – Henvisning",
   "status" : "draft",
-  "date" : "2026-06-16T14:56:57+02:00",
+  "date" : "2026-06-25T17:09:01+02:00",
   "publisher" : "MedCom",
   "contact" : [{
     "name" : "MedCom",

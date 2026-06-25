@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-abonnement | *Version*:0.1.0 |
-| Draft as of 2026-06-16 | *Computable Name*:Abonnement |
+| Draft as of 2026-06-25 | *Computable Name*:Abonnement |
 
  
 Repræsenterer en abonnementsregistrering der definerer hvilke hændelser en abonnent (typisk henviseren) ønsker at modtage notifikationer om. Svarer til FHIR Subscription. 
@@ -131,7 +131,7 @@ Other representations of profile: [CSV](StructureDefinition-ehmi-lm-abonnement.c
   "name" : "Abonnement",
   "title" : "Abonnement",
   "status" : "draft",
-  "date" : "2026-06-16T14:56:57+02:00",
+  "date" : "2026-06-25T17:09:01+02:00",
   "publisher" : "MedCom",
   "contact" : [{
     "name" : "MedCom",

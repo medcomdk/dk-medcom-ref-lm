@@ -18,7 +18,7 @@
   fhir:name [ fhir:v "EHMIReferralMessageHeader"] ; # 
   fhir:title [ fhir:v "EHMI Referral MessageHeader"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-06-16T14:56:57+02:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-06-25T17:09:01+02:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "MedCom"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "MedCom" ] ;

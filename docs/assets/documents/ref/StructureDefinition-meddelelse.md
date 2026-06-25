@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/meddelelse | *Version*:0.1.0 |
-| Draft as of 2026-06-16 | *Computable Name*:MeddelelseLM |
+| Draft as of 2026-06-25 | *Computable Name*:MeddelelseLM |
 
  
 Konceptuel logisk model for en Meddelelse i dansk sundhedsvæsen. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-meddelelse.csv), [Ex
   "name" : "MeddelelseLM",
   "title" : "Meddelelse – Logisk Model",
   "status" : "draft",
-  "date" : "2026-06-16T14:56:57+02:00",
+  "date" : "2026-06-25T17:09:01+02:00",
   "publisher" : "MedCom",
   "contact" : [{
     "name" : "MedCom",

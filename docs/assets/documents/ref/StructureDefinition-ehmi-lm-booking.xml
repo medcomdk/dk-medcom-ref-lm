@@ -21,7 +21,7 @@ patienten og henviseren. Svarer til FHIR Appointment.">ehmi-lm-booking</a><a nam
   <name value="Booking"/>
   <title value="Booking"/>
   <status value="draft"/>
-  <date value="2026-06-16T14:56:57+02:00"/>
+  <date value="2026-06-25T17:09:01+02:00"/>
   <publisher value="MedCom"/>
   <contact>
     <name value="MedCom"/>

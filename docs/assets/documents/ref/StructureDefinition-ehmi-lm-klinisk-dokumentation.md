@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-klinisk-dokumentation | *Version*:0.1.0 |
-| Draft as of 2026-06-16 | *Computable Name*:KliniskDokumentation |
+| Draft as of 2026-06-25 | *Computable Name*:KliniskDokumentation |
 
  
 Repræsenterer supplerende klinisk materiale der knyttes til en Henvisning for at understøtte visitators beslutningsgrundlag. Kan være laboratoriesvar, billeddiagnostik, epikriser eller andre dokumenter. Svarer til FHIR DocumentReference, DiagnosticReport eller Observation. 
@@ -137,7 +137,7 @@ Other representations of profile: [CSV](StructureDefinition-ehmi-lm-klinisk-doku
   "name" : "KliniskDokumentation",
   "title" : "KliniskDokumentation",
   "status" : "draft",
-  "date" : "2026-06-16T14:56:57+02:00",
+  "date" : "2026-06-25T17:09:01+02:00",
   "publisher" : "MedCom",
   "contact" : [{
     "name" : "MedCom",

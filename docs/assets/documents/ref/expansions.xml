@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="a64d2157-7866-47ce-a6a7-a4595fc91a9b"/>
+  <id value="1be56a1c-e339-474e-900d-5fc0425249ad"/>
   <meta>
-    <lastUpdated value="2026-06-16T14:56:57.298+02:00"/>
+    <lastUpdated value="2026-06-25T17:09:01.847+02:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -134,7 +134,7 @@
         <name value="EHMIMessageEventVS"/>
         <title value="EHMI Message Event ValueSet"/>
         <status value="draft"/>
-        <date value="2026-06-16T14:56:57+02:00"/>
+        <date value="2026-06-25T17:09:01+02:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -143,8 +143,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:79c63fca-9103-4692-b44c-0da4606beb4c"/>
-          <timestamp value="2026-06-16T14:58:46+02:00"/>
+          <identifier value="urn:uuid:0aff5afe-107a-4c19-874f-3c50a06ca8b8"/>
+          <timestamp value="2026-06-25T17:10:38+02:00"/>
           <total value="4"/>
           <offset value="0"/>
           <parameter>

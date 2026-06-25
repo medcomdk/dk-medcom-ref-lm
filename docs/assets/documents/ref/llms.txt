@@ -16,6 +16,7 @@
 * [10 Abonnement](10-abonnement.md)
 * [11 Meddelelseskonvolut](11-meddelelseskonvolut.md)
 * [Artifacts Summary](artifacts.md)
+* [Ehmi Glossary](ehmi-glossary.md)
 * [Fhir Henvisning Messaging Cgpt](fhir-henvisning-messaging-cgpt.md)
 * [Fhir Henvisning Use Cases Cgpt](fhir-henvisning-use-cases-cgpt.md)
 * [Fhir Henvisning Use Cases Claude](fhir-henvisning-use-cases-claude.md)

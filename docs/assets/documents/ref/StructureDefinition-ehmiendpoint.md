@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmiendpoint | *Version*:0.1.0 |
-| Draft as of 2026-06-16 | *Computable Name*:EhmiEndpointLM |
+| Draft as of 2026-06-25 | *Computable Name*:EhmiEndpointLM |
 
  
 Konceptuel logisk model for et EHMI/eDelivery endpoint i dansk sundhedsvæsen. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-ehmiendpoint.csv), [
   "name" : "EhmiEndpointLM",
   "title" : "EHMI/eDelivery Endpoint – Logisk Model",
   "status" : "draft",
-  "date" : "2026-06-16T14:56:57+02:00",
+  "date" : "2026-06-25T17:09:01+02:00",
   "publisher" : "MedCom",
   "contact" : [{
     "name" : "MedCom",

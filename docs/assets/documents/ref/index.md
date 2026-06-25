@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://medcomehmi.dk/ig/dk-medcom-ref-lm/ImplementationGuide/dk-medcom-ref-lm | *Version*:0.1.0 |
-| Draft as of 2026-06-16 | *Computable Name*:DKMEDCOMREFERRALLM |
+| Draft as of 2026-06-25 | *Computable Name*:DKMEDCOMREFERRALLM |
 
 # FHIR Henvisninger
 
@@ -42,7 +42,7 @@
   "name" : "DKMEDCOMREFERRALLM",
   "title" : "DK MEDCOM REFERRAL LM",
   "status" : "draft",
-  "date" : "2026-06-16T14:56:57+02:00",
+  "date" : "2026-06-25T17:09:01+02:00",
   "publisher" : "MedCom",
   "contact" : [{
     "name" : "MedCom",
@@ -1108,6 +1108,15 @@
         }],
         "nameUrl" : "11-meddelelseskonvolut.html",
         "title" : "11 Meddelelseskonvolut",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "ehmi-glossary.html"
+        }],
+        "nameUrl" : "ehmi-glossary.html",
+        "title" : "Ehmi Glossary",
         "generation" : "markdown"
       },
       {

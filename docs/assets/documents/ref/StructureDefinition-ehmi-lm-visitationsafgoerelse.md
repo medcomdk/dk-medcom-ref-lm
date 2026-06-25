@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-visitationsafgoerelse | *Version*:0.1.0 |
-| Draft as of 2026-06-16 | *Computable Name*:Visitationsafgoerelse |
+| Draft as of 2026-06-25 | *Computable Name*:Visitationsafgoerelse |
 
  
 Repræsenterer visitatorens formelle beslutning om en indkommende henvisning: accept, afvisning, videresendelse eller prioritetsændring. Svarer til FHIR Task med outcome og begrundelse. 
@@ -214,7 +214,7 @@ Other representations of profile: [CSV](StructureDefinition-ehmi-lm-visitationsa
   "name" : "Visitationsafgoerelse",
   "title" : "Visitationsafgoerelse",
   "status" : "draft",
-  "date" : "2026-06-16T14:56:57+02:00",
+  "date" : "2026-06-25T17:09:01+02:00",
   "publisher" : "MedCom",
   "contact" : [{
     "name" : "MedCom",

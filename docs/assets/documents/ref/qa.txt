@@ -3,8 +3,8 @@ DKMEDCOMREFERRALLM : Validation Results
 
 err = 258, warn = 481, info = 31
 IG Publisher Version: 2.2.9
-Generated Tue Jun 16 15:00:05 CEST 2026. FHIR version 4.0.1 for dk-medcom-ref-lm#0.1.0 (canonical = http://medcomehmi.dk/ig/dk-medcom-ref-lm)
- Build Errors : 155 / 4 / 0
+Generated Thu Jun 25 17:11:51 CEST 2026. FHIR version 4.0.1 for dk-medcom-ref-lm#0.1.0 (canonical = http://medcomehmi.dk/ig/dk-medcom-ref-lm)
+ Build Errors : 174 / 4 / 0
  C:\github\LogicalModels\dk-medcom-ref-lm\fsh-generated\resources\CodeSystem-ehmi-message-event-cs : 0 / 2 / 3
  C:\github\LogicalModels\dk-medcom-ref-lm\fsh-generated\resources\ImplementationGuide-dk-medcom-ref-lm : 0 / 2 / 2
  C:\github\LogicalModels\dk-medcom-ref-lm\fsh-generated\resources\StructureDefinition-dk-referral-message : 1 / 169 / 2
@@ -160,6 +160,25 @@ ERROR: StructureDefinition-ehmi-lm-visitationsafgoerelse.html#/html/body/div/div
 ERROR: StructureDefinition-ehmi-lm-visitationsafgoerelse.html#/html/body/div/div/div/div/div/div/table/tbody/tr/td/a at Line 647, column 160: The link '#user-story-34-statusnotifikation-til-henviser' for "3.4 Statusnotifikation" cannot be resolved (valid targets: 174 targets)
 ERROR: StructureDefinition-ehmi-lm-visitationsafgoerelse.html#/html/body/div/div/div/div/div/div/table/tbody/tr/td/a at Line 651, column 14: The link '#user-story-11-oprette-en-ny-henvisning' for "1.1 Oprette en ny henvisning" cannot be resolved (valid targets: 174 targets)
 ERROR: StructureDefinition-ehmi-lm-visitationsafgoerelse.html#/html/body/div/div/div/div/div/p/a at Line 1329, column 114: The link 'StructureDefinition-ehmi-lm-visitationsafgoerelse.xlsx' for "Excel" cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 208, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 221, column 2: The image source 'UC-1.2.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 234, column 2: The image source 'UC-1.3.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 247, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 260, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 273, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 280, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 293, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 306, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 319, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 332, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 345, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 358, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 365, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 378, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 391, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 404, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 417, column 2: The image source 'UC-1.1.svg' cannot be resolved
+ERROR: fhir-henvisning-use-cases-cgpt.html#/html/body/div/div/div/div/div/p/img at Line 430, column 2: The image source 'UC-1.1.svg' cannot be resolved
 ERROR: fhir-henvisning-use-cases-claude2.html#/html/body/div/div/div/div/div/table/tbody/tr/td/a at Line 351, column 14: The link '#12-tilknytte-klinisk-dokumentation' for "1.2 Tilknytte klinisk dokumentation" cannot be resolved (valid targets: 81 targets)
 ERROR: fhir-henvisning-use-cases-claude2.html#/html/body/div/div/div/div/div/table/tbody/tr/td/a at Line 351, column 160: The link '#21-modtage-og-kvittere-for-ny-henvisning' for "2.1 Modtage og kvittere for ny henvisning" cannot be resolved (valid targets: 81 targets)
 ERROR: fhir-henvisning-use-cases-claude2.html#/html/body/div/div/div/div/div/table/tbody/tr/td/a at Line 387, column 14: The link '#21-modtage-og-kvittere-for-ny-henvisning' for "2.1 Modtage og kvittere for ny henvisning" cannot be resolved (valid targets: 81 targets)

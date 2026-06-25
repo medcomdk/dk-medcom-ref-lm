@@ -1,8 +1,8 @@
 {
   "resourceType" : "Bundle",
-  "id" : "a64d2157-7866-47ce-a6a7-a4595fc91a9b",
+  "id" : "1be56a1c-e339-474e-900d-5fc0425249ad",
   "meta" : {
-    "lastUpdated" : "2026-06-16T14:56:57.298+02:00"
+    "lastUpdated" : "2026-06-25T17:09:01.847+02:00"
   },
   "type" : "collection",
   "entry" : [{
@@ -18,7 +18,7 @@
       "name" : "EHMIMessageEventVS",
       "title" : "EHMI Message Event ValueSet",
       "status" : "draft",
-      "date" : "2026-06-16T14:56:57+02:00",
+      "date" : "2026-06-25T17:09:01+02:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -27,8 +27,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:79c63fca-9103-4692-b44c-0da4606beb4c",
-        "timestamp" : "2026-06-16T14:58:46+02:00",
+        "identifier" : "urn:uuid:0aff5afe-107a-4c19-874f-3c50a06ca8b8",
+        "timestamp" : "2026-06-25T17:10:38+02:00",
         "total" : 4,
         "offset" : 0,
         "parameter" : [{

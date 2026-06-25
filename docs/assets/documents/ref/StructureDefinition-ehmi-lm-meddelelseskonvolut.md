@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-meddelelseskonvolut | *Version*:0.1.0 |
-| Draft as of 2026-06-16 | *Computable Name*:Meddelelseskonvolut |
+| Draft as of 2026-06-25 | *Computable Name*:Meddelelseskonvolut |
 
  
 Repræsenterer den tekniske meddelelsesomslag der transporterer kliniske ressourcer (Henvisning, Afgørelse mv.) via EHMI og eDelivery. Svarer til FHIR Bundle (type=message) med MessageHeader som første entry. 
@@ -150,7 +150,7 @@ Other representations of profile: [CSV](StructureDefinition-ehmi-lm-meddelelsesk
   "name" : "Meddelelseskonvolut",
   "title" : "Meddelelseskonvolut",
   "status" : "draft",
-  "date" : "2026-06-16T14:56:57+02:00",
+  "date" : "2026-06-25T17:09:01+02:00",
   "publisher" : "MedCom",
   "contact" : [{
     "name" : "MedCom",

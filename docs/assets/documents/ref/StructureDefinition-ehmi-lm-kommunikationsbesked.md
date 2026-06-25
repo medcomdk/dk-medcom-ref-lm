@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-kommunikationsbesked | *Version*:0.1.0 |
-| Draft as of 2026-06-16 | *Computable Name*:Kommunikationsbesked |
+| Draft as of 2026-06-25 | *Computable Name*:Kommunikationsbesked |
 
  
 Repræsenterer en struktureret besked i den løbende dialog mellem henviser og visitator. Bruges til supplement-anmodninger, faglig afklaring, alternativ visitation og korrektionsaftaler. Svarer til FHIR Communication eller CommunicationRequest. 
@@ -199,7 +199,7 @@ Other representations of profile: [CSV](StructureDefinition-ehmi-lm-kommunikatio
   "name" : "Kommunikationsbesked",
   "title" : "Kommunikationsbesked",
   "status" : "draft",
-  "date" : "2026-06-16T14:56:57+02:00",
+  "date" : "2026-06-25T17:09:01+02:00",
   "publisher" : "MedCom",
   "contact" : [{
     "name" : "MedCom",

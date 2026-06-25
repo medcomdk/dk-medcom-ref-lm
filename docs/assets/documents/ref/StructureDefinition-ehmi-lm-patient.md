@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-patient | *Version*:0.1.0 |
-| Draft as of 2026-06-16 | *Computable Name*:Patient |
+| Draft as of 2026-06-25 | *Computable Name*:Patient |
 
  
 Repræsenterer den patient der viderehenvises. Svarer til FHIR Patient profileret som DkCorePatient med dansk CPR-nummer som primær identifikator. 
@@ -112,7 +112,7 @@ Other representations of profile: [CSV](StructureDefinition-ehmi-lm-patient.csv)
   "name" : "Patient",
   "title" : "Patient",
   "status" : "draft",
-  "date" : "2026-06-16T14:56:57+02:00",
+  "date" : "2026-06-25T17:09:01+02:00",
   "publisher" : "MedCom",
   "contact" : [{
     "name" : "MedCom",

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://medcomehmi.dk/ig/dk-medcom-ref-lm/StructureDefinition/ehmi-lm-statusnotifikation | *Version*:0.1.0 |
-| Draft as of 2026-06-16 | *Computable Name*:Statusnotifikation |
+| Draft as of 2026-06-25 | *Computable Name*:Statusnotifikation |
 
  
 Repræsenterer en automatisk notifikation der sendes til en abonnent (typisk henviseren) ved statusændring på en aktiv henvisning. Svarer til FHIR SubscriptionNotification / SubscriptionStatus (R4B/R5-mønster implementeret via MedCom-notifikationsmodel i R4). 
@@ -175,7 +175,7 @@ Other representations of profile: [CSV](StructureDefinition-ehmi-lm-statusnotifi
   "name" : "Statusnotifikation",
   "title" : "Statusnotifikation",
   "status" : "draft",
-  "date" : "2026-06-16T14:56:57+02:00",
+  "date" : "2026-06-25T17:09:01+02:00",
   "publisher" : "MedCom",
   "contact" : [{
     "name" : "MedCom",

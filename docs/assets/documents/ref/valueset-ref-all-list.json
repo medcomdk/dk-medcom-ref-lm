@@ -112,9 +112,9 @@
     "uses" : {
     },
     "StructureDefinition-ehmi-referral-message-bundle.html" : "EHMI Referring Message Bundle",
-    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning",
     "StructureDefinition-ehmi-referral-message-header.html" : "EHMI Referral MessageHeader",
-    "StructureDefinition-ehmi-referral-message-response-bundle.html" : "EHMI Referral Message Response Bundle"
+    "StructureDefinition-ehmi-referral-message-response-bundle.html" : "EHMI Referral Message Response Bundle",
+    "StructureDefinition-ehmi-service-request.html" : "EHMI ServiceRequest – Henvisning"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/medication-as-needed-reason",

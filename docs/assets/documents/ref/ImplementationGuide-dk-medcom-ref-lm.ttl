@@ -18,7 +18,7 @@
   fhir:name [ fhir:v "DKMEDCOMREFERRALLM"] ; # 
   fhir:title [ fhir:v "DK MEDCOM REFERRAL LM"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-06-16T14:56:57+02:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-06-25T17:09:01+02:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "MedCom"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "MedCom" ] ;
@@ -1543,6 +1543,20 @@
            fhir:v "11-meddelelseskonvolut.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "11 Meddelelseskonvolut" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
+             fhir:v "ehmi-glossary.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "ehmi-glossary.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Ehmi Glossary" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

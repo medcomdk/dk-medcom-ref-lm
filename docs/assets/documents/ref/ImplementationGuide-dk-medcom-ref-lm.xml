@@ -11,7 +11,7 @@
   <name value="DKMEDCOMREFERRALLM"/>
   <title value="DK MEDCOM REFERRAL LM"/>
   <status value="draft"/>
-  <date value="2026-06-16T14:56:57+02:00"/>
+  <date value="2026-06-25T17:09:01+02:00"/>
   <publisher value="MedCom"/>
   <contact>
     <name value="MedCom"/>
@@ -878,6 +878,14 @@
         </extension>
         <nameUrl value="11-meddelelseskonvolut.html"/>
         <title value="11 Meddelelseskonvolut"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="ehmi-glossary.html"/>
+        </extension>
+        <nameUrl value="ehmi-glossary.html"/>
+        <title value="Ehmi Glossary"/>
         <generation value="markdown"/>
       </page>
       <page>

@@ -25,7 +25,7 @@ Svarer til FHIR Communication eller CommunicationRequest.">ehmi-lm-kommunikation
   <name value="Kommunikationsbesked"/>
   <title value="Kommunikationsbesked"/>
   <status value="draft"/>
-  <date value="2026-06-16T14:56:57+02:00"/>
+  <date value="2026-06-25T17:09:01+02:00"/>
   <publisher value="MedCom"/>
   <contact>
     <name value="MedCom"/>

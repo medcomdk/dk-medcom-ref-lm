@@ -18,7 +18,7 @@ Som henviser ønsker jeg at kunne oprette og afsende en struktureret henvisning 
 når jeg har truffet en klinisk beslutning om at viderehenvise en patient, 
 så visitatoren modtager alle nødvendige oplysninger på et standardiseret format.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 1.2 Tilknytte klinisk dokumentation
 
@@ -29,7 +29,7 @@ Som henviser ønsker jeg at kunne vedhæfte relevant klinisk dokumentation til e
 når jeg vurderer at visitatoren har brug for supplerende materiale for at træffe en god afgørelse, 
 så beslutningsgrundlaget er samlet ét sted.
 
- ![](1.2 Tilknytte klinisk dokumentation.svg) 
+ ![](UC-1.2.svg) 
 
 ### UC 1.3 Ændre en afsendt henvisning
 
@@ -51,7 +51,7 @@ Som henviser ønsker jeg at kunne tilbagekalde en afsendt henvisning,
 når patienten ikke længere ønsker forløbet eller det kliniske grundlag er bortfaldet, 
 så visitatoren ikke bruger ressourcer på en henvisning der ikke skal ekspederes.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 1.5 Monitorere status på afsendte henvisninger
 
@@ -62,7 +62,7 @@ Som henviser ønsker jeg løbende at kunne se status på mine afsendte og udest�
 når jeg har behov for overblik over patienternes videre forløb, 
 så jeg kan følge op og informere patienterne korrekt.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 1.6 Modtage afgørelse fra visitatoren
 
@@ -73,11 +73,11 @@ Som henviser ønsker jeg automatisk at modtage visitatorens afgørelse i mit jou
 når visitatoren har truffet beslutning om accept, afvisning eller alternativt tilbud, 
 så jeg hurtigt kan handle og orientere patienten.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ## Visitatorens use cases
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 2.1 Modtage og kvittere for ny henvisning
 
@@ -88,7 +88,7 @@ Som visitator ønsker jeg automatisk at modtage og kvittere for indkomne henvisn
 når en ny ServiceRequest ankommer i mit endpoint, 
 så afsenderen hurtigt får bekræftet at henvisningen er modtaget korrekt.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 2.2 Triagere og prioritere en henvisning
 
@@ -99,7 +99,7 @@ Som visitator ønsker jeg at kunne foretage en struktureret triage af en modtage
 når en ny eller opdateret henvisning er klar til klinisk vurdering, 
 så prioriteringen er sporbar og ensartet på tværs af alle indkomne sager.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 2.3 Acceptere en henvisning og booke forløb
 
@@ -110,7 +110,7 @@ Som visitator ønsker jeg at kunne acceptere en henvisning og oprette en booking
 når min visitationsafgørelse er positiv, 
 så patienten får en tid og henviseren automatisk modtager bekræftelsen.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 2.4 Afvise en henvisning
 
@@ -121,7 +121,7 @@ Som visitator ønsker jeg at kunne afvise en henvisning med en dokumenteret begr
 når indikationen ikke er opfyldt eller kapaciteten er nået, 
 så henviseren forstår årsagen og kan tage stilling til næste skridt for patienten.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 2.5 Videresende til anden modtager
 
@@ -132,7 +132,7 @@ Som visitator ønsker jeg at kunne videresende en fejlplaceret henvisning til re
 når jeg vurderer at et andet tilbud er bedre egnet, 
 så patienten ikke unødigt forsinkes og henviseren holdes orienteret om omdirigeringen.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 2.6 Ændre prioritet på en modtaget henvisning
 
@@ -143,11 +143,11 @@ Som visitator ønsker jeg at kunne justere prioriteten på en allerede modtaget 
 når ny klinisk information eller ændret kapacitetssituation tilsiger det, 
 så den kliniske hastegrad afspejles korrekt og henviseren notificeres om ændringen.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ## Udvekslingsdialog
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 3.1 Anmode om supplerende oplysninger
 
@@ -158,7 +158,7 @@ Som visitator ønsker jeg at kunne sende en struktureret anmodning om supplerend
 når grundlaget for triage er utilstrækkeligt, 
 så jeg kan træffe en fagligt forsvarlig visitationsafgørelse uden at afvise unødigt.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 3.2 Besvare anmodning om supplement
 
@@ -169,7 +169,7 @@ Som henviser ønsker jeg at kunne besvare en supplement-anmodning med de eftersp
 når visitatoren har bedt om yderligere data, 
 så visitatoren hurtigt kan genoptage og afslutte triage-processen.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 3.3 Faglig afklaring i dialog
 
@@ -180,7 +180,7 @@ Som henviser og visitator ønsker vi begge at kunne føre en struktureret faglig
 når indikation, egnethed eller behandlingsvalg er uklart, 
 så vi i fællesskab kan nå frem til den rigtige afgørelse for patienten uden at skulle bruge andre kommunikationskanaler.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 3.4 Statusnotifikation til henviser
 
@@ -191,7 +191,7 @@ Som henviser ønsker jeg automatisk at modtage en notifikation,
 når status på en af mine henvisninger ændrer sig hos visitatoren, 
 så jeg til enhver tid er opdateret om forløbet uden at skulle forespørge aktivt.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 3.5 Aftale om alternativ visitation
 
@@ -203,7 +203,7 @@ Som visitator ønsker jeg at kunne indlede en dialog med henviseren om et altern
 når jeg ikke kan imødekomme den primære henvisning, 
 så patienten ikke ender i en blindgyde og vi i fællesskab finder en løsning.
 
- ![](1.1 Oprette ny henvisning.svg) 
+ ![](UC-1.1.svg) 
 
 ### UC 3.6 Korrektionsaftale om fejl i afsendt henvisning
 
