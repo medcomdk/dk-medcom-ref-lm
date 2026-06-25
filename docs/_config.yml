@@ -1,4 +1,4 @@
-title: "EHMI - Enhanced Healthcare Messaging Infrastructure"
+title: "EHMI - Enhanced Healthcare Messaging Infrastructure Referrals Mock-up"
 logo: /assets/images/EHMI header_2025_3.png
 description: "Enhanced Healthcare Messaging Infrastructure"
 show_downloads: false
@@ -7,20 +7,10 @@ theme: jekyll-theme-minimal
 version: "1.0.0"
 fhir_version: "EHMI"
 releasenote: https://github.com/medcomdk/ehmi/releases
-thisurl: https://ehmi.dk/
-menuurl_item1: https://ehmi.dk/
-menutxt_item1: EHMI Landingpage
-menuurl_item2: https://ehmi.dk/assets/documents/ecore/
-menutxt_item2: EHMI Core
-menuurl_item3: https://ehmi.dk/assets/documents/eds/
-menutxt_item3: EHMI Delivery Status
-menuurl_item4: https://ehmi.dk/assets/documents/eas/
-menutxt_item4: EHMI Addressing Service
-menuurl_item5: https://ehmi.dk/assets/documents/eer/
-menutxt_item5: EHMI Endpoint Register
-menuurl_item6: https://ehmi.dk/assets/documents/egov/
-menutxt_item6: EHMI Governance*
-menuurl_item7: https://ehmi.dk/assets/documents/security/
-menutxt_item7: EHMI Security
+thisurl: https://ref.ehmi.dk/
+menuurl_item1: https://ref.ehmi.dk/
+menutxt_item1: EHMI Ref Landingpage
+menuurl_item2: https://ref.ehmi.dk/assets/documents/ref/
+menutxt_item2: EHMI Referrals
 menuurl_item8: https://ehmi.dk/assets/documents/glossary/
 menutxt_item8: EHMI Glossary
