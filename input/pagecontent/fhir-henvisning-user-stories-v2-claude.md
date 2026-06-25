@@ -2,9 +2,9 @@
   <p><b>Bemærk: Dette er en disclaimer for denne side om "User stories for FHIR-baseret henvisningshåndtering"</b></p>
   <p>
     Oversigten er en mock-up på user stories og diagrammer og er på ingen måde nødvendigvis fuldt dækkende og fuldt retvisende. Det forsøges til stadighed at blive mere dækkende og mere retvisende.
-    <br/>
-    Oversigten er delvist udarbejdet sammen med AI-værktøjerne Clause og ChatGPT, så justeringer efter deres forslag må påregnes.
-    <br/>
+    <br/><br/>
+    Oversigten og diagrammerne er delvist udarbejdet sammen med AI-værktøjerne Clause og ChatGPT, så justeringer efter deres forslag må påregnes.
+    <br/><br/>
     Oversigten vil være velegnet til en dialog med de rette aktører om henvisningsaktiviteter på hhv Henviser- og Visitator-siden samt dialogen imellem dem.
   </p>
 </div>
@@ -51,7 +51,7 @@ Disse user stories udføres selvstændigt af henviseren uden at kræve aktiv res
 
 ### User story 1.1 Oprette en ny henvisning
 
-> **User story:** Som henviser ønsker jeg at kunne oprette og afsende en struktureret henvisning via FHIR, <br/>når jeg har truffet en klinisk beslutning om at viderehenvise en patient, <br/>så visitatoren modtager alle nødvendige oplysninger på et standardiseret format.
+> **User story:** <br/>Som henviser ønsker jeg at kunne oprette og afsende en struktureret henvisning via FHIR, <br/>når jeg har truffet en klinisk beslutning om at viderehenvise en patient, <br/>så visitatoren modtager alle nødvendige oplysninger på et standardiseret format.
 
 <p style="display: block;">
 <img src="UC-1-1-Oprette-henvisning.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -69,7 +69,7 @@ Disse user stories udføres selvstændigt af henviseren uden at kræve aktiv res
 
 ### User story 1.2 Tilknytte klinisk dokumentation
 
-> **User story:** Som henviser ønsker jeg at kunne vedhæfte relevant klinisk dokumentation til en eksisterende henvisning, <br/>når jeg vurderer at visitatoren har brug for supplerende materiale for at træffe en god afgørelse, <br/>så beslutningsgrundlaget er samlet ét sted.
+> **User story:** <br/>Som henviser ønsker jeg at kunne vedhæfte relevant klinisk dokumentation til en eksisterende henvisning, <br/>når jeg vurderer at visitatoren har brug for supplerende materiale for at træffe en god afgørelse, <br/>så beslutningsgrundlaget er samlet ét sted.
 
 <p style="display: block;">
 <img src="UC-1-2-Tilknytte-dokumentation.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -88,7 +88,7 @@ Disse user stories udføres selvstændigt af henviseren uden at kræve aktiv res
 
 ### User story 1.3 Ændre en afsendt henvisning
 
-> **User story:** Som henviser ønsker jeg at kunne rette indholdet i en allerede afsendt henvisning, <br/>når jeg opdager en fejl eller patientens kliniske situation ændrer sig, <br/>så visitatoren altid arbejder ud fra korrekte og aktuelle oplysninger.
+> **User story:** <br/>Som henviser ønsker jeg at kunne rette indholdet i en allerede afsendt henvisning, <br/>når jeg opdager en fejl eller patientens kliniske situation ændrer sig, <br/>så visitatoren altid arbejder ud fra korrekte og aktuelle oplysninger.
 
 <p style="display: block;">
 <img src="UC-1-3-Aendre-henvisning.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -106,7 +106,7 @@ Henviseren opdaterer indholdet af en allerede afsendt henvisning — fx korriger
 
 ### User story 1.4 Tilbagekalde en henvisning
 
-> **User story:** Som henviser ønsker jeg at kunne tilbagekalde en afsendt henvisning, <br/>når patienten ikke længere ønsker forløbet eller det kliniske grundlag er bortfaldet, <br/>så visitatoren ikke bruger ressourcer på en henvisning der ikke skal ekspederes.
+> **User story:** <br/>Som henviser ønsker jeg at kunne tilbagekalde en afsendt henvisning, <br/>når patienten ikke længere ønsker forløbet eller det kliniske grundlag er bortfaldet, <br/>så visitatoren ikke bruger ressourcer på en henvisning der ikke skal ekspederes.
 
 <p style="display: block;">
 <img src="UC-1-4-Tilbagekalde-henvisning.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -124,7 +124,7 @@ Henviseren annullerer en afsendt henvisning, der endnu ikke er ekspederet. `Serv
 
 ### User story 1.5 Monitorere status på afsendte henvisninger
 
-> **User story:** Som henviser ønsker jeg løbende at kunne se status på mine afsendte og udestående henvisninger, <br/>når jeg har behov for overblik over patienternes videre forløb, <br/>så jeg kan følge op og informere patienterne korrekt.
+> **User story:** <br/>Som henviser ønsker jeg løbende at kunne se status på mine afsendte og udestående henvisninger, <br/>når jeg har behov for overblik over patienternes videre forløb, <br/>så jeg kan følge op og informere patienterne korrekt.
 
 <p style="display: block;">
 <img src="UC-1-5-Monitorere-status.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -142,7 +142,7 @@ Henviseren følger løbende op på status for egne udestående henvisninger. Det
 
 ### User story 1.6 Modtage afgørelse fra visitatoren
 
-> **User story:** Som henviser ønsker jeg automatisk at modtage visitatorens afgørelse i mit journalsystem, <br/>når visitatoren har truffet beslutning om accept, afvisning eller alternativt tilbud, <br/>så jeg hurtigt kan handle og orientere patienten.
+> **User story:** <br/>Som henviser ønsker jeg automatisk at modtage visitatorens afgørelse i mit journalsystem, <br/>når visitatoren har truffet beslutning om accept, afvisning eller alternativt tilbud, <br/>så jeg hurtigt kan handle og orientere patienten.
 
 <p style="display: block;">
 <img src="UC-1-6-Modtage-afgoerelse.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -164,7 +164,7 @@ Disse user stories udføres selvstændigt af visitatoren som led i modtagelse og
 
 ### User story 2.1 Modtage og kvittere for ny henvisning
 
-> **User story:** Som visitator ønsker jeg automatisk at modtage og kvittere for indkomne henvisninger via FHIR, <br/>når en ny `ServiceRequest` ankommer i mit endpoint, <br/>så afsenderen hurtigt får bekræftet at henvisningen er modtaget korrekt.
+> **User story:** <br/>Som visitator ønsker jeg automatisk at modtage og kvittere for indkomne henvisninger via FHIR, <br/>når en ny `ServiceRequest` ankommer i mit endpoint, <br/>så afsenderen hurtigt får bekræftet at henvisningen er modtaget korrekt.
 
 <p style="display: block;">
 <img src="UC-2-1-Modtage-kvittere.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -182,7 +182,7 @@ Visitatoren modtager en indkommende FHIR-`Bundle` med en ny `ServiceRequest` og 
 
 ### User story 2.2 Triagere og prioritere en henvisning
 
-> **User story:** Som visitator ønsker jeg at kunne foretage en struktureret triage af en modtaget henvisning og dokumentere mit udfald, <br/>når en ny eller opdateret henvisning er klar til klinisk vurdering, <br/>så prioriteringen er sporbar og ensartet på tværs af alle indkomne sager.
+> **User story:** <br/>Som visitator ønsker jeg at kunne foretage en struktureret triage af en modtaget henvisning og dokumentere mit udfald, <br/>når en ny eller opdateret henvisning er klar til klinisk vurdering, <br/>så prioriteringen er sporbar og ensartet på tværs af alle indkomne sager.
 
 <p style="display: block;">
 <img src="UC-2-2-Triagere-prioritere.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -200,7 +200,7 @@ Visitatoren vurderer henvisningens faglige indhold, klassificerer hastegrad og p
 
 ### User story 2.3 Acceptere en henvisning og booke forløb
 
-> **User story:** Som visitator ønsker jeg at kunne acceptere en henvisning og oprette en booking, <br/>når min visitationsafgørelse er positiv, <br/>så patienten får en tid og henviseren automatisk modtager bekræftelsen.
+> **User story:** <br/>Som visitator ønsker jeg at kunne acceptere en henvisning og oprette en booking, <br/>når min visitationsafgørelse er positiv, <br/>så patienten får en tid og henviseren automatisk modtager bekræftelsen.
 
 <p style="display: block;">
 <img src="UC-2-3-Acceptere-booke.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -218,7 +218,7 @@ Visitatoren accepterer henvisningen og opretter et forløb. Der bookes en tid, o
 
 ### User story 2.4 Afvise en henvisning
 
-> **User story:** Som visitator ønsker jeg at kunne afvise en henvisning med en dokumenteret begrundelse, <br/>når indikationen ikke er opfyldt eller kapaciteten er nået, <br/>så henviseren forstår årsagen og kan tage stilling til næste skridt for patienten.
+> **User story:** <br/>Som visitator ønsker jeg at kunne afvise en henvisning med en dokumenteret begrundelse, <br/>når indikationen ikke er opfyldt eller kapaciteten er nået, <br/>så henviseren forstår årsagen og kan tage stilling til næste skridt for patienten.
 
 <p style="display: block;">
 <img src="UC-2-4-Afvise-henvisning.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -236,7 +236,7 @@ Visitatoren afviser henvisningen med en faglig eller kapacitetsmæssig begrundel
 
 ### User story 2.5 Videresende til anden modtager
 
-> **User story:** Som visitator ønsker jeg at kunne videresende en fejlplaceret henvisning til rette modtager, <br/>når jeg vurderer at et andet tilbud er bedre egnet, <br/>så patienten ikke unødigt forsinkes og henviseren holdes orienteret om omdirigeringen.
+> **User story:** <br/>Som visitator ønsker jeg at kunne videresende en fejlplaceret henvisning til rette modtager, <br/>når jeg vurderer at et andet tilbud er bedre egnet, <br/>så patienten ikke unødigt forsinkes og henviseren holdes orienteret om omdirigeringen.
 
 <p style="display: block;">
 <img src="UC-2-5-Videresende.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -254,7 +254,7 @@ Visitatoren vurderer at henvisningen hører hjemme et andet sted og videresender
 
 ### User story 2.6 Ændre prioritet på en modtaget henvisning
 
-> **User story:** Som visitator ønsker jeg at kunne justere prioriteten på en allerede modtaget henvisning, <br/>når ny klinisk information eller ændret kapacitetssituation tilsiger det, <br/>så den kliniske hastegrad afspejles korrekt og henviseren notificeres om ændringen.
+> **User story:** <br/>Som visitator ønsker jeg at kunne justere prioriteten på en allerede modtaget henvisning, <br/>når ny klinisk information eller ændret kapacitetssituation tilsiger det, <br/>så den kliniske hastegrad afspejles korrekt og henviseren notificeres om ændringen.
 
 <p style="display: block;">
 <img src="UC-2-6-Aendre-prioritet.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -276,7 +276,7 @@ Disse user stories forudsætter aktiv kommunikation frem og tilbage mellem henvi
 
 ### User story 3.1 Anmode om supplerende oplysninger
 
-> **User story:** Som visitator ønsker jeg at kunne sende en struktureret anmodning om supplerende oplysninger til henviseren, <br/>når grundlaget for triage er utilstrækkeligt, <br/>så jeg kan træffe en fagligt forsvarlig visitationsafgørelse uden at afvise unødigt.
+> **User story:** <br/>Som visitator ønsker jeg at kunne sende en struktureret anmodning om supplerende oplysninger til henviseren, <br/>når grundlaget for triage er utilstrækkeligt, <br/>så jeg kan træffe en fagligt forsvarlig visitationsafgørelse uden at afvise unødigt.
 
 <p style="display: block;">
 <img src="UC-3-1-Anmode-supplement.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -294,7 +294,7 @@ Visitatoren mangler oplysninger for at kunne triagere og sender en struktureret 
 
 ### User story 3.2 Besvare anmodning om supplement
 
-> **User story:** Som henviser ønsker jeg at kunne besvare en supplement-anmodning med de efterspurgte kliniske oplysninger, <br/>når visitatoren har bedt om yderligere data, <br/>så visitatoren hurtigt kan genoptage og afslutte triage-processen.
+> **User story:** <br/>Som henviser ønsker jeg at kunne besvare en supplement-anmodning med de efterspurgte kliniske oplysninger, <br/>når visitatoren har bedt om yderligere data, <br/>så visitatoren hurtigt kan genoptage og afslutte triage-processen.
 
 <p style="display: block;">
 <img src="UC-3-2-Besvare-supplement.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -312,7 +312,7 @@ Henviseren modtager en supplement-anmodning og besvarer denne ved at sende de ef
 
 ### User story 3.3 Faglig afklaring i dialog
 
-> **User story:** Som henviser og visitator ønsker vi begge at kunne føre en struktureret faglig dialog om en konkret henvisning, <br/>når indikation, egnethed eller behandlingsvalg er uklart, <br/>så vi i fællesskab kan nå frem til den rigtige afgørelse for patienten uden at skulle bruge andre kommunikationskanaler.
+> **User story:** <br/>Som henviser og visitator ønsker vi begge at kunne føre en struktureret faglig dialog om en konkret henvisning, <br/>når indikation, egnethed eller behandlingsvalg er uklart, <br/>så vi i fællesskab kan nå frem til den rigtige afgørelse for patienten uden at skulle bruge andre kommunikationskanaler.
 
 <p style="display: block;">
 <img src="UC-3-3-Faglig-afklaring.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -330,7 +330,7 @@ Henviser og visitator udveksler kliniske spørgsmål og svar for at afklare indi
 
 ### User story 3.4 Statusnotifikation til henviser
 
-> **User story:** Som henviser ønsker jeg automatisk at modtage en notifikation, <br/>når status på en af mine henvisninger ændrer sig hos visitatoren, <br/>så jeg til enhver tid er opdateret om forløbet uden at skulle forespørge aktivt.
+> **User story:** <br/>Som henviser ønsker jeg automatisk at modtage en notifikation, <br/>når status på en af mine henvisninger ændrer sig hos visitatoren, <br/>så jeg til enhver tid er opdateret om forløbet uden at skulle forespørge aktivt.
 
 <p style="display: block;">
 <img src="UC-3-4-Statusnotifikation.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -348,7 +348,7 @@ Visitatoren notificerer automatisk henviseren ved statusskift på en afsendt hen
 
 ### User story 3.5 Aftale om alternativ visitation
 
-> **User story:** Som visitator ønsker jeg at kunne indlede en dialog med henviseren om et alternativt tilbud, <br/>når jeg ikke kan imødekomme den primære henvisning, <br/>så patienten ikke ender i en blindgyde og vi i fællesskab finder en løsning.
+> **User story:** <br/>Som visitator ønsker jeg at kunne indlede en dialog med henviseren om et alternativt tilbud, <br/>når jeg ikke kan imødekomme den primære henvisning, <br/>så patienten ikke ender i en blindgyde og vi i fællesskab finder en løsning.
 
 <p style="display: block;">
 <img src="UC-3-5-Alternativ-visitation.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">
@@ -366,7 +366,7 @@ Henviser og visitator forhandler i fællesskab om et alternativt tilbud, <br/>n�
 
 ### User story 3.6 Korrektionsaftale om fejl i afsendt henvisning
 
-> **User story:** Som visitator ønsker jeg at kunne kontakte henviseren og aftale en korrektion, <br/>når jeg opdager en fejl i en modtaget henvisning, <br/>så fejlen rettes på en koordineret og sporbar måde uden at vi mister historikken.
+> **User story:** <br/>Som visitator ønsker jeg at kunne kontakte henviseren og aftale en korrektion, <br/>når jeg opdager en fejl i en modtaget henvisning, <br/>så fejlen rettes på en koordineret og sporbar måde uden at vi mister historikken.
 
 <p style="display: block;">
 <img src="UC-3-6-Korrektionsaftale.svg" alt="UC-1-1-Oprette-henvisning" width="65%" style="margin-top: 10px; margin-left: 0%; margin-right: 35%;">

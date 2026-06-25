@@ -6,7 +6,9 @@ Alle udvekslinger sker som FHIR Message Bundles via EHMI.
 
 ## Meddelelseskatalog 
 
-### REF-001 -- Opret henvisning **Fokusressource:**
+### Henvisning ID=1-version=01 -- Opret henvisning 
+
+**Fokusressource:**
 `ServiceRequest`
 
 **Trigger:** Henviser beslutter at henvise patient.
@@ -15,8 +17,9 @@ Alle udvekslinger sker som FHIR Message Bundles via EHMI.
 `Patient` - `Practitioner` - `Organization`
 
 ![Opret henvisning](fhir-henvisning-messaging-1.svg)
+<br clear="all"/>
 
-### REF-002 -- Supplerende dokumentation
+### Henvisning ID=1-version=02 -- Supplerende dokumentation
 
 **Fokusressource:** `DocumentReference`
 
@@ -26,8 +29,9 @@ Alle udvekslinger sker som FHIR Message Bundles via EHMI.
 `DiagnosticReport` - `Media`
 
 ![Supplerende dokumentation](fhir-henvisning-messaging-2.svg)
+<br clear="all"/>
 
-### REF-003 -- Anmodning om supplerende oplysninger
+### Henvisning ID=1-version=03 -- Anmodning om supplerende oplysninger
 
 **Fokusressource:** `CommunicationRequest`
 
@@ -36,8 +40,9 @@ Alle udvekslinger sker som FHIR Message Bundles via EHMI.
 **Ressourcer:** - `Bundle` - `MessageHeader` - `CommunicationRequest`
 
 ![Anmodning om supplerende oplysninger](fhir-henvisning-messaging-3.svg)
+<br clear="all"/>
 
-### REF-004 -- Besvarelse af anmodning
+### Henvisning ID=1-version=04 -- Besvarelse af anmodning
 
 **Fokusressource:** `Communication`
 
@@ -46,8 +51,9 @@ Alle udvekslinger sker som FHIR Message Bundles via EHMI.
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Communication`
 
 ![Besvarelse af anmodning](fhir-henvisning-messaging-4.svg)
+<br clear="all"/>
 
-### REF-005 -- Accept af henvisning
+### Henvisning ID=1-version=05 -- Accept af henvisning
 
 **Fokusressource:** `Task`
 
@@ -56,8 +62,9 @@ Alle udvekslinger sker som FHIR Message Bundles via EHMI.
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Task`
 
 ![Accept af henvisning](fhir-henvisning-messaging-5.svg)
+<br clear="all"/>
 
-### REF-006 -- Booking gennemført
+### Henvisning ID=1-version=06 -- Booking gennemført
 
 **Fokusressource:** `Appointment`
 
@@ -66,8 +73,9 @@ Alle udvekslinger sker som FHIR Message Bundles via EHMI.
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Appointment`
 
 ![Booking gennemført](fhir-henvisning-messaging-6.svg)
+<br clear="all"/>
 
-### REF-007 -- Afvisning
+### Henvisning ID=1-version=07 -- Afvisning
 
 **Fokusressource:** `Task`
 
@@ -76,8 +84,9 @@ Alle udvekslinger sker som FHIR Message Bundles via EHMI.
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Task`
 
 ![Afvisning](fhir-henvisning-messaging-7.svg)
+<br clear="all"/>
 
-### REF-008 -- Videresendelse
+### Henvisning ID=1-version=08 -- Videresendelse
 
 **Fokusressource:** `ServiceRequest`
 
@@ -86,8 +95,9 @@ Alle udvekslinger sker som FHIR Message Bundles via EHMI.
 **Ressourcer:** - `Bundle` - `MessageHeader` - `ServiceRequest`
 
 ![Videresendelse](fhir-henvisning-messaging-8.svg)
+<br clear="all"/>
 
-### REF-009 -- Statusopdatering
+### Henvisning ID=1-version=09 -- Statusopdatering
 
 **Fokusressource:** `Task`
 
@@ -96,8 +106,9 @@ Alle udvekslinger sker som FHIR Message Bundles via EHMI.
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Task`
 
 ![Statusopdatering](fhir-henvisning-messaging-9.svg)
+<br clear="all"/>
 
-### REF-010 -- Faglig dialog
+### Henvisning ID=1-version=10 -- Faglig dialog
 
 **Fokusressource:** `Communication`
 
@@ -106,8 +117,9 @@ Alle udvekslinger sker som FHIR Message Bundles via EHMI.
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Communication`
 
 ![Faglig dialog](fhir-henvisning-messaging-10.svg)
+<br clear="all"/>
 
-### REF-011 -- Alternativ visitation
+### Henvisning ID=1-version=11 -- Alternativ visitation
 
 **Fokusressource:** `Communication`
 
@@ -116,8 +128,9 @@ Alle udvekslinger sker som FHIR Message Bundles via EHMI.
 **Ressourcer:** - `Bundle` - `MessageHeader` - `Communication`
 
 ![Alternativ visitation](fhir-henvisning-messaging-11.svg)
+<br clear="all"/>
 
-### REF-012 -- Korrektion
+### Henvisning ID=1-version=12 -- Korrektion
 
 **Fokusressource:** `ServiceRequest`
 
