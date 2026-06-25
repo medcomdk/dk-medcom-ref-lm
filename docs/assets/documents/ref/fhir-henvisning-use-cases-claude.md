@@ -53,7 +53,7 @@ så beslutningsgrundlaget er samlet ét sted.**
 
 ### 1.3 Ændre en afsendt henvisning
 
-Henviseren opdaterer indholdet af en allerede afsendt henvisning — fx korrigerer indikation, hastegrad eller kontaktoplysninger. Opdateringen sker via en `PUT`-operation på den eksisterende `ServiceRequest`, og der sættes et revisionsflag så visitatoren notificeres.
+Henviseren opdaterer indholdet af en allerede afsendt henvisning — fx korrigerer indikation, hastegrad eller kontaktoplysninger. Opdateringen sker på den eksisterende `ServiceRequest`, og der sættes et revisionsflag så visitatoren notificeres.
 
 > **Som henviser ønsker jeg at kunne rette indholdet i en allerede afsendt henvisning, 
 når jeg opdager en fejl eller patientens kliniske situation ændrer sig, 
@@ -306,7 +306,7 @@ så patienten ikke ender i en blindgyde og vi i fællesskab finder en løsning.*
 
 ### 3.6 Korrektionsaftale om fejl i afsendt henvisning
 
-Visitatoren opdager en fejl i en modtaget henvisning — fx forkert CPR-nummer, forkert ydelseskode eller manglende samtykkedokumentation — og indleder en dialog med henviseren om korrektion. Korrektionen aftales via `Communication`-besked og gennemføres med en efterfølgende `PUT`-opdatering af `ServiceRequest`.
+Visitatoren opdager en fejl i en modtaget henvisning — fx forkert CPR-nummer, forkert ydelseskode eller manglende samtykkedokumentation — og indleder en dialog med henviseren om korrektion. Korrektionen aftales via `Communication`-besked og gennemføres med en efterfølgende opdatering af `ServiceRequest`.
 
 > **Som visitator ønsker jeg at kunne kontakte henviseren og aftale en korrektion, 
 når jeg opdager en fejl i en modtaget henvisning, 
@@ -314,7 +314,7 @@ så fejlen rettes på en koordineret og sporbar måde uden at vi mister historik
 
 | | |
 | :--- | :--- |
-| **Ressource** | `Communication`·`ServiceRequest`(PUT/korrektion) |
+| **Ressource** | `Communication`·`ServiceRequest`(korrektion) |
 | **Trigger** | Fejl opdaget under modtagelse eller triage hos visitatoren |
 | **Næste trin** | →[1.3 Ændre](#13-ændre-en-afsendt-henvisning)·→[2.2 Triagere](#22-triagere-og-prioritere-en-henvisning) |
 

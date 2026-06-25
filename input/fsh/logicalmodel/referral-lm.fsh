@@ -1,3 +1,4 @@
+/*
 Logical: DKReferralMessage
 Id: dk-referral-message
 Title: "DK Logical Referral Message"
@@ -96,3 +97,4 @@ Target: "FHIR R4"
 * referral.attachments -> "DocumentReference"
 * workflow -> "Task"
 * provenance -> "Provenance"
+*/

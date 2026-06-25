@@ -49,7 +49,7 @@ Henviseren vedhæfter supplerende klinisk materiale til en eksisterende henvisni
 
 ### 1.3 Ændre en afsendt henvisning
 
-Henviseren opdaterer indholdet af en allerede afsendt henvisning — fx korrigerer indikation, hastegrad eller kontaktoplysninger. Opdateringen sker via en `PUT`-operation på den eksisterende `ServiceRequest`, og der sættes et revisionsflag så visitatoren notificeres om ændringen.
+Henviseren opdaterer indholdet af en allerede afsendt henvisning — fx korrigerer indikation, hastegrad eller kontaktoplysninger. Opdateringen sker på den eksisterende `ServiceRequest`, og der sættes et revisionsflag så visitatoren notificeres om ændringen.
 
 > **User story:** Som henviser ønsker jeg at kunne rette indholdet i en allerede afsendt henvisning, når jeg opdager en fejl eller patientens kliniske situation ændrer sig, så visitatoren altid arbejder ud fra korrekte og aktuelle oplysninger.
 
@@ -305,11 +305,11 @@ Henviser og visitator forhandler i fællesskab om et alternativt tilbud, når de
 
 ### 3.6 Korrektionsaftale om fejl i afsendt henvisning
 
-Visitatoren opdager en fejl i en modtaget henvisning — fx forkert CPR-nummer, forkert ydelseskode eller manglende samtykkedokumentation — og indleder en dialog med henviseren om korrektion. Korrektionen aftales via `Communication`-besked og gennemføres med en efterfølgende `PUT`-opdatering af `ServiceRequest`.
+Visitatoren opdager en fejl i en modtaget henvisning — fx forkert CPR-nummer, forkert ydelseskode eller manglende samtykkedokumentation — og indleder en dialog med henviseren om korrektion. Korrektionen aftales via `Communication`-besked og gennemføres med en efterfølgende opdatering af `ServiceRequest`.
 
 > **User story:** Som visitator ønsker jeg at kunne kontakte henviseren og aftale en korrektion, når jeg opdager en fejl i en modtaget henvisning, så fejlen rettes på en koordineret og sporbar måde uden at vi mister historikken.
 
-**Primær FHIR-ressource:** `Communication`, `ServiceRequest` (PUT/korrektion)
+**Primær FHIR-ressource:** `Communication`, `ServiceRequest` (korrektion)
 
 **Triggerhændelse:** Fejl opdaget under modtagelse eller triage hos visitatoren
 

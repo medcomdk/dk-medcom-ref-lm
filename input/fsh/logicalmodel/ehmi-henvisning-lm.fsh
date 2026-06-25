@@ -1,3 +1,4 @@
+/*
 // ------------------------------------------------------------
 // 2.6 Logical Model – Konceptuel oversigt (FSH LogicalModel)
 // ------------------------------------------------------------
@@ -105,4 +106,4 @@ Description: "Konceptuel logisk model for en Kommunikator i dansk sundhedsvæsen
 * navn 1..1 string "Organisationsnavn"
 * yder 0..1 string "Ydernummer (hvis relevant)"
 * endpoint 1..1 EhmiEndpointLM "EHMI/eDelivery endpoint"
-
+*/

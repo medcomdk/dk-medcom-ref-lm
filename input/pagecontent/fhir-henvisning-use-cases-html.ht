@@ -1208,7 +1208,7 @@
         <p class="uc-desc">Visitatoren opdager en fejl i en modtaget henvisning — fx forkert CPR-nummer, forkert ydelseskode eller manglende samtykkedokumentation — og indleder en dialog med henviseren om korrektion. Korrektionen aftales via <code>Communication</code>-besked og gennemføres med en efterfølgende <code>PUT</code>-opdatering af <code>ServiceRequest</code>.</p>
         <p class="uc-story">Som visitator ønsker jeg at kunne kontakte henviseren og aftale en korrektion, når jeg opdager en fejl i en modtaget henvisning, så fejlen rettes på en koordineret og sporbar måde uden at vi mister historikken.</p>
         <div class="uc-meta">
-          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>Communication</code> · <code>ServiceRequest</code> (PUT/korrektion)</span></div>
+          <div class="meta-row"><span class="meta-label">Ressource</span><span class="meta-val"><code>Communication</code> · <code>ServiceRequest</code> (korrektion)</span></div>
           <div class="meta-row"><span class="meta-label">Trigger</span><span class="meta-val">Fejl opdaget under modtagelse eller triage hos visitatoren</span></div>
           <div class="meta-row"><span class="meta-label">Næste trin</span>
             <div class="next-steps">
