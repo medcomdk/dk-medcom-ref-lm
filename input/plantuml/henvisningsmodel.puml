@@ -1,0 +1,123 @@
+@startuml Henvisningsmodel
+
+skinparam classAttributeIconSize 0
+hide circle
+skinparam packageStyle rectangle
+skinparam class {
+  BackgroundColor White
+  ArrowColor #555555
+  BorderColor #555555
+}
+
+title Logisk model – Henvisningsproces (FHIR / DK Core)
+
+package "Henvisningskerne" {
+  class Henvisning <<ServiceRequest>> {
+    henvisningsId : Identifier
+    status : Kode
+    prioritet : Kode
+    henvisningsdato : DateTime
+    kategori : CodeableConcept
+    klinisk_baggrund : String
+  }
+  note bottom of Henvisning: [1] Klinisk anmodning om viderehenvisning
+
+  class Visitationsafgoerelse <<Task>> {
+    afgoerelsesId : Identifier
+    status : Kode
+    udfald : CodeableConcept
+    begrundelse : String
+    afgoerelsesdato : DateTime
+  }
+  note bottom of Visitationsafgoerelse: [6] Visitatorens formelle afgørelse
+
+  class Booking <<Appointment>> {
+    bookingId : Identifier
+    status : Kode
+    start : DateTime
+    slut : DateTime
+    lokation : Reference
+  }
+  note bottom of Booking: [7] Aftalt tid ved accept af henvisning
+}
+
+package "Aktører" {
+  class Patient <<DkCorePatient>> {
+    cpr : Identifier
+    navn : HumanName
+    foedselsdato : Date
+    koen : Kode
+  }
+  note bottom of Patient: [2] Patienten der viderehenvises
+
+  class Henviser <<Practitioner/PractitionerRole>> {
+    autorisationsId : Identifier
+    navn : HumanName
+    speciale : CodeableConcept
+    kontakt : ContactPoint
+  }
+  note bottom of Henviser: [3a] Henvisende behandler
+
+  class Visitator <<Practitioner/PractitionerRole>> {
+    autorisationsId : Identifier
+    navn : HumanName
+    funktion : CodeableConcept
+    kontakt : ContactPoint
+  }
+  note bottom of Visitator: [3b] Visiterende behandler
+
+  class BehandlendeOrganisation <<DkCoreOrganization>> {
+    sorCode : Identifier
+    navn : String
+    adresse : Address
+  }
+  note bottom of BehandlendeOrganisation: [4b] Organisation der modtager henvisningen
+}
+
+package "Understøttende data" {
+  class KliniskDokumentation <<DocumentReference/DiagnosticReport/Observation>> {
+    dokumentId : Identifier
+    type : CodeableConcept
+    dato : DateTime
+    indhold : Attachment
+  }
+  note bottom of KliniskDokumentation: [5] Supplerende klinisk materiale
+}
+
+package "Henvisningsdialog" {
+  class Henvisningsdialog <<Communication/CommunicationRequest>> {
+    dialogId : Identifier
+    emne : String
+    indhold : String
+    status : Kode
+    tidspunkt : DateTime
+  }
+  note bottom of Henvisningsdialog: [8] Struktureret besked i dialogen
+}
+
+' ---------- Relationer ----------
+
+Henvisning   "1" -- "1"     Patient                : vedrører >
+Henvisning   "1" -- "1"     Henviser               : oprettet af >
+Henvisning   "1" -- "0..1"  Visitator              : tildelt til >
+Henvisning   "1" -- "1"     AfsendendeOrganisation : afsendt fra >
+Henvisning   "1" -- "1"     BehandlendeOrganisation : adresseret til >
+Henvisning   "1" -- "0..*"  KliniskDokumentation   : understøttes af >
+Henvisning   "1" -- "0..*"  Visitationsafgoerelse  : behandles via >
+Henvisning   "1" -- "0..*"  Henvisningsdialog      : kommunikeres via >
+
+Visitationsafgoerelse "0..*" -- "1"    Visitator : udføres af >
+Visitationsafgoerelse "1"    -- "0..1" Booking   : resulterer i >
+
+Booking "0..*" -- "1" Patient                : er booket for >
+Booking "0..*" -- "1" BehandlendeOrganisation : afholdes hos >
+
+Henviser  "0..*" -- "1" AfsendendeOrganisation : tilknyttet >
+Visitator "0..*" -- "1" BehandlendeOrganisation : tilknyttet >
+
+KliniskDokumentation "0..*" -- "1" Patient : vedrører >
+
+Henvisningsdialog "0..*" -- "0..1" Henviser  : afsender/modtager >
+Henvisningsdialog "0..*" -- "0..1" Visitator : afsender/modtager >
+
+@enduml

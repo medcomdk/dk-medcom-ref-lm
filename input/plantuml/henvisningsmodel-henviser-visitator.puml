@@ -1,0 +1,64 @@
+@startuml Henvisningsmodel-Henviser-Visitator
+
+skinparam classAttributeIconSize 0
+hide circle
+skinparam packageStyle rectangle
+skinparam class {
+  BackgroundColor White
+  ArrowColor #555555
+  BorderColor #555555
+}
+
+title Logisk model – Henvisningsproces (FHIR / DK Core)
+
+  class Henvisning {
+    henvisningsId : Identifier
+    status : Kode
+    prioritet : Kode
+    henvisningsdato : DateTime
+    kategori : CodeableConcept
+    klinisk_baggrund : String
+    KliniskDokumentation : String/Attachment [0..*]
+  }
+
+  class Patient {
+    cpr : Identifier
+    navn : HumanName
+    foedselsdato : Date
+    koen : Kode
+  }
+  class Henviser <<Henvisende behandler>> {
+    autorisationsId : Identifier
+    navn : HumanName
+    speciale : CodeableConcept
+    kontakt : ContactPoint
+  }
+  
+  class Visitator <<Visiterende behandler>> {
+    autorisationsId : Identifier
+    navn : HumanName
+    funktion : CodeableConcept
+    kontakt : ContactPoint
+  }
+
+
+
+  class Henvisningsdialog <<Struktureret besked i dialogen>> {
+    dialogId : Identifier
+    emne : String
+    indhold : String
+    status : Kode
+    tidspunkt : DateTime
+  }
+
+' ---------- Relationer ----------
+
+Henvisning   "1" -- "1"     Patient                : vedrører >
+Henvisning   "1" -- "1"     Henviser               : oprettet af >
+Henvisning   "1" -- "0..1"  Visitator              : tildelt til >
+Henvisning   "1" -- "0..*"  Henvisningsdialog      : kommunikeres via >
+
+Henvisningsdialog "0..*" -- "1..*" Henviser  : aktør >
+Henvisningsdialog "0..*" -- "1..*" Visitator : aktør >
+
+@enduml

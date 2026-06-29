@@ -1,0 +1,225 @@
+@startuml fhir-henvisning-logisk-model
+
+title Logisk model — FHIR-baseret henvisningshåndtering
+
+skinparam backgroundColor #F2F4F7
+skinparam defaultFontName "IBM Plex Sans"
+skinparam defaultFontSize 11
+skinparam classBackgroundColor #FFFFFF
+skinparam classBorderColor #B0B8C4
+skinparam classBorderThickness 1
+skinparam classHeaderBackgroundColor #1B2333
+skinparam classFontColor #FFFFFF
+skinparam classFontSize 11
+skinparam classFontStyle bold
+skinparam classAttributeFontSize 10
+skinparam classAttributeFontColor #3D4E63
+skinparam ArrowColor #4B3F8A
+skinparam ArrowThickness 1.5
+skinparam NoteBackgroundColor #E6F4F6
+skinparam NoteBorderColor #1A7F8E
+skinparam NoteFontSize 9
+skinparam NoteFontColor #1A7F8E
+skinparam PackageBackgroundColor #F8F9FB
+skinparam PackageBorderColor #D8DFE8
+skinparam PackageFontStyle bold
+skinparam PackageFontSize 10
+skinparam PackageFontColor #3D4E63
+skinparam Padding 5
+skinparam roundcorner 8
+skinparam linetype ortho
+
+' ══════════════════════════════════════════════
+'  PAKKE: PARTER
+' ══════════════════════════════════════════════
+package "Parter" #EEF2F7 {
+
+  class Patient {
+    .. DkCorePatient ..
+    CPR-nummer
+    navn
+    adresse
+    kontaktoplysninger
+  }
+
+  class Behandler {
+    .. Practitioner + PractitionerRole ..
+    autorisationsId
+    navn
+    rolle : {henviser | visitator}
+    specialale
+  }
+
+  class Organisation {
+    .. DkCoreOrganization ..
+    SOR-kode
+    navn
+    type : {afsender | modtager}
+    kontaktoplysninger
+  }
+
+}
+
+' ══════════════════════════════════════════════
+'  PAKKE: KERNE — HENVISNINGSFLOW
+' ══════════════════════════════════════════════
+package "Henvisningsflow" #EAF4F6 {
+
+  class Henvisning {
+    .. ServiceRequest ..
+    id
+    status : {proposed | active | revoked | completed}
+    hastegrad : {routine | urgent | asap | stat}
+    indikation
+    ønsketYdelse
+    oprettetDato
+    ændringsMarkering : Boolean
+  }
+
+  class Visitationsafgørelse {
+    .. Task ..
+    id
+    status : {requested | accepted | declined | cancelled}
+    afgørelsesType : {accept | afvisning | videresendelse}
+    begrundelse
+    afgørelsesdato
+  }
+
+  class Booking {
+    .. Appointment ..
+    id
+    status : {booked | cancelled | noshow}
+    starttidspunkt
+    varighed
+    lokation
+  }
+
+}
+
+' ══════════════════════════════════════════════
+'  PAKKE: KLINISK DOKUMENTATION
+' ══════════════════════════════════════════════
+package "Klinisk dokumentation" #F2EEFA {
+
+  class KliniskDokumentation {
+    .. DocumentReference / DiagnosticReport / Observation ..
+    id
+    type : {epikrise | labsvar | billeddiagnostik | \nobservation | medicin}
+    dato
+    indhold
+    format : {PDF | CDA | FHIR}
+  }
+
+}
+
+' ══════════════════════════════════════════════
+'  PAKKE: KOMMUNIKATION & NOTIFIKATION
+' ══════════════════════════════════════════════
+package "Kommunikation & notifikation" #FBF3EE {
+
+  class Kommunikationsbesked {
+    .. Communication / CommunicationRequest ..
+    id
+    type : {supplement-anmodning | supplement-svar | \nfaglig-afklaring | korrektionsaftale}
+    emne
+    afsendtDato
+    status : {unknown | preparation | in-progress | completed}
+  }
+
+  class Statusnotifikation {
+    .. SubscriptionNotification ..
+    id
+    notifikationsType : {event | heartbeat}
+    statusSkift
+    afsendtTidspunkt
+  }
+
+  class Abonnement {
+    .. Subscription ..
+    id
+    kriterium
+    kanal : {rest-hook | websocket | email}
+    status : {requested | active | error | off}
+    udløbsdato
+  }
+
+}
+
+' ══════════════════════════════════════════════
+'  PAKKE: INFRASTRUKTUR
+' ══════════════════════════════════════════════
+package "Infrastruktur (EHMI)" #F5F5F0 {
+
+  class Meddelelseskonvolut {
+    .. Bundle (message) + MessageHeader ..
+    bundleId
+    afsenderEndpoint
+    modtagerEndpoint
+    afsendtTidspunkt
+    kvitteringsStatus : {ACK | NACK}
+    eventType
+  }
+
+}
+
+' ══════════════════════════════════════════════
+'  RELATIONER
+' ══════════════════════════════════════════════
+
+' --- Henvisning — parter ---
+Henvisning "1" --> "1" Patient         : omhandler >
+Henvisning "1" --> "1" Behandler       : oprettet af (henviser) >
+Henvisning "1" --> "1" Organisation    : afsendt fra >
+Henvisning "1" --> "1" Organisation    : sendt til >
+
+' --- Klinisk dokumentation ---
+Henvisning "1" o-- "0..*" KliniskDokumentation : understøttes af >
+
+' --- Visitationsafgørelse ---
+Visitationsafgørelse "1" --> "1" Henvisning     : baseret på >
+Visitationsafgørelse "1" --> "1" Behandler      : truffet af (visitator) >
+Visitationsafgørelse "1" ..> "0..1" Henvisning   : videresender til (replaces) >
+
+' --- Booking ---
+Booking "0..1" --> "1" Visitationsafgørelse     : følger af >
+Booking "0..1" --> "1" Patient                  : involverer >
+Booking "0..1" --> "1" Organisation             : hos >
+
+' --- Kommunikationsbesked ---
+Kommunikationsbesked "0..*" --> "1" Henvisning  : vedrører >
+Kommunikationsbesked "0..*" --> "1" Behandler   : afsender >
+Kommunikationsbesked "0..*" --> "1" Behandler   : modtager >
+Kommunikationsbesked "0..*" ..> "0..1" Kommunikationsbesked : svar på (in-response-to) >
+
+' --- Abonnement / Notifikation ---
+Abonnement "1" --> "1" Behandler               : registreret af >
+Abonnement "1" --> "1" Organisation            : tilhører >
+Statusnotifikation "0..*" --> "1" Abonnement   : udløst af >
+Statusnotifikation "0..*" --> "1" Henvisning   : omhandler >
+
+' --- Meddelelseskonvolut ---
+Meddelelseskonvolut "1" o-- "1" Henvisning     : indeholder >
+Meddelelseskonvolut "1" --> "1" Organisation   : fra >
+Meddelelseskonvolut "1" --> "1" Organisation   : til >
+
+' ══════════════════════════════════════════════
+'  NOTER
+' ══════════════════════════════════════════════
+note bottom of Meddelelseskonvolut
+  Anvendes ved afsendelse og modtagelse
+  via EHMI-infrastrukturen.
+  MessageHeader angiver event og routing.
+end note
+
+note right of Visitationsafgørelse
+  Videresendelse opretter en ny
+  Henvisning med replaces-reference
+  til den originale.
+end note
+
+note bottom of Kommunikationsbesked
+  Kan indgå i en kæde (thread)
+  via in-response-to-kæde.
+end note
+
+@enduml

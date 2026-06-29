@@ -31,14 +31,13 @@ markdown-dokumenter for hver entitet.
 ## Relationsdiagram
 
 ```
-Meddelelseskonvolut
- └── fokus ──────────────────────► Henvisning
-                                      ├── patient ──────► Patient
-                                      ├── henviser ─────► Behandler
-                                      │                      └── organisation ► Organisation
-                                      ├── modtagerOrganisation ► Organisation
-                                      ├── dokumentation ──► KliniskDokumentation
-                                      └── booking ────────► Booking
+ Henvisning
+    ├── patient ──────► Patient
+    ├── henviser ─────► Behandler
+    │                      └── organisation 
+    ├── modtagerOrganisation ► Organisation
+    ├── dokumentation ──► KliniskDokumentation
+    └── booking ────────► Booking
 
 Visitationsafgoerelse
  └── vedroererHenvisning ────────► Henvisning
@@ -96,3 +95,4 @@ Statusnotifikation
 | `SubscriptionStatus` | Statusnotifikation | Notifikationsindhold |
 | `Bundle` (message) | Meddelelseskonvolut | Transportomslag |
 | `MessageHeader` | Meddelelseskonvolut | Routing og hændelsestype |
+
