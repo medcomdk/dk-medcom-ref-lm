@@ -26,14 +26,218 @@ eller resultere i en booking.
 
 Den logiske model for Henvisning og dialog imkring denne ser således ud skåret ind til benet.
 
-Modellen er fokuseret og afspejler kerneflowet: én Henvisning som omdrejningspunkt, de to behandlerroller som separate klasser med stereotype-labels, og Henvisningsdialog som den fælles kommunikationsentitet. Det er den rigtige granularitet for en logisk model — du er ikke druknet i tekniske FHIR-detaljer.
+Modellen er fokuseret og afspejler kerneflowet: én Henvisning som omdrejningspunkt, de to behandlerroller som separate klasser med stereotype-labels, og Henvisningsdialog som den fælles kommunikationsentitet. Modellen er grov og nogle elementer vil nok have sin egen entitet, når det modelleres i bund, men for at illustrere et overblik er det dækkende.
+Perfekt. Jeg inkluderer dem begge steder — som attributter på `Henvisning` i din PUML-inspirerede model, og som en udvidelse af den større FHIR-logiske model.Her er begge modeller som Mermaid-kode klar til at indsætte direkte i din markdown-fil.
 
+---
 
-<p style="display: block;">
-<img src="Henvisningsmodel-Henviser-Visitator.svg" alt="Henvisningsmodel Henviser Visitator" width="55%" style="margin-top: 10px; margin-left: 10%; margin-right: 35%;">
-</p>
-<br clear="all"/>
+**Model 1 — Din kompakte model med de 8 fraser**
 
+```mermaid
+classDiagram
+    direction TB
+
+    class Henvisning {
+        henvisningsId : Identifier
+        status : Kode
+        prioritet : Kode
+        henvisningsdato : DateTime
+        kategori : CodeableConcept
+        KliniskDokumentation : Attachment [0..*]
+        ── MedCom kliniske oplysninger ──
+        cave : String [1..1]
+        anamnese : String [1..1]
+        tidligereRelevantSygehistorie : String [1..1]
+        objektive_fund : String [1..1]
+        undersøgelsesresultater : String [1..1]
+        aktuelMedicin : String [1..1]
+        socialeForhold : String [1..1]
+        sagtTilPatienten : String [1..1]
+    }
+
+    class Patient {
+        cpr : Identifier
+        navn : HumanName
+        foedselsdato : Date
+        koen : Kode
+    }
+
+    class Henviser {
+        autorisationsId : Identifier
+        navn : HumanName
+        speciale : CodeableConcept
+        kontakt : ContactPoint
+    }
+
+    class Visitator {
+        autorisationsId : Identifier
+        navn : HumanName
+        funktion : CodeableConcept
+        kontakt : ContactPoint
+    }
+
+    class Henvisningsdialog {
+        dialogId : Identifier
+        emne : String
+        indhold : String
+        status : Kode
+        tidspunkt : DateTime
+    }
+
+    Henvisning "1" --> "1" Patient : vedrører
+    Henvisning "1" --> "1" Henviser : oprettet af
+    Henvisning "1" --> "0..1" Visitator : tildelt til
+    Henvisning "1" --> "0..*" Henvisningsdialog : kommunikeres via
+    Henvisningsdialog "0..*" --> "1..*" Henviser : aktør
+    Henvisningsdialog "0..*" --> "1..*" Visitator : aktør
+```
+
+---
+
+**Model 2 — Den fulde FHIR-logiske model med de 8 fraser**
+
+Her er det et designvalg værd at nævne: de 8 fraser lever i FHIR på `ServiceRequest.note` (fritekst) eller som navngivne extensions, men logisk er de attributter på `Henvisning`. Jeg modellerer dem som en navngiven komponent `KliniskeOplysninger` der aggregeres ind på `Henvisning`, så de ikke drukner i den lange attributliste men stadig er eksplicit tilstede.
+
+```mermaid
+classDiagram
+    direction TB
+
+    %% ── PARTER ──────────────────────────────────────────
+    class Patient {
+        cpr : Identifier
+        navn : HumanName
+        foedselsdato : Date
+        koen : Kode
+    }
+
+    class Behandler {
+        autorisationsId : Identifier
+        navn : HumanName
+        rolle : Kode
+        speciale : CodeableConcept
+        kontakt : ContactPoint
+    }
+
+    class Organisation {
+        SOR-kode : Identifier
+        navn : String
+        type : Kode
+    }
+
+    %% ── KERNEFLOW ────────────────────────────────────────
+    class Henvisning {
+        henvisningsId : Identifier
+        status : Kode
+        prioritet : Kode
+        hastegrad : Kode
+        henvisningsdato : DateTime
+        kategori : CodeableConcept
+        ønsketYdelse : CodeableConcept
+        replaces : Reference [0..1]
+    }
+
+    class KliniskeOplysninger {
+        ── MedCom REF01 fraser ──
+        cave : String [0..1]
+        anamnese : String [0..1]
+        tidligereRelevantSygehistorie : String [0..1]
+        objektive_fund : String [0..1]
+        undersøgelsesresultater : String [0..1]
+        aktuelMedicin : String [0..1]
+        socialeForhold : String [0..1]
+        sagtTilPatienten : String [0..1]
+        ── FHIR mapping ──
+        fhir : ServiceRequest.note / extension
+    }
+
+    class KliniskDokumentation {
+        type : Kode
+        dato : DateTime
+        format : Kode
+    }
+
+    class Visitationsafgørelse {
+        afgørelsesId : Identifier
+        status : Kode
+        afgørelsesType : Kode
+        begrundelse : String
+        afgørelsesdato : DateTime
+    }
+
+    class Booking {
+        bookingId : Identifier
+        status : Kode
+        starttidspunkt : DateTime
+        varighed : Duration
+    }
+
+    %% ── KOMMUNIKATION ────────────────────────────────────
+    class Kommunikationsbesked {
+        dialogId : Identifier
+        type : Kode
+        emne : String
+        indhold : String
+        status : Kode
+        tidspunkt : DateTime
+        inResponseTo : Reference [0..1]
+    }
+
+    class Statusnotifikation {
+        notifikationsType : Kode
+        statusSkift : Kode
+        tidspunkt : DateTime
+    }
+
+    class Abonnement {
+        kriterium : String
+        kanal : Kode
+        status : Kode
+        udløbsdato : DateTime
+    }
+
+    %% ── INFRASTRUKTUR ────────────────────────────────────
+    class Meddelelseskonvolut {
+        bundleId : Identifier
+        afsenderEndpoint : String
+        modtagerEndpoint : String
+        kvitteringsStatus : Kode
+        eventType : Kode
+    }
+
+    %% ── RELATIONER: PARTER ───────────────────────────────
+    Henvisning "1" --> "1" Patient : vedrører
+    Henvisning "1" --> "1" Behandler : oprettet af
+    Henvisning "1" --> "1" Organisation : afsender
+    Henvisning "1" --> "1" Organisation : modtager
+
+    %% ── RELATIONER: KERNEFLOW ────────────────────────────
+    Henvisning "1" *-- "1" KliniskeOplysninger : indeholder
+    Henvisning "1" o-- "0..*" KliniskDokumentation : understøttes af
+    Visitationsafgørelse "1" --> "1" Henvisning : baseret på
+    Visitationsafgørelse "1" --> "1" Behandler : truffet af
+    Booking "0..1" --> "1" Visitationsafgørelse : følger af
+    Booking "0..1" --> "1" Patient : involverer
+
+    %% ── RELATIONER: KOMMUNIKATION ────────────────────────
+    Kommunikationsbesked "0..*" --> "1" Henvisning : vedrører
+    Kommunikationsbesked "0..*" --> "1" Behandler : afsender
+    Kommunikationsbesked "0..*" --> "1" Behandler : modtager
+    Statusnotifikation "0..*" --> "1" Abonnement : udløst af
+    Statusnotifikation "0..*" --> "1" Henvisning : omhandler
+
+    %% ── RELATIONER: INFRASTRUKTUR ────────────────────────
+    Meddelelseskonvolut "1" o-- "1" Henvisning : indeholder
+    Meddelelseskonvolut "1" --> "1" Organisation : fra
+    Meddelelseskonvolut "1" --> "1" Organisation : til
+```
+
+---
+
+Et par noter til brugen:
+
+`KliniskeOplysninger` er modelleret med **komposition** (`*--`) på `Henvisning` — det markerer at den ikke eksisterer uafhængigt. I FHIR-implementeringen svarer det til at de 8 fraser placeres i `ServiceRequest.note`-elementet som sektionerede tekster (én note-entry per frase med en `note.text`-overskrift), eller alternativt i en dansk extension `dk-medcom-referral-notes`. Begge tilgange er gyldige, og valget bør afklares i implementeringsguiden.
+
+`aktuelMedicin` skal i praksis trækkes fra FMK frem for at leve som fritekst i henvisningen — det er eksplicit angivet i MedComs retningslinjer ("FMK skal være ajourført"). Det er værd at notere i implementeringsguiden at dette felt er en reference/pointer snarere end en kopi.
 ## Livscyklus
 
 ```
@@ -44,6 +248,9 @@ Modellen er fokuseret og afspejler kerneflowet: én Henvisning som omdrejningspu
     │
     ├── [on-hold]    →  afventer supplement (3.1)
     │       └── [active]  →  supplement modtaget (3.2)
+    │
+    ├── [on-hold]    →  afventer klinisk afklarende dialog (x.x)
+    │       └── [active]  →  klinisk afklarende dialog med opdateret henvisning færdiggjort (x.x)
     │
     ├── [revoked]   →  tilbagekaldt af henviser (1.4) eller afvist (2.4)
     │
