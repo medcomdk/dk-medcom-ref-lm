@@ -5,4 +5,3 @@
 **Grundlæggende følger udvekslingen i EHMi denne model:**
 
 
-
