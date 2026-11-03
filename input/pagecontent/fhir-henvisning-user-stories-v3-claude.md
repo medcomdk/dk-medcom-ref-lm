@@ -1,10 +1,13 @@
-**Bemærk: Dette er en disclaimer for denne side om "User stories for FHIR-baseret henvisningshåndtering"**
-
-Oversigten er en mock-up på user stories og diagrammer og er på ingen måde nødvendigvis fuldt dækkende og fuldt retvisende. Det forsøges til stadighed at blive mere dækkende og mere retvisende.
-
-Oversigten og diagrammerne er delvist udarbejdet sammen med AI-værktøjerne Claude og ChatGPT, så justeringer efter deres forslag må påregnes.
-
-Oversigten vil være velegnet til en dialog med de rette aktører om henvisningsaktiviteter på hhv Henviser- og Visitator-siden samt dialogen imellem dem.
+<div class="stu-note">
+  <p><b>Bemærk: Dette er en disclaimer for denne side om "User stories for FHIR-baseret henvisningshåndtering"</b></p>
+  <p>
+    Oversigten er en mock-up på user stories og diagrammer og er på ingen måde nødvendigvis fuldt dækkende og fuldt retvisende. Det forsøges til stadighed at blive mere dækkende og mere retvisende.
+    <br/><br/>
+    Oversigten og diagrammerne er delvist udarbejdet sammen med AI-værktøjerne Clause og ChatGPT, så justeringer efter deres forslag må påregnes.
+    <br/><br/>
+    Oversigten vil være velegnet til en dialog med de rette aktører om henvisningsaktiviteter på hhv Henviser- og Visitator-siden samt dialogen imellem dem.
+  </p>
+</div>
 
 ## User stories for FHIR-baseret henvisningshåndtering
 
